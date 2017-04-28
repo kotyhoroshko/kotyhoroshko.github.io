@@ -52,9 +52,9 @@ header {
 	border-color: transparent #838383;}
 
 .menu a {
-	padding: 12px 24px 0;
 	display: inline-block;
-	height: 26px;
+	line-height: 38px;
+	padding: 0 24px;
 	font-size: 1rem;
 	letter-spacing: 1px;
 	color: white;}
@@ -74,7 +74,6 @@ header {
 	vertical-align: top;}
 
 .left_menu li {	
-	height: 39px;
 	background-color: transparent;
 	border-top: 1px solid #c8c8c8;
 	border-left: 1px solid #c8c8c8;
@@ -85,12 +84,13 @@ header {
 
 .left_menu a {
 	display: inline-block;
-	width: 194px;
+	width: 100%;
+	line-height: 39px;
 	color: #656363;
-	padding: 12px 22px;}
+	text-indent: 23px;}
 
 .left_menu a:hover {
-	text-indent: 14px;
+	text-indent: 37px;
 	color: #2c2c2c;
 	background-color: #f9f9f9;}
 
@@ -119,14 +119,17 @@ footer p {
 	display: inline-block;}
 
 footer li {
+	line-height: 40px;
 	margin-right: 36px;
-	padding: 14px 24px;}
+	padding: 0 24px;}
 
 footer a:hover {
 	text-decoration: underline;}
 
 footer p {
+	line-height: 40px;
 	padding-right: 24px;
 	letter-spacing: 0.5px;
-	margin-left: 210px;}
+	margin: 0 0 0 212px;
+	text-align: right;}
 
