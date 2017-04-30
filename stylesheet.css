@@ -1,5 +1,5 @@
 body {
-	background-color: #ccc;
+    background-image: url("https://s-media-cache-ak0.pinimg.com/736x/bc/64/0e/bc640eee7652414bb3964646a3fd24d3.jpg");
 	font-family: arial;
 	padding: 0;
 	margin: 0;}
@@ -7,9 +7,9 @@ body {
 .wrapper {
 	width: 940px;
 	height: 450px;
-	background: linear-gradient(to bottom right, #fefefe, #ccc);
+	background-color: rgba(192,192,192,0.66);
 	margin: 50px auto;
-	box-shadow: 0px 0px 4px gray;}
+	box-shadow: 2px 2px 14px black;}
 
 .hw {
 	display: inline-block;
@@ -42,3 +42,9 @@ a {
 	width: 100%;
 	color: white;
 	text-decoration: none;}
+
+h2 a {
+	display: inline;}
+
+h2 a.bonus:hover {
+	color: yellow;}
