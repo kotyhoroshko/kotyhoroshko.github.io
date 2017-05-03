@@ -1,0 +1,361 @@
+body {
+	padding: 0;
+	margin: 0;
+	background: linear-gradient(to bottom, 
+	    #1297b8 0px, #1297b8 37px,
+	    #128aa7 38px, #128aa7 66px,
+	    #5ef0ff 66px, #5ef0ff 67px,
+	    #11cde1 67px, #ffffff 212px,
+	    #40c6d3 212px, #1192b1 360px,
+	    #0c739f 1060px);
+	background-repeat: no-repeat;
+	font-family: tahoma;}
+
+a {
+	text-decoration: none;
+	color: #fff;}
+
+li,
+ul {
+	padding: 0;
+	margin: 0;}
+
+li {
+	list-style-type: none;}
+
+.wrapper {
+	position: relative;
+	padding: 0;
+	margin: 38px auto;
+	background-color: white;
+	width: 1000px;
+	height: 988px;
+	box-shadow: 0 7px 7px black;}	
+
+header {
+	position: relative;
+	width: 100%;
+	height: 174px;
+	margin: 0 auto;
+	font-size: 12px;}
+
+.logo {
+	position: absolute;
+	bottom: 0;
+	left: 28px;}
+
+header span {
+	position: absolute;
+	bottom: 53px;
+	left: 100px;
+	color: rgb(18, 138, 167);}
+
+.contacts {
+	float: right;
+	padding: 1px 31px 0 0;
+ 	color: rgba(18, 138, 167, 0.8);
+	line-height: 0.6;
+	text-align: left;}
+
+.countries {
+	clear: both;
+	padding: 20px 30px 0 0;
+	float: right;}
+
+.countries div {
+	float: right;
+	width: 54px;
+	height: 56px;
+	text-align: center;
+	margin-right: 1px;
+	font-size: 10px;
+}
+
+.countries div a {
+	height: 56px;
+	width: 100%;
+	vertical-align: bottom;
+	color: rgb(18, 138, 167);
+	text-decoration: underline;}
+
+.photo {
+	clear: both;
+	margin: 0 auto;
+	border-top-style: solid;
+	border-bottom-style: solid;
+    border-top-color: #128aa7;
+    border-bottom-color: #128aa7;
+	border-width: 1px;}
+
+.center_panel {
+	position: absolute;
+	top: 414px;
+	height: 28px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	background: linear-gradient(to bottom, #373737, #303030);	
+    border-bottom: 1px solid black;
+    box-shadow: 0 2px 4px black;
+    z-index: 10;
+
+	}	
+
+.center_panel li {
+	float: left;
+	font-size: 14px;
+	line-height: 28px;
+	margin: 0 0 0 60px;
+}
+
+
+.left_block {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 201px;
+	height: 545px;
+	background-color: #edeef0;
+	border-right: 1px solid #c7cacf;
+    border-left: 1px solid #c7cacf;
+    z-index: 9;}
+
+.right_block {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 201px;
+	height: 545px;
+	background-color: #edeef0;
+	border-right: 1px solid #c7cacf;
+    border-left: 1px solid #c7cacf;
+    z-index: 8;}
+}
+
+
+
+
+
+
+/* .menu {
+	margin-top: 0;
+	height: 40px;
+	background: linear-gradient(#5e5e5e, #464545);}
+
+.menu li {
+	display: inline-block;
+	margin-right: 28px;
+	border-style: solid;
+    border-color: transparent;
+	border-width: 1px;}
+
+.menu li:hover {
+	background: linear-gradient( #4a4a4a, #2e2e2e);
+	border-color: transparent #838383;}
+
+.menu a {
+	display: inline-block;
+	line-height: 38px;
+	padding: 0 24px;
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+	color: white;}
+
+.container {
+	width: 966px;
+	height: 600px;
+	margin: 40px auto;}
+
+.left_menu,
+.content {
+	display: inline-block;}
+
+.left_menu {
+	width: 240px;
+	margin-right: 40px;
+	vertical-align: top;}
+
+.left_menu li {	
+	background-color: transparent;
+	border-top: 1px solid #c8c8c8;
+	border-left: 1px solid #c8c8c8;
+	border-right: 1px solid #c8c8c8;}
+
+.left_menu li:nth-last-child(1) {
+	border-bottom: 1px solid #c8c8c8;}
+
+.left_menu a {
+	display: inline-block;
+	width: 100%;
+	line-height: 39px;
+	color: #656363;
+	text-indent: 23px;}
+
+.left_menu a:hover {
+	text-indent: 37px;
+	color: #2c2c2c;
+	background-color: #f9f9f9;}
+
+.image {
+	border: 1px solid #c8c8c8;
+	margin-bottom: 40px;}
+
+.content {
+	width: 678px;} 
+
+.content p {
+	padding: 0 24px;
+	margin: 0 auto;
+	line-height: 1.675;
+	letter-spacing: 0.6px;}
+
+footer {
+	height: 40px;
+	width: 966px;
+	margin: 40px auto;
+	background-color: #e1e1e1;}
+
+footer ul,
+footer li, 
+footer p {
+	display: inline-block;}
+
+footer li {
+	line-height: 40px;
+	margin-right: 36px;
+	padding: 0 24px;}
+
+footer a:hover {
+	text-decoration: underline;}
+
+footer span {
+	line-height: 40px;
+	padding-right: 24px;
+	letter-spacing: 0.5px;
+	margin: 0 0 0 212px;
+	text-align: right;}
+
+
+.text {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1280px;
+  height: 1060px;
+  z-index: 39;
+}
+.Главная {
+  font-size: 14px;
+  font-family: "Tahoma";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 218px;
+  top: 455.6px;
+  z-index: 38;
+}
+.Путешествие {
+  font-size: 14px;
+  font-family: "Tahoma";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 336px;
+  top: 455.511px;
+  z-index: 37;
+}
+.Услуги {
+  font-size: 14px;
+  font-family: "Tahoma";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 485.25px;
+  top: 455.511px;
+  z-index: 36;
+}
+.Партнерам {
+  font-size: 14px;
+  font-family: "Tahoma";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 606px;
+  top: 455.511px;
+  z-index: 35;
+}
+.Отзывы_клиентов {
+  font-size: 14px;
+  font-family: "Tahoma";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 742px;
+  top: 455.6px;
+  z-index: 34;
+}
+.О_нас {
+  font-size: 14px;
+  font-family: "Tahoma";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 929px;
+  top: 455.6px;
+  z-index: 33;
+}
+.Контакты {
+  font-size: 14px;
+  font-family: "Tahoma";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 1028px;
+  top: 455.6px;
+  z-index: 32;
+}
+.white_triangles {
+  background-image: url("white_triangles.png");
+  position: absolute;
+  left: 426px;
+  top: 462px;
+  width: 263px;
+  height: 6px;
+  z-index: 31;
+}
+.dropdown {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1280px;
+  height: 1060px;
+  z-index: 30;
+}
+.Путешествие_1_Путешествие_2_Путешествие_3_Путеш {
+  font-size: 14px;
+  font-family: "Tahoma";
+  color: rgb(255, 255, 255);
+  line-height: 1.714;
+  text-align: left;
+  position: absolute;
+  left: 336px;
+  top: 502.913px;
+  z-index: 29;
+}
+.dropdown_layer {
+  background-color: rgb(48, 48, 48);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  left: 326px;
+  top: 480px;
+  width: 150px;
+  height: 125px;
+  z-index: 28;
+}
