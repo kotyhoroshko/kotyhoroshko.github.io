@@ -105,13 +105,54 @@ header span {
 	background: linear-gradient(to bottom, #373737, #303030);	
     border-bottom: 1px solid black;
     box-shadow: 0 2px 4px black;
-    z-index: 10;}	
+   }	
+
+.center_panel ul{
+	margin-left: 30px;
+	position: relative;
+	}
 
 .center_panel li {
 	float: left;
 	font-size: 14px;
 	line-height: 28px;
-	margin: 0 0 0 60px;}
+	margin: 0 10px;}
+
+.center_panel li a {
+	position: relative;
+	display: inline-block;
+	line-height: 28px;
+	padding: 0 20px;}
+
+ul.submenu {
+    position: absolute;
+    display: none;
+    width: 150px;
+    top: 28px;
+    background-color: rgb(48, 48, 48);
+  	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  	border-top: 1px solid black;
+	text-align: left;
+	}
+
+ul.submenu,
+li.submenu_item,
+a.submenu_link {
+	margin: 0;
+	padding: 0;
+	line-height: 24px;
+	font-size: 14px;
+	width: 150px;}
+
+ul li a.submenu_link {
+	padding: 0 0 0 20px;
+	width: 130px;}
+
+.center_panel ul li:hover > ul.submenu {
+    display: block;}
+
+ a.submenu_link:hover {
+ 	text-decoration: underline; }
 
 .left_block {
 	float: left;}
@@ -121,10 +162,9 @@ header span {
 
 .right_block,
 .left_block {
-	margin-top: 28px;
-	height: 100%;
+	min-height: 546px;
 	width: 210px;
-	padding: 5px 24px 10px 16px;
+	margin-top: 28px;
 	background-color: #edeef0;
 	border-right: 1px solid #c7cacf;
     border-left: 1px solid #c7cacf;
@@ -135,12 +175,14 @@ header span {
 
 .right_block h2,
 .left_block h2 {
-	margin: 0;
+	margin: 5px 0 0;
 	text-align: center;}
 
 .right_block p,
 .left_block p {
-	margin: 0;}
+	padding: 5px 24px 20px 16px;
+	margin: 0;
+	border-bottom: 1px solid gray;}
 
 footer {
 	clear: both;	
