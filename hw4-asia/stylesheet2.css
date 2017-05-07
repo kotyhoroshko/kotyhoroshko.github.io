@@ -1,14 +1,15 @@
+html {
+	background-color: #0c739f;}
+	
 body {
 	padding: 0;
 	margin: 0;
-	background-color: #0c739f;
 	background: linear-gradient(to bottom, 
-	    #1297b8 0px, #1297b8 37px,
-	    #128aa7 38px, #128aa7 66px,
-	    #5ef0ff 66px, #5ef0ff 67px,
-	    #11cde1 67px, #ffffff 212px,
-	    #40c6d3 212px, #1192b1 360px,
-	    #0c739f 1060px);
+			    #128aa7 0px, #128aa7 28px,
+			    #5ef0ff 28px, #5ef0ff 29px,
+			    #11cde1 29px, #ffffff 174px,
+			    #40c6d3 174px, #1192b1 322px,
+			    #0c739f 1022px, #0c739f 100%);
 	background-repeat: no-repeat;
 	font-family: tahoma;}
 
@@ -19,26 +20,17 @@ a {
 li,
 ul {
 	padding: 0;
-	margin: 0;}
-
-li {
+	margin: 0;
 	list-style-type: none;}
 
 .wrapper {
 	position: relative;
 	padding: 0;
-	margin: 38px auto 0;
+	margin: 0 auto;
 	background-color: white;
 	width: 1000px;
-	min-height: 988px;
-	box-shadow: 0 7px 7px black;
-	overflow: inherit;
-	z-index: 1}	
-
-.wrapper:after {
-    content: "";
-    display: table;
-    clear: both;}
+	height: 988px;
+	box-shadow: 0 7px 7px black;	}	
 
 header {
 	position: relative;
@@ -76,8 +68,7 @@ header span {
 	height: 56px;
 	text-align: center;
 	margin-right: 1px;
-	font-size: 10px;
-}
+	font-size: 10px;}
 
 .countries div a {
 	height: 56px;
@@ -89,11 +80,8 @@ header span {
 .photo {
 	clear: both;
 	margin: 0 auto;
-	border-top-style: solid;
-	border-bottom-style: solid;
-    border-top-color: #128aa7;
-    border-bottom-color: #128aa7;
-	border-width: 1px;}
+	border-top: 1px solid #128aa7;
+	border-bottom: 1px solid #128aa7;}
 
 .center_panel {
 	position: absolute;
@@ -105,12 +93,11 @@ header span {
 	background: linear-gradient(to bottom, #373737, #303030);	
     border-bottom: 1px solid black;
     box-shadow: 0 2px 4px black;
-   }	
+	z-index: 20;}	
 
 .center_panel ul{
 	margin-left: 30px;
-	position: relative;
-	}
+	position: relative;}
 
 .center_panel li {
 	float: left;
@@ -132,8 +119,7 @@ ul.submenu {
     background-color: rgb(48, 48, 48);
   	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
   	border-top: 1px solid black;
-	text-align: left;
-	}
+	text-align: left;}
 
 ul.submenu,
 li.submenu_item,
@@ -151,38 +137,72 @@ ul li a.submenu_link {
 .center_panel ul li:hover > ul.submenu {
     display: block;}
 
- a.submenu_link:hover {
- 	text-decoration: underline; }
+ a.submenu_link:hover { /* Для наглядності роботи посилань */
+ 	text-decoration: underline;} 
 
-.left_block {
-	float: left;}
-
- .right_block {
-  	float: right;}
-
-.right_block,
-.left_block {
-	min-height: 546px;
-	width: 210px;
-	margin-top: 28px;
-	background-color: #edeef0;
-	border-right: 1px solid #c7cacf;
-    border-left: 1px solid #c7cacf;
-    font-size: 14px;
-   	color: rgb(66, 76, 67);
-  	line-height: 1.7;
-    z-index: 8;}
-
-.right_block h2,
-.left_block h2 {
-	margin: 5px 0 0;
+h4,
+h2 {
+	margin: 15px 0 0;
 	text-align: center;}
 
 .right_block p,
-.left_block p {
-	padding: 5px 24px 20px 16px;
+.left_block p,
+.center_block p {
+	padding: 10px 24px 20px 16px;
 	margin: 0;
 	border-bottom: 1px solid gray;}
+
+.fon1 {  /* фон для левой колонки */
+	width:210px;
+	background-color: #edeef0;
+	float: left;
+	right: 210px;
+	border-right: 1px solid gray; 
+	border-left: 1px solid gray;}
+
+.fon2 {/* фон для центральной колонки */
+	width: 790px;
+	background: white;
+	float: left;
+	right: 210px; 
+	border-right: 1px solid gray; 
+	border-left: 1px solid gray;}
+
+.fon3 {/* фон для правой колонки */
+	width: 1000px;
+	background-color: #edeef0;
+	float: left;
+	border-right: 1px solid gray; 
+	border-left: 1px solid gray;}
+
+.content {
+	margin-top: 29px; 
+	width: 1000px;
+	height: auto;}
+
+.left_block {
+	width: 210px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	left:0;}
+
+.center_block {
+	width: 580px;
+	float: left;
+	position: relative;
+	overflow: hidden;}
+
+.right_block {
+	width: 210px;
+	float: left;
+	position: relative;
+	overflow: hidden;}
+
+.wrapper:after {
+    content: "";
+    display: table;
+    clear: both;}
 
 footer {
 	clear: both;	
