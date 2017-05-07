@@ -59,7 +59,7 @@ header span {
 
 .countries {
 	clear: both;
-	padding: 20px 30px 0 0;
+	padding: 10px 30px 0 0;
 	float: right;}
 
 .countries div {
@@ -70,7 +70,11 @@ header span {
 	margin-right: 1px;
 	font-size: 10px;}
 
-.countries div a {
+.countries img {
+	height: 42px;
+	width: 42px;}
+
+.countries div p a {
 	height: 56px;
 	width: 100%;
 	vertical-align: bottom;
@@ -83,6 +87,10 @@ header span {
 	border-top: 1px solid #128aa7;
 	border-bottom: 1px solid #128aa7;}
 
+.photo img {
+	width: 1000px;
+	height: 237px;}
+	
 .center_panel {
 	position: absolute;
 	top: 414px;
