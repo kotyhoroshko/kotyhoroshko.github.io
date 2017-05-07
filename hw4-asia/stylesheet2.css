@@ -29,8 +29,7 @@ ul {
 	margin: 0 auto;
 	background-color: white;
 	width: 1000px;
-	height: 988px;
-	box-shadow: 0 7px 7px black;	}	
+	box-shadow: 0 7px 7px black;}	
 
 header {
 	position: relative;
@@ -90,7 +89,7 @@ header span {
 .photo img {
 	width: 1000px;
 	height: 237px;}
-	
+
 .center_panel {
 	position: absolute;
 	top: 414px;
