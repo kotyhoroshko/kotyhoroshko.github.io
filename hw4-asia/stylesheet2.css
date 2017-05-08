@@ -11,7 +11,7 @@ body {
 			    #40c6d3 174px, #1192b1 322px,
 			    #0c739f 1022px, #0c739f 100%);
 	background-repeat: no-repeat;
-	font-family: tahoma;}
+	font-family: tahoma, sans-serif;}
 
 a {
 	text-decoration: none;
@@ -95,10 +95,10 @@ header span {
 	top: 414px;
 	height: 28px;
 	width: 100%;
+	background: linear-gradient(to bottom, #373737, #303030);
 	margin: 0 auto;
 	padding: 0;
-	background: linear-gradient(to bottom, #373737, #303030);	
-    border-bottom: 1px solid black;
+	border-bottom: 1px solid black;
     box-shadow: 0 2px 4px black;
 	z-index: 20;}	
 
