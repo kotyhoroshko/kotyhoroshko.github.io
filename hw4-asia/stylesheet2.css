@@ -172,15 +172,13 @@ h2 {
 	background: white;
 	float: left;
 	right: 210px; 
-	border-right: 1px solid gray; 
-	border-left: 1px solid gray;}
+	border-right: 1px solid gray;}
 
 .fon3 {/* фон для правой колонки */
 	width: 1000px;
 	background-color: #edeef0;
 	float: left;
-	border-right: 1px solid gray; 
-	border-left: 1px solid gray;}
+	border-right: 1px solid gray;}
 
 .content {
 	margin-top: 29px; 
