@@ -1,0 +1,59 @@
+@font-face {
+   font-family: AA-BebasNeue;
+   src: url(AA-BebasNeue.ttf);}
+
+body {	
+    background-image: url("bckg.jpg");
+	padding: 0;
+	margin: 0;}
+
+.wrapper {
+	width: 210mm;
+	height: 297mm;
+	margin: 0 auto;
+	padding: 10mm;	
+	border: 1px solid gray;}
+
+div.n {
+	position: relative;
+	display: inline-block;
+	width: 85mm;
+	height: 55mm;
+	background: url(pb.jpg);
+	background-size: 85mm 55mm;
+	border: 1px dotted #ddd;}
+
+input[type=text],
+select {
+	font-family: AA-BebasNeue;
+	width: 70mm;
+   	border: 1px solid transparent;}
+
+form input.prof {
+	position: absolute;
+	top: 17mm;
+	left: 2mm;
+	color: #cd0000;
+	font-size: 7mm;
+	text-decoration: underline;
+	background-color: transparent;}
+
+form input.pri {
+	position: absolute;
+	top: 25mm;
+	left: 2mm;
+	color: #000;
+	font-size: 16mm;
+	letter-spacing: -1.75px;
+	background-color: transparent;}
+
+form input.ib {
+	position: absolute;
+	top: 40mm;
+	left: 2mm;
+	color: #000;
+	font-size: 8mm;
+	background-color: transparent;}
+
+
+
