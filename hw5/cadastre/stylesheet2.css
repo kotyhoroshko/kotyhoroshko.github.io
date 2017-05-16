@@ -11,7 +11,7 @@
 
 html {
 	background: url(img/bckg.jpg) no-repeat center fixed; 
-  	background-size: cover;}
+  	background-size: cover; }
 
 body {
 	padding: 0;
@@ -29,11 +29,11 @@ body {
 .top_menu {
 	float: right;
 	top: 0;
-	height: 36px;}
+	height: 36px; }
 
 ul, li {
 	margin: 0;
-	padding: 0;}
+	padding: 0; }
 
 .top li {
 	display: inline-block;
@@ -42,7 +42,7 @@ ul, li {
 
 ul {
 	display: inline;
-	height: 36px;}	
+	height: 36px; }	
 
 .top_menu a {
 	display: inline-block;
@@ -72,7 +72,7 @@ span.flag {
 	padding-right: 0;}
 
 span.location {
-	background: linear-gradient(#51b1dc, #2e7ac4);}
+	background: linear-gradient(#51b1dc, #2e7ac4); }
 
 .login_block{
 	width: 560px;
@@ -148,8 +148,6 @@ input.checkbox {
 	box-shadow: 0 0 7px #588bbc;
     color: #fff; }
 
-/*=======ПОЗИЦІЇ БЛОКІВ==========*/
-
 .login_block input.button {
 	width: auto;
 	padding: 0 10px;
@@ -181,4 +179,3 @@ input.checkbox {
 	width: 9%;
 	vertical-align: middle;
 	font-size: 14px; }
-
