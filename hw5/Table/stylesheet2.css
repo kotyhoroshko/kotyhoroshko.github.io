@@ -84,7 +84,7 @@ td {
 	padding: 0;
 	background-color: white;
 	border-top: 10px solid #222;
-	border-left: 10px solid #222;
+	border-right: 10px solid #222;
 	width: 71.42px;
 	height: 60px;}
 
@@ -94,15 +94,20 @@ td {
 .table tr.h200 td {
 	height: 120px;}
 
-td:first-child {
-	border-left: none;}
+td:last-child {
+	border-right: none;}
 
 tr:first-child > td {
 	border-top: none;}
 
 /*======= ПЕРЕКЛЮЧАТЕЛЬ JS =======*/
-.switcher {
-	width: 100px;
+.switcher {	
+	width: 150px;
 	margin: 25px auto 10px;
-	padding: 10px 45px 10px 50px;
-	box-shadow: 5px 5px 33px gray;}
+	padding: 10px 30px 10px 30px;
+	box-shadow: 5px 5px 33px gray;
+	text-align: center;}
+
+.switcher button {
+	display: inline;
+}
