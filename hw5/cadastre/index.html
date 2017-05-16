@@ -6,12 +6,28 @@
 			<link rel="stylesheet" type="text/css" href="stylesheet2.css">
 		</head>
 		<body>
-		<div class="login_block">				
+			<div class="top_menu"></div>
+			<div class="login_block">
+				<div class="title"><span>Cadastre-se</span></div>				
+				<div class="forms">
+					<button class="button log_fb" formaction="#2"><img src="img/fb_login.png" alt="login via fb"></button>
+					<div>
+						<div> </div>
+						<span>OU</span>
+						<div> </div>
+					</div>
+					<form action="#" method="POST">					
+					    <input type="text" name="firstname" placeholder="First Name" required>
+					    <input type="text" name="lastname" placeholder="Last Name" required>
+					    <input type="email" name="email" placeholder="Email Address" required>
+					    <input type="password" name="pasw" placeholder="Choose Password" required>
+					    <input type="password" name="confirmpasw" placeholder="Password Confirm" required>
+					    <label><input class="checkbox" type="checkbox" name="subscribe">&nbsp; Send me Youbike updates and tips</label>
+					    <input class="button" type="submit" value="Create my Account">
+					</form>
+					<p>By clicking the button above, you agree to the Terms of Service Xiew our Privacy Policy</p>
+				</div>
 			</div>
-			<div class="top_menu">				
-			</div>
-			
-
 		</body>
 	</html>
 
