@@ -166,16 +166,16 @@ input.checkbox {
 	height: 36px;
 	margin: 0 auto; }
 
-.forms div div {
+.forms div span {
+	line-height: 36px; }
+
+.forms div span::before,
+.forms div span::after {
+	content: "";
 	display: inline-block;
-	width: 42%;
+	width: 120px;
 	height: 0px;
 	border-top: 1px solid white;
 	border-bottom: 1px solid black;
-	vertical-align: middle; }
-
-.forms div span {
-	display: inline-block;
-	width: 9%;
 	vertical-align: middle;
-	font-size: 14px; }
+	margin: 0 0 4px; }
