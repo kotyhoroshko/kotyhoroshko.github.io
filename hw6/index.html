@@ -13,8 +13,8 @@
 						<span class="phone">&#128222;</span>
 						<span>(044)123-45-67 (044)567-89-10</span>
 					</div>
-					<div class="login_form" method="POST">
-						<form action="#1">
+					<div class="login_form">
+						<form action="#1" method="POST">
 							<input name="login" placeholder="логин" required>
 				    		<input type="password" name="pasw" placeholder="пароль" required>
 						</form>
@@ -22,7 +22,6 @@
 						<span> | </span>
 						<a href="#">регистрация</a>
 						<a class="forgot_pasw" href="#">забыли пароль?</a>
-
 					</div>
 					<div class="top_navi" >
 						<a href="#"><img src="img/home.png" alt="на главную"></a>
@@ -31,7 +30,124 @@
 					</div>
 				</div>
 				<img src="img/header.jpg" alt="zazor.com.ua">
+				<div class="main_menu">
+					<div class="bascet">
+						<span class="quantity money">0,00 грн.</span>
+						<span>на сумму: &nbsp;</span>
+						<span class="quantity goods" >0</span>
+						<span>товаров:</span>
+					</div>
+					<ul>
+						<li><a href="#">КОНТАКТЫ</a></li>
+						<li><a href="#">СТАТЬИ</a></li>
+						<li><a href="#">ДОСТАВКА</a></li>
+						<li><a href="#">ОПЛАТА</a></li>
+						<li><a href="#">О КОМПАНИИ</a></li>
+					</ul>								
+				</div>
 			</header>
+			<div class="finders_block">
+				<form name="find_by_auto" action="#2" method="POST">
+					<div class="label_of_finders">
+						<span>Диски:</span>
+						<span>Поиск по автомобилю</span>
+						<span>Шины:</span>
+					</div>
+					<div class="find_by_auto_disks">
+						<div class="find_by_auto_disks_label">
+							<table>
+								<tr><td>Марка авто:</td></tr>
+								<tr><td>Модель автомобиля:</td></tr>
+								<tr><td>Год выпуска автомобиля:</td></tr>
+								<tr><td>Комплектация:</td></tr>
+							</table>
+						</div>
+						<div class="find_by_auto_disks_options">
+							<select name="brand_auto_disks">
+							    <option value="volvo">Volvo</option>
+							    <option value="saab">Saab</option>
+							    <option value="fiat">Fiat</option>
+							    <option value="audi">Audi</option>
+							    <option value="audi">ВАЗ</option>
+							    <option value="audi">ГАЗ</option>
+							    <option value="volvo">Ferari</option>
+							    <option value="saab">Mercedes</option>
+							    <option value="fiat">BMW</option>
+							    <option value="audi">Toyota</option>
+							    <option value="audi">Mazda</option>
+							    <option value="audi">Renault</option>
+						  	</select>					  	
+						  	<select name="model_auto_disks">
+							    <option value="volvo">Хачбек</option>
+							    <option value="saab">Комби</option>
+							    <option value="fiat">Седан</option>
+							    <option value="audi">Кабриолет</option>
+							    <option value="audi">Ретро</option>
+							    <option value="audi">Минивен</option>
+						  	</select>						
+							<input type="number" name="year_auto_disks" min="1950" max="2017" value="2017">						
+							<select name="komplekt_auto_disks">
+								<option value="fiat">Бюджет</option>
+							    <option value="volvo">Базовая</option>
+							    <option value="audi">Базовая +</option>
+							    <option value="saab">Оптимум</option>
+							    <option value="audi">Преміум</option>
+							    <option value="audi">Жир</option>
+						  	</select>
+					  	</div>
+					</div>
+					<div class="find_by_auto_tires">
+						<div class="find_by_auto_tires_label">
+							<table>
+								<tr><td>Марка авто:</td></tr>
+								<tr><td>Модель автомобиля:</td></tr>
+								<tr><td>Год выпуска автомобиля:</td></tr>
+								<tr><td>Комплектация:</td></tr>
+							</table>
+						</div>
+						<div class="find_by_auto_tires_options">
+							<select name="brand_auto_tires">
+							    <option value="volvo">Volvo</option>
+							    <option value="saab">Saab</option>
+							    <option value="fiat">Fiat</option>
+							    <option value="audi">Audi</option>
+							    <option value="audi">ВАЗ</option>
+							    <option value="audi">ГАЗ</option>
+							    <option value="volvo">Ferari</option>
+							    <option value="saab">Mercedes</option>
+							    <option value="fiat">BMW</option>
+							    <option value="audi">Toyota</option>
+							    <option value="audi">Mazda</option>
+							    <option value="audi">Renault</option>
+						  	</select>					  	
+						  	<select name="model_auto_tires">
+							    <option value="volvo">Хачбек</option>
+							    <option value="saab">Комби</option>
+							    <option value="fiat">Седан</option>
+							    <option value="audi">Кабриолет</option>
+							    <option value="audi">Ретро</option>
+							    <option value="audi">Минивен</option>
+						  	</select>
+							<input type="number" name="year_auto_tires" min="1950" max="2017" value="2017">
+							<select name="komplekt_auto_tires">
+								<option value="fiat">Бюджет</option>
+							    <option value="volvo">Базовая</option>
+							    <option value="audi">Базовая +</option>
+							    <option value="saab">Оптимум</option>
+							    <option value="audi">Преміум</option>
+							    <option value="audi">Жир</option>
+						  	</select>
+					  	</div>
+					</div>
+					<input type="submit" value="ПОИСК...">
+				</form>				
+				<div class="find_tires">
+					<img src="img/find_tirez.jpg" alt="">
+				</div>
+				<div class="find_disks">
+					<img src="img/find_disc.jpg" alt="">
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

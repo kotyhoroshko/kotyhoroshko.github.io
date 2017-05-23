@@ -35,7 +35,7 @@ a {
 	padding-top: 6px;
 	}
 
-.telephones span.phone {	
+div.telephones span.phone {	
 	width: 22px;
 	height: 21px;
 	border-radius: 50%;
@@ -53,7 +53,7 @@ a {
   	border-top: 1px solid #a6c3c8;
 	box-shadow: 6px 6px 6px #bbb;
 	border-radius: 5px;
-	background: linear-gradient( -90deg, rgb(32,105,136) 0%, rgb(17,65,101) 59%, rgb(15,58,94) 85%, rgb(12,50,86) 100%);
+	background: linear-gradient( to bottom, rgb(32,105,136) 0%, rgb(17,65,101) 59%, rgb(15,58,94) 85%, rgb(12,50,86) 100%);
 	margin: 16px 0 6px 14px;}
 
 .login_form form::before {
@@ -102,3 +102,157 @@ div.top_navi img {
 
 div.top_navi a:hover > img {
 	opacity: 1; }
+
+.main_menu {
+	width: 912px;
+	height: 34px;
+	border-top: 1px solid rgb(13, 22, 66);
+	background: linear-gradient( to top, rgb(0,0,0) 0%, rgb(44,48,52) 87%, rgb(87,96,104) 100%);
+	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+	border-radius: 5px;
+	margin-top: 2px; }
+
+.main_menu * {
+	float: right;
+}	
+
+ul, li {
+	padding: 0;
+	margin: 0;}
+
+.main_menu li {
+	list-style-type: none;
+	display: inline-block;
+	color: white;
+	height: 26px;
+	margin-top: 4px;}
+
+.main_menu li a {
+	display: inline-block;
+	line-height: 26px;
+	padding: 0 16px;
+	color: #b1bcc0;
+	font-size: 14px }
+
+.main_menu li a:hover {
+	background: linear-gradient( to bottom, rgb(32,105,136) 0%, rgb(17,65,101) 59%, rgb(15,58,94) 85%, rgb(12,50,86) 100%);
+	box-shadow: 3px 3px 3px black;
+	border-radius: 15px; }
+
+.bascet::before {
+	display: inline-block;
+	margin: 9px 7px 0 55px;
+	content: url(img/bascet.png);}
+
+.bascet span {
+	line-height: 33px;
+	color: #8a9296;
+	font-size: 11px;
+	letter-spacing: .5px; }
+
+.bascet span.quantity {
+	color: #0d5a8f;
+	margin-right: 15px;
+	font-size: 12px; }
+
+div.finders_block {
+	width: 912px;
+	height: 134px;
+	margin: 20px auto;
+	clear: both;}
+
+.finders_block form {
+	float: left;	
+	width: 415px;
+	height: 134px;
+	border: 1px solid rgb(156, 156, 157);
+	box-shadow: 5px 5px 5px rgba(104, 104, 104, 0.75);
+	border-radius: 10px; }
+
+.label_of_finders {
+	height: 20px;
+	width: 380px;
+	line-height: 20px;
+	margin: 0 21px;
+	color: #154467;
+	text-align: center;
+	font-weight: bold;}
+
+.label_of_finders span:first-child {
+	font-size: 12px;
+	font-weight: normal;
+	float: left;}
+
+.label_of_finders span:last-child {
+	font-size: 12px;
+	font-weight: normal;
+	float: right;}
+
+.find_by_auto_disks,
+.find_by_auto_tires {
+	display: inline-block;
+	width: 180px;
+	height: 84px;
+	font-size: 9px;
+	margin-left: 18px;}
+
+div.find_by_auto_disks_label,
+div.find_by_auto_tires_label {
+	display: inline-block;
+	height: 83px;
+	width: 74px;}
+
+div.find_by_auto_disks_label td,
+div.find_by_auto_tires_label td {
+	height: 18px;
+	width: 100%;
+	vertical-align: middle;
+	line-height: 9px;
+	margin: -2px 0 0 0;
+	padding: 0 0 3px 0;	}
+
+div.find_by_auto_disks_options,
+div.find_by_auto_tires_options {
+	display: inline-block;
+	height: 83px;
+	width: 103px; }
+
+div.find_by_auto_disks_options *,
+div.find_by_auto_tires_options * {
+	height: 18px;
+	width: 100%;
+	border: 1px solid gray;
+	margin-bottom: 5px;	}
+
+div.find_by_auto_disks_options input,
+div.find_by_auto_tires_options input {
+	box-sizing: border-box;
+	width: 100%;
+	height: 18px;}
+
+input[type="submit"] {
+	float: right;
+	background-color: transparent;
+    border: none;
+    color: #154467;
+    text-decoration: underline;
+    font-size: 16px;
+    font-style: italic;
+    margin: 3px 21px;
+	cursor: pointer;}
+
+.find_tires img,
+.find_disks img {
+	height: 134px;
+	width: auto;
+	border-radius: 10px;}
+
+.find_tires,
+.find_disks {
+	float: left;
+	height: 134px;
+	width: auto;
+	border: 1px solid rgb(156, 156, 157);
+	box-shadow: 5px 5px 5px rgba(104, 104, 104, 0.75);
+	border-radius: 10px;
+	margin-left: 15px;}
