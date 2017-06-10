@@ -29,7 +29,8 @@ p {
 	font-family: 'open sans'; }
 
 body {
-	position: relative;}
+	position: relative;
+	overflow-x: hidden;}
 
 h1, h2, span {
 	margin: 0;
