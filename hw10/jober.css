@@ -1,0 +1,46 @@
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven{
+	display: block;
+	background-color: #fefefe;
+	font-size: 21px;
+	font-family: "century gothic", sans-serif, arial;
+	font-weight: 900;}
+
+p {
+	text-align: center;
+	font-size: 26px;
+	font-family: "century gothic", sans-serif, arial;
+	color: darkred;
+	font-weight: 900;
+	margin-top: 50px; }
+
+.five > p:not(:first-child) {
+	margin: 0 auto;
+	font-size: 21px;
+	color: black; }
+
+div:not(:first-child) {
+	width: 100%;
+	border-top: 3px solid #666;
+	padding-bottom: 50px;}
+
+div.four > input,
+div.four > span {
+	display: block;
+	margin: 5px auto;
+	height: 30px;
+	font-size: 21px;
+	text-align: center; }
+
+div.four > span {
+	width: 50vw;
+	height: 40px;
+	font-size: 30px;
+	line-height: 40px;
+	color: #444;
+}
