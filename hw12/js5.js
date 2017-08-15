@@ -1,20 +1,20 @@
-function chooseTag(tagClass) {
-	return document.querySelector(tagClass)
-}
-
-function count() {
-	var res = Math.pow(digit1.value, digit2.value);
-	displayRes(res)
-}
-
-function isValidNum(n){
-	 return ((isNaN(n)) + (n != parseInt(n, 10)) )}
-
 const digit1 = chooseTag('input[name="digit1"]');
 const digit2 = chooseTag('input[name="digit2"]');
 const submt = chooseTag('input[type="submit"]');
 	  submt.addEventListener('click', count);
 
+function chooseTag(tagClass) {
+	return document.querySelector(tagClass) }
+
+function isValidNum(n){
+	 return ( isNaN(n) + (n == '') ) }
+
+function count() {
+	if (isValidNum(digit1.value) + isValidNum(digit2.value))
+		{return alert('Помилка введення!')}
+	var res = Math.pow(digit1.value, digit2.value);
+	displayRes(res);
+	alert(res); }
 
 function displayRes(res) {
 	var p = document.createElement("p");
