@@ -120,7 +120,7 @@ p.location {
 	color: snow;
 	background-color: #666;
 	box-shadow: 0 0 15px rgba(0,0,0,.6);
-	transition: .3s ease;
+	transition: .4s ease-in;
 	border-radius: 50%;
 	text-align: center;	}
 
