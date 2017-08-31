@@ -1,6 +1,6 @@
 const wrapp = document.querySelector('.wrapper');
-wrapp.addEventListener('mouseover', function(){ chngBrdRad('50') } );
-wrapp.addEventListener('mouseout', function(){ chngBrdRad('0') } );
+wrapp.addEventListener('mouseover', br50) ;
+wrapp.addEventListener('mouseout', br50);
 
 (function create300Div() {
 	var div = '';
@@ -8,7 +8,6 @@ wrapp.addEventListener('mouseout', function(){ chngBrdRad('0') } );
 		div += '<div class="simple"></div>'; }
 	wrapp.innerHTML = div; })()
 
-function chngBrdRad(n) {
-	if (event.target.className == "simple") {
-		event.target.style.cssText = ("border-radius:" + n + "%;"); 
-} }
+function br50(event) {
+	if (event.target.className !="wrapper") {event.target.classList.toggle("br50"); 
+	}}

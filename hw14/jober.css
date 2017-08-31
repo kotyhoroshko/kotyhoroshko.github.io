@@ -89,7 +89,12 @@ p.location {
 	background-color: #666;
 	box-shadow: 1px 1px 5px rgba(0,0,0,.4);
 	margin: 5px;
-	transition:.6s; }
+	transition:.6s;
+	border-radius: 0;}
+
+.br50 {
+	border-radius: 50%;
+	background-color: #444;}
 
 .wrapper_14_4 {
 	width: 100%;
