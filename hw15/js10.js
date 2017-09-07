@@ -11,7 +11,7 @@ for (var i = 0; i < 6; i++) {
 	if (h[i] == 0) {h[i]='<span style="color:red;">MISS!</span>'}
 	res += ' &nbsp; h'+(i+1)+' :<b> '+h[i]+'</b>&nbsp;&nbsp;&nbsp;'
 }
-var title = document.querySelector('head > title');
+var title = document.querySelector('meta[name="title"]');
 var description = document.querySelector('meta[name="description"');
 var keywords = document.querySelector('meta[name="keywords"]');
 
@@ -22,7 +22,7 @@ keywords = '&nbsp;&nbsp; keywords: <b>'+chekUndef(keywords);
 div.innerHTML = '<p style="text-align:center">' + res + '</p><p style="text-align:center">'+title+description+keywords+'</p>';
 
 function chekUndef(elem) {
-	if (!elem){ return '<span style="color:red;">MISS!</span>'};
-	if (elem == keywords) { return elem.content.split(",").length +'</b>words' }; 
-	return elem.content.length +'</b>symbols' ;
+	if (!elem){ return '<span style="color:red;">MISS!</span></b>'};
+	if (elem == keywords) { return elem.content.split(",").length +'</b> words' }; 
+	return elem.content.length +'</b> symbols';
 }
