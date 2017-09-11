@@ -1,11 +1,11 @@
 var n = 0;
 var textArea = document.querySelector('textarea[name="textarea"]')
 
-var formZone = TagForClick('.formZone', removeInput);
-var btnAdd = TagForClick('button.addNew', addNewInput);
-var btnPickUp = TagForClick('input[type="submit"]', PickUpValue);	
+var formZone = tagForClick('.formZone', removeInput);
+var btnAdd = tagForClick('button.addNew', addNewInput);
+var btnPickUp = tagForClick('input[type="submit"]', PickUpValue);	
 
-function TagForClick(selector, func){
+function tagForClick(selector, func){
 	var tag = document.querySelector(selector);
 	tag.addEventListener('click', func);
 	return tag

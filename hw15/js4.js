@@ -1,11 +1,11 @@
-var mainBtn = TagForClick('.mainBtn', function(){moveWindow(0, 0, 50)});
-var wndw = TagForClick('.wndw', chooseOption);
+var mainBtn = tagForClick('.mainBtn', function(){moveWindow(0, 0, 50)});
+var wndw = tagForClick('.wndw', chooseOption);
 
 function chooseTag(selector){
 	return  document.querySelector(selector)
 }
 
-function TagForClick(selector, func){
+function tagForClick(selector, func){
 	var tag =  chooseTag(selector);
 	tag.addEventListener('click', func);
 	return tag

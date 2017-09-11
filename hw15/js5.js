@@ -1,11 +1,11 @@
-function TagForClick(selector, func){
+function tagForClick(selector, func){
 	var tag = document.querySelector(selector);
 	tag.addEventListener('click', func);
 	return tag
 }
 
-var tag = TagForClick('.z155', paintRed);
-var btn = TagForClick('button', addNewTag);
+var tag = tagForClick('.z155', paintRed);
+var btn = tagForClick('button', addNewTag);
 
 function paintRed(ev){
 	ev.target.classList.toggle("paintRed");

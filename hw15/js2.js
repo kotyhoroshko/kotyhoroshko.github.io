@@ -1,13 +1,13 @@
-var btnAdd =  TagForClick('button.addNew', addNewInput);
-var radioZone = TagForClick('.radioForm', getNumberType);
-var formZone = TagForClick('form', removeInput);
-var btnPickUp = TagForClick('input[type="submit"]', PickUpValue);
+var btnAdd =  tagForClick('button.addNew', addNewInput);
+var radioZone = tagForClick('.radioForm', getNumberType);
+var formZone = tagForClick('form', removeInput);
+var btnPickUp = tagForClick('input[type="submit"]', PickUpValue);
 
 var n = 0; //кількість додаткових input
 
 var textArea = document.querySelector('textarea[name="textarea"]');
 
-function TagForClick(selector, func){
+function tagForClick(selector, func){
 	var tag = document.querySelector(selector);
 	tag.addEventListener('click', func);
 	return tag
