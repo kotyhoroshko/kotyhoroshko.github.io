@@ -6,7 +6,7 @@ $(document).ready(function(){
 	$('.height').text('Height: '+height.value + ' cm');
 	$('input[name="height"]').mouseup( function(){$('.height').text('Height: '+height.value + ' cm')});
     $('.sentBtn').click(function(){
-        $.post("ajax1/a3.php",
+        $.post("http://kotyhoroshko.github.io/hw17/ajax1/a3.php",
         {
           height: height.value,
           sex: $( "input:checked" ).val()
