@@ -67,6 +67,15 @@ input:not([type="radio"]) {
 	text-align: center;
 	transition: 0.9s; }
 
+input[type="range"] {
+	width: auto;
+	height: auto;
+	box-shadow: none;
+	text-align: center;
+	margin: 4px auto;
+    width: 100%;
+}
+
 input[type="submit"],
 button{
 	padding: 5px 10px;
@@ -128,5 +137,26 @@ text-align: center;
 img {
 	margin: 15px; }
 
-input[type="submit"]{
-	display: block; }
+.res {
+	display: block;
+	font-size: 150%;
+    letter-spacing: -1px;
+	width: 100%;}
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
+
+.flex > div {
+	margin: 1% 4% 1% 0;}
+
+label[for="height"] {
+	display: block;
+	margin: 0 auto;
+	text-align: center;}
+
+.sex{
+	text-align: right;
+}

@@ -1,15 +1,15 @@
-var num1 = document.querySelector('input[name="num1"]');
-var num2 = document.querySelector('input[name="num2"]');
+var height = document.querySelector('input[name="height"]');
+
 
 // ================ with jQuery + shuffleLetters plugin =======================
 
 $(document).ready(function(){
 	$('.joberZone').append('<p class="res"></p>');
     $(".sentBtn").click(function(){
-        $.post("ajax1/a1.php",
+        $.post("ajax1/a3.php",
         {
-          num1: num1.value,
-          num2: num2.value
+          height: height.value,
+          sex: $( "input:checked" ).val()
         },
         function(data,status){
         	$('.res').shuffleLetters({"text": data});;
@@ -35,7 +35,7 @@ $(document).ready(function(){
 // 		if (this.readyState == 4 && this.status == 200) {
 // 			document.querySelector(".res").textContent = this.responseText; }
 // 	};
-// 	xhttp.open("POST", "ajax1/a1.php", true);
+// 	xhttp.open("POST", "ajax1/a3.php", true);
 // 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-// 	xhttp.send("num1="+num1.value+"&num2="+num2.value);
+// 	xhttp.send("height="+height.value+"&sex="+document.querySelector('[name="sex"]:checked').value);
 // }
