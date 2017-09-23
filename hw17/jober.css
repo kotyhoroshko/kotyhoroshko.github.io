@@ -162,5 +162,13 @@ label[for="height"] {
 
 .inputs175 > *{
 	min-width: 200px;
-	margin: 0 10px;
-}
+	margin: 0 10px; }
+
+div.containerDesc{
+	min-width: 25%;
+	margin: 1% 1% 1% 0; }
+
+.containerDesc > p {
+	text-align: right;
+	margin: 4px 10px 4px 0;
+	font-size: 24px;}

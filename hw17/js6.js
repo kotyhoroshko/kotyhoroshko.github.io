@@ -1,17 +1,28 @@
 // ================ with jQuery + shuffleLetters plugin =======================
 
 $(document).ready(function(){
-	var res = $('<p class="res"></p>').css({"display": "flex", "justify-content": "center"});
+	var res = $('<div class="res flex"></div>');
 	$('.joberZone').append(res);
+
 	$('.sentBtn').click(function(){	    	
-	        $.get("ajax1/goods.php?art=" + $( 'input[name="art"]' ).val(), function(data,status){        	
+	        $.get("ajax1/goods.php?art=" + $( 'input[name="art"]' ).val(), function(data,status){
         	var answJson = jQuery.parseJSON( data );
-        	$('.res').text('');
+
+        	var goodsDescr='';
+        	$('.res').html('<div class="containerDesc"></div>');
+        	var j = 0;
+
 			for (item in answJson) {
-				if (item == 'img') {$('.joberZone').append('<img style="margin:-20px 20px;" src="'+ answJson[item] +'" alt="goods image">') }
-    			else { $('.res').shuffleLetters({"text": (item +" : "+ answJson[item] + "\n")}); }
+				if (item == 'img') {var goodsImg = $('<img style="margin:-20px 20px;" src="'
+					+ answJson[item] 
+					+'" alt="goods image">') }
+    			else { j++;
+    					$('.res > div').append('<p class="c'+j+'"></p>');
+    			$('.res > div > p.c'+j).shuffleLetters({ "text": (item +" : "+ answJson[item]) }); }
+
     		}
-    		   		
+    		$('.res').append(goodsImg);
+    		
         });
     });
 });
