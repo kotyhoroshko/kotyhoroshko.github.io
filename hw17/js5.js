@@ -3,16 +3,15 @@
 $(document).ready(function(){
 	var height = document.querySelector('input[name="height"]');
 	$('.joberZone').append('<p class="res"></p>');
-	$('.height').text('Height: '+height.value + ' cm');
-	$('input[name="height"]').mouseup( function(){$('.height').text('Height: '+height.value + ' cm')});
-    $('.sentBtn').click(function(){
-        $.post("ajax1/a3.php",
+	    $('.sentBtn').click(function(){
+        $.post("ajax1/mail.php",
         {
-          height: height.value,
-          sex: $( "input:checked" ).val()
+          fio: $( '[type="text"]' ).val(),
+          email: $( '[type="email"]' ).val(),
+          phone : $( '[type="tel"]' ).val()
         },
         function(data,status){
-        	$('.res').shuffleLetters({"text": data});;
+        	$('.res').shuffleLetters({"text": data});
         });
     });
 });
@@ -22,15 +21,9 @@ $(document).ready(function(){
 
 // ================ with jQuery ============================
 
-// var height = document.querySelector('input[name="height"]');
-// 	height.addEventListener('mousemove', showHeight);
-
-// function showHeight(){
-// 	document.querySelector('.height').textContent = height.value +"cm" ;
-// }
-
-// showHeight();
-
+// var name = document.querySelector('input[type="text"]');
+// var email = document.querySelector('input[type="email"]');
+// var tel = document.querySelector('input[type="tel"]');
 // var sentBtn = document.querySelector('.sentBtn');
 // 	sentBtn.addEventListener('click', loadDoc);
 
@@ -44,7 +37,7 @@ $(document).ready(function(){
 // 		if (this.readyState == 4 && this.status == 200) {
 // 			document.querySelector(".res").textContent = this.responseText; }
 // 	};
-// 	xhttp.open("POST", "ajax1/a3.php", true);
+// 	xhttp.open("POST", "ajax1/mail.php", true);
 // 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-// 	xhttp.send("height="+height.value+"&sex="+document.querySelector('[name="sex"]:checked').value);
+// 	xhttp.send("fio="+name.value+"&email="+email.value+"&phone="+tel.value);
 // }

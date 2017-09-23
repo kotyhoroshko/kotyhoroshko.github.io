@@ -158,5 +158,9 @@ label[for="height"] {
 	text-align: center;}
 
 .sex{
-	text-align: right;
+	text-align: right; }
+
+.inputs175 > *{
+	min-width: 200px;
+	margin: 0 10px;
 }
