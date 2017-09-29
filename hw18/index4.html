@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>Домашнє завдання 17.4</title>
+			<link rel="stylesheet" type="text/css" href="jober.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		</head>
+		<body>
+			<div  class="zadacha">
+				<a href="./index.html" title="Перейти вверх"><div class="up">&#10060;</div></a>
+				<span> <b>Завдання 4. </b>Создайте окно, которое всплывает через 4 секунды после загрузки страницы. В окне – опция «Согласен». Если пользователь выбирает данную опцию и закрывает окно – то при последующих обновлениях окно не показывается. Если пользователь не выбрал опцию «Согласен», то повторяйте вывод окна после загрузки. </span>
+			</div>
+
+			<div class="joberZone">				
+				
+				<div class="popup">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quo eum, ullam dolorum eos fuga impedit ratione quae tenetur nemo.</p>
+					<label for="agree">Согласен</label>
+					<input id="agree" type="radio" name="agree"> <br>
+					<label for="desagree">Не согласен</label>
+					<input id="desagree" type="radio" name="agree" checked> <br>
+					<button name="submitBtn">Принять</button>
+
+					<a href="javascript:hidePopup()" title="Close"><div class="up jober">&#10060;</div></a>
+					
+				</div>
+
+			</div>	
+
+			<script src="js4.js"></script>
+						
+		</body>
+	</html>
