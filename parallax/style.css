@@ -1,0 +1,37 @@
+/*Demo URL: http://www.ianlunn.co.uk/demos/jquery-vertical-parallax-background/
+@charset "utf-8";
+/* CSS Document */
+
+
+/* for browsers that don't support CSS3 multiple backgrounds */
+* {
+	font-family: sans-serif;
+	color: white;
+}
+
+html{
+background: url(images/bg-sky.jpg) fixed;
+	
+/*multiple backgrounds is a CSS3 feature only. Here we specify those backgrounds and their starting positions*/
+background: url(images/r1.png) 0 0 repeat,
+ 			url(images/r2.png) 0 0 repeat,
+			url(images/r3.png) 0 0 repeat,
+			url(images/r4.png) 0 0 repeat,
+		    url(images/bg-sky.jpg) fixed;
+}
+
+body{
+	background-color: black; /*fallback color for browsers that don't support CSS3*/
+	background-color: rgba(51, 18, 18, 0.66); /*white background with 30% opacity (CSS3 only)*/
+	height: 2000px; /*height of the page, try experimenting with size*/
+	margin: 0 auto; /*center the body*/
+	padding: 10px; 
+	width: 960px; /*width of the body*/
+}
+
+h1{
+	text-transform: uppercase;
+	font-weight: 800;
+}
+.desc{
+	width: 400px;}
