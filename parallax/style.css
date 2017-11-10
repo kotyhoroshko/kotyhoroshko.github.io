@@ -6,32 +6,76 @@
 /* for browsers that don't support CSS3 multiple backgrounds */
 * {
 	font-family: sans-serif;
-	color: white;
 }
 
 html{
-background: url(images/bg-sky.jpg) fixed;
-	
-/*multiple backgrounds is a CSS3 feature only. Here we specify those backgrounds and their starting positions*/
-background: url(images/r1.png) 0 0 repeat,
- 			url(images/r2.png) 0 0 repeat,
-			url(images/r3.png) 0 0 repeat,
-			url(images/r4.png) 0 0 repeat,
-		    url(images/bg-sky.jpg) fixed;
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+	background-color: #0066aa;
+	/* background-image: url(images/c1.png), url(images/c2.png), url(images/c3.png), url(images/c4.png);
+	background-position: 0 0, 0 0, 0 0, 0 0;
+	background-repeat: repeat; 
+	background: url(images/c1.png) 0 0 repeat,
+ 			url(images/c2.png) 0 0 repeat,
+			url(images/c3.png) 0 0 repeat,
+			url(images/c4.png) 0 0 repeat #0066aa;
+			transition: 0.05s ease-in;*/
 }
 
 body{
-	background-color: black; /*fallback color for browsers that don't support CSS3*/
-	background-color: rgba(51, 18, 18, 0.66); /*white background with 30% opacity (CSS3 only)*/
-	height: 2000px; /*height of the page, try experimenting with size*/
-	margin: 0 auto; /*center the body*/
-	padding: 10px; 
-	width: 960px; /*width of the body*/
+	height: 10000px; /*height of the page, try experimenting with size*/
+	margin: 20px auto; /*center the body*/
+	padding: 2%; 
+	width: 86%; /*width of the body*/
+	max-width: 920px;
 }
 
 h1{
 	text-transform: uppercase;
 	font-weight: 800;
+	font-size: 330%;
+	text-shadow: 1px 1px 4px rgba(0,0,0,.6);
+	color: white;
+	margin: 0;
+}
+p{
+	color: #333
 }
 .desc{
 	width: 400px;}
+
+.portfolio--item{
+	background-color: rgba(255,255,255,.9);
+	color: #333;
+	border-radius: 50%;
+	margin-bottom:100px;
+	max-width: 550px;
+}
+.portfolio--item:nth-child(even){
+	margin-left: -21vw;
+}
+.portfolio--item:nth-child(odd){
+	margin-right: -20vw;
+}
+.portfolio{
+	position: relative;
+}
+img{
+	display: block;
+	max-width: 500px;
+	max-height: 220px;
+	margin: 0 auto;
+}
+
+footer p {
+	border-radius: 50%;
+	background-color: rgba(255,255,255,.9);
+	color: #333;
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+	font-weight: 600;
+	font-size: 24px;
+	font-style: italic;
+}
