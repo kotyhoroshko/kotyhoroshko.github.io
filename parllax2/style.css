@@ -1,0 +1,105 @@
+@font-face {
+	font-family: 'Open Sans';
+	src: url(fonts/OpenSans-Regular.ttf);
+	font-weight: 100;
+ }
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
+
+html{
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+	background-color: #e9be00;
+	/* background-image: url(images/c1.png), url(images/c2.png), url(images/c3.png), url(images/c4.png);
+	background-position: 0 0, 0 0, 0 0, 0 0;
+	background-repeat: repeat; 
+	background: url(images/c1.png) 0 0 repeat,
+ 			url(images/c2.png) 0 0 repeat,
+			url(images/c3.png) 0 0 repeat,
+			url(images/c4.png) 0 0 repeat #0066aa;
+			transition: all 0.05s ease;*/
+}
+
+body{
+	height: 10000px; /*height of the page, try experimenting with size*/
+	padding: 50px 2%; 
+	Width: 100%;
+	overflow-x: hidden;
+}
+
+h1{
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 330%;
+	text-shadow: 1px 1px 4px rgba(0,0,0,.6);
+	color: white;
+	margin: 0;	
+}
+
+h2{
+	font-family: 'Roboto';
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: 200%;
+	margin-bottom: 0;
+	color: black;
+}
+
+header{
+	width: 80%;
+	margin: 0 auto 100px;
+}
+
+.portfolio--item{
+	background-color: rgba(255,255,255,.9);
+	color: #333;
+	border-radius: 50%;
+	margin-bottom:100px;
+	min-width: 500px;
+	max-width: 550px;
+	box-shadow: 6px 4px 9px 3px rgba(0,0,0,.25);
+}
+.portfolio--item:nth-child(even){
+	margin-left: -100px;
+}
+.portfolio--item:nth-child(odd){
+	margin-left: calc(100% - 625px);
+}
+.portfolio--item p {
+	color: #333;	
+}
+
+.portfolio--itemContainer{
+	border-left: 5px solid rgb(235, 203, 175);
+	padding-left: 5px;
+}
+
+img{
+	display: block;
+	max-width: 500px;
+	max-height: 220px;
+	margin: 10px 0;
+}
+
+footer p {
+	border-radius: 50%;
+	background-color: rgba(255,255,255,.9);
+	color: #333;
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+	font-weight: 600;
+	font-size: 24px;
+	font-style: italic;
+}
+
+button{
+	width: 150px;
+	height: 60px;
+	display: block;
+	margin:20px auto 0;
+}
