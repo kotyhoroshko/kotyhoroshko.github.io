@@ -1,0 +1,9 @@
+{
+    "themes": [
+        { "id": 1, "num": 1, "title": "ДЗ по хтмл", "hours": "11", "deadline": "21.01.2018", "text": "HTML Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sint cumque dicta officiis rem, fugit nihil ad rerum deserunt mollitia fuga, reiciendis odit, aperiam culpa vel. Voluptate nesciunt necessitatibus ipsa." },
+        { "id": 2, "num": 2, "title": "ДЗ по CSS", "hours": "12", "deadline": "26.01.2018", "text": "CSS Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis modi totam id aut incidunt nulla cumque corrupti praesentium recusandae. Vitae amet delectus nulla, repellendus optio pariatur id eveniet ipsum iure!" },
+        { "id": 3, "num": 3, "title": "ДЗ по CSS3", "hours": "13", "deadline": "27.01.2018", "text": "CSS3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod amet, ea nostrum aliquam repudiandae excepturi voluptatem fugit aperiam. Quaerat minima reiciendis nesciunt ut enim necessitatibus nam in voluptate debitis excepturi." },
+        { "id": 4, "num": 4, "title": "ДЗ по JS", "hours": "14", "deadline": "28.01.2018", "text": "Java Script Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus sapiente voluptas hic, perferendis deserunt dolor excepturi vero fuga numquam nesciunt neque mollitia possimus ipsa quod laudantium, alias adipisci deleniti ipsum." },
+        { "id": 5, "num": 5, "title": "ДЗ по Angular", "hours": "15", "deadline": "29.01.2018", "text": "Angular Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi est sunt, perferendis excepturi! Consequatur optio quos eaque beatae laudantium, ratione aspernatur sequi quaerat, veritatis fugiat consectetur, voluptatum inventore repellat?" }
+    ]
+}
