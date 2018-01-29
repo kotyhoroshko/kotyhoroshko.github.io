@@ -1,0 +1,201 @@
+body {
+    background-image: url("../bckg2.jpg");
+    font-family: "century gothic", sans-serif, arial;
+    transition: .4s;
+    margin: 0 auto;
+}
+
+p,
+span {
+    font-size: 18px;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin: 0 0 20px;
+}
+
+span {
+    margin: 20px;
+}
+
+.up {
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    top: 12px;
+    right: 30px;
+    background-color: transparent;
+    color: #888;
+    font-size: 32px;
+    font-weight: 800;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    box-shadow: 5px 5px 16px rgba(0, 0, 0, .0);
+    text-align: center;
+    transition: .4s;
+}
+
+.up:hover {
+    background-color: rgba(255, 255, 255, .8);
+    color: black;
+    border: 1px solid #444;
+    box-shadow: 5px 5px 16px rgba(0, 0, 0, .6);
+    text-align: center;
+    -webkit-animation: trubker 3.4s ease 0s infinite;
+    animation: trubker 3.4s ease 0s infinite;
+}
+
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes trubker {
+    0% {
+        transform: rotate(0rad);
+    }
+    3% {
+        transform: rotate(0.8rad);
+    }
+    6% {
+        transform: rotate(0rad);
+    }
+    9% {
+        transform: rotate(0.7rad);
+    }
+    13% {
+        transform: rotate(0rad);
+    }
+    17% {
+        transform: rotate(0.4rad);
+    }
+    22% {
+        transform: rotate(0rad);
+    }
+    27% {
+        transform: rotate(0.2rad);
+    }
+    33% {
+        transform: rotate(0rad);
+    }
+}
+
+
+/* Standard syntax */
+
+@keyframes trubker {
+    0% {
+        transform: rotate(0rad);
+    }
+    3% {
+        transform: rotate(0.8rad);
+    }
+    6% {
+        transform: rotate(0rad);
+    }
+    9% {
+        transform: rotate(0.7rad);
+    }
+    13% {
+        transform: rotate(0rad);
+    }
+    17% {
+        transform: rotate(0.4rad);
+    }
+    22% {
+        transform: rotate(0rad);
+    }
+    27% {
+        transform: rotate(0.2rad);
+    }
+    33% {
+        transform: rotate(0rad);
+    }
+}
+
+input:not([type="radio"]) {
+    display: inline-block;
+    box-shadow: 1px 1px 3px gray;
+    height: 34px;
+    width: 25%;
+    font-size: 21px;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.9s;
+    border-radius: 17px;
+    border: 1px solid #888;
+    padding: 0 10px 0 18px;
+}
+
+.quantity,
+span {
+    margin-top: 20px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 5px 10px;
+    font-size: 21px;
+    font-weight: 600;
+    background-color: #cd0000;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #ab0000;
+    font-size: 21px;
+    box-shadow: 1px 1px 9px rgba(0, 0, 0, .8);
+    transform: scale(1.05);
+}
+
+.flex>div {
+    margin: 3%;
+}
+
+.vacansArea,
+.rezultArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+    border-top: 2px solid #666;
+    padding: 50px 20px 70px;
+}
+
+.rezultArea {
+    background-color: rgba(32, 32, 32, .8);
+    color: #fff;
+    margin-top: 60px;
+}
+
+.vacansArea>div {
+    position: relative;
+    margin: 10px;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 20px 20px 60px;
+    border: 1px solid #333;
+    box-shadow: 3px 4px 8px #666;
+}
+
+.vacansArea>div>p:nth-child(even) {
+    background-color: #eee;
+}
+
+.rezultArea>p {
+    font-size: 28px;
+    margin: 0 10px;
+}
+
+.candidates {
+    position: absolute;
+    bottom: 10px;
+    right: 25px;
+    text-align: right;
+}
