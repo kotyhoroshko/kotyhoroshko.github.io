@@ -76,13 +76,14 @@ function getStatistic() {
         return b[1] - a[1];
     });
 
-    let rezTxt = '';
+    let totalRezHtml = '';
     for (const key in sortedArr) {
-        rezTxt += '<p>' + sortedArr[key][0] + '(' + sortedArr[key][1] + ') ' + '</p>'
+        totalRezHtml += '<p>' + sortedArr[key][0] + '(' + sortedArr[key][1] + ') ' + '</p>'
     }
 
     let totalRezult = document.querySelector('.rezultArea');
-    totalRezult.innerHTML = rezTxt;
+    totalRezult.innerHTML = totalRezHtml;
+    console.log(sortedArr)
 }
 
 // ==========================v=VIEW=v==================================
