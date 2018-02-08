@@ -12,6 +12,85 @@
     <a href="../" title="Перейти вверх">
         <div class="up">&#10060;</div>
     </a>
+    <div class="zadacha">
+        <a href="https://kotyhoroshko.github.io" title="Перейти вверх">
+            <div class="up">&#10060;</div>
+        </a>
+        <details>
+            <summary>
+                <b>Робимо помічник для збору статистики для HR менеджера.</b>
+            </summary>
+            <pre>
+                Є компанія, яка має відкриті вакансії з переліком скілів, які необхідні для кожної вакансії.
+                Компанія постійно набирає нових людей у великій кількості.
+                Потрібно реалізувати скрипт для збору статистики по потрібним кандидатам і їх скілам.
+
+                Вхідний масив данних виглядає так:
+
+                let vacansies = {
+                    backEndDeveloper: {
+                        html: 8,
+                        php: 10,
+                        laravel: 9,
+                        javaScript: 6,
+                        git: 8,
+                        sql: 9
+                    },
+                    frontEndDeveloper: {
+                        html: 9,
+                        css: 8,
+                        javaScript: 8,
+                        git: 6,
+                        angular: 5
+                    },
+                    htmlDeveloper: {
+                        html: 10,
+                        css: 9,
+                        sass: 9,
+                        git: 6,
+                        jQuery: 8
+                    },
+                    nodeJsDeveloper: {
+                        html: 7,
+                        nodeJs: 9,
+                        npm: 8,
+                        expressJs: 9,
+                        mongoDB: 8,
+                        sql: 7
+                    },
+                    angularDeveloper: {
+                        angular: 10,
+                        javaScript: 9,
+                        mongoDB: 8,
+                        git: 8,
+                        html: 8,
+                        typeScript: 10,
+                    },
+                    fullStackDeveloper: {
+                        javaScript: 10,
+                        php: 10,
+                        nodeJs: 10,
+                        typeScript: 10,
+                        html: 10,
+                        angular: 10,
+                        react: 10,
+                        mongoDB: 10,
+                        sql: 10
+                    }
+                }
+
+                Кожна вакансія, має перелік необхідних скілів, та коефіцієнт пріорітетності(рівня знань) від 1 до 10. 
+                Потрібно реалізувати функцію getStatistic(), яка працюватиме так, на вхід подаємо назви вакансій та кількість необхідних кандидатів, на виході отримаємо масив з переліком необхідних скілів для цих вакансій, відсортований по пріорітетності.
+                getStatistic({'frontEndDeveloper': 2, 'AngularDeveloper': 1}) => ['javascript(25)', 'html(26)', 'angular(20)', 'git(20)', 'typeScript(10)', 'css(16)', 'mongoDB(8)'];
+
+                Завдання можна виконати 3-ома способами, будь-який з них є прийнятним:
+
+                1. реалізувати лише JS.
+                2. JS + візуальне відображення, де можна побачити всі вакансії поклікати на +/- щоб змінити кількість і натиснути кнопку GetStatistic для отримання інформації.
+                3. Реалізувати пункт 2 з використанням фреймворка(Angular/React/Vue).
+            </pre>
+        </details>
+    </div>
     <div class="vacansArea"></div>
     <button class="getStat">GetStatistic</button>
     <div class="rezultArea">&nbsp;</div>

@@ -21,6 +21,13 @@ span {
     margin: 20px;
 }
 
+.zadacha {
+    padding: 50px 20px;
+    background-color: #444;
+    color: snow;
+    transition: 0.5s;
+}
+
 .up {
     display: inline-block;
     position: absolute;
@@ -198,4 +205,8 @@ button:hover {
     bottom: 10px;
     right: 25px;
     text-align: right;
+}
+
+pre {
+    font-size: 16px;
 }

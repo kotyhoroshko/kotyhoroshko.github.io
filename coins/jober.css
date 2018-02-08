@@ -5,6 +5,106 @@ body {
     margin: 0 auto;
 }
 
+.zadacha {
+    padding: 50px 20px;
+    background-color: #444;
+    color: snow;
+    transition: 0.5s;
+}
+
+.up {
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    top: 12px;
+    right: 30px;
+    background-color: transparent;
+    color: snow;
+    font-size: 32px;
+    font-weight: 800;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    box-shadow: 5px 5px 16px rgba(0, 0, 0, .0);
+    text-align: center;
+    transition: .4s;
+}
+
+.up:hover {
+    background-color: rgba(255, 255, 255, .8);
+    color: black;
+    border: 1px solid #444;
+    box-shadow: 5px 5px 16px rgba(0, 0, 0, .6);
+    text-align: center;
+    -webkit-animation: trubker 3.4s ease 0s infinite;
+    animation: trubker 3.4s ease 0s infinite;
+}
+
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes trubker {
+    0% {
+        transform: rotate(0rad);
+    }
+    3% {
+        transform: rotate(0.8rad);
+    }
+    6% {
+        transform: rotate(0rad);
+    }
+    9% {
+        transform: rotate(0.7rad);
+    }
+    13% {
+        transform: rotate(0rad);
+    }
+    17% {
+        transform: rotate(0.4rad);
+    }
+    22% {
+        transform: rotate(0rad);
+    }
+    27% {
+        transform: rotate(0.2rad);
+    }
+    33% {
+        transform: rotate(0rad);
+    }
+}
+
+
+/* Standard syntax */
+
+@keyframes trubker {
+    0% {
+        transform: rotate(0rad);
+    }
+    3% {
+        transform: rotate(0.8rad);
+    }
+    6% {
+        transform: rotate(0rad);
+    }
+    9% {
+        transform: rotate(0.7rad);
+    }
+    13% {
+        transform: rotate(0rad);
+    }
+    17% {
+        transform: rotate(0.4rad);
+    }
+    22% {
+        transform: rotate(0rad);
+    }
+    27% {
+        transform: rotate(0.2rad);
+    }
+    33% {
+        transform: rotate(0rad);
+    }
+}
+
 .table__wrapper {
     width: 80vw;
     min-width: 600px;
