@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment 3</title>
+    <link rel="stylesheet" type="text/css" href="jober.css">
+</head>
+
+<body>
+    <!-- <a href="../" title="Перейти вверх">
+        <div class="up">&#10060;</div>
+    </a> -->
+
+    <div class="wrapper">
+
+        <div class="table__wrapper">
+            <table class="table">
+                <tr>
+                    <th colspan="3">Statistics</th>
+                </tr>
+                <tr>
+                    <th>Event</th>
+                    <th>Number of occurences</th>
+                    <th>Percentage of occurences</th>
+                </tr>
+                <tr>
+                    <th>H-H-H</th>
+                    <td class="hhh"></td>
+                    <td class="hhhPercent"></td>
+                </tr>
+                <tr>
+                    <th>T-T-T</td>
+                        <td class="ttt">
+                    </th>
+                    <td class="tttPercent"></td>
+                </tr>
+                <tr>
+                    <th>Others</th>
+                    <td class="tht"></td>
+                    <td class="thtPercent"></td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td class="total"></td>
+                    <td class="totalPercent"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="coins">
+            <div class="coinBg">
+                <div class="coin"></div>
+            </div>
+            <div class="coinBg">
+                <div class="coin"></div>
+            </div>
+            <div class="coinBg">
+                <div class="coin"></div>
+            </div>
+        </div>
+
+        <div class="btnArea">
+            <button class="toss">Toss Coin</button>
+        </div>
+
+        <div class="moreToss">
+            <button id="moreTossBtn">More toss</button>
+            <input id="manyToss" type="number" min="1" step="1" placeholder="insert how many times to toss">
+        </div>
+
+    </div>
+
+    <script src="asi3.js"></script>
+
+</body>
+
+</html>
