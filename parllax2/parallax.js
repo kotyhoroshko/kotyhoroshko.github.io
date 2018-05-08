@@ -55,13 +55,10 @@ $(document).ready(function() {
         }
         yMov--;
         Move();
-    }, 1000 / 40);
+    }, 1000 / 33);
 
 
     //-----------WIND-^-------------------------------------------------------------------
-
-
-    window.addEventListener('click', moveItem);
 
     function rnd() {
 
@@ -76,31 +73,21 @@ $(document).ready(function() {
 
     var koorX;
     var koorY;
-    var koefScreenWidth = Math.floor(window.innerWidth / 133);
-
+    var koefScreenWidth = Math.floor(window.innerWidth / 70);
+    var koefScreenHeight = Math.floor(window.innerHeight / 70);
 
     var portItem = document.querySelectorAll('.portfolioItem');
     var portItemCont = document.querySelectorAll('.portfolioItem__container');
 
-    var j = 0;
-
-    function findItems() {
-        j++;
-        if (j == portItem.length) {
-            j = 0;
-        }
-        console.log('find j=' + j)
-
-    }
+    window.addEventListener('click', moveItem);
 
     function moveItem() {
 
-        hideItem(j - 1);
         findItems();
+        hideItem.call(portItem[pre]);
 
         koorX = (rnd() - window.innerWidth / 2);
         koorY = (rnd() - window.innerHeight / 2);
-
 
         if (Math.abs(koorX) > Math.abs(koorY)) {
             var koefX = Math.abs(koorX / koorY);
@@ -109,61 +96,94 @@ $(document).ready(function() {
             var koefY = Math.abs(koorY / koorX);
             var koefX = 1;
         }
+        //console.log("koef " + koefY, koefX)
 
+        var koef = {
+            x: (koefScreenWidth * koefX),
+            y: (koefScreenWidth * koefY)
+        }
+        var ee = 0
         var findItem = setInterval(() => {
 
-            if (koorX > koefScreenWidth * koefX) {
-                koorX -= koefScreenWidth * koefX;
-                xMov -= koefScreenWidth * koefX;
-                portItem[0].style.left = Math.floor(koorX) + window.innerWidth / 2 + 'px';
+            if (koorX > koef.x) {
+                koorX -= koef.x;
+                xMov -= koef.x;
+                portItem[j].style.left = (Math.floor(koorX) + window.innerWidth / 2) + 'px';
             } else if (koorX < 0) {
-                koorX += koefScreenWidth * koefX;
-                xMov += koefScreenWidth * koefX;
-                portItem[0].style.left = Math.floor(koorX) + window.innerWidth / 2 + 'px';
-            } else { var repX = 1 }
+                koorX += koef.x;
+                xMov += koef.x;
+                portItem[j].style.left = (Math.floor(koorX) + window.innerWidth / 2) + 'px';
+            } else {
+                var repX = 1
+            }
 
-            if (koorY > koefScreenWidth * koefY) {
-                koorY -= koefScreenWidth * koefY;
-                yMov -= koefScreenWidth * koefY;
-                portItem[0].style.top = Math.floor(koorY) + window.innerHeight / 2 + 'px';
+            if (koorY > koef.y) {
+                koorY -= koef.y;
+                yMov -= koef.y;
+                portItem[j].style.top = (Math.floor(koorY) + window.innerHeight / 2) + 'px';
             } else if (koorY < 0) {
-                koorY += koefScreenWidth * koefY;
-                yMov += koefScreenWidth * koefY;
-                portItem[0].style.top = Math.floor(koorY) + window.innerHeight / 2 + 'px';
-            } else { var repY = 1 }
+                koorY += koef.y;
+                yMov += koef.y;
+                portItem[j].style.top = (Math.floor(koorY) + window.innerHeight / 2) + 'px';
+            } else {
+                var repY = 1
+            }
 
             if (repX && repY) {
                 repY = 0;
                 repX = 0;
                 clearInterval(findItem);
-                showItem();
-                //console.log(koorX, koorY, ('screen:' + koefScreenWidth), 'j=' + j)
+                //console.log('koor= ' + (Math.floor(koorY) + window.innerHeight / 2) + 'px')
+                //console.log(koorX, koorY, ('screen:' + koefScreenWidth), ' j=' + j + " pre= " + pre);
+                portItem[j].style.transform = "translate(-50%, -50%) scale(1)";
+                portItem[j].style.transition = '.8s cubic-bezier(0.37,-0.19, 0.36, 2.31)';
+                portItem[j].style.boxShadow = '6px 4px 33px 18px rgba(255, 255, 255, .95 )';
+                // console.log(koefX, koefY)
+                portItemCont[j].style.opacity = '1';
             }
-
+            showItem.call(portItem[j]);
             Move();
-        }, 1 / 5);
+            ee++
+            // console.log(koorX, koorY)
+        }, 1000 / 60);
     }
 
+
+
     function showItem() {
-        portItem[0].style.opacity = '.9';
-        portItem[0].style.width = '500px';
-        portItem[0].style.height = '500px';
-        portItem[0].style.padding = '100px';
-        portItem[0].style.boxShadow = '6px 4px 9px 3px rgba(0, 0, 0, .25)';
-        portItem[0].style.transition = '.4s ease';
-        portItem[0].style.transitionDelay = '.1s';
+        this.style.opacity = ".9";
+        this.style.width = "500px";
+        this.style.height = "500px";
+        this.style.padding = "100px";
+        // this.style.transitionDelay = '.3s';
+    }
 
-        portItemCont[j].style.opacity = '1';
-        portItemCont[j].style.transitionDelay = '.6s';
-        console.log('j show= ' + j)
-    };
+    function showContent() {
 
-    function hideItem(spec) {
-        if (spec < 0) { spec = portItem.length - 1 }
-        console.log('j hide= ' + spec)
-        portItem[0].style.cssText = "opacity: 0.9; width: 200px; height: 200px;";
-        portItemCont[spec].style.opacity = '0';
+    }
 
+    function hideItem() {
+        this.style.opacity = "0";
+        this.style.boxShadow = 'unset';
+        this.style.transition = 'unset';
+        this.style.transform = "translate(-50%, -50%) scale(0.66)";
+        portItemCont[j].style.opacity = '0';
+    }
+
+    var j = 0,
+        pre = 0,
+        next = 0;
+
+    function findItems() {
+        pre = j;
+        j++;
+        next = j;
+        if (j == portItem.length) {
+            j = 0;
+            pre = portItem.length - 1;
+
+        }
+        console.log(' j=' + j + " pre= " + pre)
     }
 
 });
