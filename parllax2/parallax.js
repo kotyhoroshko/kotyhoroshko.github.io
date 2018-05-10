@@ -55,10 +55,10 @@ $(document).ready(function() {
         }
         yMov--;
         Move();
-    }, 1000 / 33);
-
+    }, 1000 / 30);
 
     //-----------WIND-^-------------------------------------------------------------------
+
 
     function rnd() {
 
@@ -79,7 +79,7 @@ $(document).ready(function() {
     var portItem = document.querySelectorAll('.portfolioItem');
     var portItemCont = document.querySelectorAll('.portfolioItem__container');
 
-    window.addEventListener('click', moveItem);
+    window.addEventListener('click', moveItem)
 
     function moveItem() {
 
@@ -97,22 +97,39 @@ $(document).ready(function() {
             var koefX = 1;
         }
         //console.log("koef " + koefY, koefX)
-
+        var ee = 0;
         var koef = {
-            x: (koefScreenWidth * koefX),
-            y: (koefScreenWidth * koefY)
-        }
-        var ee = 0
-        var findItem = setInterval(() => {
+                x: (koefScreenWidth * koefX / 2),
+                y: (koefScreenWidth * koefY / 2),
+            }
+            // var frame = Math.ceil(Math.abs(koorX / koef.x))
+        var frame = Math.abs(koorX / 2);
 
+        function cubic() {
+            if (frame < Math.abs(koorX)) {
+                koef.x *= 1.04;
+                koef.y *= 1.04;
+                console.log("+" + koef.x)
+            } else {
+                koef.x /= 1.045;
+                koef.y /= 1.045;
+                console.log("-" + koef.x)
+            }
+        }
+
+        //console.log('x=' + koorX / koef.x, 'y=' + koorY / koef.y)
+        var findItem = setInterval(() => {
+            cubic();
             if (koorX > koef.x) {
                 koorX -= koef.x;
                 xMov -= koef.x;
                 portItem[j].style.left = (Math.floor(koorX) + window.innerWidth / 2) + 'px';
+                portItem[pre].style.left = parseInt(portItem[pre].style.left) - koef.x + 'px';
             } else if (koorX < 0) {
                 koorX += koef.x;
                 xMov += koef.x;
                 portItem[j].style.left = (Math.floor(koorX) + window.innerWidth / 2) + 'px';
+                portItem[pre].style.left = parseInt(portItem[pre].style.left) + koef.x + 'px';
             } else {
                 var repX = 1
             }
@@ -121,10 +138,12 @@ $(document).ready(function() {
                 koorY -= koef.y;
                 yMov -= koef.y;
                 portItem[j].style.top = (Math.floor(koorY) + window.innerHeight / 2) + 'px';
+                portItem[pre].style.top = parseInt(portItem[pre].style.top) - koef.y + 'px';
             } else if (koorY < 0) {
                 koorY += koef.y;
                 yMov += koef.y;
                 portItem[j].style.top = (Math.floor(koorY) + window.innerHeight / 2) + 'px';
+                portItem[pre].style.top = parseInt(portItem[pre].style.top) + koef.y + 'px';
             } else {
                 var repY = 1
             }
@@ -133,40 +152,39 @@ $(document).ready(function() {
                 repY = 0;
                 repX = 0;
                 clearInterval(findItem);
-                //console.log('koor= ' + (Math.floor(koorY) + window.innerHeight / 2) + 'px')
-                //console.log(koorX, koorY, ('screen:' + koefScreenWidth), ' j=' + j + " pre= " + pre);
+                //portItem[j].transform = "translate(-50%, -50%) scale(0.5)"
+                //portItem[j].style.transition = 'unset';
                 portItem[j].style.transform = "translate(-50%, -50%) scale(1)";
                 portItem[j].style.transition = '.8s cubic-bezier(0.37,-0.19, 0.36, 2.31)';
                 portItem[j].style.boxShadow = '6px 4px 33px 18px rgba(255, 255, 255, .95 )';
-                // console.log(koefX, koefY)
+                portItem[pre].style.transform = "translate(-50%, -50%) scale(0.5)";
+                //console.log()
                 portItemCont[j].style.opacity = '1';
+                console.log(ee + ' разів', "frame=" + frame, 'koorX=' + koorX)
             }
+
             showItem.call(portItem[j]);
             Move();
-            ee++
-            // console.log(koorX, koorY)
+            ee++;
+
         }, 1000 / 60);
     }
-
-
 
     function showItem() {
         this.style.opacity = ".9";
         this.style.width = "500px";
         this.style.height = "500px";
         this.style.padding = "100px";
-        // this.style.transitionDelay = '.3s';
-    }
-
-    function showContent() {
-
     }
 
     function hideItem() {
-        this.style.opacity = "0";
-        this.style.boxShadow = 'unset';
+        //this.style.opacity = "0";
+        //this.style.boxShadow = 'unset';
         this.style.transition = 'unset';
-        this.style.transform = "translate(-50%, -50%) scale(0.66)";
+        //this.style.transition = 'scale .1s cubic-bezier(0.37,-0.19, 0.36, 2.31) .7s';
+        //this.style.transition = 'translate .1s cubic-bezier(0.37,-0.19, 0.36, 2.31) .7s';
+        //this.style.transition = 'scale .1s cubic-bezier(0.37,-0.19, 0.36, 2.31) .7s';
+        //this.style.transform = "translate(-50%, -50%) scale(0.5)";
         portItemCont[j].style.opacity = '0';
     }
 
@@ -181,9 +199,7 @@ $(document).ready(function() {
         if (j == portItem.length) {
             j = 0;
             pre = portItem.length - 1;
-
         }
-        console.log(' j=' + j + " pre= " + pre)
+        //console.log(' j=' + j + " pre= " + pre);
     }
-
 });
