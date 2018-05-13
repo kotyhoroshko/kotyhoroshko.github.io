@@ -96,28 +96,25 @@ $(document).ready(function() {
             var koefY = Math.abs(koorY / koorX);
             var koefX = 1;
         }
-        //console.log("koef " + koefY, koefX)
-        var ee = 0;
+
         var koef = {
-                x: (koefScreenWidth * koefX / 2),
-                y: (koefScreenWidth * koefY / 2),
-            }
-            // var frame = Math.ceil(Math.abs(koorX / koef.x))
+            x: (koefScreenWidth * koefX / 2),
+            y: (koefScreenWidth * koefY / 2),
+        }
         var frame = Math.abs(koorX / 2);
 
         function cubic() {
             if (frame < Math.abs(koorX)) {
                 koef.x *= 1.04;
                 koef.y *= 1.04;
-                console.log("+" + koef.x)
+                //console.log("+" + koef.x)
             } else {
                 koef.x /= 1.045;
                 koef.y /= 1.045;
-                console.log("-" + koef.x)
+                //console.log("-" + koef.x)
             }
         }
 
-        //console.log('x=' + koorX / koef.x, 'y=' + koorY / koef.y)
         var findItem = setInterval(() => {
             cubic();
             if (koorX > koef.x) {
@@ -160,12 +157,11 @@ $(document).ready(function() {
                 portItem[pre].style.transform = "translate(-50%, -50%) scale(0.5)";
                 //console.log()
                 portItemCont[j].style.opacity = '1';
-                console.log(ee + ' разів', "frame=" + frame, 'koorX=' + koorX)
+                //console.log(ee + ' разів', "frame=" + frame, 'koorX=' + koorX)
             }
 
             showItem.call(portItem[j]);
             Move();
-            ee++;
 
         }, 1000 / 60);
     }
