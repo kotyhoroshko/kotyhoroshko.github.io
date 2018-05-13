@@ -1,5 +1,6 @@
-$(document).ready(function() {
+window.onload = function() {
 
+    var html = document.querySelector('html');
     var xCor = 0;
     var yCor = 0;
     var yPos = 0;
@@ -8,17 +9,17 @@ $(document).ready(function() {
     Move();
 
     function Move() {
-        $('html').css({
-            "background": "url(images/c12.png) " + (xMov * 2 - xCor / 3) + "px " + (yMov * 2 - (yPos * 4) + yCor / 3) +
-                "px repeat, url(images/c22.png) " + (xMov - xCor / 10) + "px " + (yMov - (yPos) + yCor / 9) +
-                "px repeat, url(images/c32.png) " + (xMov / 2 - xCor / 50) + "px " + (yMov / 2 + (yPos * 0.75) + yCor / 40) +
-                "px repeat, url(images/c42.png) " + (xMov / 10 - xCor / 120) + "px " + (yMov / 7 + (yPos * 0.9) + yCor / 120) +
-                "px repeat, url(images/b3.jpg) fixed"
-        });
+        html.style.background = `
+            url(images/c12.png) ${(xMov * 2 - xCor / 3)}px ${(yMov * 2 - (yPos * 4) + yCor / 3)}px repeat, 
+            url(images/c22.png) ${(xMov - xCor / 10)}px ${(yMov - (yPos) + yCor / 9)}px repeat, 
+            url(images/c32.png) ${(xMov / 2 - xCor / 50)}px ${(yMov / 2 + (yPos * 0.75) + yCor / 40)}px repeat, 
+            url(images/c42.png) ${(xMov / 10 - xCor / 120)}px ${(yMov / 7 + (yPos * 0.9) + yCor / 120)}px repeat, 
+            url(images/b3.jpg) fixed
+        `
     }
 
-    $(window).bind('scroll', function() { //when the user is scrolling...
-        yPos = $(window).scrollTop();
+    window.addEventListener('scroll', function() {
+        yPos = html.scrollTop;
         Move();
     });
 
@@ -27,26 +28,25 @@ $(document).ready(function() {
     function getX(e) {
         xCor = e.pageX;
         yCor = e.screenY;
-        yPos = $(window).scrollTop();
+        yPos = html.scrollTop;
         Move();
     }
 
 
     //-----------WIND--------------------------------------------------------------------
 
-    var wind0 = 0;
-    var wind1 = 0;
-    var wind2 = 0;
-    var wind3 = 0;
+    var wind = 0;
+    var wind0 = rndMove(300);
+    var wind1 = rndMove(1000);
+    var wind2 = rndMove(200);
+    var wind3 = rndMove(200);
 
-    function rndMove() {
-        wind0 = Math.floor(Math.random() * 300);
-        wind1 = Math.floor(Math.random() * 1000);
-        wind2 = Math.floor(Math.random() * 200);
-        wind3 = Math.floor(Math.random() * 200);
+    function rndMove(koefic) {
+        return Math.floor(Math.random() * koefic);
     }
 
-    var wind = 0;
+    var go = 0;
+
     setInterval(() => {
         wind++;
         if (wind < wind0) { xMov++ } else if (wind < (wind0 + wind1)) {} else if (wind < (wind0 + wind1 + wind2)) { xMov-- } else if (wind < (wind0 + wind1 + wind2 + wind3)) {} else {
@@ -55,15 +55,16 @@ $(document).ready(function() {
         }
         yMov--;
         Move();
+
+        go ? goNextItem() : {};
+
     }, 1000 / 30);
 
     //-----------WIND-^-------------------------------------------------------------------
 
 
     function rnd() {
-
         var itemPos = window.innerWidth - (Math.floor(Math.random() * (window.innerWidth * 2)));
-
         for (let index = 0; index = 1; index) {
             if ((itemPos < (-1 * window.innerWidth)) || (itemPos > window.innerWidth)) {
                 return itemPos;
@@ -71,11 +72,12 @@ $(document).ready(function() {
         }
     }
 
+    var koef = {};
+    var frame = 0;
     var koorX;
     var koorY;
     var koefScreenWidth = Math.floor(window.innerWidth / 70);
     var koefScreenHeight = Math.floor(window.innerHeight / 70);
-
     var portItem = document.querySelectorAll('.portfolioItem');
     var portItemCont = document.querySelectorAll('.portfolioItem__container');
 
@@ -97,73 +99,26 @@ $(document).ready(function() {
             var koefX = 1;
         }
 
-        var koef = {
+        koef = {
             x: (koefScreenWidth * koefX / 2),
             y: (koefScreenWidth * koefY / 2),
         }
-        var frame = Math.abs(koorX / 2);
 
-        function cubic() {
-            if (frame < Math.abs(koorX)) {
-                koef.x *= 1.04;
-                koef.y *= 1.04;
-                //console.log("+" + koef.x)
-            } else {
-                koef.x /= 1.045;
-                koef.y /= 1.045;
-                //console.log("-" + koef.x)
-            }
+        frame = Math.abs(koorX / 2);
+        showItem.call(portItem[j]);
+        go = 1;
+    }
+
+    function cubic() {
+        if (frame < Math.abs(koorX)) {
+            koef.x += koef.x / 20;
+            koef.y += koef.y / 20;
+            console.log("+" + koef.x)
+        } else {
+            koef.x -= koef.x / 21;
+            koef.y -= koef.y / 21;
+            console.log("-" + koef.x)
         }
-
-        var findItem = setInterval(() => {
-            cubic();
-            if (koorX > koef.x) {
-                koorX -= koef.x;
-                xMov -= koef.x;
-                portItem[j].style.left = (Math.floor(koorX) + window.innerWidth / 2) + 'px';
-                portItem[pre].style.left = parseInt(portItem[pre].style.left) - koef.x + 'px';
-            } else if (koorX < 0) {
-                koorX += koef.x;
-                xMov += koef.x;
-                portItem[j].style.left = (Math.floor(koorX) + window.innerWidth / 2) + 'px';
-                portItem[pre].style.left = parseInt(portItem[pre].style.left) + koef.x + 'px';
-            } else {
-                var repX = 1
-            }
-
-            if (koorY > koef.y) {
-                koorY -= koef.y;
-                yMov -= koef.y;
-                portItem[j].style.top = (Math.floor(koorY) + window.innerHeight / 2) + 'px';
-                portItem[pre].style.top = parseInt(portItem[pre].style.top) - koef.y + 'px';
-            } else if (koorY < 0) {
-                koorY += koef.y;
-                yMov += koef.y;
-                portItem[j].style.top = (Math.floor(koorY) + window.innerHeight / 2) + 'px';
-                portItem[pre].style.top = parseInt(portItem[pre].style.top) + koef.y + 'px';
-            } else {
-                var repY = 1
-            }
-
-            if (repX && repY) {
-                repY = 0;
-                repX = 0;
-                clearInterval(findItem);
-                //portItem[j].transform = "translate(-50%, -50%) scale(0.5)"
-                //portItem[j].style.transition = 'unset';
-                portItem[j].style.transform = "translate(-50%, -50%) scale(1)";
-                portItem[j].style.transition = '.8s cubic-bezier(0.37,-0.19, 0.36, 2.31)';
-                portItem[j].style.boxShadow = '6px 4px 33px 18px rgba(255, 255, 255, .95 )';
-                portItem[pre].style.transform = "translate(-50%, -50%) scale(0.5)";
-                //console.log()
-                portItemCont[j].style.opacity = '1';
-                //console.log(ee + ' разів', "frame=" + frame, 'koorX=' + koorX)
-            }
-
-            showItem.call(portItem[j]);
-            Move();
-
-        }, 1000 / 60);
     }
 
     function showItem() {
@@ -174,13 +129,7 @@ $(document).ready(function() {
     }
 
     function hideItem() {
-        //this.style.opacity = "0";
-        //this.style.boxShadow = 'unset';
         this.style.transition = 'unset';
-        //this.style.transition = 'scale .1s cubic-bezier(0.37,-0.19, 0.36, 2.31) .7s';
-        //this.style.transition = 'translate .1s cubic-bezier(0.37,-0.19, 0.36, 2.31) .7s';
-        //this.style.transition = 'scale .1s cubic-bezier(0.37,-0.19, 0.36, 2.31) .7s';
-        //this.style.transform = "translate(-50%, -50%) scale(0.5)";
         portItemCont[j].style.opacity = '0';
     }
 
@@ -198,4 +147,47 @@ $(document).ready(function() {
         }
         //console.log(' j=' + j + " pre= " + pre);
     }
-});
+
+    function goNextItem() {
+        cubic();
+        if (koorX > koef.x) {
+            koorX -= koef.x;
+            xMov -= koef.x;
+            portItem[j].style.left = ((koorX) + window.innerWidth / 2) + 'px';
+            portItem[pre].style.left = parseInt(portItem[pre].style.left) - koef.x + 'px';
+        } else if (koorX < 0) {
+            koorX += koef.x;
+            xMov += koef.x;
+            portItem[j].style.left = ((koorX) + window.innerWidth / 2) + 'px';
+            portItem[pre].style.left = parseInt(portItem[pre].style.left) + koef.x + 'px';
+        } else {
+            var repX = 1
+        }
+
+        if (koorY > koef.y) {
+            koorY -= koef.y;
+            yMov -= koef.y;
+            portItem[j].style.top = ((koorY) + window.innerHeight / 2) + 'px';
+            portItem[pre].style.top = parseInt(portItem[pre].style.top) - koef.y + 'px';
+        } else if (koorY < 0) {
+            koorY += koef.y;
+            yMov += koef.y;
+            portItem[j].style.top = ((koorY) + window.innerHeight / 2) + 'px';
+            portItem[pre].style.top = parseInt(portItem[pre].style.top) + koef.y + 'px';
+        } else {
+            var repY = 1
+        }
+
+        if (repX && repY) {
+            repY = 0;
+            repX = 0;
+
+            portItem[j].style.transform = "translate(-50%, -50%) scale(1)";
+            portItem[j].style.transition = '.8s cubic-bezier(0.37,-0.19, 0.36, 2.31)';
+            portItem[j].style.boxShadow = '6px 4px 33px 18px rgba(255, 255, 255, .95 )';
+            portItem[pre].style.transform = "translate(-50%, -50%) scale(0.5)";
+            portItemCont[j].style.opacity = '1';
+            go = 0;
+        }
+    }
+}
