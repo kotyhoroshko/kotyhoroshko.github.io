@@ -10,8 +10,8 @@
 }
 
 html {
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-    background-color: #e9be00;
+    /* transition: cubic-bezier(0.075, 0.82, 0.165, 1); */
+    /* background-color: rgb(175, 0, 0); */
     /* background-image: url(images/c1.png), url(images/c2.png), url(images/c3.png), url(images/c4.png);
 	background-position: 0 0, 0 0, 0 0, 0 0;
 	background-repeat: repeat; 
@@ -34,7 +34,7 @@ h1 {
     font-weight: 800;
     font-size: 330%;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, .6);
-    color: white;
+    color: rgb(255, 200, 21);
     margin: 0;
 }
 
