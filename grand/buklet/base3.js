@@ -299,7 +299,7 @@ let base = [
 ,{
     size: "1",
     desc: 'Зошити 18 аркушів$в асортименті',
-    pic:"0",
+    pic:"kz1",
     priceO:"349",
     priceN: "2,75",
     disc: "20%"
@@ -307,7 +307,7 @@ let base = [
 ,{
     size: "1",
     desc: 'Ручка шарикова автомат$в асортименті',
-    pic:"0",
+    pic:"kr",
     priceO:"299",
     priceN: "2,35",
     disc: "20%"
@@ -315,7 +315,7 @@ let base = [
 ,{
     size: "1",
     desc: 'Олівці 12 кольорів$1шт',
-    pic:"0",
+    pic:"ko",
     priceO:"1699",
     priceN: "14,45",
     disc: "15%"
@@ -323,7 +323,7 @@ let base = [
 ,{
     size: "1",
     desc: 'Фломайстери 12 кольорів$1шт',
-    pic:"0",
+    pic:"kf",
     priceO:"1624",
     priceN: "13,65",
     disc: "15%"
