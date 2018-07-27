@@ -242,9 +242,19 @@ body {
 }
 
 .item.size3 {
-    width: 96%;
+    width: 63%;
 }
 
 .item.size3>.item__price {
+    transform: scale(1.5);
     right: 430px;
+}
+
+.item.size3.x2>.item__price {    
+    right: 70px;
+}
+
+.item.size3>.item__discount {
+    transform: scale(1.5) rotate(-6deg);
+    left: 70px;
 }
