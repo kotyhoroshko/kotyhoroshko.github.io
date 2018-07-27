@@ -411,7 +411,7 @@ let base = [
 ,{
     size: "3",
     desc: 'Багет "GRAND FOOD" в асортименті 230г',
-    pic:"baner",
+    pic:"baner2",
     priceO:"2299",
     priceN: "1499",
     disc: "35%"
