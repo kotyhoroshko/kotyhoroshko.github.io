@@ -27,6 +27,11 @@
     color: black;
 }
 
+
+body {
+    background: url(../img/bg.jpg) center;   
+}
+
 .wrapper__gl {
     /* display: flex; */
     width: calc(4960px / 2);
