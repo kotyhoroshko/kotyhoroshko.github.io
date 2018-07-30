@@ -247,8 +247,13 @@ body {
 
 .item.size3>.item__price {
     transform: scale(1.5);
-    right: 430px;
+    right: 425px;
+    bottom: 240px;
 }
+
+.item.size3 .item__price--o-cop,
+.item.size3 .item__price--o {
+    color: #000;}
 
 .item.size3.x2>.item__price {    
     right: 70px;
@@ -257,4 +262,11 @@ body {
 .item.size3>.item__discount {
     transform: scale(1.5) rotate(-6deg);
     left: 70px;
+}
+
+.item.size4{
+    height: 720px;    
+}
+.item.size5{
+    height: 770px;    
 }
