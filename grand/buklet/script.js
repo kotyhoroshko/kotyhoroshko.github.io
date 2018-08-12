@@ -1,5 +1,6 @@
-const wrapper = document.querySelector('.wrapper__half');
-var inner = '';
+const wrapper = document.querySelector('.wrapper__gl');
+var inner = `<div class="header"></div>
+            <div class="wrapper__half">`;
 
 for (let index = 0; index < base.length; index++) {
     inner += `
@@ -26,6 +27,9 @@ for (let index = 0; index < base.length; index++) {
     </div>
     `
 }
-
+inner+= `</div>
+        <div class="footer">
+            <p>Супермаркет "Гранд" залишає за собою право змінювати ціни в період дії пропозиції та не несе відповідальність за друкарські помилки. Пропозиція діє з 04.08.2018 до 51.08.2018 (або до закінчення товарних залишків) за адресами: м.Виноградів, вул. Станційна, 1б та вул.Копанська, 221. Фото товарів, розміщених у товарних пропозиція, можуть відрізнятися від фото товарів, що беруть участь в акції.</p>
+        </div>`;
 wrapper.innerHTML = inner;
 
