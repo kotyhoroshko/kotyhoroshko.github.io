@@ -1,6 +1,11 @@
 const wrapper = document.querySelector('.wrapper__gl');
 const body = document.querySelector('BODY');
-var inner = `<div class="header"></div>
+const shirma = document.querySelector('.shirma');
+// const shirma = document.createElement('div');
+// shirma.className = "shirma";
+// body.appendChild(shirma);
+var inner = `<span class="previewMode">Попередній перегляд</span>
+            <div class="header"></div>
             <div class="wrapper__half">`;
 
 for (let index = 0; index < base.length; index++) {
@@ -35,8 +40,16 @@ inner+= `</div>
 wrapper.innerHTML = inner;
 
 document.addEventListener("DOMContentLoaded", go);
+window.addEventListener("resize", go);
 
 function go(){
+    // shirma.style.left="150vw";
+    setTimeout(hideShirma, 100);
+    function hideShirma(){
+        shirma.style.left="101%";
+    }
+    var prevBtn = document.querySelector('.previewMode');
+    prevBtn.style.display='inline-block';
     var wi=document.documentElement.clientWidth/2480;
     wrapper.style.position='absolute';
     wrapper.style.left='50%';
@@ -47,6 +60,14 @@ function go(){
                         background: url(./img/bg2.jpg) center;
                         position: relative;
                         overflow-x: hidden;
-                        margin: 0 auto;`
+                        margin: 0 auto;`;
+    prevBtn.addEventListener('click', goPrev);
+    function goPrev(){
+        shirma.style.left="0";
+        setTimeout(goToPrev, 500)
+        function goToPrev(){
+            window.location = window.location.toString().slice(0, -10)+"prev/index.html";}
+
+    }
 }
 

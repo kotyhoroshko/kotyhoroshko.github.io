@@ -1,17 +1,29 @@
 function go(){
 
     var wrap = document.querySelector('.wrap');
+    var shirma = document.querySelector('.shirma');
     var front = document.querySelector('.front');
     var back = document.querySelector('.back');
     var page = document.querySelector('.page');
     var next = document.querySelector('.next');
     var prev = document.querySelector('.prev');
     var book = document.querySelector('.book');
+    var constr = document.querySelector('.const');
     var pages = document.querySelector('.pages');
     var card = document.querySelector('.card');
     var p = document.querySelectorAll('.p');
     var pageNum = document.querySelector('.pageNum')
     var gr=0, i=0;
+
+
+    constr.addEventListener("click", goConst)
+        function goConst(){
+            shirma.style.left="0";
+            setTimeout(goToConstr, 500)
+            function goToConstr(){
+                window.location = window.location.toString().slice(0, -15)+"index.html";}
+        }        
+    
 
     pages.addEventListener("click", function(){        
         book.style.display='inline-block';
@@ -102,5 +114,11 @@ function go(){
         }    
     }
 
+    setTimeout(hideShirma, 100);
+    function hideShirma(){
+        shirma.style.left="101%";
+    }
 }
+
 document.addEventListener("DOMContentLoaded", go);
+

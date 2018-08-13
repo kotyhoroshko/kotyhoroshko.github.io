@@ -29,7 +29,39 @@
 
 
 body {
-    background: url(../img/bg.jpg) center;   
+    background: url(../img/bg.jpg) center;
+    transition: .3s;  
+}
+.shirma{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    background-color: white;
+    z-index: 99;
+    transition: .5s ease;
+}
+.previewMode{
+    display: none;
+    text-align: center;
+    font-size: 21px;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: absolute;
+    padding: 4px 15px;
+    top: -1%;
+    left: 50%;
+    transform: translate(-50%, 0) scale(2);
+    background: white;
+    box-shadow: 2px 2px 16px rgba(0,0,0,.6);
+    transition: .3s;
+    opacity: 0.66;
+    border-radius: 15px;
+}
+.previewMode:hover{
+    transform: translate(-50%, 0) scale(2.2);
+    opacity: 1;
 }
 
 .wrapper__gl {

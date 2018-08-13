@@ -26,6 +26,16 @@
     color: black;
 }
 
+.shirma{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    background-color: white;
+    z-index: 99;
+    transition: 1s;
+}
+
 .wrapper__gl {
     /* display: flex; */
     width: 2400px;
