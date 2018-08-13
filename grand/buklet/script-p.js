@@ -1,10 +1,8 @@
 const wrapper = document.querySelector('.wrapper__gl');
 const body = document.querySelector('BODY');
 const shirma = document.querySelector('.shirma');
-// const shirma = document.createElement('div');
-// shirma.className = "shirma";
-// body.appendChild(shirma);
-var inner = `<span class="previewMode">Попередній перегляд</span>
+
+var inner = `            
             <div class="header"></div>
             <div class="wrapper__half">`;
 
@@ -37,19 +35,22 @@ inner+= `</div>
         <div class="footer">
             <p>Супермаркет "Гранд" залишає за собою право змінювати ціни в період дії пропозиції та не несе відповідальність за друкарські помилки. Пропозиція діє з ${dataVid}.2018 до ${dataDo}.2018 (або до закінчення товарних залишків) за адресами: м.Виноградів, вул. Станційна, 1б та вул.Копанська, 221. Фото товарів, розміщених у товарних пропозиція, можуть відрізнятися від фото товарів, що беруть участь в акції.</p>
         </div>`;
+
 wrapper.innerHTML = inner;
 
 document.addEventListener("DOMContentLoaded", go);
 window.addEventListener("resize", go);
 
 function go(){
-    // shirma.style.left="150vw";
     setTimeout(hideShirma, 100);
     function hideShirma(){
         shirma.style.left="140vw";
     }
-    var prevBtn = document.querySelector('.previewMode');
-    prevBtn.style.display='inline-block';
+    var footer= document.querySelector('.footer');
+    var header= document.querySelector('.header');
+    var prevBtn = document.querySelector('.toPrevMode');
+    var navi = document.querySelector('.navi');
+        navi.style.display='flex';
     var wi=document.documentElement.clientWidth/2480;
     wrapper.style.position='absolute';
     wrapper.style.left='50%';
@@ -69,5 +70,16 @@ function go(){
             var loc = window.location.toString();
             window.location = loc.slice(0, loc.lastIndexOf("/"))+"/prev/index.html";}
 
+    }
+
+    var toTop=document.querySelector('.toTop');
+    toTop.addEventListener('click', goTop);
+    function goTop(){
+        header.scrollIntoView({ behavior: 'smooth' })
+    }
+    var toBottom=document.querySelector('.toBottom');
+    toBottom.addEventListener('click', goBottom);
+    function goBottom(){
+        footer.scrollIntoView({ behavior: 'smooth' })
     }
 }

@@ -31,7 +31,7 @@ function go(){
 
     pages.addEventListener("click", function(){        
         book.style.display='inline-block';
-        setTimeout(showFrBck, 300);
+        setTimeout(showFrBck, 400);
         function showFrBck(){
             maket.style.opacity='1';
         }        
@@ -63,7 +63,7 @@ function go(){
         book.style.display='none';                   
         maket.style.opacity='0';
 
-        setTimeout(showPage, 300);
+        setTimeout(showPage, 400);
         function showPage(){
             page.style.opacity='1';
         }
