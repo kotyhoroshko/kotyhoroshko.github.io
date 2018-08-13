@@ -46,7 +46,7 @@ function go(){
     // shirma.style.left="150vw";
     setTimeout(hideShirma, 100);
     function hideShirma(){
-        shirma.style.left="101%";
+        shirma.style.left="140vw";
     }
     var prevBtn = document.querySelector('.previewMode');
     prevBtn.style.display='inline-block';
@@ -66,8 +66,8 @@ function go(){
         shirma.style.left="0";
         setTimeout(goToPrev, 500)
         function goToPrev(){
-            window.location = window.location.toString().slice(0, -10)+"prev/index.html";}
+            var loc = window.location.toString();
+            window.location = loc.slice(0, loc.lastIndexOf("/"))+"/prev/index.html";}
 
     }
 }
-

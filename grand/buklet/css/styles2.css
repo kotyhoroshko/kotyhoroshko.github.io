@@ -32,15 +32,18 @@ body {
     background: url(../img/bg.jpg) center;
     transition: .3s;  
 }
+
 .shirma{
     position: fixed;
     width: 100vw;
     height: 100vh;
     left: 0;
+    box-shadow: 0 0 20vw 20vw white;
     background-color: white;
     z-index: 99;
-    transition: .5s ease;
+    transition: 1s;
 }
+
 .previewMode{
     display: none;
     text-align: center;
@@ -58,6 +61,7 @@ body {
     transition: .3s;
     opacity: 0.66;
     border-radius: 15px;
+    cursor: pointer;
 }
 .previewMode:hover{
     transform: translate(-50%, 0) scale(2.2);

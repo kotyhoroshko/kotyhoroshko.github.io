@@ -2,6 +2,7 @@ function go(){
 
     var wrap = document.querySelector('.wrap');
     var shirma = document.querySelector('.shirma');
+    var maket = document.querySelector('.maket');
     var front = document.querySelector('.front');
     var back = document.querySelector('.back');
     var page = document.querySelector('.page');
@@ -10,26 +11,31 @@ function go(){
     var book = document.querySelector('.book');
     var constr = document.querySelector('.const');
     var pages = document.querySelector('.pages');
-    var card = document.querySelector('.card');
+    var card = document.querySelector('.card');   ;
+    var pageNum = document.querySelector('.pageNum');
     var p = document.querySelectorAll('.p');
-    var pageNum = document.querySelector('.pageNum')
     var gr=0, i=0;
 
 
     constr.addEventListener("click", goConst)
-        function goConst(){
-            shirma.style.left="0";
-            setTimeout(goToConstr, 500)
-            function goToConstr(){
-                window.location = window.location.toString().slice(0, -15)+"index.html";}
-        }        
+    function goConst(){
+        shirma.style.left="0";
+        setTimeout(goToConstr, 500)
+        function goToConstr(){
+            var loc = window.location.toString();
+            loc = loc.slice(0, loc.lastIndexOf("/"));
+            window.location = (loc.slice(0, loc.lastIndexOf("/"))+"/index.html") 
+        }
+    }        
     
 
     pages.addEventListener("click", function(){        
         book.style.display='inline-block';
-        front.style.display='flex';
-        back.style.display='flex';
-        page.style.display='none';
+        setTimeout(showFrBck, 300);
+        function showFrBck(){
+            maket.style.opacity='1';
+        }        
+        page.style.opacity='0';
         pages.style.display='none';
         pageNum.style.display='none'; 
     })
@@ -52,12 +58,17 @@ function go(){
     next.addEventListener("click", nextC)
     
     book.addEventListener("click", function(){
-        pages.style.display='inline-block';
-        page.style.display='flex';
+        pages.style.display='inline-block';        
         pageNum.style.display='inline-block';
-        book.style.display='none';        
-        front.style.display='none';
-        back.style.display='none';
+        book.style.display='none';                   
+        maket.style.opacity='0';
+
+        setTimeout(showPage, 300);
+        function showPage(){
+            page.style.opacity='1';
+        }
+        // front.style.display='none';
+        // back.style.display='none';
         
         prev.addEventListener("click", prevP);
         next.addEventListener("click", nextP);
@@ -116,7 +127,7 @@ function go(){
 
     setTimeout(hideShirma, 100);
     function hideShirma(){
-        shirma.style.left="101%";
+        shirma.style.left="140vw";
     }
 }
 

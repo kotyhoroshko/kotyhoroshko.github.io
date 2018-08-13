@@ -31,6 +31,7 @@
     width: 100vw;
     height: 100vh;
     left: 0;
+    box-shadow: 0 0 20vw 20vw white;
     background-color: white;
     z-index: 99;
     transition: 1s;
