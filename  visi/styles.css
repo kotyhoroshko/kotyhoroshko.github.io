@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif;
+  }
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  }
+.menuItem {
+  position: relative;
+  transition: .3s;
+  opacity: 0.66;
+  width: 100%;
+  max-width: 70vw;
+  margin: 1% 0;
+  text-align: center;
+}
+.menuItem:hover {
+  transform: scale(1.1);
+  z-index: 3;
+  opacity: 1;  
+}
+
+.menuItem img{
+  width: 80%;
+}
+.menuItem img:hover{
+  box-shadow: 2px 2px 21px rgba(0,0,0,.5);
+}
+
+.menuItem span{
+  font-size: 2em;
+  z-index: 2;
+}
+
+.b{
+  color: black;
+}
+
+.w{
+  color: white;
+}

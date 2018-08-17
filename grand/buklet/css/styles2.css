@@ -56,6 +56,7 @@ body {
     width: 30%;
     opacity: 0;
     transition: .3s;
+    z-index: 0;
 }
 
 p.toTop:hover,
@@ -67,6 +68,7 @@ p.toPrevMode:hover{
 
 .navi:hover > *{
     opacity: 0.5;
+    z-index: 11;
 }
 
 .navi{
@@ -91,8 +93,6 @@ p.toPrevMode:hover{
     opacity: 1;
     top:0;
 }
-
-
 
 .wrapper__gl {
     /* display: flex; */
