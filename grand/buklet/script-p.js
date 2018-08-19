@@ -1,8 +1,8 @@
+
 const wrapper = document.querySelector('.wrapper__gl');
 const body = document.querySelector('BODY');
 const shirma = document.querySelector('.shirma');
-
-var inner = `            
+let inner = `            
             <div class="header"></div>
             <div class="wrapper__half">`;
 
@@ -38,55 +38,55 @@ inner+= `</div>
 
 wrapper.innerHTML = inner;
 
-document.addEventListener("DOMContentLoaded", go);
-window.addEventListener("resize", go);
+window.onload = function() {
+   
+    window.addEventListener("resize", go);
 
-function go(){
-    setTimeout(hideShirma, 100);
-    function hideShirma(){
-        shirma.style.left="140vw";
-    }
-    var footer= document.querySelector('.footer');
-    var header= document.querySelector('.header');
-    var prevBtn = document.querySelector('.toPrevMode');
-    var navi = document.querySelector('.navi');
-        navi.style.display='flex';
-    var wi=document.documentElement.clientWidth/2480;
-    wrapper.style.position='absolute';
-    wrapper.style.left='50%';
-    wrapper.style.top='50%';
-    wrapper.style.transform='translate(-50%, -50%) scale('+wi*0.95+')';
-    body.style.cssText=`width: ${document.documentElement.clientWidth}px;
-                        height: ${wrapper.offsetHeight*wi}px;
-                        background: url(./img/bg2.jpg) center;
-                        position: relative;
-                        overflow-x: hidden;
-                        margin: 0 auto;`;
-    prevBtn.addEventListener('click', goPrev);
-    function goPrev(){
-        shirma.style.left="0";
-        setTimeout(goToPrev, 500)
-        function goToPrev(){
-            var loc = window.location.toString();
-            window.location = loc.slice(0, loc.lastIndexOf("/"))+"/prev/index.html";}
+    function go(){
+        setTimeout(hideShirma, 100);
+        function hideShirma(){
+            shirma.style.left="140vw";
+        }
+        var footer= document.querySelector('.footer');
+        var header= document.querySelector('.header');
+        var prevBtn = document.querySelector('.toPrevMode');
+        var navi = document.querySelector('.navi');
+            navi.style.display='flex';
+        var wi=document.documentElement.clientWidth/2480;
+        wrapper.style.position='absolute';
+        wrapper.style.left='50%';
+        wrapper.style.top='50%';
+        wrapper.style.transform='translate(-50%, -50%) scale('+wi*0.95+')';
+        body.style.cssText=`width: ${document.documentElement.clientWidth}px;
+                            height: ${wrapper.offsetHeight*wi}px;
+                            background: url(./img/bg2.jpg) center;
+                            position: relative;
+                            overflow-x: hidden;
+                            margin: 0 auto;`;
+        prevBtn.addEventListener('click', goPrev);
+        function goPrev(){
+            shirma.style.left="0";
+            setTimeout(goToPrev, 500)
+            function goToPrev(){
+                var loc = window.location.toString();
+                window.location = loc.slice(0, loc.lastIndexOf("/"))+"/prev/index.html";}
 
-    }
+        }
 
-    var toTop=document.querySelector('.toTop');
-    toTop.addEventListener('click', goTop);
-    function goTop(){
-        header.scrollIntoView({ behavior: 'smooth' })
-    }
-    var toBottom=document.querySelector('.toBottom');
-    toBottom.addEventListener('click', goBottom);
-    function goBottom(){
-        footer.scrollIntoView({ behavior: 'smooth' })
-    }
-
-    document.body.onload= function(){
+        var toTop=document.querySelector('.toTop');
+        toTop.addEventListener('click', goTop);
+        function goTop(){
+            header.scrollIntoView({ behavior: 'smooth' })
+        }
+        var toBottom=document.querySelector('.toBottom');
+        toBottom.addEventListener('click', goBottom);
+        function goBottom(){
+            footer.scrollIntoView({ behavior: 'smooth' })
+        }
+    
         var preloder=document.querySelector('.preLoader');
         setTimeout(function(){preloder.style.opacity="0";}, 300);
         setTimeout(function(){preloder.style.display="none";}, 1300);
-      }
-
-}
+    }
+    go();
+};
