@@ -82,4 +82,9 @@ function go(){
     function goBottom(){
         footer.scrollIntoView({ behavior: 'smooth' })
     }
+
+    var preloder=document.querySelector('.preLoader');
+    setTimeout(function(){preloder.style.opacity="0";}, 300);
+    setTimeout(function(){preloder.style.display="none";}, 1300);
+
 }
