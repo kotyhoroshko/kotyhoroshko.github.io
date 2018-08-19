@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="prev.svg">
+   sodipodi:docname="next.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -27,7 +27,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="8"
      inkscape:cx="18.613649"
-     inkscape:cy="42.764514"
+     inkscape:cy="25.528414"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -57,15 +57,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:107.61566925px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:0.8;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-       x="-0.20922479"
-       y="1110.579"
+       x="-1.3096505"
+       y="1110.7158"
        id="text4136"
        sodipodi:linespacing="125%"
        transform="scale(1.0487636,0.95350372)"><tspan
          sodipodi:role="line"
          id="tspan4138"
-         x="-0.20922479"
-         y="1110.579"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Jazz Gothic';-inkscape-font-specification:'Jazz Gothic';fill:#ffffff;">&lt;</tspan></text>
+         x="-1.3096505"
+         y="1110.7158"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Jazz Gothic';-inkscape-font-specification:'Jazz Gothic';fill:#ffffff;">&gt;</tspan></text>
   </g>
 </svg>
