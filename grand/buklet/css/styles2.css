@@ -29,6 +29,7 @@
 
 
   .preLoader {
+      /* display: none; */
     position:fixed;
     z-index: 9999999;top:0;
     left:0; 
@@ -93,6 +94,7 @@ body {
 }
 
 .shirma{
+    /* display: none; */
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -113,7 +115,7 @@ body {
     text-align: center;
     padding: 1% 2%;
     width: 30%;
-    opacity: 0;
+    opacity: 0.66;
     transition: .3s;
     z-index: 0;
 }
@@ -125,32 +127,22 @@ p.toPrevMode:hover{
     opacity: 1;
 }
 
-.navi:hover > *{
-    opacity: 0.5;
-    z-index: 11;
-}
-
 .navi{
     display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: -1%;
+    top: 0;
     left: 50%;
     width: 80vw;   
     padding: 4px 15px;    
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0) scale(1.2);
     background-color: rgba(0,0,0,.6);
     transition: .3s;
-    opacity: 0.66;
+    opacity: 1;
     border-radius: 15px;
     cursor: pointer;
     z-index: 9;
-}
-.navi:hover{
-    transform: translate(-50%, 0) scale(1.2);
-    opacity: 1;
-    top:0;
 }
 
 .wrapper__gl {
@@ -234,15 +226,25 @@ p.toPrevMode:hover{
     transform: translate(-50%, -50%);
 }
 
+.discBg{
+    position: absolute;
+    top: -106px;
+    left: -24px;
+    width: 56%;
+}
+
 .item__discount {
     font-family: 'discount';
     font-weight: bold;
     line-height: .9;
     text-shadow: white 4px 4px 0, white -4px -4px 0, white -4px 4px 0, white 4px -4px 0, black 1px 1px 28px;
     top: 30px;
-    left: 10px;
+    left: 45px;
+    /*left: 10px; 
     font-size: 160px;
-    color: #d0131f;
+    color: #d0131f; */
+    font-size: 132px;
+    color: #8e1119;
     transform: rotate(-6deg);
     /* font-weight: 800; */
 }
@@ -371,8 +373,15 @@ p.toPrevMode:hover{
 
 .item.size3>.item__discount {
     transform: scale(1.5) rotate(-6deg);
-    left: 70px;
+    /* left: 70px; */
+    left: 145px;
+    top: 120px;
 }
+
+.item.size3>.discBg {
+    width: 40%;
+}
+
 
 .item.size4{
     height: 720px;    

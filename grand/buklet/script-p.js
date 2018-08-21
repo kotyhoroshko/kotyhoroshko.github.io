@@ -13,6 +13,7 @@ for (let index = 0; index < base.length; index++) {
             <img src="img/${base[index].pic}.jpg" alt="">
         </div>
 
+        <img src="./img/leaf.png" class="discBg">
         <span class="item__discount">${base[index].disc}</span>
         <div class="line"></div>   
         <div class="item__price">
