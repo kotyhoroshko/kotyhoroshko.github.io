@@ -145,7 +145,7 @@ body {
 .navBB__img,
 .navZag_img{
   max-height: 16vh;
-  max-width: 31%;
+  max-width: 19%;
   box-shadow: 2px 2px 12px black;
   opacity: 0.5;
   transition: .3s;
