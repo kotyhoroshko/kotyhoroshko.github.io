@@ -1,3 +1,9 @@
+document.body.onload= function(){
+    var preloder=document.querySelector('.preLoader');
+    setTimeout(function(){preloder.style.opacity="0";}, 300);
+    setTimeout(function(){preloder.style.display="none";}, 1300);
+}
+
 let zagImg=document.querySelector('.zagImg');
 let bbImg=document.querySelector('.bbImg');
 

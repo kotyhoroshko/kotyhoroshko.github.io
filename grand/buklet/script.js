@@ -8,7 +8,7 @@ for (let index = 0; index < base.length; index++) {
         <div class="item__pic">
             <img src="img/${base[index].pic}.jpg" alt="">
         </div>
-
+        <img src="./img/leaf.png" class="discBg">
         <span class="item__discount">${base[index].disc}</span>
         <div class="line"></div>   
         <div class="item__price">
