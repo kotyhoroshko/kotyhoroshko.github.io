@@ -60,7 +60,7 @@ window.onload = function() {
         wrapper.style.transform='translate(-50%, -50%) scale('+wi*0.95+')';
         body.style.cssText=`width: ${document.documentElement.clientWidth}px;
                             height: ${wrapper.offsetHeight*wi}px;
-                            background: url(./img/bg2.jpg) center;
+                            background: url('./img/bg.jpg') center;
                             position: relative;
                             overflow-x: hidden;
                             margin: 0 auto;`;
