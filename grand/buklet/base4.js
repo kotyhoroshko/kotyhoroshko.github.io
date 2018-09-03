@@ -11,7 +11,7 @@ let base = [
     disc: "XIT"
 }
 ,{
-    color: "leaf",
+    color: "leaf3",
     size: "1",
     pic: "33",
     desc: 'Помідори',                                            	
@@ -20,7 +20,7 @@ let base = [
     disc: "XIT"
 }
 ,{
-    color: "leaf3",
+    color: "leaf",
     size: "1",
     pic: "34",
     desc: 'Яблука',                                  	
