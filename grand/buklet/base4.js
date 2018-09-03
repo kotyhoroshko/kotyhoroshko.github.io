@@ -1,7 +1,88 @@
 let dataVid='10.09'
-let dataDo = '31.09';
+let dataDo = '30.09';
 let base = [
-{
+    {
+        color: "leaf",
+        size: "1",
+        pic: "1",
+        desc: 'Голубці "По-Закарпатськи"$100г',                               	
+        priceO: "599",	
+        priceN: "449",	
+        disc: "25%"
+    }
+    ,{
+        color: "leaf2",
+        size: "1",
+        pic: "2",
+        desc: 'Квасоля "По-Закарпатськи"$100г',                                	
+        priceO: "549",	
+        priceN: "389",	
+        disc: "30%"
+    }
+    ,{
+        color: "leaf2",
+        size: "1",
+        pic: "4",
+        desc: 'Салат "Олівє"$100г',                               	
+        priceO: "999",	
+        priceN: "599",	
+        disc: "35%"
+    }
+    ,{
+        color: "leaf",
+        size: "1",
+        pic: "3",
+        desc: 'Четвертина куряча запечена$100г',                              	
+        priceO: "1499",	
+        priceN: "899",	
+        disc: "40%"
+    }
+    ,{
+        color: "leaf3",
+        size: "1",
+        pic: "6",
+        desc: 'Шинка свинна охолоджена$100г',                                	
+        priceO: "1449",	
+        priceN: "1249",	
+        disc: "15%"
+    }
+    ,{
+        color: "leaf3",
+        size: "1",
+        pic: "9",
+        desc: 'Авіньйон четвертина "Наша Ряба" куряча$100г',                  	
+        priceO: "899",	
+        priceN: "699",	
+        disc: "25%"
+    }
+    ,{
+        color: "leaf",
+        size: "1",
+        pic: "5",
+        desc: 'Четвертина "Наша Ряба"$курчат бройлерів охолодж.$100г',      	
+        priceO: "509",	
+        priceN: "449",	
+        disc: "15%"
+    }
+    ,{
+        color: "leaf2",
+        size: "6",
+        pic: "8",
+        desc: 'Шкіра свинна$охолоджена$100г',                                 	
+        priceO: "099",	
+        priceN: "090",	
+        disc: "XIT"
+    }
+    ,{
+        color: "leaf2",
+        size: "",
+        pic: "7",
+        desc: 'Шашлик з курячого стейка$охолоджений$100г',	
+        priceO: "999",	
+        priceN: "850",	
+        disc: "15%"
+    }
+    ,{
     color: "leaf2",
     size: "1",
     pic: "32",
@@ -86,7 +167,7 @@ let base = [
     color: "leaf3",
     size: "1",
     pic: "39",
-    desc: 'Сосіски"Хот-дог"$(Глобино)$100г',	
+    desc: 'Сосиски"Хот-дог"$(Глобино)$100г',	
     priceO: "769",	
     priceN: "649",	
     disc: "15%"
@@ -104,7 +185,7 @@ let base = [
     color: "leaf",
     size: "1",
     pic: "19",
-    desc: 'Ковбаса "Бутербродна" 500г$(Бащінський)$1шт',                    	
+    desc: 'Ковбаса "Бутербродна" 500г$(Бащинський)$1шт',                    	
     priceO: "3990",	
     priceN: "3190",	
     disc: "20%"
@@ -158,7 +239,7 @@ let base = [
     color: "leaf",
     size: "1",
     pic: "45",
-    desc: 'Макарони "Чумак" спагетті$400г',            	
+    desc: 'Макарони "Чумак" спагеті$400г',            	
     priceO: "2359",	
     priceN: "1759",	
     disc: "25%"
@@ -275,7 +356,7 @@ let base = [
     color: "leaf3",
     size: "1",
     pic: "46",
-    desc: 'Торт "Творожній"$100г',	
+    desc: 'Торт "Творожний"$100г',	
     priceO: "1299",	
     priceN: "799",	
     disc: "40%"
@@ -352,85 +433,5 @@ let base = [
     priceN: "1399",	
     disc: "40%"
 }
-,{
-    color: "leaf",
-    size: "1",
-    pic: "1",
-    desc: 'Голубці "По-Закарпатськи"$100г',                               	
-    priceO: "599",	
-    priceN: "449",	
-    disc: "25%"
-}
-,{
-    color: "leaf2",
-    size: "1",
-    pic: "2",
-    desc: 'Квасоля "По-Закарпатськи"$100г',                                	
-    priceO: "549",	
-    priceN: "389",	
-    disc: "30%"
-}
-,{
-    color: "leaf2",
-    size: "1",
-    pic: "4",
-    desc: 'Салат "Олівє"$100г',                               	
-    priceO: "999",	
-    priceN: "599",	
-    disc: "35%"
-}
-,{
-    color: "leaf",
-    size: "1",
-    pic: "3",
-    desc: 'Четвертина куряча запечена$100г',                              	
-    priceO: "1499",	
-    priceN: "899",	
-    disc: "40%"
-}
-,{
-    color: "leaf3",
-    size: "1",
-    pic: "6",
-    desc: 'Шинка свинна охолоджена$100г',                                	
-    priceO: "1449",	
-    priceN: "1249",	
-    disc: "15%"
-}
-,{
-    color: "leaf3",
-    size: "1",
-    pic: "9",
-    desc: 'Авіньйон четвертина "Наша Ряба" куряча$100г',                  	
-    priceO: "899",	
-    priceN: "699",	
-    disc: "25%"
-}
-,{
-    color: "leaf",
-    size: "1",
-    pic: "5",
-    desc: 'Четвертина "Наша Ряба"$курчат бройлерів охолодж.$100г',      	
-    priceO: "509",	
-    priceN: "449",	
-    disc: "15%"
-}
-,{
-    color: "leaf2",
-    size: "1",
-    pic: "7",
-    desc: 'Шашлик з курячого стейка$охолоджений$100г',	
-    priceO: "999",	
-    priceN: "850",	
-    disc: "15%"
-}
-,{
-    color: "leaf2",
-    size: "1",
-    pic: "8",
-    desc: 'Шкіра свинна$охолоджена$100г',                                 	
-    priceO: "099",	
-    priceN: "090",	
-    disc: "XIT"
-}
+
 ]

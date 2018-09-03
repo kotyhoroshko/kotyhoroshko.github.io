@@ -171,6 +171,7 @@ p.toPrevMode:hover{
     /* display: none; */
     height: 830px;
     background: url(../img/header.jpg);
+    margin-bottom: 40px;
 }
 .footer{
     /* width: 100%; */
@@ -381,10 +382,13 @@ p.toPrevMode:hover{
     width: 40%;
 }
 
-
 .item.size4{
     height: 720px;    
 }
 .item.size5{
     height: 770px;    
+}
+
+.size6 .item__pic img {
+    top: 60%;
 }
