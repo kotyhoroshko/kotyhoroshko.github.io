@@ -146,7 +146,7 @@ p.toPrevMode:hover{
 
 .wrapper__gl {
     /* display: flex; */
-    width: 2900px; /*calc(4960px / 2);*/
+    width: 2480px; /*calc(4960px / 2);*/
     /* width: 4960px; */
     /* height: 3508px; */
     background-color: white;
@@ -168,11 +168,11 @@ p.toPrevMode:hover{
 }
 
 .header{
-    margin-bottom: -783px;
+    /* margin-bottom: -783px; */
     /* display: none; */
     height: 830px;
-    /* background: url(../img/header.jpg); */
-    /* margin-bottom: 40px; */
+    background: url(../img/header.jpg);
+    margin-bottom: 40px;
 }
 .footer{
     /* width: 100%; */
