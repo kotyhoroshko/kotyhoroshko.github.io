@@ -2,85 +2,87 @@ let dataVid='10.09'
 let dataDo = '30.09';
 let base = [
     {
-        color: "leaf",
-        size: "1",
-        pic: "1",
-        desc: 'Голубці "По-Закарпатськи"$100г',                               	
-        priceO: "599",	
-        priceN: "449",	
-        disc: "25%"
-    }
-    ,{
         color: "leaf2",
         size: "1",
-        pic: "2",
-        desc: 'Квасоля "По-Закарпатськи"$100г',                                	
-        priceO: "549",	
-        priceN: "389",	
-        disc: "30%"
-    }
-    ,{
-        color: "leaf2",
-        size: "1",
-        pic: "4",
-        desc: 'Салат "Олівє"$100г',                               	
-        priceO: "999",	
-        priceN: "599",	
-        disc: "35%"
-    }
-    ,{
-        color: "leaf",
-        size: "1",
-        pic: "3",
-        desc: 'Четвертина куряча запечена$100г',                              	
-        priceO: "1499",	
-        priceN: "899",	
+        pic: "46",
+        desc: 'Торт "Творожний"$100г',	
+        priceO: "1299",	
+        priceN: "799",	
         disc: "40%"
     }
     ,{
         color: "leaf3",
         size: "1",
-        pic: "6",
-        desc: 'Шинка свинна охолоджена$100г',                                	
-        priceO: "1449",	
-        priceN: "1249",	
-        disc: "15%"
-    }
-    ,{
-        color: "leaf3",
-        size: "1",
-        pic: "9",
-        desc: 'Авіньйон четвертина "Наша Ряба" куряча$100г',                  	
-        priceO: "899",	
-        priceN: "699",	
-        disc: "25%"
+        pic: "17",
+        desc: 'Торт "Лісова ягода"$100г',	
+        priceO: "1199",	
+        priceN: "719",	
+        disc: "40%"
     }
     ,{
         color: "leaf",
         size: "1",
-        pic: "5",
-        desc: 'Четвертина "Наша Ряба"$курчат бройлерів охолодж.$100г',      	
-        priceO: "509",	
-        priceN: "449",	
-        disc: "15%"
+        pic: "47",
+        desc: 'Тістечко "Коктельне"$100г',	
+        priceO: "1249",	
+        priceN: "749",	
+        disc: "40%"
     }
+
     ,{
-        color: "leaf2",
-        size: "6",
-        pic: "8",
-        desc: 'Шкіра свинна$охолоджена$100г',                                 	
-        priceO: "099",	
-        priceN: "090",	
-        disc: "XIT"
-    }
-    ,{
-        color: "leaf2",
-        size: "",
-        pic: "7",
-        desc: 'Шашлик з курячого стейка$охолоджений$100г',	
+        color: "leaf3",
+        size: "1",
+        pic: "16",
+        desc: 'Слойка зі смородиною$100г',	
         priceO: "999",	
-        priceN: "850",	
-        disc: "15%"
+        priceN: "499",	
+        disc: "50%"
+    }
+    ,{
+        color: "leaf",
+        size: "1",
+        pic: "24",
+        desc: 'Булочка "Плюшка"$100г',	
+        priceO: "499",	
+        priceN: "299",	
+        disc: "40%"
+    }
+    ,{
+        color: "leaf2",
+        size: "1",
+        pic: "30",
+        desc: 'Батон "Бездріжджовий подовий" в/г$400г',	
+        priceO: "1299",	
+        priceN: "899",	
+        disc: "30%"
+    }
+
+    ,{
+        color: "leaf3",
+        size: "1",
+        pic: "15",
+        desc: 'Блулочка "З кетчупоп та сиром"$80г',	
+        priceO: "649",	
+        priceN: "325",	
+        disc: "50%"
+    }
+    ,{
+        color: "leaf2",
+        size: "1",
+        pic: "49",
+        desc: 'Гамбургер "GRAND FOOD"$280г',                                 	
+        priceO: "2299",	
+        priceN: "1399",	
+        disc: "40%"
+    }
+    ,{
+        color: "leaf",
+        size: "1",
+        pic: "48",
+        desc: 'Чізбургер "GRAND FOOD"$300г',                                 	
+        priceO: "2299",	
+        priceN: "1399",	
+        disc: "40%"
     }
     ,
     {
@@ -352,94 +354,99 @@ let base = [
     priceO: "1499",	
     priceN: "1199",	
     disc: "20%"
-}
-,
+},
+
+
 {
     color: "leaf2",
     size: "1",
-    pic: "46",
-    desc: 'Торт "Творожний"$100г',	
-    priceO: "1299",	
-    priceN: "799",	
-    disc: "40%"
-}
-,{
-    color: "leaf3",
-    size: "1",
-    pic: "17",
-    desc: 'Торт "Лісова ягода"$100г',	
-    priceO: "1199",	
-    priceN: "719",	
-    disc: "40%"
-}
-,{
-    color: "leaf",
-    size: "1",
-    pic: "47",
-    desc: 'Тістечко "Коктельне"$100г',	
-    priceO: "1249",	
-    priceN: "749",	
-    disc: "40%"
-}
-,{
-    color: "leaf3",
-    size: "1",
-    pic: "15",
-    desc: 'Блулочка "З кетчупоп та сиром"$80г',	
-    priceO: "649",	
-    priceN: "325",	
-    disc: "50%"
-}
-,{
-    color: "leaf",
-    size: "1",
-    pic: "24",
-    desc: 'Булочка "Плюшка"$100г',	
-    priceO: "499",	
-    priceN: "299",	
-    disc: "40%"
-}
-,{
-    color: "leaf2",
-    size: "1",
-    pic: "30",
-    desc: 'Батон "Бездріжджовий подовий" в/г$400г',	
-    priceO: "1299",	
-    priceN: "899",	
-    disc: "30%"
-}
-,{
-    color: "leaf3",
-    size: "1",
-    pic: "16",
-    desc: 'Слойка зі смородиною$100г',	
+    pic: "4",
+    desc: 'Салат "Олівє"$100г',                               	
     priceO: "999",	
-    priceN: "499",	
-    disc: "50%"
+    priceN: "599",	
+    disc: "35%"
+}
+,{
+    color: "leaf3",
+    size: "1",
+    pic: "2",
+    desc: 'Квасоля "По-Закарпатськи"$100г',                                	
+    priceO: "549",	
+    priceN: "389",	
+    disc: "30%"
+},
+{
+    color: "leaf",
+    size: "1",
+    pic: "1",
+    desc: 'Голубці "По-Закарпатськи"$100г',                               	
+    priceO: "599",	
+    priceN: "449",	
+    disc: "25%"
+}
+
+,{
+    color: "leaf3",
+    size: "1",
+    pic: "6",
+    desc: 'Шинка свинна охолоджена$100г',                                	
+    priceO: "1449",	
+    priceN: "1249",	
+    disc: "15%"
 }
 ,{
     color: "leaf2",
+    size: "",
+    pic: "7",
+    desc: 'Шашлик з курячого стейка$охолоджений$100г',	
+    priceO: "999",	
+    priceN: "850",	
+    disc: "15%"
+}
+,{
+    color: "leaf2",
+    size: "6",
+    pic: "8",
+    desc: 'Шкіра свинна$охолоджена$100г',                                 	
+    priceO: "099",	
+    priceN: "090",	
+    disc: "XIT"
+}
+
+,{
+    color: "leaf",
     size: "1",
-    pic: "49",
-    desc: 'Гамбургер "GRAND FOOD"$280г',                                 	
-    priceO: "2299",	
-    priceN: "1399",	
+    pic: "3",
+    desc: 'Четвертина куряча запечена$100г',                              	
+    priceO: "1499",	
+    priceN: "899",	
     disc: "40%"
+}
+,{
+    color: "leaf3",
+    size: "1",
+    pic: "9",
+    desc: 'Авіньйон четвертина "Наша Ряба" куряча$100г',                  	
+    priceO: "899",	
+    priceN: "699",	
+    disc: "25%"
 }
 ,{
     color: "leaf",
     size: "1",
-    pic: "48",
-    desc: 'Чізбургер "GRAND FOOD"$300г',                                 	
-    priceO: "2299",	
-    priceN: "1399",	
-    disc: "40%"
+    pic: "5",
+    desc: 'Четвертина "Наша Ряба"$курчат бройлерів охолодж.$100г',      	
+    priceO: "509",	
+    priceN: "449",	
+    disc: "15%"
 }
-,{
+
+,
+{
     color: "leaf4",
     size: "3",
     pic: "10",
-    desc: 'Багет з шашликом"$300г',                                 	
+    desc: 'Багет з шашликом"$230г',                                 	
     priceO: "",	
     priceN: "1599",	
     disc: ""
