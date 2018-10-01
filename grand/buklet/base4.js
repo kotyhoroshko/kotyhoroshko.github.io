@@ -1,5 +1,5 @@
-let dataVid='10.09'
-let dataDo = '30.09';
+let dataVid='08.10'
+let dataDo = '31.10';
 let base = [
     {
         color: "leaf2",
@@ -28,7 +28,6 @@ let base = [
         priceN: "749",	
         disc: "40%"
     }
-
     ,{
         color: "leaf3",
         size: "1",
@@ -56,7 +55,6 @@ let base = [
         priceN: "899",	
         disc: "30%"
     }
-
     ,{
         color: "leaf3",
         size: "1",
@@ -67,15 +65,6 @@ let base = [
         disc: "50%"
     }
     ,{
-        color: "leaf2",
-        size: "1",
-        pic: "49",
-        desc: 'Гамбургер "GRAND FOOD"$280г',                                 	
-        priceO: "2299",	
-        priceN: "1399",	
-        disc: "40%"
-    }
-    ,{
         color: "leaf",
         size: "1",
         pic: "48",
@@ -84,8 +73,7 @@ let base = [
         priceN: "1399",	
         disc: "40%"
     }
-    ,
-    {
+    ,{
     color: "leaf2",
     size: "1",
     pic: "32",
@@ -93,8 +81,8 @@ let base = [
     priceO: "",	
     priceN: "",	
     disc: "XIT"
-}
-,{
+    }
+    ,{
     color: "leaf3",
     size: "1",
     pic: "33",
@@ -396,7 +384,7 @@ let base = [
 }
 ,{
     color: "leaf2",
-    size: "",
+    size: "1",
     pic: "7",
     desc: 'Шашлик з курячого стейка$охолоджений$100г',	
     priceO: "999",	
@@ -405,7 +393,7 @@ let base = [
 }
 ,{
     color: "leaf2",
-    size: "6",
+    size: "1",
     pic: "8",
     desc: 'Шкіра свинна$охолоджена$100г',                                 	
     priceO: "099",	
@@ -444,7 +432,7 @@ let base = [
 ,
 {
     color: "leaf4",
-    size: "3",
+    size: "1",
     pic: "10",
     desc: 'Багет з шашликом"$230г',                                 	
     priceO: "",	
