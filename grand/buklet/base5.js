@@ -95,7 +95,7 @@ let base = [
     color:"leaf",
     size: "1",
     pic: "41",
-    desc: 'Сир "Ферма"$сметанковий та російський$180г',	
+    desc: 'Сир "Ферма"$в асортименті$180г',	
     disc: "25%",	
     priceO: "4354",	
     priceN: "3354"
@@ -203,7 +203,7 @@ let base = [
     color:"leaf",
     size: "1",
     pic: "2",
-    desc: '"Королівський Смак"$майонез перепелиний 72%$380г',	
+    desc: 'Майонез "Королівський Смак"$на перепелиних яйцях 72%$380г',	
     disc: "20%",	
     priceO: "2299",	
     priceN: "1899"
@@ -212,7 +212,7 @@ let base = [
     color:"leaf3",
     size: "1",
     pic: "45",
-    desc: 'Соус "Щедро"$Тартар, папрік, сирний$ ???г',	
+    desc: 'Соус "Щедро"$тартар, папрік, сирний$200г',	
     disc: "20%",	
     priceO: "1799",	
     priceN: "1499"
@@ -221,7 +221,7 @@ let base = [
     color:"leaf",
     size: "1",
     pic: "48",
-    desc: 'Чай "Ахмад"$фруктовий смак 20шт x 2г$упаковка',	
+    desc: 'Чай "Ахмад"$фруктовий смак$20шт x 2г',	
     disc: "20%",	
     priceO: "3557",	
     priceN: "2899"
@@ -230,7 +230,7 @@ let base = [
     color:"leaf3",
     size: "1",
     pic: "20",
-    desc: 'Сухі сніданоки "Старт"$850г',	
+    desc: 'Сухий сніданок "Старт"$в асортименті$850г',	
     disc: "21%",	
     priceO: "7549",	
     priceN: "5999"
@@ -248,7 +248,7 @@ let base = [
     color:"leaf2",
     size: "1",
     pic: "34",
-    desc: 'Міні-рулет бісквітний "Тімі"$в асортименті 50г$упаковка',	
+    desc: 'Тістечко "Тімі"$в асортименті$50г',	
     disc: "20%",	
     priceO: "699",	
     priceN: "550"
@@ -294,15 +294,15 @@ let base = [
     size: "1",
     pic: "42",
     desc: 'Cвічка-лампадка$скло$1шт',
-    disc: "??%?",
-    priceO: "??",	
+    disc: "XIT",
+    priceO: "",	
     priceN: "500"
     },
 {
     color:"leaf2",
     size: "1",
     pic: "43",
-    desc: 'Колготи Леді Діана$в асортиментінті$1шт',	
+    desc: 'Колготи "Леді Діана"$в асортиментін$1шт',	
     disc: "25%",	
     priceO: "2250",	
     priceN: "1699"
@@ -331,8 +331,8 @@ let base = [
     pic: "38",
     desc: 'Капуста',	
     disc: "XIT",
-    priceO: "900",	
-    priceN: "000"
+    priceO: "",	
+    priceN: ""
     },
 {
     color:"leaf3",
@@ -340,8 +340,8 @@ let base = [
     pic: "40",
     desc: 'Морква',	
     disc: "XIT",
-    priceO: "1349",	
-    priceN: "000"
+    priceO: "",	
+    priceN: ""
     },
 {
     color:"leaf2",
@@ -349,8 +349,8 @@ let base = [
     pic: "39",
     desc: 'Яблуко зелене',	
     disc: "XIT",
-    priceO: "1499",	
-    priceN: "000"
+    priceO: "",	
+    priceN: ""
     },
 {
     color:"leaf3",
@@ -365,18 +365,18 @@ let base = [
     color:"leaf",
     size: "1",
     pic: "15",
-    desc: 'Плов з мясом курки$100г',	
-    disc: "40%",	
-    priceO: "799",	
+    desc: 'Плов з мясом курки$100г',
+    disc: "40%",
+    priceO: "799",
     priceN: "479"
     },
 {
     color:"leaf",
     size: "1",
     pic: "14",
-    desc: 'Гуляш "Сегединський"$100г',	
-    disc: "40%",	
-    priceO: "1899",	
+    desc: 'Гуляш "Сегединський"$100г',
+    disc: "40%",
+    priceO: "1899",
     priceN: "1149"
     },
 {
@@ -403,8 +403,8 @@ let base = [
     pic: "18",
     desc: 'Шкіра свинна охолоджена$100г',	
     disc: "XIT",
-    priceO: "99",	
-    priceN: "70"
+    priceO: "099",	
+    priceN: "070"
     },    
 {
     color:"leaf3",
