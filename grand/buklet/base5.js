@@ -106,7 +106,7 @@ let base = [
     pic: "35",
     desc: 'Сметанковий продукт$"Моліка" 25%$400г',	
     disc: "XIT",
-    priceO: "1199",	
+    priceO: "",	
     priceN: "1100"
     },
 {
@@ -124,7 +124,7 @@ let base = [
     pic: "4",
     desc: 'Масло Селянське 73%$ТМ"Глобино"$180г',	
     disc: "XIT",
-    priceO: "3547",	
+    priceO: "",	
     priceN: "3347"
     },
 {
@@ -403,7 +403,7 @@ let base = [
     pic: "18",
     desc: 'Шкіра свинна охолоджена$100г',	
     disc: "XIT",
-    priceO: "099",	
+    priceO: "",	
     priceN: "070"
     },    
 {
@@ -412,7 +412,7 @@ let base = [
     pic: "11",
     desc: 'Корейка свинна охолоджена$100г',	
     disc: "XIT",
-    priceO: "1499",	
+    priceO: "",	
     priceN: "1349"
     },
 {
