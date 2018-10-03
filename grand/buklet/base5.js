@@ -1,90 +1,90 @@
 let dataVid='10.10'
 let dataDo = '31.10';
 let base = [
-    {
-    color:"leaf",
-    size: "1",
-    pic: "31",
-    desc: 'Торт "Премєра"$100г',	
-    disc: "35%",	
-    priceO: "999",	
-    priceN: "649"
-    },
-{
-    color:"leaf2",
-    size: "1",
-    pic: "22",
-    desc: 'Торт "Лісова ягода"$100г',	
-    disc: "45%",	
-    priceO: "1199",	
-    priceN: "659"
-    },
-{
-    color:"leaf2",
-    size: "1",
-    pic: "21",
-    desc: 'Рулет "Горіховий"$100г',	
-    disc: "35%",	
-    priceO: "1499",	
-    priceN: "979"
-    },
-{
-    color:"leaf",
-    size: "1",
-    pic: "25",
-    desc: 'Булочка "Конверт з яблуками"$110г',	
-    disc: "40%",	
-    priceO: "549",	
-    priceN: "329"
-    },
-{
-    color:"leaf3",
-    size: "1",
-    pic: "29",
-    desc: 'Палочка з тмином$80г',	
-    disc: "50%",	
-    priceO: "399",	
-    priceN: "199"
-    },
-{
-    color:"leaf",
-    size: "1",
-    pic: "26",
-    desc: 'Слойка з "Вишнею"$100г',	
-    disc: "30%",	
-    priceO: "999",	
-    priceN: "699"
-    },
-{
-    color:"leaf2",
-    size: "1",
-    pic: "24",
-    desc: 'Хліб "Сонечко" подовий$600г',	
-    disc: "30%",	
-    priceO: "1699",	
-    priceN: "1199"
-    },
-{
-    color:"leaf3",
-    size: "1",
-    pic: "27",
-    desc: 'Хот-дог"GRAND FOOD" "Гріль"$240г',       	
-    disc: "40%",	
-    priceO: "1999",	
-    priceN: "1199"
-    },
-{
-    color:"leaf",
-    size: "1",
-    pic: "28",
-    desc: 'Хот-дог "GRAND FOOD"$180г',
-    disc: "40%",	
-    priceO: "1499",	
-    priceN: "899"
-    },
+//     {
+//     color:"leaf",
+//     size: "1",
+//     pic: "31",
+//     desc: 'Торт "Премєра"$100г',	
+//     disc: "35%",	
+//     priceO: "999",	
+//     priceN: "649"
+//     },
+// {
+//     color:"leaf2",
+//     size: "1",
+//     pic: "22",
+//     desc: 'Торт "Лісова ягода"$100г',	
+//     disc: "45%",	
+//     priceO: "1199",	
+//     priceN: "659"
+//     },
+// {
+//     color:"leaf2",
+//     size: "1",
+//     pic: "21",
+//     desc: 'Рулет "Горіховий"$100г',	
+//     disc: "35%",	
+//     priceO: "1499",	
+//     priceN: "979"
+//     },
+// {
+//     color:"leaf",
+//     size: "1",
+//     pic: "25",
+//     desc: 'Булочка "Конверт з яблуками"$110г',	
+//     disc: "40%",	
+//     priceO: "549",	
+//     priceN: "329"
+//     },
+// {
+//     color:"leaf3",
+//     size: "1",
+//     pic: "29",
+//     desc: 'Палочка з тмином$80г',	
+//     disc: "50%",	
+//     priceO: "399",	
+//     priceN: "199"
+//     },
+// {
+//     color:"leaf",
+//     size: "1",
+//     pic: "26",
+//     desc: 'Слойка з "Вишнею"$100г',	
+//     disc: "30%",	
+//     priceO: "999",	
+//     priceN: "699"
+//     },
+// {
+//     color:"leaf2",
+//     size: "1",
+//     pic: "24",
+//     desc: 'Хліб "Сонечко" подовий$600г',	
+//     disc: "30%",	
+//     priceO: "1699",	
+//     priceN: "1199"
+//     },
+// {
+//     color:"leaf3",
+//     size: "1",
+//     pic: "27",
+//     desc: 'Хот-дог"GRAND FOOD" "Гріль"$240г',       	
+//     disc: "40%",	
+//     priceO: "1999",	
+//     priceN: "1199"
+//     },
+// {
+//     color:"leaf",
+//     size: "1",
+//     pic: "28",
+//     desc: 'Хот-дог "GRAND FOOD"$180г',
+//     disc: "40%",	
+//     priceO: "1499",	
+//     priceN: "899"
+//     },
     {
         color:"leaf",
-        size: "1",
+        size: "8",
         pic: "38",
         desc: 'Капуста, кг',	
         disc: "XIT",
@@ -93,7 +93,7 @@ let base = [
         },
     {
         color:"leaf3",
-        size: "1",
+        size: "8",
         pic: "40",
         desc: 'Морква, кг',	
         disc: "XIT",
@@ -102,7 +102,7 @@ let base = [
         },
     {
         color:"leaf2",
-        size: "1",
+        size: "8",
         pic: "39",
         desc: 'Яблуко зелене, кг',	
         disc: "XIT",
@@ -167,34 +167,34 @@ let base = [
     color:"leaf",
     size: "1",
     pic: "23",
-    desc: 'Ковбаса "Тульчин"$варена з молоком$1шт',
-    disc: "25%",	
-    priceO: "6747",	
+    desc: 'Ковбаса "Тульчин"$варена з молоком$505г',
+    disc: "25%",
+    priceO: "6747",
     priceN: "4990"
     },
 {
     color:"leaf2",
     size: "1",
     pic: "44",
-    desc: 'Ковбаса "Салямі зі cвинини"$ТМ"Глобино"$100г',	
-    disc: "15%",	
-    priceO: "999",	
+    desc: 'Ковбаса "Салямі зі cвинини"$ТМ"Глобино"$100г',
+    disc: "15%",
+    priceO: "999",
     priceN: "829"
     },
 {
     color:"leaf2",
     size: "1",
     pic: "30",
-    desc: 'Вареники "Макуха" з картоплею$1кг',	
-    disc: "25%",	
-    priceO: "3650",	
+    desc: 'Вареники "Макуха" з картоплею$1кг',
+    disc: "25%",
+    priceO: "3650",
     priceN: "2650"
     },
 {
     color:"leaf3",
     size: "1",
     pic: "8",
-    desc: 'Пиво "ППБ" Свіжий розлив$0,65л',	
+    desc: 'Пиво "ППБ" Свіжий розлив$0,65л',
     disc: "15%",	
     priceO: "1399",	
     priceN: "1200"
@@ -351,87 +351,87 @@ let base = [
     disc: "15%",	
     priceO: "2337",	
     priceN: "1999"
-    },
-{
-    color:"leaf3",
-    size: "1",
-    pic: "16",
-    desc: 'Салат "Увертюра"$100г',	
-    disc: "40%",	
-    priceO: "1599",	
-    priceN: "959"
-    },
-{
-    color:"leaf",
-    size: "1",
-    pic: "15",
-    desc: 'Плов з м`ясом курки$100г',
-    disc: "40%",
-    priceO: "799",
-    priceN: "479"
-    },
-{
-    color:"leaf",
-    size: "1",
-    pic: "14",
-    desc: 'Гуляш "Сегединський"$100г',
-    disc: "40%",
-    priceO: "1899",
-    priceN: "1149"
-    },
-{
-    color:"leaf2",
-    size: "1",
-    pic: "17",
-    desc: 'Крила курячі запечені$100г',	
-    disc: "40%",	
-    priceO: "1599",	
-    priceN: "959"
-    },
-{
-    color:"leaf3",
-    size: "1",
-    pic: "19",
-    desc: 'Голова свинна$100г', 	
-    disc: "35%",	
-    priceO: "299",	
-    priceN: "199"
-    },
-{
-    color:"leaf2",
-    size: "1",
-    pic: "18",
-    desc: 'Шкіра свинна$100г',	
-    disc: "XIT",
-    priceO: "",	
-    priceN: "070"
-    },    
-{
-    color:"leaf3",
-    size: "1",
-    pic: "11",
-    desc: 'Корейка свинна$100г',	
-    disc: "XIT",
-    priceO: "",	
-    priceN: "1349"
-    },
-{
-    color:"leaf2",
-    size: "1",
-    pic: "13",
-    desc: 'Крило "Наша Ряба" курячат бройлерів$100г',	
-    disc: "15%",	
-    priceO: "579",	
-    priceN: "499"
-    },
-{
-    color:"leaf",
-    size: "1",
-    pic: "12",
-    desc: 'Шашлик "Класичний"$свинний з шовдиря$100г',	
-    disc: "20%",	
-    priceO: "1649",	
-    priceN: "1319"
     }
+// ,{
+//     color:"leaf3",
+//     size: "1",
+//     pic: "16",
+//     desc: 'Салат "Увертюра"$100г',	
+//     disc: "40%",	
+//     priceO: "1599",	
+//     priceN: "959"
+//     },
+// {
+//     color:"leaf",
+//     size: "1",
+//     pic: "15",
+//     desc: 'Плов з м`ясом курки$100г',
+//     disc: "40%",
+//     priceO: "799",
+//     priceN: "479"
+//     },
+// {
+//     color:"leaf",
+//     size: "1",
+//     pic: "14",
+//     desc: 'Гуляш "Сегединський"$100г',
+//     disc: "40%",
+//     priceO: "1899",
+//     priceN: "1149"
+//     },
+// {
+//     color:"leaf2",
+//     size: "7",
+//     pic: "17",
+//     desc: 'Крила курячі запечені$100г',	
+//     disc: "40%",	
+//     priceO: "1599",	
+//     priceN: "959"
+//     },
+// {
+//     color:"leaf3",
+//     size: "9",
+//     pic: "19",
+//     desc: 'Голова свинна$100г', 	
+//     disc: "35%",	
+//     priceO: "299",	
+//     priceN: "199"
+//     },
+// {
+//     color:"leaf2",
+//     size: "8",
+//     pic: "18",
+//     desc: 'Шкіра свинна$100г',	
+//     disc: "XIT",
+//     priceO: "",	
+//     priceN: "070"
+//     },    
+// {
+//     color:"leaf3",
+//     size: "1",
+//     pic: "11",
+//     desc: 'Корейка свинна$100г',	
+//     disc: "XIT",
+//     priceO: "",	
+//     priceN: "1349"
+//     },
+// {
+//     color:"leaf2",
+//     size: "1",
+//     pic: "13",
+//     desc: 'Крило "Наша Ряба" курячат бройлерів$100г',	
+//     disc: "15%",	
+//     priceO: "579",	
+//     priceN: "499"
+//     },
+// {
+//     color:"leaf",
+//     size: "1",
+//     pic: "12",
+//     desc: 'Шашлик "Класичний"$свинний з шовдиря$100г',	
+//     disc: "20%",	
+//     priceO: "1649",	
+//     priceN: "1319"
+//     }
 
 ]

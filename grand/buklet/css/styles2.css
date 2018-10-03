@@ -379,7 +379,7 @@ p.toPrevMode:hover{
     left: 145px;
     top: 120px;
 }
-
+/* 
 .item.size3>.discBg {
     width: 40%;
 }
@@ -393,4 +393,33 @@ p.toPrevMode:hover{
 
 .size6 .item__pic img {
     top: 60%;
+} */
+
+.header{
+    margin-bottom: -770px;
+    /* display: none; */
+    height: 830px;
+    /* background: url(../img/header.jpg); */
+    /* margin-bottom: 40px; */
 }
+.size8 .item__pic>img {
+    top: 58%;
+}
+/* 
+.item__pic>img {
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.size9 .item__pic>img {
+    top: 45%;
+}
+
+.size7 .item__pic>img {
+    top: 61%;
+    max-width: 845px;
+} */
