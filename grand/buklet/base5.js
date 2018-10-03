@@ -32,7 +32,7 @@ let base = [
     color:"leaf",
     size: "1",
     pic: "25",
-    desc: 'Булочка"конверт$ з яблуками 110гр$1шт',	
+    desc: 'Булочка"конверт$з яблуками 110гр$1шт',	
     disc: "40%",	
     priceO: "549",	
     priceN: "329"
@@ -67,7 +67,7 @@ let base = [
 {
     color:"leaf3",
     size: "1",
-    pic: "28",
+    pic: "27",
     desc: 'Хот-дог"GRAND FOOD" "Гріль"$240г',       	
     disc: "40%",	
     priceO: "1999",	
@@ -76,7 +76,7 @@ let base = [
 {
     color:"leaf",
     size: "1",
-    pic: "27",
+    pic: "28",
     desc: 'Хот-дог"GRAND FOOD"$180г',      	
     disc: "40%",	
     priceO: "1499",	
@@ -365,7 +365,7 @@ let base = [
     color:"leaf",
     size: "1",
     pic: "15",
-    desc: 'Плов з мясом курки$100г',
+    desc: 'Плов з м`ясом курки$100г',
     disc: "40%",
     priceO: "799",
     priceN: "479"
