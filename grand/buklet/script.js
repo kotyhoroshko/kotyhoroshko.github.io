@@ -6,7 +6,7 @@ for (let index = 0; index < base.length; index++) {
     inner += `
     <div class="item size${base[index].size}">
     <div class="item__pic">
-        <img src="img/${base[index].pic}.jpg" alt="">
+        <img src="img/${base[index].pic}.jpg">
     </div>
 
     <img src="./img/${base[index].color}.png" class="discBg">

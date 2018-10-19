@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.wrap{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    background: url(bg.jpg);
+    background-attachment: fixed;
+}
+
+.item{
+    display: flex;
+    position: relative;
+    width: 30%;    
+    min-width: 300px;
+    min-height: 300px;
+    flex-direction: column;
+    box-shadow: 3px 3px 18px rgba(0,0,0,.66);
+    margin: 20px 0;
+    background-color: #fff;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.item:hover{
+    transform: scale(1.1);
+}
+
+.item__foto{
+    position: absolute;
+    top: 0;
+    width: 99%;
+    height: 89%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fotoPic{
+    max-width: 99%;
+    max-height: 99%;
+}
+
+.item__title{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.66);
+}
+
+.titleText{
+    bottom: 0;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+.hiden{
+    display: none;
+}
+
+.hidemove{
+    animation: hidemove 0.5s;}
+@keyframes hidemove {
+    0%   {opacity: 1;}
+    /* 1%   {opacity: 1;} */
+    99%  { }
+    100% {opacity: 0;display: none;}
+}
+
+.showmove{
+    animation: showmove 0.5s;}
+
+@keyframes showmove {
+    0%   {opacity: 0;display: block;}
+    1%   {}
+    /* 99%  {opacity: 1;} */
+    100% {opacity: 1;}
+}
+
+.btns{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(255,255,255,.33);
+    z-index: 100;
+    padding: 5px;
+}
+
+.popUp__layer{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.66);
+    z-index: 101;
+    width: 100vw;
+    height: 100vh;
+}
+
+.popUp{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+    /* background-color: white; */
+    z-index: 102;
+    transition: 1s ease-in-out;
+}
+
+.popUp .item{
+    min-width: 66vmin;
+    min-height: 66vmin;
+    border-radius: 20px;
+    transition: 1s ease-in-out;;
+}
+.popUp .item:hover{
+    transform: none;
+}
+
+.nul{
+    animation: nul 1s;}
+@keyframes nul {
+    0%   {transform: translate(-50%, -50%) scale(1) rotate(0);
+    left: 50%;}
+    100% {transform: translate(-50%, -50%) scale(6) rotate(90deg);
+    left: 110%;}
+}
+.nulf{
+    animation: nulf 1s;}
+@keyframes nulf {
+    0%   {transform: translate(-50%, -50%) scale(8) rotate(60deg);
+          left: -10%;}
+    100% {transform: translate(-50%, -50%) scale(1) rotate(0);
+          left: 50%;}
+}
+
+.popUp .item__title{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: unset;
+    padding: 10px;
+}
+
+.popUp .titleText{
+    bottom: 0;
+    text-align: center;
+    font-size: 26px;
+    color: #000;
+    font-weight: bold;    
+}
