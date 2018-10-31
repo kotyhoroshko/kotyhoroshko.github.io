@@ -7,13 +7,14 @@ let inner = `
             <div class="wrapper__half">`;
 
 for (let index = 0; index < base.length; index++) {
+    console.log(base[index].desc)
     inner += `
     <div class="item size${base[index].size}">
         <div class="item__pic">
             <img src="img/${base[index].pic}.jpg" alt="">
         </div>
 
-        <img src="./img/${base[index].color}.png" class="discBg">
+        !-- <img src="./img/${base[index].color}.png" class="discBg">--!
         <span class="item__discount">${base[index].disc}</span>
         <div class="line"></div>   
         <div class="item__price">
