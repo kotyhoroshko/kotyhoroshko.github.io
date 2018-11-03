@@ -7,7 +7,7 @@ let inner = `
             <div class="wrapper__half">`;
 
 for (let index = 0; index < base.length; index++) {
-    console.log(base[index].desc)
+    //console.log(base[index].desc)
     inner += `
     <div class="item size${base[index].size}">
         <div class="item__pic">

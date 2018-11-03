@@ -10,8 +10,8 @@ for (let index = 0; index < base.length; index++) {
     </div>`+
 
     // `<img src="./img/${base[index].color}.png" class="discBg">`
-    `
-    <span class="item__discount">${base[index].disc}</span>
+
+    `<span class="item__discount">${base[index].disc}</span>
     <div class="line"></div>   
     <div class="item__price">
         <span class="item__price--n">${base[index].priceN.slice(0, -2)}</span>
@@ -35,3 +35,10 @@ inner+= `</div>
         </div>`;
 wrapper.innerHTML = inner;
 
+
+        var preloader=document.querySelector('.preLoader');
+        preloader.style.display="none";
+
+        var shirma = document.querySelector('.shirma');
+        shirma.style.display="none";
+       
