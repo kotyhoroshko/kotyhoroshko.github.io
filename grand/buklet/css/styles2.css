@@ -172,7 +172,7 @@ p.toPrevMode:hover{
     /* display: none; */
     height: 830px;
     background: url(../img/header.jpg);
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 .footer{
     /* width: 100%; */
@@ -199,7 +199,7 @@ p.toPrevMode:hover{
     /* border: 2px solid #efefef; */
     width: 31%;
     height: 830px;
-    margin: 0.8%;
+    margin: -1% 0.8%;
     /* box-shadow: 3px 3px 21px rgba(0,0,0,.6); */
     border-radius: 50px;
 }
@@ -263,7 +263,7 @@ p.toPrevMode:hover{
 .item__desc>span {
     width: 100%;
     font-family: sans-serif;
-    font-size: 47px;
+    font-size: 46px;
     text-align: center;
     /* color: white;     */
     font-weight: 600;
