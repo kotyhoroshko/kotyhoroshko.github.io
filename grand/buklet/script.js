@@ -7,11 +7,9 @@ for (let index = 0; index < base.length; index++) {
     <div class="item size${base[index].size}">
     <div class="item__pic">
         <img src="img/${base[index].pic}.jpg">
-    </div>`+
-
-    // `<img src="./img/${base[index].color}.png" class="discBg">`
-
-    `<span class="item__discount">${base[index].disc}</span>
+    </div>
+     <img src="./img/${base[index].sf}.png" class="discBg">
+    <span class="item__discount">${base[index].disc}</span>
     <div class="line"></div>   
     <div class="item__price">
         <span class="item__price--n">${base[index].priceN.slice(0, -2)}</span>

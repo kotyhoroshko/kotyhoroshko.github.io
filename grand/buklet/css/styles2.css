@@ -146,7 +146,7 @@ p.toPrevMode:hover{
 
 .wrapper__gl {
     /* display: flex; */
-    width: 2480px; /*calc(4960px / 2);*/
+    width: 2600px; /*calc(4960px / 2);*/
     /* width: 4960px; */
     /* height: 3508px; */
     background-color: white;
@@ -164,7 +164,7 @@ p.toPrevMode:hover{
     box-sizing: border-box;
     width: 100%;
     /* border: 5px solid #bbb; */
-    margin: 1%;
+    margin: 3% 1%;
 }
 
 .header{
@@ -181,6 +181,7 @@ p.toPrevMode:hover{
     color: white;
     font: 1em sans-serif;
     padding: 40px;
+    /* display: none; */
 }
 .footer > p{
     font-family: sans-serif;
@@ -197,9 +198,9 @@ p.toPrevMode:hover{
     position: relative;
     box-sizing: border-box;
     /* border: 2px solid #efefef; */
-    width: 31%;
-    height: 830px;
-    margin: -1% 0.8%;
+    width: 23%;
+    height: 725px;
+    margin: -.2% 1%;
     /* box-shadow: 3px 3px 21px rgba(0,0,0,.6); */
     border-radius: 50px;
 }
@@ -210,7 +211,7 @@ p.toPrevMode:hover{
 }
 
 .item__pic {
-    height: 600px;
+    height: 502px;
     width: 750px;
     width: 100%;
     top: 22px;
@@ -230,9 +231,10 @@ p.toPrevMode:hover{
 
 .discBg{
     position: absolute;
-    top: -106px;
-    left: -24px;
-    width: 56%;
+    top: -3%;
+    left: -3%;
+    width: 50%;
+    opacity: .66;
 }
 
 .item__discount {
@@ -241,7 +243,7 @@ p.toPrevMode:hover{
     line-height: .9;
     text-shadow: white 4px 4px 0, white -4px -4px 0, white -4px 4px 0, white 4px -4px 0, black 1px 1px 28px;
     top: 55px;
-    left: 75px;
+    left: -4px;
     /*left: 10px; 
     font-size: 160px;
     color: #d0131f; */
