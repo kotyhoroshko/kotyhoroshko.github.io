@@ -146,7 +146,7 @@ p.toPrevMode:hover{
 
 .wrapper__gl {
     /* display: flex; */
-    width: 2600px; /*calc(4960px / 2);*/
+    width: 2512px; /*calc(4960px / 2);*/
     /* width: 4960px; */
     /* height: 3508px; */
     background-color: white;
@@ -171,7 +171,7 @@ p.toPrevMode:hover{
     /* margin-bottom: -783px; */
     /* display: none; */
     height: 830px;
-    background: url(../img/header.jpg);
+    background: url(../img/header.jpg) no-repeat;
     margin-bottom: 0px;
 }
 .footer{
@@ -198,7 +198,7 @@ p.toPrevMode:hover{
     position: relative;
     box-sizing: border-box;
     /* border: 2px solid #efefef; */
-    width: 23%;
+    width: 31%;
     height: 725px;
     margin: -.2% 1%;
     /* box-shadow: 3px 3px 21px rgba(0,0,0,.6); */
