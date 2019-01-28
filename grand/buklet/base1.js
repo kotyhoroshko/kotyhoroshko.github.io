@@ -67,9 +67,9 @@ let base = [
 {
     pic: "27",
     desc: 'Слойка "GRAND FOOD"$з персиком$90г',
-    disc: "30%",
+    disc: "35%",
     priceO: "1099",
-    priceN: "790",
+    priceN: "749",
     size: "",
     heart: ""
     },
@@ -182,7 +182,7 @@ let base = [
     heart: ""
     },
 {
-    pic: "10",
+    pic: "10b",
     desc: 'Нектари "Річ"$персик та яблучний$1л',
     disc: "20%",
     priceO: "2600",
