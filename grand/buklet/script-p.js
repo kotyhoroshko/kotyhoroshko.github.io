@@ -1,4 +1,3 @@
-
 const wrapper = document.querySelector('.wrapper__gl');
 const body = document.querySelector('BODY');
 const shirma = document.querySelector('.shirma');
@@ -12,10 +11,10 @@ for (let index = 0; index < base.length; index++) {
     <div class="item size${base[index].size}">
         <div class="item__pic">
             <img src="img/${base[index].pic}.jpg" alt="">
-            </div>`+
-            
-            // `<img src="./img/${base[index].color}.png" class="discBg">`
-            `
+            </div>` +
+
+        // `<img src="./img/${base[index].color}.png" class="discBg">`
+        `
         <span class="item__discount">${base[index].disc}</span>
         <div class="line"></div>   
         <div class="item__price">
@@ -34,62 +33,68 @@ for (let index = 0; index < base.length; index++) {
     </div>
     `
 }
-inner+= `</div>
+inner += `</div>
         <div class="footer">
-            <p>Супермаркет "Гранд" залишає за собою право змінювати ціни в період дії пропозиції та не несе відповідальність за друкарські помилки. Пропозиція діє з ${dataVid}.2018 до ${dataDo}.2019 (або до закінчення товарних залишків) за адресами: м.Виноградів, вул. Станційна, 1б та вул.Копанська, 221. Фото товарів, розміщених у товарних пропозиція, можуть відрізнятися від фото товарів, що беруть участь в акції.</p>
+            <p>Супермаркет "Гранд" залишає за собою право змінювати ціни в період дії пропозиції та не несе відповідальність за друкарські помилки. Пропозиція діє з ${dataVid}.2019 до ${dataDo}.2019 (або до закінчення товарних залишків) за адресами: м.Виноградів, вул. Станційна, 1б та вул.Копанська, 221. Фото товарів, розміщених у товарних пропозиція, можуть відрізнятися від фото товарів, що беруть участь в акції.</p>
         </div>`;
 
 wrapper.innerHTML = inner;
 
 window.onload = function() {
-   
+
     window.addEventListener("resize", go);
 
-    function go(){
+    function go() {
         setTimeout(hideShirma, 100);
-        function hideShirma(){
-            shirma.style.left="140vw";
+
+        function hideShirma() {
+            shirma.style.left = "140vw";
         }
-        var footer= document.querySelector('.footer');
-        var header= document.querySelector('.header');
+        var footer = document.querySelector('.footer');
+        var header = document.querySelector('.header');
         var prevBtn = document.querySelector('.toPrevMode');
         var navi = document.querySelector('.navi');
-            navi.style.display='flex';
-        var wi=document.documentElement.clientWidth/2480;
-        wrapper.style.position='absolute';
-        wrapper.style.left='50%';
-        wrapper.style.top='50%';
-        wrapper.style.transform='translate(-50%, -50%) scale('+wi*0.95+')';
-        body.style.cssText=`width: ${document.documentElement.clientWidth}px;
+        navi.style.display = 'flex';
+        var wi = document.documentElement.clientWidth / 2480;
+        wrapper.style.position = 'absolute';
+        wrapper.style.left = '50%';
+        wrapper.style.top = '50%';
+        wrapper.style.transform = 'translate(-50%, -50%) scale(' + wi * 0.95 + ')';
+        body.style.cssText = `width: ${document.documentElement.clientWidth}px;
                             height: ${wrapper.offsetHeight*wi}px;
                             background: url('./img/bg.jpg') center;
                             position: relative;
                             overflow-x: hidden;
                             margin: 0 auto;`;
         prevBtn.addEventListener('click', goPrev);
-        function goPrev(){
-            shirma.style.left="0";
+
+        function goPrev() {
+            shirma.style.left = "0";
             setTimeout(goToPrev, 500)
-            function goToPrev(){
+
+            function goToPrev() {
                 var loc = window.location.toString();
-                window.location = loc.slice(0, loc.lastIndexOf("/"))+"/prev/index.html";}
+                window.location = loc.slice(0, loc.lastIndexOf("/")) + "/prev/index.html";
+            }
 
         }
 
-        var toTop=document.querySelector('.toTop');
+        var toTop = document.querySelector('.toTop');
         toTop.addEventListener('click', goTop);
-        function goTop(){
+
+        function goTop() {
             header.scrollIntoView({ behavior: 'smooth' })
         }
-        var toBottom=document.querySelector('.toBottom');
+        var toBottom = document.querySelector('.toBottom');
         toBottom.addEventListener('click', goBottom);
-        function goBottom(){
+
+        function goBottom() {
             footer.scrollIntoView({ behavior: 'smooth' })
         }
-    
-        var preloder=document.querySelector('.preLoader');
-        setTimeout(function(){preloder.style.opacity="0";}, 300);
-        setTimeout(function(){preloder.style.display="none";}, 1300);
+
+        var preloder = document.querySelector('.preLoader');
+        setTimeout(function() { preloder.style.opacity = "0"; }, 300);
+        setTimeout(function() { preloder.style.display = "none"; }, 1300);
     }
     go();
 };
