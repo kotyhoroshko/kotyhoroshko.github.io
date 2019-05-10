@@ -1,5 +1,5 @@
 let dataVid = '17.05'
-let dataDo = '07.06';
+let dataDo = '31.05';
 let base = [{
         pic: `16`,
         desc: `Торт "Творожно-кавовий"$100г	`,
