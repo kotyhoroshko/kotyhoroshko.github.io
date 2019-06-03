@@ -176,7 +176,7 @@ p.toPrevMode:hover {
     /* margin-bottom: -783px; */
     /* display: none; */
     height: 830px;
-    background: url(../img/header.jpg) no-repeat;
+    background: url(../image/header.jpg) no-repeat;
     margin-bottom: 0px;
 }
 
@@ -348,7 +348,9 @@ p.toPrevMode:hover {
     left: 17%;
     bottom: 195px;
 }
-
+.toPrevMode{
+    display: none;
+}
 
 /* 
 .header{
