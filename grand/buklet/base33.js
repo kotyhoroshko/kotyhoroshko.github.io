@@ -335,8 +335,8 @@ let base = [
         pic: `41`,
         desc: `Крила курячі запечені$100г`,
         disc: `40%`,
-        priceO: `159`,
-        priceN: `099`
+        priceO: `1599`,
+        priceN: `999`
     }
 
 ]
