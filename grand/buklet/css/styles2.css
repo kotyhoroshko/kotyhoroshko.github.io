@@ -357,5 +357,10 @@ p.toPrevMode:hover {
  }
  */
  img.op {
-    margin-bottom: -75px;
+     padding-bottom: 20px;
+     
+}
+.op {
+    width: 100%;
+    background-color: yellow;
 }
