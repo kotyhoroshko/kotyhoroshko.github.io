@@ -320,8 +320,8 @@ let base = [
     {
         pic: `42`,
         desc: `Крило курчат бройлерів охолоджене$100г`,
-        disc: `15%`,
-        priceO: `590`,
+        disc: `XIT`,
+        priceO: ``,
         priceN: `520`
     },
     {
