@@ -24,7 +24,7 @@ let base = [
     },
     {
         pic: '3',
-        desc: `Слойка "GRAND FOOD"$з маком&$00г`,
+        desc: `Слойка "GRAND FOOD"$з маком$100г`,
         disc: '40%',
         priceO: '1099',	
         priceN: '659'
