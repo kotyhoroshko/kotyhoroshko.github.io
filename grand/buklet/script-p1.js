@@ -36,8 +36,7 @@ for (let index = 0; index < base.length; index++) {
 inner += ` </div>
         <div class="footer">
             <p>Супермаркет "Гранд" залишає за собою право змінювати ціни в період дії пропозиції та не несе відповідальність за друкарські помилки. Пропозиція діє з ${dataVid}.2019 до ${dataDo}.2019 (або до закінчення товарних залишків) за адресами: м.Виноградів, вул. Станційна, 1б та вул.Копанська, 221. Фото товарів, розміщених у товарних пропозиція, можуть відрізнятися від фото товарів, що беруть участь в акції.</p>
-        </div>
-        <div class="op"><img src="image/op.jpg" alt="" class="op"></div>
+        </div>        
         `;
 
 wrapper.innerHTML = inner;
@@ -64,7 +63,7 @@ window.onload = function() {
         wrapper.style.transform = 'translate(-50%, -50%) scale(' + wi * 0.95 + ')';
         body.style.cssText = `width: ${document.documentElement.clientWidth}px;
                             height: ${wrapper.offsetHeight*wi}px;
-                            background: url('./img/bg.jpg') center;
+                            background: url('./image/bg.jpg') center;
                             position: relative;
                             overflow-x: hidden;
                             margin: 0 auto;`;
