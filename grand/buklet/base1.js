@@ -17,7 +17,7 @@ let base = [
     },
     {
         pic: '13',
-        desc: `Пончик в шоколаді$60г`,
+        desc: `Пончик "GRAND FOOD"$в шоколаді$60г`,
         disc: '30%',
         priceO: '1299',	
         priceN: '899'
