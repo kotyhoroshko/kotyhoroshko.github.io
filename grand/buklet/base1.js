@@ -1,7 +1,55 @@
 let dataVid = '15.09'
 let dataDo = '05.10';
 let base = [
-
+    
+{ 
+    pic: "9",
+    desc:`Торт "Шедевр"$100г`,disc: `30%`,	priceO: `1400`,	priceN: `980`
+},
+{ 
+    pic: "22",
+    desc:`Торт "Снікерс"$100г`,disc: `30%`,	priceO: `1300`,	priceN: `910`
+},
+{ 
+    pic: "10",
+    desc:`Булочка "Бананова"$100г`,disc: `40%`,	priceO: `700`,	priceN: `400`
+},
+{ 
+    pic: "25",
+    desc:`Слойка "GRAND FOOD"$з вишнею$100г`,disc: `40%`,	priceO: `1199`,	priceN: `700`
+},
+{ 
+    pic: "26",
+    desc:`Булочка "Міні багет"$130г`,disc: `40%`,	priceO: `600`,	priceN: `350`
+},
+{ 
+    pic: "27",
+    desc:`Хлібець "Пшеничний"$400г`,disc: `25%`,	priceO: `1499`,	priceN: `1100`
+},
+{ 
+    pic: "24",
+    desc:`Гамбургер "GRAND FOOD"$280г`,disc: `30%`,	priceO: `2400`,	priceN: `1700`
+},
+{ 
+    pic: "23",
+    desc:`Чізбургер "GRAND FOOD"$300г`,disc: `35%`,	priceO: `2600`,	priceN: `1700`
+},
+{ 
+    pic: "4",
+    desc:`Сало по-українськи$з чорним перцем$100г`,disc: `25%`,	priceO: `1000`,	priceN: `750`
+},
+{ 
+    pic: "2",
+    desc:`Шинка свинна охолоджена$100г`, disc: `XIT`,	priceO: `1299`,	priceN: `1150`
+},
+{ 
+    pic: "3",
+    desc:`Шашлик з курячого стейка охолоджений$100г`,disc: `25%`,	priceO: `1199`,	priceN: `900`
+},
+{ 
+    pic: "1",
+    desc:`Кістки телячі$100г`,disc: `40%`,	priceO: `150`,	priceN: `090`
+},
 { 
     pic: "28",
     desc:`Морозиво "Пломбір" 100%$TM"Рудь"$1кг`, disc: `35%`,	priceO: `11169`,	priceN: `7500`
@@ -73,54 +121,5 @@ let base = [
 { 
     pic: "19",
     desc:`Буряк`, disc:`XIT`, priceO: ``,	priceN: ``
-},
-{ 
-    pic: "26",
-    desc:`Булочка "Міні багет"$130г`,disc: `40%`,	priceO: `600`,	priceN: `350`
-},
-{ 
-    pic: "10",
-    desc:`Булочка "Бананова"$100г`,disc: `40%`,	priceO: `700`,	priceN: `400`
-},
-{ 
-    pic: "27",
-    desc:`Хлібець "Пшеничний"$400г`,disc: `25%`,	priceO: `1499`,	priceN: `1100`
-},
-{ 
-    pic: "25",
-    desc:`Слойка "GRAND FOOD"$з вишнею$100г`,disc: `40%`,	priceO: `1199`,	priceN: `700`
-},
-{ 
-    pic: "9",
-    desc:`Торт "Шедевр"$100г`,disc: `30%`,	priceO: `1400`,	priceN: `980`
-},
-{ 
-    pic: "22",
-    desc:`Торт "Снікерс"$100г`,disc: `30%`,	priceO: `1300`,	priceN: `910`
-},
-{ 
-    pic: "24",
-    desc:`Гамбургер "GRAND FOOD"$280г`,disc: `30%`,	priceO: `2400`,	priceN: `1700`
-},
-{ 
-    pic: "23",
-    desc:`Чізбургер "GRAND FOOD"$300г`,disc: `35%`,	priceO: `2600`,	priceN: `1700`
-},
-{ 
-    pic: "2",
-    desc:`Шинка свинна охолоджена$100г`, disс: `XIT`,	priceO: `1299`,	priceN: `1150`
-},
-{ 
-    pic: "3",
-    desc:`Шашлик з курячого стейка охолоджений$100г`,disc: `25%`,	priceO: `1199`,	priceN: `900`
-},
-{ 
-    pic: "1",
-    desc:`Кістки телячі$100г`,disc: `40%`,	priceO: `150`,	priceN: `090`
-},
-{ 
-    pic: "4",
-    desc:`Сало по-українськи$з чорним перцем$100г`,disc: `25%`,	priceO: `1000`,	priceN: `750`
 }
-
 ]
