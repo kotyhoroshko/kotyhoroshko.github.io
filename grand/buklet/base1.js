@@ -40,7 +40,7 @@ let base = [
 },
 { 
     pic: "2",
-    desc:`Шинка свинна охолоджена$100г`, disc: `XIT`,	priceO: `1299`,	priceN: `1150`
+    desc:`Шинка свинна охолоджена$100г`, disc: `XIT`,	priceO: ` `,	priceN: `1150`
 },
 { 
     pic: "3",
@@ -49,6 +49,18 @@ let base = [
 { 
     pic: "1",
     desc:`Кістки телячі$100г`,disc: `40%`,	priceO: `150`,	priceN: `090`
+},
+{ 
+    pic: "20",
+    desc: `Яблука`, disc:`XIT`,	priceO: ``,	priceN: ``, size: "-1-line"
+},
+{ 
+    pic: "18",
+    desc:`Морква`, disc:`XIT`,	priceO: ``,	priceN: ``, size: "-1-line"
+},
+{ 
+    pic: "19",
+    desc:`Буряк`, disc:`XIT`, priceO: ``,	priceN: ``, size: "-1-line"
 },
 { 
     pic: "28",
@@ -91,35 +103,23 @@ let base = [
     desc:`Макарони "Бел густо"$в асортименті$400г`,disc: `30%`,	priceO: `2099`,	priceN: `1499`
 },
 { 
-    pic: "21b",
+    pic: "21",
     desc:`Круасан "СевенДейс"$в асортименті$65г`,disc: `25%`,	priceO: `1154`,	priceN: `839`
 },
 { 
-    pic: "15b",
+    pic: "15",
     desc:`Вафлі "Май Мотто" з начинкою$в асортименті$34г`,disc: `25%`,	priceO: `729`,	priceN: `529`
 },
 { 
     pic: "12",
-    desc:`Тунець "Ріо"$в оливковій олії$80г`,disc: `20%`, priceO: `3900`,	priceN: `3125`
+    desc:`Тунець "Ріо" в оливковій олії$80г`,disc: `20%`, priceO: `3900`,	priceN: `3125`, size: "-hor-img"
 },
 { 
     pic: "31",
-    desc:`Короп заморожений$100г`, disc: `XIT`,	priceO: ``,	priceN: `3900`
+    desc:`Короп заморожений$100г`, disc: `XIT`,	priceO: ``,	priceN: `3900`, size: "-hor-img"
 },
 { 
     pic: "30",
-    desc:`Пластівці вівсяні "Хатинка"$400г`,disc: `35%`, priceO: `1214`,	priceN: `799`
-},
-{ 
-    pic: "20",
-    desc: `Яблука`, disc:`XIT`,	priceO: ``,	priceN: ``
-},
-{ 
-    pic: "18",
-    desc:`Морква`, disc:`XIT`,	priceO: ``,	priceN: ``
-},
-{ 
-    pic: "19",
-    desc:`Буряк`, disc:`XIT`, priceO: ``,	priceN: ``
+    desc:`Пластівці вівсяні "Хатинка"$400г`,disc: `35%`, priceO: `1349`, priceN: `849`
 }
 ]
