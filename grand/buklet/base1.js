@@ -1,5 +1,5 @@
-let dataVid = '10.10'
-let dataDo = '30.10';
+let dataVid = '15.10'
+let dataDo = '05.11';
 let base = [
 
     
@@ -108,8 +108,8 @@ let base = [
     desc: `Сардина "Легенда моря"$в олії$240г`, disc: "25%", priceO :"2200", priceN: "1700"
 },
 {
-    pic: "27",
-    desc: `Салака "Нептун"$100г`, disc: "35%", priceO :"550", priceN: "370"
+    pic: "27a",
+    desc: `Салака "Нептун"$пряного посолу$100г`, disc: "35%", priceO :"550", priceN: "370"
 },
 {
     pic: "5",
