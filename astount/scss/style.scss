@@ -299,7 +299,7 @@ body *, html * {
 .also {
     position: relative;
     padding: 40px 0;
-    
+    overflow: hidden;    
 
     &__title {        
         font-size: 1.6rem;

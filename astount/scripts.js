@@ -154,7 +154,7 @@ function displayMainProduct(products, ShowNowProductArt) {
         <h2 class="product-detail__title">Details:</h2>
         <p class="product-detail__desc">${product.desc}</p>
       </div>
-      <form class="product-form-wrapper" action="/action_page.php">     
+      <form class="product-form-wrapper" action="javascript:alert(showCart())" name="productAttr">     
         <div class="product-size">
           <span class="product-size__title"><span>Select a </span>size:</span>
           <div class="product-size__items">
@@ -202,7 +202,7 @@ function getAttrItems(attr, arr, returnHtml='') {
     for (let index = 0; index < arr.length; index++) {
         returnHtml += `
         <div class="product-${attr}-item">
-        <input type="radio" name="${attr}" value="${arr[index]}" id="${attr}-${arr[index]}">
+        <input type="radio" name="${attr}" value="${arr[index]}" id="${attr}-${arr[index]}" checked>
         <label class="product-${attr}__item" for="${attr}-${arr[index]}" ${checkAttr(index)}</label>
         </div>`;
     }
@@ -215,6 +215,17 @@ function hideShowShareBlock() {
     function toggleShowClass() {
       document.querySelector('.product-share').classList.toggle('show')
     }
+}
+
+function showCart() {
+    let checkedColor = document.querySelector('.product-color-item input:checked').value;
+    let checkedSize = document.querySelector('.product-size-item input:checked').value;
+    let checkedArt = document.querySelector('.product-art').textContent;
+
+    return `Product ${checkedArt} now in cart!
+             - color: #${checkedColor};
+             - size: ${checkedSize}.`
+    
 }
 function showProductOnClick(products) {    
     document.querySelectorAll('.also-product').forEach(function(item) {
