@@ -1,0 +1,175 @@
+@media screen and (min-width: 896px) {
+
+    .product {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px 32px 20px;
+        position: relative;
+        
+        .product-title {
+            display: inline-block;
+            width: auto;
+            margin-top: 15px;
+        }
+    
+        .product-image {
+            width: 48%;
+            margin-right: 56px;
+        }
+    
+        .product-art {
+            font-size: .7rem;
+            margin-top: 13px;
+        }
+    
+        .product-price {
+            margin-top: 17px;
+            &__value {
+                font-size: 1.6rem;
+                &--special {
+                    margin-left: 18px;
+                }
+            }
+        }
+    
+        .product-rate {
+            margin-top: 22px;
+        }
+
+        .product-share-title {
+            display: inline-block;
+            color: $social-color;
+            font-size: 1.2rem;
+            font-family: $bold;
+            margin-left: 14px;
+            cursor: pointer;
+        }
+    
+        .product-share {
+            display: none;
+            position: absolute;
+            padding: 20px 15px;
+            margin-top: 9px;
+            margin-left: 5px;
+            width: unset;
+            max-width: unset;
+            top: unset;
+            left: unset;
+            background: white;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            &::before{
+                content: '';
+                display: inline-block;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: -4px;
+                left: 50%;
+                transform: translate(-50%, 0) rotate(45deg);
+                background-color: #fff;
+                box-shadow:  -5px -5px 7px -3px rgba(0, 0, 0, 0.33);
+                z-index: -1;
+            }
+
+            &__item {
+                margin-right: 9px;
+                &--close {
+                    display: inline-block;
+                    background: url('../img/close.svg') no-repeat center;
+                    margin-right: 0;
+                }    
+            }
+            &.show {
+                display: inline-block;
+            }
+        }
+    
+        .product-detail {
+            &__title {
+                display: none;
+            }
+            &__desc {
+                min-height: 100px;
+            }
+        }
+    
+        .product-size {
+            margin-top: 11px;
+            &__title {
+                &>span {
+                }
+            }
+        }
+    
+        .product-color {
+            &__title {
+                &>span {
+                }
+            }
+            &__item {
+                &::after {
+                }
+                &:checked {
+                    &::after {
+                    }
+                }
+            }
+        }
+          
+        .addtocart-btn {
+            margin-top: 13px;
+            font-size: 1rem;
+        }
+    }
+    
+    .also {
+        padding: 38px 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        &__title {
+            text-align-last: left;
+            font-size: 1.5rem;
+            letter-spacing: .7px;
+            margin-bottom: 16px;
+        }
+        .also-products {
+            justify-content: space-between;
+            .also-product {
+                min-width: unset;
+                margin: 0 0 50px;
+                width: 32%;
+    
+                &__img {
+                    min-height: 265px;
+                }
+                &__title {
+                    font-size: .95rem;
+                    margin-top: 11px;
+                }
+            }
+    
+            .also-product-price {
+                width: auto;
+                right: 0;
+                bottom: 22px;
+                padding-left: 5px;
+                padding-right: 4px;
+                &__value {
+                    font-size: 1rem;
+                    line-height: 1.4rem;
+                    letter-spacing: 1px;
+                    &--special {
+                        margin-left: 0;
+                    }
+                    &.outdated {
+                        margin-right: 20px;
+                        margin-left: 4px;
+                        display: inline-block;
+                        text-decoration: line-through;
+                    }
+                }
+            }
+        }            
+    }    
+}

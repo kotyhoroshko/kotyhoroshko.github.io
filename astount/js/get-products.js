@@ -1,0 +1,92 @@
+document.addEventListener("DOMContentLoaded", function(){
+
+  fetch("products.json")
+    .then(response => response.json())  
+    .then(json => displayMainProduct(json.products, 0))
+    .then(response => response ? false : console.log("Load JSON productBase") )
+    .catch(error => displayMainProduct(alternateProductBase(), 0))
+
+});
+
+function alternateProductBase(){
+  console.log("Load alternate productBase (not JSON)");
+  return [
+    {
+      "art": 701642853695,
+      "title": "For gamers by gamers TEE",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "img": "7b",
+      "price": 29.50,
+      "spPrice": 19.99,
+      "size": ["xs", "s", "m"],
+      "color": ["77d8e7", "96c795", "ce92a1", "0093cf"],
+      "rate": 4
+    },
+    {
+      "art": 701642853696,
+      "title": "For gamers by gamers TEE",
+      "desc": "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "img": "1",
+      "price": 29.99,
+      "spPrice": 19.99,
+      "size": ["xs", "s", "m"],
+      "color": ["77d8e7", "966d05", "cc55aa", "aa99cc"],
+      "rate": 1.5
+    },
+    {
+      "art": 701642853697,
+      "title": "PRO gamer SLASH HOODIE",
+      "desc": "Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "img": "2",
+      "price": 49.99,
+      "spPrice": false,
+      "size": ["xs", "s", "m", "l"],
+      "color": ["77ddee", "cc0000", "00ff00", "ff33ff"],
+      "rate": 4.95
+    },
+    {
+      "art": 701642853698,
+      "title": "spectroom GAMER TEE",
+      "desc": "Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "img": "3",
+      "price": 24.99,
+      "spPrice": false,
+      "size": ["s", "m", "l", "xl"],
+      "color": ["ff00ff", "000000", "ff9911", "aa93cf"],
+      "rate": 4.2
+    },
+    {
+      "art": 701642853699,
+      "title": "GAMING FOR GOOD TEE",
+      "desc": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "img": "4",
+      "price": 29.90,
+      "spPrice": 19.99,
+      "size": ["xs", "s", "m"],
+      "color": ["770022", "00cc11",  "966d05", "667766"],
+      "rate": 2.51
+    },
+    {
+      "art": 701642853700,
+      "title": "GAMING FOR GOOD TEE",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "img": "5",
+      "price": 60,
+      "spPrice": false,
+      "size": ["s", "m", "l"],
+      "color": ["776655", "ff0033"],
+      "rate": 4.82
+    },
+    {
+      "art": 701642853701,
+      "title": "spectroom varsity hoodie",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "img": "6",
+      "price": 54.00,
+      "spPrice": false,
+      "size": ["xs", "s", "m", "l"],
+      "color": ["0000ee", "33ff33", "c9c9c9", "aa0000"],
+      "rate": 3.33
+    }
+  ];  
+}

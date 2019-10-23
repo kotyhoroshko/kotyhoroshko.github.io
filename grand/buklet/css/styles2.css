@@ -202,9 +202,9 @@ p.toPrevMode:hover {
     display: inline-block;
     position: relative;
     box-sizing: border-box;
-    width: 31%;
-    height: 725px;
-    margin: 1% 1.1%;
+    width: 32.333%;
+    height: 690px;
+    margin: .5% .5%;
     box-shadow: 12px 12px 24px rgba(0,0,0,.45);
     border-radius: 20px;
     background: white;
@@ -216,7 +216,7 @@ p.toPrevMode:hover {
 }
 
 .item__pic {
-    height: 502px;
+    height: 470px;
     width: 750px;
     width: 90%;
     top: 50px;
@@ -270,9 +270,16 @@ p.toPrevMode:hover {
     box-shadow: 0 -20px 33px rgba(0,0,0,.16);
 }
 
-.size-1-line .item__desc {
-    height: 75px;
+.sizelestext .item__desc {
+    height: 100px;
 }
+.sizelestext .item__pic {
+    height: 530px;
+ }
+ .sizelestext .item__price {
+    bottom: 100px;
+ }
+
 
 .item__desc>span {
     width: 100%;
