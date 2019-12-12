@@ -270,15 +270,18 @@ p.toPrevMode:hover {
     box-shadow: 0 -20px 33px rgba(0,0,0,.16);
 }
 
-.sizelestext .item__desc {
-    height: 100px;
+.sizelestext.item {
+    height: 590px;
 }
-.sizelestext .item__pic {
+.sizelestext .item__desc {
+    height: 75px;
+}
+/* .sizelestext .item__pic {
     height: 530px;
  }
  .sizelestext .item__price {
     bottom: 100px;
- }
+ } */
 
 
 .item__desc>span {
