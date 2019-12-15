@@ -202,7 +202,7 @@ p.toPrevMode:hover {
     display: inline-block;
     position: relative;
     box-sizing: border-box;
-    width: 32.333%;
+    width: 24%;
     height: 690px;
     margin: .5% .5%;
     box-shadow: 12px 12px 24px rgba(0,0,0,.45);
@@ -270,18 +270,25 @@ p.toPrevMode:hover {
     box-shadow: 0 -20px 33px rgba(0,0,0,.16);
 }
 
-.sizelestext.item {
-    height: 590px;
+.sizethree.item {
+    width: 32.333%;
 }
-.sizelestext .item__desc {
-    height: 75px;
+.item.sizeundefined {
+    height: 665px;
 }
+.item.sizeundefined .item__desc {
+    height: 138px;
+}
+.item.sizeundefined .item__desc > span {
+    font-size: 41px;
+}
+.item.sizeundefined  .item__price {
+    bottom: 135px;
+ }
 /* .sizelestext .item__pic {
     height: 530px;
  }
- .sizelestext .item__price {
-    bottom: 100px;
- } */
+ */
 
 
 .item__desc>span {
