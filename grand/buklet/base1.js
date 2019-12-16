@@ -4,11 +4,11 @@ let base = [
 
 
   {
-    size:"three", pic: '3', desc: `Торт "Королівський"$100г`,	disc: '40%',	priceO: '1300',	priceN: '799'},
+    size:"three", pic: '2', desc: `Торт "Лимонно-Маковий"$100г`,	disc: '40%',	priceO: '1400',	priceN: '799'},
   {
-    size:"three", pic: '2', desc: `Торт "Горіхова насолода"$100г`,	disc: '40%',	priceO: '1400',	priceN: '799'},
+    size:"three", pic: '4', desc: `Торт "Королівський"$100г`,	disc: '40%',	priceO: '1300',	priceN: '799'},
   {
-    size:"three", pic: '4', desc: `Торт "Лимонно-Маковий"$100г`,	disc: '40%',	priceO: '1400',	priceN: '799'},
+    size:"three", pic: '3', desc: `Торт "Горіхова насолода"$100г`,	disc: '40%',	priceO: '1400',	priceN: '799'},
     
   {
     size:"three", pic: '67', desc: `Хлібець "На живій заквасці" житній$300г`,	disc: '20%',	priceO: '1200',	priceN: '990'},
@@ -18,7 +18,7 @@ let base = [
     size:"three", pic: '60', desc: `Багет$400г`,	disc: '35%',	priceO: '1200',	priceN: '790'},
     
   {
-    size:"three", pic: '0', desc: `Круасан "GRAND FOOD" шоколадний$з заварним кремом$100г`,	disc: '50%',	priceO: '1600',	priceN: '790'},
+    size:"three", pic: '68', desc: `Круасан "GRAND FOOD" шоколадний$з заварним кремом$100г`,	disc: '50%',	priceO: '1600',	priceN: '790'},
   {
     size:"three", pic: '57', desc: `Слойка "GRAND FOOD"$зі сливою та горіхом$110г`,	disc: '45%',	priceO: '1400',	priceN: '790'},
   {
@@ -41,11 +41,11 @@ let base = [
     size:"three", pic: '7', desc: `Салат "Морква по корейськи"$450г`,	disc: '30%',	priceO: '2500',	priceN: '1700'},
 
   {
-    size:"three", pic: '54', desc: `Рулети з омлетом$100г`,	disc: '35%',	priceO: '2600',	priceN: '1690'},
+    size:"three", pic: '55', desc: `Рулет з омлетом$100г`,	disc: '35%',	priceO: '2600',	priceN: '1690'},
   {
-    size:"three", pic: '54', desc: `Рулети Цапрський$100г`,	disc: '35%',	priceO: '2600',	priceN: '1690'},
+    size:"three", pic: '53', desc: `Рулет Цапрський$100г`,	disc: '35%',	priceO: '2600',	priceN: '1690'},
   {
-    size:"three", pic: '54', desc: `Рулети з ковбасою$100г`,	disc: '35%',	priceO: '2600',	priceN: '1690'},
+    size:"three", pic: '54', desc: `Рулет з ковбасою$100г`,	disc: '35%',	priceO: '2600',	priceN: '1690'},
     
   {
     size:"three", pic: '16', desc: `Курча Гриль$100г`,	disc: '25%',	priceO: '1300',	priceN: '990'},
@@ -67,23 +67,23 @@ let base = [
     pic: '43', desc: `Креветки "Полар Стар" очищені$200г`, disc: '45%', priceO: '10600', priceN: '6000'
   },
   {
-    pic: '23', desc: `Крабові палочки Єконом$200г`, disc: '25%', priceO: '2200', priceN: '1700'
+    pic: '51', desc: `Сьомга, форель "Флотилія"$філе шматок$130г`, disc: '25%', priceO: '10100', priceN: '7700'
   },
   {
-    pic: '51', desc: `Сьомга, форель "Флотилія"$філе шматок$130г`, disc: 'XIT', priceO: '', priceN: '10100'
+    pic: '23', desc: `Крабові палочки Єконом$200г`, disc: '25%', priceO: '2200', priceN: '1700'
   },
   {
     pic: '1', desc: `Оселедець "Океан" в олії$450г`, disc: '25%', priceO: '5000', priceN: '3900'
   },
 
   {
-    pic: '61', desc: `Сир кисломолочний "Ружин-молоко" 18%$100г`, disc: '15%', priceO: '580', priceN: '500'
-  },
-  {
     pic: '25', desc: `Сир "Королівський"$100г`, disc: '15%', priceO: '2050', priceN: '1790'
   },
   {
     pic: '15', desc: `Сир "Голландський", "Російський" TM"Охтирка"$100г`, disc: '25%', priceO: '1380', priceN: '1080'
+  },
+  {
+    pic: '61', desc: `Сир кисломолочний "Ружин-молоко" 18%$100г`, disc: '15%', priceO: '580', priceN: '500'
   },
   {
     pic: '14', desc: `Масло "Вершкова долина"$200г`, disc: '15%', priceO: '2800', priceN: '2400'
@@ -155,6 +155,20 @@ let base = [
     pic: '34', desc: `Серветки "Кіт Домовіт"$новорічні в асортименті$18шт`, disc: '25%', priceO: '2300', priceN: '1700'
   },
 
+  
+  {
+    pic: '36', desc: `Фольга "Кіт Домовіт"$алюмінієва$10м  `, disc: '30%', priceO: '3300', priceN: '2300'
+  },
+  {
+    pic: '35', desc: `Пергамент "ФрекенБок"$5м`, disc: '30%', priceO: '2800', priceN: '1900'
+  },
+  {
+    pic: '27', desc: `Мандарин`, disc: 'XIT', priceO: '', priceN: ''
+  },
+  {
+    pic: '26', desc: `Апельсин`, disc: 'XIT', priceO: '', priceN: ''
+  },
+
   {
     pic: '44', desc: `Віскі "Балентайнс"$0,5л `, disc: '30%', priceO: '43300', priceN: '29500'
   },
@@ -179,20 +193,6 @@ let base = [
   },
   {
     pic: '45', desc: `Пиво "Кроненбург" Бланк$0.46л`, disc: '30%', priceO: '3000', priceN: '2200'
-  },
-
-  {
-    pic: '36', desc: `Фольга "Кіт Домовіт"$алюмінієва$10м  `, disc: '30%', priceO: '3300', priceN: '2300'
-  },
-  {
-    pic: '35', desc: `Пергамент "ФрекенБок"$5м`, disc: '30%', priceO: '2800', priceN: '1900'
-  },
-  {
-    pic: '27', desc: `Мандарин`, disc: 'XIT', priceO: '', priceN: ''
-  },
-  {
-    pic: '26', desc: `Апельсин`, disc: 'XIT', priceO: '', priceN: ''
-  },
-
+  }
 
 ]
