@@ -4,53 +4,62 @@ let base = [
 
 
   {
-    size:"three", pic: '2', desc: `Торт "Королівський"$100г`,	disc: '40%',	priceO: '1300',	priceN: '799'},
+    size:"three", pic: '3', desc: `Торт "Королівський"$100г`,	disc: '40%',	priceO: '1300',	priceN: '799'},
   {
-    size:"three", pic: '4', desc: `Торт "Горіхова насолода"$100г`,	disc: '40%',	priceO: '1400',	priceN: '799'},
+    size:"three", pic: '2', desc: `Торт "Горіхова насолода"$100г`,	disc: '40%',	priceO: '1400',	priceN: '799'},
   {
-    size:"three", pic: '3', desc: `Торт "Лимонно-Маковий"$100г`,	disc: '40%',	priceO: '1400',	priceN: '799'},    
+    size:"three", pic: '4', desc: `Торт "Лимонно-Маковий"$100г`,	disc: '40%',	priceO: '1400',	priceN: '799'},
+    
   {
     size:"three", pic: '67', desc: `Хлібець "На живій заквасці" житній$300г`,	disc: '20%',	priceO: '1200',	priceN: '990'},
   {
     size:"three", pic: '12', desc: `Хлібець "На живій заквасці"$бездріжджовий вищий гатунок$500г`,	disc: '20%',	priceO: '1700',	priceN: '1390'},
   {
-    size:"three", pic: '60', desc: `Багет$400г`,	disc: '35%',	priceO: '1200',	priceN: '790'},    
+    size:"three", pic: '60', desc: `Багет$400г`,	disc: '35%',	priceO: '1200',	priceN: '790'},
+    
+  {
+    size:"three", pic: '0', desc: `Круасан "GRAND FOOD" шоколадний$з заварним кремом$100г`,	disc: '50%',	priceO: '1600',	priceN: '790'},
   {
     size:"three", pic: '57', desc: `Слойка "GRAND FOOD"$зі сливою та горіхом$110г`,	disc: '45%',	priceO: '1400',	priceN: '790'},
+  {
+    size:"three", pic: '5', desc: `Тісто "GRAND FOOD" листкове в асортименті$500г`,	disc: '25%',	priceO: '3000',	priceN: '2250'},
+
+  {
+    size:"three", pic: '6', desc: `Круасан "GRAND FOOD"$в асортименті$200г`,	disc: '40%',	priceO: '2500',	priceN: '1490'},  
   {
     size:"three", pic: '42', desc: `Ікра "Сахалінская" лососева зерниста$140г`,	disc: '25%',	priceO: '10000',	priceN: '7700'},
   {
     size:"three", pic: '49', desc: `Hапій "Кока-кола"$2л`,	disc: '30%',	priceO: '3300',	priceN: '2600'},
 
-
-
-  {
-    size:"three", pic: '54', desc: `Рулети в асортимент$100г`,	disc: '35%',	priceO: '2600',	priceN: '1690'},     
-  {
-    size:"three", pic: '63', desc: `Салат "Увертюра" пісний, кг`,	disc: '40%',	priceO: '14500',	priceN: '8900'},
-  {
-    size:"three", pic: '16', desc: `Курча Гриль$100г`,	disc: '25%',	priceO: '1300',	priceN: '990'},
+    
 
   {
-    size:"three", pic: '28', desc: `Філе куряче охолоджене$100г`, disc: 'XIT',	priceO: '1030',	priceN: '890'},
-  {
-    size:"three", pic: '29', desc: `Гомілка куряча охолоджена$100г`,	disc: 'XIT',	priceO: '540',	priceN: '480'},
-  {
-    size:"three", pic: '13', desc: `Шинка свинна охолоджена$100г`,	disc: '15%',	priceO: '1250',	priceN: '990'},
-
-  {
-    size:"three", pic: '11', desc: `Шашлик в маринаді "Арізона"$свинний з ошийка$100г`,	disc: '20%',	priceO: '1900',	priceN: '1520'},
-  {
-    size:"three", pic: '17', desc: `Фарш свинний охолоджений$100г`,	disc: '15%',	priceO: '1070',	priceN: '890'},
-  {
-    size:"three", pic: '5', desc: `Тісто "GRAND FOOD" листкове в асортименті$500г`,	disc: '25%',	priceO: '3000',	priceN: '2250'},
-
+    size:"three", pic: '63', desc: `Салат "Увертюра"$100г`,	disc: '40%',	priceO: '1450',	priceN: '890'},
   {
     size:"three", pic: '8', desc: `Салат "Буряк маринований з хріном"$500г`,	disc: '35%',	priceO: '3000',	priceN: '1900'},
   {
     size:"three", pic: '7', desc: `Салат "Морква по корейськи"$450г`,	disc: '30%',	priceO: '2500',	priceN: '1700'},
+
   {
-    size:"three", pic: '6', desc: `Круасан "GRAND FOOD"$в асортименті$200г`,	disc: '40%',	priceO: '2500',	priceN: '1490'},
+    size:"three", pic: '54', desc: `Рулети з омлетом$100г`,	disc: '35%',	priceO: '2600',	priceN: '1690'},
+  {
+    size:"three", pic: '54', desc: `Рулети Цапрський$100г`,	disc: '35%',	priceO: '2600',	priceN: '1690'},
+  {
+    size:"three", pic: '54', desc: `Рулети з ковбасою$100г`,	disc: '35%',	priceO: '2600',	priceN: '1690'},
+    
+  {
+    size:"three", pic: '16', desc: `Курча Гриль$100г`,	disc: '25%',	priceO: '1300',	priceN: '990'},
+  {
+    size:"three", pic: '11', desc: `Шашлик в маринаді "Арізона"$свинний з ошийка$100г`,	disc: '20%',	priceO: '1900',	priceN: '1520'},
+  {
+    size:"three", pic: '17', desc: `Фарш свинний охолоджений$100г`,	disc: '15%',	priceO: '1070',	priceN: '890'},
+        
+  {
+    size:"three", pic: '28', desc: `Філе куряче охолоджене$100г`, disc: 'XIT',	priceO: '1030',	priceN: '950'},
+  {
+    size:"three", pic: '29', desc: `Гомілка куряча охолоджена$100г`,	disc: 'XIT',	priceO: '540',	priceN: '480'},
+  {
+    size:"three", pic: '13', desc: `Шинка свинна охолоджена$100г`,	disc: '15%',	priceO: '1250',	priceN: '990'},
 
 
 
