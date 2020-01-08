@@ -1,0 +1,75 @@
+body {
+    text-align: center;
+    background-color: #bbb;
+}
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1024px;
+    font-family: sans-serif;
+}
+.square {
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 9vw;
+    height: 9vw;
+    line-height: 9vw;
+    margin: .2vw;
+    border: 1px solid #999;
+    text-align: center;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+@media screen and (min-width: 1000px) {
+    .square {
+        width: 90px;    
+        height: 90px;
+        line-height: 90px;
+        margin: 5px;
+    }
+}
+
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    margin: 10px auto 0;
+}
+
+.btns__item {   
+    background-color: #333;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.btns__item--start {
+    background-color: #383;
+}
+
+.btns__item--stop {
+    background-color: #833;
+    display: none;
+}
+
+.more25 {
+    background-color: #FCF6A9;
+}
+
+.more50 {
+    background-color: #FCCF05;
+}
+
+.more75  {
+    background-color: #FC8505;
+}
+
+.more100 {
+    background-color: #F50202;
+}
