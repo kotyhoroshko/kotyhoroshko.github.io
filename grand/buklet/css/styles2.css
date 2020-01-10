@@ -172,7 +172,7 @@ p.toPrevMode:hover {
 
 .header {
     /* margin-bottom: -783px; */
-    /* display: none; */
+    display: none;
     height: 750px;
     background: url(../image/header.jpg) no-repeat;
     margin-bottom: 0px;
@@ -185,7 +185,7 @@ p.toPrevMode:hover {
     color: white;
     font: 1em sans-serif;
     padding: 40px;
-    /* display: none; */
+    display: none;
 }
 
 .footer>p {
@@ -285,6 +285,14 @@ p.toPrevMode:hover {
 .item.sizeundefined  .item__price {
     bottom: 135px;
  }
+
+ .lesText.sizethree.item {
+    height: 620px;
+}
+
+ .lesText .item__desc {
+    height: 109px;
+}
 /* .sizelestext .item__pic {
     height: 530px;
  }
