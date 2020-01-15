@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic|Montserrat:900&display=swap");
+body *, html * {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: unset; }
+
+h1 {
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: 100; }
+
+.ru, .hidden {
+  display: none !important; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px; }
+
+header {
+  background: url("../img/bg3.jpg") no-repeat center;
+  border-radius: 0 0 0 100px;
+  color: white;
+  box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.2); }
+  header .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 45px 15px 60px; }
+
+.logo {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 56px; }
+
+.contact {
+  font-family: sans-serif; }
+  .contact-tel {
+    display: flex;
+    align-items: center; }
+    .contact-tel__phone {
+      font-size: 21px;
+      font-weight: 600; }
+    .contact-tel__viber {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: url(../img/vi.png) no-repeat center;
+      background-size: cover;
+      margin: 0 10px; }
+    .contact-tel__wu {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: url(../img/wu.png) no-repeat center;
+      background-size: cover; }
+  .contact-mail {
+    display: block;
+    margin-top: 5px;
+    text-align: center; }
+
+.product {
+  padding: 60px 15px;
+  position: relative; }
+  .product .ua, .product .ru {
+    display: flex;
+    flex-wrap: wrap; }
+  .product-price {
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    background-color: #F2385A;
+    width: 140px;
+    height: 65px;
+    border-radius: 15px;
+    top: 45%;
+    right: -12%;
+    transform: rotate(-10deg);
+    position: absolute; }
+  .product-desc {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 480px;
+    margin-top: 100px; }
+    .product-desc__desc {
+      width: 100%;
+      text-align: center;
+      font-family: "Didact Gothic", sans-serif, sans-serif;
+      font-size: 36px;
+      line-height: 1.15;
+      font-weight: 600;
+      color: #151515;
+      max-height: 83px;
+      border-right: 3px solid #F2385A;
+      border-bottom: 2px solid #F2385A;
+      border-radius: 75px 0;
+      padding-bottom: 7px;
+      margin-left: 12%;
+      padding-right: 12%; }
+      .product-desc__desc .chick {
+        color: #0C4C8C;
+        cursor: pointer; }
+      .product-desc__desc .cow {
+        color: #F2385A;
+        cursor: pointer; }
+  .product .co-title {
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 36px;
+    text-align: center;
+    color: #F2385A;
+    line-height: 1.15; }
+    .product .co-title span {
+      display: block;
+      font-size: 58px;
+      color: #0C4C8C; }
+  .product-img {
+    max-width: 48%;
+    margin-left: 2%; }
+
+.why-we {
+  padding: 75px 0;
+  background: linear-gradient(#CCFF00, white);
+  border-radius: 0 33% 0 33%;
+  box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.2); }
+  .why-we .ua, .why-we .ru {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+  .why-we-item {
+    width: 23%;
+    text-align: center; }
+    .why-we-item__img {
+      display: inline-block;
+      width: 125px;
+      background-color: #0C4C8C;
+      border-radius: 0 50% 0;
+      padding: 17.5%; }
+    .why-we-item-icon {
+      width: 100%; }
+    .why-we-item__title {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      margin: 10px 0;
+      font-size: 24px;
+      color: #0C4C8C; }
+    .why-we-item__desc {
+      font-family: "Didact Gothic", sans-serif;
+      font-size: 18px;
+      color: #151515; }
+
+.components {
+  padding: 75px 0;
+  margin: 75px 0 30px;
+  text-align: right;
+  background: url("../img/bg1.webp") no-repeat left;
+  background-size: contain; }
+
+.table {
+  display: inline-block;
+  width: 75%;
+  text-align: center;
+  border: 1px solid #0C4C8C;
+  background-color: rgba(255, 255, 255, 0.8); }
+  .table-row:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.1); }
+  .table-row--title.table-row {
+    background-color: #0C4C8C;
+    color: white; }
+  .table-text, .table-num {
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 21px;
+    width: 32%;
+    line-height: 2; }
+
+footer {
+  padding: 40px 15px 30px;
+  background: url("../img/bg3.jpg") no-repeat center;
+  border-top: 2px solid #151515;
+  text-shadow: 0 0 12px black; }
+  footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    color: white; }
+  footer .copyright {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+    font-family: sans-serif; }
