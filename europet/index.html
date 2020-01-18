@@ -6,25 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>"Європет - Україна"</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"> -->
 </head>
 <body>
     <header>
        <div class="container">
-            <div class="logo">
+            <div class="logo ua">
                 <img src="img/favicon.png" alt="logo" class="hidden">
                 <h1 class="co-title">Торговий Дім<span>ЄВРОПЕТ Україна</span><span class="co-officiale">Офіційний дистрибютор</span></h1>
             </div>
+            <div class="logo ru hidden">
+                <h1 class="co-title">Торговый дом<span>ЕВРОПЕТ Украина</span><span class="co-officiale">Офіційний дистрибютор</span></h1>
+            </div>            
             <div class="contact">
                 <div class="contact-tel">
                     <a class="contact-tel__phone" href="tel:+380669275040">+380 (66) 927 50 40</a>
                     <a class="contact-tel__viber" href="viber://chat?number=+380669275040"></a>
                     <a class="contact-tel__wu" href="whatsapp://send?phone=+380669275040"></a>
-                </div>            
-                <!-- <a class="contact-mail" href="mailto:info@europet.com.ua">info@europet.com.ua</a> -->
+                </div>
             </div>
             <img src="img/ru.png" alt="choose ru lang" class="lang ua" title="Руский">
-            <img src="img/ua.png" alt="choose ua lang" class="lang ru" title="Українська">
+            <img src="img/ua.png" alt="choose ua lang" class="lang ru hidden" title="Українська">
        </div>
     </header>
     <main>
@@ -35,19 +37,27 @@
                     <div class="product-desc__desc">
                         <p class="title">Сухий корм</p>
                         <p>Зі смаком курки</p>
-                        <p>або яловичини</p>                        
+                        <p>або яловичини</p>
+                        <p>10кг</p>
                     </div>
-                    <p class="product-price"><span>10кг</span> - <span>168грн</span></p>
+                    <p class="product-price">168<span>грн</span></p>
                 </div>
                 <img src="img/2in1-2.png" alt="euro dog сухий корм" class="product-img">
             </div>
-            <div class="ru">
-                <h2 class="co-title">Торговый дом<span>ЕВРОПЕТ Украина</h2></span>
-                <img src="img/2in1-2.webp" alt="euro dog сухой корм" class="product-img">
-                <p class="product-desc">Сухой корм. Со вкусом говядины/курицы.</p>
-                <span class="product-price">168грн</span>
+
+            <div class="ru hidden">
+                <div class="product-desc">
+                    <div class="product-desc__desc">
+                        <p class="title">Сухой корм</p>
+                        <p>Со вкусом курицы</p>
+                        <p>или говядины</p>
+                        <p>10кг</p>
+                    </div>
+                    <p class="product-price">168<span>грн</span></p>
+                </div>
+                <img src="img/2in1-2.png" alt="euro dog сухий корм" class="product-img">
             </div>         
-            
+                       
         </div>
 
         <div class="why-we">
@@ -77,7 +87,7 @@
                     </div>    
                 </div>
 
-                <div class="ru">
+                <div class="ru hidden">
                     <div class="why-we-item">
                         <div class="why-we-item__img">
                             <img src="img/like.svg" alt="европет украина" class="why-we-item-icon">
@@ -107,51 +117,52 @@
         <div class="components">
             <div class="container">
 
-                <h2 class="components__title">Склад кормів</h2>
+                <h2 class="components__title ua">Склад кормів</h2>
+                <h2 class="components__title ru hidden">Сoстав кормов</h2>
 
                 <div class="table">
                     <div class="table-row table-row--title ua">
                         <span class="table-text ua"> </span>
-                        <span class="table-text ru"> </span>
+                        <span class="table-text ru hidden"> </span>
                         <span class="table-num">Сухий корм, %</span><span class="table-num">Консервований корм, %</span>
                     </div>
-                    <div class="table-row table-row--title ru">
+                    <div class="table-row table-row--title ru hidden">
                         <span class="table-text"> </span>
                         <span class="table-num">Сухой корм, %</span><span class="table-num">Консервированный корм, %</span>
                     </div>
                     <div class="table-row">
                         <span class="table-text ua">Сирий протеїн</span>
-                        <span class="table-text ru">Сырой протеин</span>
+                        <span class="table-text ru hidden">Сырой протеин</span>
                         <span class="table-num">25</span><span class="table-num">7</span>
                     </div>
                     <div class="table-row">
                         <span class="table-text ua">Олії та жири</span>
-                        <span class="table-text ru">Масла и жиры</span>
+                        <span class="table-text ru hidden">Масла и жиры</span>
                         <span class="table-num">8</span><span class="table-num">3</span>
                     </div>
                     <div class="table-row">
                         <span class="table-text ua">Зола</span>
-                        <span class="table-text ru">Зола</span>
+                        <span class="table-text ru hidden">Зола</span>
                         <span class="table-num">1,4</span><span class="table-num">3</span>
                     </div>
                     <div class="table-row">
                         <span class="table-text ua">Вуглеводи</span>
-                        <span class="table-text ru">Углеводы</span>
+                        <span class="table-text ru hidden">Углеводы</span>
                         <span class="table-num">44,1</span><span class="table-num">-</span>
                     </div>
                     <div class="table-row">
                         <span class="table-text ua">Сира клітковина</span>
-                        <span class="table-text ru">Сырая клетчатка</span>
+                        <span class="table-text ru hidden">Сырая клетчатка</span>
                         <span class="table-num">8</span><span class="table-num">0,5</span>
                     </div>
                     <div class="table-row">
                         <span class="table-text ua">Мінеральні речовини</span>
-                        <span class="table-text ru">Минеральные вещества</span>
+                        <span class="table-text ru hidden">Минеральные вещества</span>
                         <span class="table-num">3,5</span><span class="table-num">5,5</span>
                     </div>
                     <div class="table-row">
                         <span class="table-text ua">Вода</span>
-                        <span class="table-text ru">Вода</span>
+                        <span class="table-text ru hidden">Вода</span>
                         <span class="table-num">10</span><span class="table-num">81</span>
                     </div>
                 </div>
@@ -177,6 +188,6 @@
         <p class="copyright">ЄВРОПЕТ УКРАЇНА &copy; 2020</p>
     </footer>
 
-    <!-- <script src="scripts.js"></script> -->
+    <script src="scripts.js"></script>
 </body>
 </html>
