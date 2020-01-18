@@ -343,7 +343,9 @@ footer {
         border-right: none;
         margin-top: 0; }
     .product-img {
-      max-width: 95%;
+      max-width: none;
+      width: 95%;
+      height: 100%;
       order: 1; }
   .why-we .ua, .why-we .ru {
     justify-content: space-evenly; }
