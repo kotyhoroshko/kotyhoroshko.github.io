@@ -136,13 +136,13 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0 5px 5px;
+    padding: 0 15px 5px;
     font-family: "Montserrat", sans-serif;
     border-radius: 32px;
-    font-size: 156px;
-    font-weight: 800;
+    font-size: 96px;
+    font-weight: 900;
     color: #0C4C8C;
-    height: 100px;
+    height: 60px;
     width: 33%;
     text-align: right;
     margin-top: auto;
