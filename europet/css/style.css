@@ -136,18 +136,20 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 15px 5px;
+    padding: 0 0 5px 5px;
     font-family: "Montserrat", sans-serif;
     border-radius: 32px;
-    font-size: 72px;
-    font-weight: 900;
-    color: #F2385A;
-    height: 60px;
+    font-size: 156px;
+    font-weight: 800;
+    color: #0C4C8C;
+    height: 100px;
     width: 33%;
     text-align: right;
-    margin-top: auto; }
+    margin-top: auto;
+    text-shadow: 0 0 12px white; }
     .product-price span {
-      font-size: 42px; }
+      font-size: 42px;
+      margin-top: 20px; }
   .product-desc {
     position: relative;
     display: flex;
@@ -338,24 +340,24 @@ footer {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      width: 460px;
+      width: 100%;
       text-align: center; }
       .product-desc__desc {
-        width: 100%;
-        text-align: center;
-        border-right: none;
+        width: auto;
         margin-top: 0; }
     .product-img {
       max-width: none;
       width: 95%;
       height: 100%;
       order: 1; }
-  .why-we .ua, .why-we .ru {
-    justify-content: space-evenly; }
-  .why-we-item {
-    margin: 20px;
-    width: 30%;
-    min-width: 270px; }
+  .why-we {
+    margin-top: 0; }
+    .why-we .ua, .why-we .ru {
+      justify-content: space-evenly; }
+    .why-we-item {
+      margin: 20px;
+      width: 30%;
+      min-width: 270px; }
   .components .container {
     display: flex;
     align-items: center;
@@ -461,6 +463,8 @@ footer {
         height: 165px;
         display: flex;
         align-items: center; }
+        .table-row--title.table-row.ru {
+          height: 200px; }
         .table-row--title.table-row .table-num,
         .table-row--title.table-row .table-text {
           writing-mode: tb-rl;
@@ -476,6 +480,8 @@ footer {
       width: 33%;
       padding: 15px 0;
       vertical-align: middle; }
+      .table-text.ru, .table-num.ru {
+        font-size: 18px; }
     .table-text {
       text-align: right;
       width: 31%;
