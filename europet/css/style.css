@@ -115,10 +115,10 @@ header {
     text-align: center; }
 
 .lang {
-  width: 32px;
-  height: 32px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.42);
-  border-radius: 50%;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #0C4C8C;
   cursor: pointer;
   margin-top: 5px; }
 
@@ -319,6 +319,9 @@ footer {
   header .lang {
     order: 2;
     margin-right: 40px; }
+    header .lang__item {
+      display: inline-block;
+      margin: 0 5px; }
   main {
     margin-top: -200px; }
   .product {
@@ -408,6 +411,8 @@ footer {
           font-size: 4.5vw; }
         header .logo .co-title span {
           font-size: 16vw; }
+      header .logo.ru .co-title span.co-officiale {
+        font-size: 4vw; }
     header .contact {
       order: 2;
       width: 100%; }
@@ -432,6 +437,16 @@ footer {
       top: 15px; }
   main {
     margin-top: -60px; }
+  .product-desc {
+    padding-bottom: 60px; } }
+  @media screen and (max-width: 768px) and (max-width: 650px) {
+    .product-desc__desc {
+      text-align: center;
+      border-right: none;
+      width: 100%;
+      margin-bottom: 10px; } }
+
+@media screen and (max-width: 768px) {
   .why-we {
     border-radius: 0;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.33); }
