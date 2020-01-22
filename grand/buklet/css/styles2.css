@@ -172,7 +172,7 @@ p.toPrevMode:hover {
 
 .header {
     /* margin-bottom: -783px; */
-    display: none;
+    /* display: none; */
     height: 750px;
     background: url(../image/header.jpg) no-repeat;
     margin-bottom: 0px;
@@ -185,7 +185,7 @@ p.toPrevMode:hover {
     color: white;
     font: 1em sans-serif;
     padding: 40px;
-    display: none;
+    /* display: none; */
 }
 
 .footer>p {
@@ -202,7 +202,7 @@ p.toPrevMode:hover {
     display: inline-block;
     position: relative;
     box-sizing: border-box;
-    width: 24%;
+    width: 32%;
     height: 690px;
     margin: .5% .5%;
     box-shadow: 12px 12px 24px rgba(0,0,0,.45);
