@@ -13,17 +13,27 @@ body {
 }
 
 .a4 {
-    width: 2500px;
-    height: 3500px;
+    /* width: 2500px; */
+    /* height: 3500px; */
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 0 auto 30px;
     background-color: #fff;
 }
 
+h2 {
+    width: 100%;
+    font-size: 3vw;
+    margin: 2vw 0 1vw;
+    text-align: center;
+}
+
 .item {
-    width: 25%;
-    height: 16.666666666666668%;
+    /* width: 25%;
+    height: 16.666666666666668%; */
+    width: 24vw;
+    height: 20vw;
     position: relative;
     border-right: 1px solid gray;
     padding: 10px;
