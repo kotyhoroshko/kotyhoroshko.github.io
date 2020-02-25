@@ -27,6 +27,7 @@ h2 {
     font-size: 3vw;
     margin: 2vw 0 1vw;
     text-align: center;
+    color: #777;
 }
 
 .item {
@@ -40,11 +41,13 @@ h2 {
 }
 
 .item__img {
-    max-height: calc(100% - 80px);
+    max-height: calc(100% - 3vw);
+    /* width: 97%; */
     max-width: 97%;
     position: absolute;
     top: 44%;
-    transform: translate(0, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 0;
 }
 
@@ -55,6 +58,8 @@ h2 {
     padding: 3px;
     font-weight: 800;
     z-index: 2;
+
+    font-size: 2.5vw;
 }
 
 .item__name {
@@ -74,5 +79,8 @@ h2 {
     min-height: 100px;
     line-height: 1;
     z-index: 2;
+
+    font-size: 2vw;
+    min-height: auto
 
 }
