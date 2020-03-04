@@ -4,9 +4,17 @@ const shirma = document.querySelector('.shirma');
 let inner = `            
             <div class="header"></div>
             <div class="wrapper__half">`;
+let classSPO = 'hidden';
 
 for (let index = 0; index < base.length; index++) {
     //console.log(base[index].desc)
+    if (!base[index].descSPO) {
+        base[index].descSPO='';
+        classSPO = 'hidden';
+    }
+    else {
+        classSPO = 'spo';
+    }
     inner += `
     <div class="item size${base[index].size}">
         <div class="item__pic">
@@ -28,10 +36,12 @@ for (let index = 0; index < base.length; index++) {
             </div>            
         </div>
         <div class="item__desc">
+            <span class="${classSPO}">${base[index].descSPO.replace("$","<br>").trim().replace("$","<br>").trim()}</span>
             <span>${base[index].desc.replace("$","<br>").trim().replace("$","<br>").trim()}</span>
         </div>
     </div>
     `
+    classSPO = 'hidden';
 }
 inner += ` </div>
         <div class="footer">

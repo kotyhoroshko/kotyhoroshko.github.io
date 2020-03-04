@@ -95,6 +95,10 @@ body {
     transition: .3s;
 }
 
+.hidden {
+    display: none;
+}
+
 .shirma {
     /* display: none; */
     position: fixed;
@@ -174,7 +178,7 @@ p.toPrevMode:hover {
 .header {
     /* margin-bottom: -783px; */
     /* display: none; */
-    height: 781px;
+    height: 1050px;
     background: url(../image/header.jpg) no-repeat;
     margin-bottom: 0px;
 }
@@ -182,7 +186,7 @@ p.toPrevMode:hover {
 .footer {
     /* width: 100%; */
     height: 270px;
-    /* background: linear-gradient(to bottom, #800 0%, #ff0000 7%, #cc0000 100%); */
+    background: linear-gradient(to bottom, #800 0%, #ff0000 7%, #cc0000 100%);
     color: white;
     font: 1em sans-serif;
     padding: 40px;
@@ -262,6 +266,7 @@ p.toPrevMode:hover {
 
 .item__desc {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     bottom: 0;
     left: 0;
@@ -388,4 +393,17 @@ p.toPrevMode:hover {
 .op {
     width: 100%;
     background-color: yellow;
+}
+
+.sizespo{
+   
+}
+
+.spo {
+    width: 100%;
+    display: inline-block;
+    background-color: #d0131f;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1.4;
 }
