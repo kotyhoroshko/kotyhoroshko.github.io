@@ -26,8 +26,10 @@ h2 {
     width: 100%;
     font-size: 3vw;
     margin: 2vw 0 1vw;
-    text-align: center;
-    color: #777;
+    text-align: left;
+    padding-left: 10%;
+    color: yellow;
+    background: red;
 }
 
 .item {
