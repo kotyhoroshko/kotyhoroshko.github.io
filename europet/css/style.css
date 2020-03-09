@@ -22,7 +22,7 @@ h1 {
 
 header {
   position: relative;
-  background: url(../img/bg-top.svg) no-repeat right 100.5%, radial-gradient(#CCFF00, #aca701);
+  background: url(../img/bg-top.svg) no-repeat right 100.5%, radial-gradient(#448f88, #6aa);
   background-size: 100%;
   color: white;
   min-height: 500px;
@@ -183,7 +183,7 @@ main {
 
 .why-we {
   padding: 75px 0;
-  background: linear-gradient(#CCFF00, white);
+  background: linear-gradient(#448f88, white);
   border-radius: 0 33% 0 33%;
   margin-top: 50px; }
   .why-we .ua, .why-we .ru {
@@ -255,8 +255,11 @@ main {
   .table-row:nth-child(odd) {
     background-color: rgba(0, 0, 200, 0.06); }
   .table-row--title.table-row {
-    background-color: #CCFF00;
+    background-color: #448f88;
     color: #151515; }
+    .table-row--title.table-row .table-num {
+      line-height: 1;
+      vertical-align: middle; }
   .table-text, .table-num {
     display: inline-block;
     font-family: sans-serif;
@@ -373,7 +376,7 @@ footer {
   .table {
     width: 100%; }
     .table-row--title.table-row {
-      background-color: #CCFF00;
+      background-color: #448f88;
       color: #151515; }
     .table-text, .table-num {
       display: inline-block;
@@ -390,7 +393,7 @@ footer {
   footer .logo {
     width: 100%;
     margin-bottom: 10px;
-    color: #CCFF00; }
+    color: #448f88; }
   footer .contact {
     text-align: center; }
     footer .contact-tel {
@@ -471,7 +474,7 @@ footer {
   .table {
     width: 100%; }
     .table-row--title.table-row {
-      background-color: #CCFF00;
+      background-color: #448f88;
       color: #151515; } }
     @media screen and (max-width: 768px) and (max-width: 550px) {
       .table-row--title.table-row {
@@ -506,7 +509,7 @@ footer {
   footer .logo {
     width: 100%;
     margin-bottom: 10px;
-    color: #CCFF00; }
+    color: #448f88; }
   footer .contact {
     width: 100%;
     text-align: center; }
