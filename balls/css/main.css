@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #886644;
+  width: 100%;
+  height: 100vh; }
+
+.toggles {
+  padding: 1vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  color: white;
+  font-family: sans-serif; }
+  .toggles div {
+    width: 30%;
+    min-width: 300px;
+    text-align: center;
+    font-weight: 100;
+    margin-top: 3vh; }
+  .toggles input {
+    display: block;
+    width: 95%; }
+    .toggles input.turn__value {
+      direction: rtl; }
+  .toggles .indicator {
+    font-weight: bold; }
+
+.preloader-container {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 280px;
+  height: 20vw;
+  min-height: 140px; }
+  .preloader-container::after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 150%;
+    min-width: 320px;
+    height: 70%;
+    top: 80%;
+    background: radial-gradient(#bb8866 33%, transparent 66%) no-repeat;
+    z-index: -1; }
+
+.ball-container {
+  height: 100%;
+  position: relative;
+  z-index: 2; }
+
+.ball {
+  position: relative;
+  width: 5vw;
+  min-width: 40px;
+  height: 5vw;
+  min-height: 40px;
+  border-radius: 50%;
+  top: 0;
+  background: radial-gradient(circle at 65% 15%, transparent 1%, rgba(0, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0.33) 60%, rgba(0, 0, 0, 0.3) 100%);
+  background-color: #fff;
+  animation-name: ball-move;
+  z-index: 3; }
+
+.ball-shadow {
+  position: absolute;
+  width: 100%;
+  height: 1vw;
+  min-height: 1px;
+  background: rgba(0, 0, 0, 0.25);
+  filter: blur(0.66vw);
+  bottom: -15%;
+  border-radius: 50%;
+  animation-name: shadow-move;
+  z-index: 1; }
+
+.ball-shadow,
+.ball {
+  animation-duration: 3000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1); }
+  .ball-shadow--1,
+  .ball--1 {
+    animation-delay: 0.2s; }
+  .ball-shadow--2,
+  .ball--2 {
+    animation-delay: 0.4s; }
+  .ball-shadow--3,
+  .ball--3 {
+    animation-delay: 0.6s; }
+  .ball-shadow--4,
+  .ball--4 {
+    animation-delay: 0.8s; }
+  .ball-shadow--5,
+  .ball--5 {
+    animation-delay: 1s; }
+  .ball-shadow--6,
+  .ball--6 {
+    animation-delay: 1.2s; }
+  .ball-shadow--7,
+  .ball--7 {
+    animation-delay: 1.4s; }
+
+@keyframes ball-move {
+  50% {
+    top: 85%; }
+  100% {
+    top: 0; } }
+
+@keyframes shadow-move {
+  50% {
+    filter: blur(0.125vw); }
+  100% {
+    filter: blur(0.66vw); } }

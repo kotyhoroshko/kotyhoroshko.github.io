@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>preloder</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="toggles">
+        <div class="turn">
+            <span class="turn__title">Speed(ms): </span>
+            <span class="indicator">3000</span>
+            <input type="range" step="200" min="600" max="10000" class="turn__value" value="3000">
+        </div>
+        <div class="delta">
+            <span class="delta__title">Delay(ms): </span>
+            <span class="indicator">200</span>
+            <input type="range" step="10" min="0" max="2000" class="delta__value" value="200">
+        </div>
+        <div class="balls-qty">
+            <span class="balls-qty__title">Balls: </span>
+            <span class="indicator">7</span>
+            <input type="range" step="1" min="1" max="20" class="balls-qty__value" value="7">
+        </div>        
+    </header>
+
+    <div class="preloader-container">
+        <div class="ball-container">
+            <div class="ball ball--1"></div>        
+            <div class="ball-shadow ball-shadow--1" data-ball-num="1"></div>
+        </div>
+        <div class="ball-container">
+            <div class="ball ball--2"></div>        
+            <div class="ball-shadow ball-shadow--2" data-ball-num="2"></div>
+        </div>
+        <div class="ball-container">
+            <div class="ball ball--3"></div>
+            <div class="ball-shadow ball-shadow--3" data-ball-num="3"></div>
+        </div>
+        <div class="ball-container">
+            <div class="ball ball--4"></div>
+            <div class="ball-shadow ball-shadow--4" data-ball-num="4"></div>
+        </div>
+        <div class="ball-container">
+            <div class="ball ball--5"></div>
+            <div class="ball-shadow ball-shadow--5" data-ball-num="5"></div>
+        </div>
+        <div class="ball-container">
+            <div class="ball ball--6"></div>
+            <div class="ball-shadow ball-shadow--6" data-ball-num="6"></div>
+        </div>
+        <div class="ball-container">
+            <div class="ball ball--7"></div>
+            <div class="ball-shadow ball-shadow--7" data-ball-num="7"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
