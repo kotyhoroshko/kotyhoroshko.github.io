@@ -3,11 +3,13 @@ document.addEventListener("DOMContentLoaded", function(){
 fetch("https://dataservice.accuweather.com/forecasts/v1/daily/5day/1214319?apikey=0tV5rkAIYVjrGg5OsD0wjbr4iGAMiU9A&language=uk-ua&metric=true")
     .then(response => response.json())  
     .then(json => go(json))   
-    .then(response => response ? false : console.log("Weather forecast is succesfully loaded") )
-    .catch(error => console.log(reject))
+    .then(json => console.log("Weather forecast was succesfully loaded"))
+    .catch(error => console.log('Weather forecast not loaded'))
 })
 
-function go(db2){ 
+function go(db2){
+
+  console.log(db2);
 
   function getDate(date) {
     let clearDate = date.slice(8, 10)+'.'+date.slice(5, 7)+'.'+date.slice(2, 4)
@@ -23,11 +25,10 @@ function go(db2){
 
   function showMainInfo(){
     document.querySelector('.main-info').innerHTML = `
-      <p class="main-info__dates">${getDate(db2.Headline.EffectiveDate)} 
+      <p class="main-info__dates"><span class="loc">Прогноз погоди в с.Королево на</span> <br> ${getDate(db2.DailyForecasts[0].Date)} 
        - 
-        ${getDate(db2.Headline.EndDate)}</p>
-      <p class="main-info__desc">${db2.Headline.Text}</p>
-      <p class="main-info__category">${db2.Headline.Category}</p>
+       ${getDate(db2.DailyForecasts[4].Date)}</p>
+      <p class="main-info__desc">${db2.Headline.Text}</p>      
     `
   }
 

@@ -11,8 +11,21 @@ a {
 .hidden {
   display: none; }
 
+html {
+  background-color: #000; }
+
 body {
-  background-color: #335; }
+  min-height: 100vh;
+  background: url(../img/b1.jpg) no-repeat center;
+  background-size: cover;
+  opacity: .66; }
+
+header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.66); }
+
+main {
+  padding-top: 20px; }
 
 .container {
   width: 100%;
@@ -21,21 +34,32 @@ body {
   padding: 0 0 15px; }
 
 .main-info {
-  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   color: white;
   padding: 15px; }
+  .main-info .loc {
+    display: inline-block;
+    font-size: 16px; }
   .main-info__dates {
     display: inline-block;
-    font-size: 150%;
-    width: 70%; }
+    font-size: 24px;
+    max-width: 320px; }
   .main-info__desc {
-    display: inline-block;
-    font-size: 120%;
-    width: 70%; }
-  .main-info__category {
-    display: inline-block;
-    font-size: 150%;
-    float: right; }
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    height: 25px; }
+    .main-info__desc::before {
+      content: '';
+      display: inline-block;
+      background: url("../img/info.png") no-repeat center;
+      background-size: contain;
+      width: 25px;
+      height: 25px;
+      margin-right: 5px; }
 
 .days-info {
   display: flex;
@@ -66,6 +90,8 @@ body {
       vertical-align: top;
       width: 49%;
       text-align: center; }
+    .days-info__item .icon {
+      width: 100px; }
     .days-info__item .phrase {
       line-height: 1;
       min-height: 33px;
@@ -79,4 +105,18 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly; }
     .days-info__item {
-      width: 85vw; } }
+      width: 85vw; }
+  .main-info {
+    display: block;
+    text-align: center; }
+    .main-info__desc {
+      justify-content: center;
+      width: 100%;
+      margin-top: 10px; }
+      .main-info__desc::before {
+        content: '';
+        display: inline-block;
+        background: url("../img/info.png") no-repeat center;
+        background-size: contain;
+        width: 25px;
+        height: 25px; } }
