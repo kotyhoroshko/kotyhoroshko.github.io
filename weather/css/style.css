@@ -16,9 +16,15 @@ html {
 
 body {
   min-height: 100vh;
-  background: url(../img/b1.JPG) no-repeat center;
-  background-size: cover;
   opacity: .66; }
+
+.video-bg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; }
 
 header {
   width: 100%;
@@ -32,6 +38,22 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 0 15px; }
+
+.locs {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0 10px; }
+  .locs__item {
+    display: inline-block;
+    max-width: 100px;
+    width: 18%;
+    cursor: pointer; }
+    .locs__item img {
+      width: 100%; }
+    .locs__item p {
+      color: white;
+      text-align: center;
+      line-height: 1; }
 
 .main-info {
   display: flex;
@@ -51,7 +73,8 @@ main {
     display: flex;
     align-items: center;
     font-size: 21px;
-    height: 25px; }
+    height: 25px;
+    line-height: 1; }
     .main-info__desc::before {
       content: '';
       display: inline-block;
@@ -106,6 +129,8 @@ main {
     justify-content: space-evenly; }
     .days-info__item {
       width: 85vw; }
+  .locs__item p {
+    font-size: 3vw; }
   .main-info {
     display: block;
     text-align: center; }

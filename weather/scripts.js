@@ -1,13 +1,28 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function() {
+  
+  function getLocation(e) {
+    console.log();
+    console.log();
 
-fetch("https://dataservice.accuweather.com/forecasts/v1/daily/5day/1214319?apikey=0tV5rkAIYVjrGg5OsD0wjbr4iGAMiU9A&language=uk-ua&metric=true")
+    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${e.getAttribute('data-lockey')}?apikey=0tV5rkAIYVjrGg5OsD0wjbr4iGAMiU9A&language=uk-ua&metric=true`)
     .then(response => response.json())  
-    .then(json => go(json))   
+    .then(json => go(json, e.getAttribute('data-point-name')))   
     .then(json => console.log("Weather forecast was succesfully loaded"))
     .catch(error => console.log('Weather forecast not loaded'))
+  }
+  
+  document.querySelector('.locs').addEventListener('click', function(e) {
+    if (e.target.parentElement.className=="locs__item") {
+      getLocation(e.target.parentElement)
+    }    
+  })
+
 })
 
-function go(db2){
+
+
+
+function go(db2, locName){
 
   console.log(db2);
 
@@ -25,7 +40,7 @@ function go(db2){
 
   function showMainInfo(){
     document.querySelector('.main-info').innerHTML = `
-      <p class="main-info__dates"><span class="loc">Прогноз погоди в с.Королево на</span> <br> ${getDate(db2.DailyForecasts[0].Date)} 
+      <p class="main-info__dates"><span class="loc">Прогноз погоди в ${locName} на</span> <br> ${getDate(db2.DailyForecasts[0].Date)} 
        - 
        ${getDate(db2.DailyForecasts[4].Date)}</p>
       <p class="main-info__desc">${db2.Headline.Text}</p>      
@@ -63,3 +78,10 @@ function go(db2){
   showDaysInfo()
 };
 
+// const locs = [
+//   ["м.Берегово", "326289"],
+//   ["м.Виноградів", "326287"],
+//   ["с.Королево", "1214319"],
+//   ["м.Тепліце", "3394999"],
+//   ["м.Ужгород", "326310"]
+// ];
