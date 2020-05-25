@@ -1,30 +1,41 @@
+
 document.addEventListener("DOMContentLoaded", function() {
   
-  function getLocation(e) {
-    console.log();
-    console.log();
-
+  function getWeatherFromAccu(e) {
     fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${e.getAttribute('data-lockey')}?apikey=0tV5rkAIYVjrGg5OsD0wjbr4iGAMiU9A&language=uk-ua&metric=true`)
     .then(response => response.json())  
-    .then(json => go(json, e.getAttribute('data-point-name')))   
+    .then(json => go(json, e.getAttribute('data-point-name'), e.getAttribute('data-lockey')) )  
     .then(json => console.log("Weather forecast was succesfully loaded"))
-    .catch(error => console.log('Weather forecast not loaded'))
+    .catch(error => console.log('Weather forecast not loaded'))  
   }
-  
+
   document.querySelector('.locs').addEventListener('click', function(e) {
-    if (e.target.parentElement.className=="locs__item") {
-      getLocation(e.target.parentElement)
-    }    
+    if (e.target.parentElement.className == "locs__item") {
+
+      if ( (7400000 - ((+new Date()) - new Date((JSON.parse(window.localStorage.getItem(e.target.parentElement.getAttribute('data-lockey')+'stamp'))))) )>0) {
+        go( 
+          JSON.parse(window.localStorage.getItem(e.target.parentElement.getAttribute('data-lockey'))),
+          e.target.parentElement.getAttribute('data-point-name'),
+          e.target.parentElement.getAttribute('data-lockey'))
+        console.log ('Weather was load from LS')
+        
+      }
+
+      else {
+        getWeatherFromAccu(e.target.parentElement)
+      }
+
+    }
   })
 
 })
 
-
-
-
-function go(db2, locName){
+function go(db2, locName, locKey){
 
   console.log(db2);
+
+  window.localStorage.setItem(locKey, JSON.stringify(db2))
+  window.localStorage.setItem(locKey+'stamp', JSON.stringify(new Date()))
 
   function getDate(date) {
     let clearDate = date.slice(8, 10)+'.'+date.slice(5, 7)+'.'+date.slice(2, 4)
@@ -35,7 +46,7 @@ function go(db2, locName){
     let opacity=.66;
     let color = [(255/60*(temp+20)),(255-temp+20),(255-(255/60*(temp+20)))];
         color =color.map(Math.round);
-        return `rgba(${color[0]},${color[1]},${color[2]},${opacity})`
+    return `rgba(${color[0]},${color[1]},${color[2]},${opacity})`
   }
 
   function showMainInfo(){
@@ -77,11 +88,3 @@ function go(db2, locName){
   showMainInfo()
   showDaysInfo()
 };
-
-// const locs = [
-//   ["м.Берегово", "326289"],
-//   ["м.Виноградів", "326287"],
-//   ["с.Королево", "1214319"],
-//   ["м.Тепліце", "3394999"],
-//   ["м.Ужгород", "326310"]
-// ];
