@@ -15,8 +15,7 @@ html {
   background-color: #000; }
 
 body {
-  min-height: 100vh;
-  opacity: .66; }
+  min-height: 100vh; }
 
 .video-bg {
   position: fixed;
@@ -28,7 +27,7 @@ body {
 
 header {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.66); }
+  background-color: rgba(0, 0, 0, 0.33); }
 
 main {
   padding-top: 20px; }
@@ -36,13 +35,12 @@ main {
 .container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 0 15px; }
+  margin: 0 auto; }
 
 .locs {
   display: flex;
   justify-content: space-evenly;
-  padding: 15px 0 10px; }
+  padding: 20px 0 10px; }
   .locs__item {
     display: inline-block;
     max-width: 100px;
@@ -65,16 +63,22 @@ main {
   .main-info .loc {
     display: inline-block;
     font-size: 16px; }
+    .main-info .loc__name {
+      font-weight: 500;
+      color: #ffe; }
   .main-info__dates {
     display: inline-block;
     font-size: 24px;
-    max-width: 320px; }
+    max-width: 320px;
+    text-align: center;
+    margin: 0 10px; }
   .main-info__desc {
     display: flex;
     align-items: center;
     font-size: 21px;
     height: 25px;
-    line-height: 1; }
+    line-height: 1;
+    margin: 10px; }
     .main-info__desc::before {
       content: '';
       display: inline-block;
@@ -87,7 +91,8 @@ main {
 .days-info {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+  padding: 0 0 25px; }
   .days-info__item {
     width: 300px;
     background: linear-gradient(360deg, rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.4));
@@ -128,7 +133,8 @@ main {
     flex-wrap: wrap;
     justify-content: space-evenly; }
     .days-info__item {
-      width: 85vw; }
+      width: 50vw;
+      min-width: 300px; }
   .locs__item p {
     font-size: 3vw; }
   .main-info {
@@ -139,7 +145,7 @@ main {
       width: 100%;
       margin-top: 10px; }
       .main-info__desc::before {
-        content: '';
+        content: none;
         display: inline-block;
         background: url("../img/info.png") no-repeat center;
         background-size: contain;

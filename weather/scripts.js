@@ -51,7 +51,7 @@ function go(db2, locName, locKey){
 
   function showMainInfo(){
     document.querySelector('.main-info').innerHTML = `
-      <p class="main-info__dates"><span class="loc">Прогноз погоди в ${locName} на</span> <br> ${getDate(db2.DailyForecasts[0].Date)} 
+      <p class="main-info__dates"><span class="loc">Прогноз погоди <span class="loc__name">в ${locName}</span> на</span> <br> ${getDate(db2.DailyForecasts[0].Date)} 
        - 
        ${getDate(db2.DailyForecasts[4].Date)}</p>
       <p class="main-info__desc">${db2.Headline.Text}</p>      
