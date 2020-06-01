@@ -173,12 +173,13 @@ p.toPrevMode:hover {
     display: inline-block;
     box-sizing: border-box;
     width: 100%;
+    text-align: center;
 }
 
 .header {
     /* margin-bottom: -783px; */
     /* display: none; */
-    height: 1050px;
+    height: 800px;
     background: url(../image/header.jpg) no-repeat;
     margin-bottom: 0px;
 }
@@ -210,8 +211,8 @@ p.toPrevMode:hover {
     width: 32%;
     height: 690px;
     margin: .5% .5%;
-    box-shadow: 12px 12px 24px rgba(0,0,0,.25);
-    border-radius: 20px;
+    box-shadow: 4px 8px 28px rgba(0,0,0,.33);
+    border-radius: 9px;
     background: white;
 }
 
