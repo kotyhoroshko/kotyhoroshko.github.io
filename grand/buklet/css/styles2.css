@@ -214,6 +214,7 @@ p.toPrevMode:hover {
     box-shadow: 4px 8px 28px rgba(0,0,0,.33);
     border-radius: 9px;
     background: white;
+    border-radius: 0 0 50px 50px;
 }
 
 .item>* {
@@ -275,6 +276,8 @@ p.toPrevMode:hover {
     height: 160px;
     border-top: 1px solid #d20000;
     box-shadow: 0 -20px 33px rgba(0,0,0,.06);
+    background-color: #ffff44;
+    border-radius: 0 0 50px 50px;
 }
 
 .sizethree.item {
@@ -313,7 +316,7 @@ p.toPrevMode:hover {
     text-align: center;
     font-weight: 600;
     line-height: 1.1;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .item__price {
