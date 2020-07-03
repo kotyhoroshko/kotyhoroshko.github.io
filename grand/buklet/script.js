@@ -12,7 +12,7 @@ var inner = `<div class="header"></div>
                     classSPO = 'spo';
                 }
                 inner += `
-                <div class="item size${base[index].size}">
+                <div class="item ${base[index].size}">
                     <div class="item__pic">
                         <img src="image/${base[index].pic}.jpg" alt="">
                         </div>` +

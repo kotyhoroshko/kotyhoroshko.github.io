@@ -181,7 +181,7 @@ p.toPrevMode:hover {
     /* display: none; */
     height: 800px;
     background: url(../image/header.jpg) no-repeat;
-    margin-bottom: 0px;
+    margin-bottom: -30px;
 }
 
 .footer {
@@ -191,6 +191,7 @@ p.toPrevMode:hover {
     color: white;
     font: 1em sans-serif;
     padding: 40px;
+    margin-top: 30px;
     /* display: none; */
 }
 
@@ -208,9 +209,10 @@ p.toPrevMode:hover {
     display: inline-block;
     position: relative;
     box-sizing: border-box;
-    width: 32%;
+    width: 24%;
     height: 690px;
-    margin: .5% .5%;
+    height: 535px;
+    margin: .33% .33%;
     box-shadow: 4px 8px 28px rgba(0,0,0,.33);
     border-radius: 9px;
     background: white;
@@ -224,9 +226,11 @@ p.toPrevMode:hover {
 
 .item__pic {
     height: 470px;
+    height: 340px;
     width: 750px;
     width: 90%;
     top: 50px;
+    top: 24px;
     left: 50%;
     transform: translate(-50%, 0%);
     /* background-color: #333; */
@@ -260,7 +264,7 @@ p.toPrevMode:hover {
     text-shadow: white 4px 4px 0, white -4px -4px 0, white -4px 4px 0, white 4px -4px 0;
     top: 36px;
     left: 12px;
-    font-size: 132px;
+    font-size: 100px;
     color: #d20000;
     /* transform: rotate(-6deg); */
     /* font-weight: 800; */
@@ -276,53 +280,24 @@ p.toPrevMode:hover {
     height: 160px;
     border-top: 1px solid #d20000;
     box-shadow: 0 -20px 33px rgba(0,0,0,.06);
-    background-color: #ffff44;
     border-radius: 0 0 50px 50px;
 }
-
-.sizethree.item {
-    width: 32.333%;
-}
-.item.sizeundefined {
-    height: 665px;
-}
-.item.sizeundefined .item__desc {
-    height: 138px;
-}
-.item.sizeundefined .item__desc > span {
-    font-size: 38px;
-}
-.item.sizeundefined  .item__price {
-    bottom: 135px;
- }
-
- .lesText.sizethree.item {
-    height: 620px;
-}
-
- .lesText .item__desc {
-    height: 109px;
-}
-/* .sizelestext .item__pic {
-    height: 530px;
- }
- */
-
 
 .item__desc>span {
     width: 100%;
     font-family: sans-serif;
     font-size: 46px;
+    font-size: 37px;
     text-align: center;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1.25;
     letter-spacing: 1px;
 }
 
 .item__price {
     display: flex;
     font-size: 0;
-    bottom: 150px;
+    bottom: 155px;
     right: 18px;
 }
 
@@ -336,7 +311,7 @@ p.toPrevMode:hover {
 .item__price--n {
     letter-spacing: 6px;
     font-family: price;
-    font-size: 175px;
+    font-size: 150px;
     font-weight: 800;
     color: #d0131f;
     text-shadow: white 4px 4px 0, white -4px -4px 0, white -4px 4px 0, white 4px -4px 0;
@@ -345,7 +320,7 @@ p.toPrevMode:hover {
 .item__price--n-cop {
     letter-spacing: 6px;
     font-family: price;
-    font-size: 125px;
+    font-size: 100px;
     font-weight: 800;
     line-height: 0.9;
     text-shadow: white 2px 2px 0, white -2px -2px 0, white -2px 2px 0, white 2px -2px 0;
@@ -399,10 +374,33 @@ p.toPrevMode:hover {
     background-color: yellow;
 }
 
-.sizespo{
-   
+.l-desc .item__desc{
+    height: 100px;   
 }
 
+.l-desc .item__price {
+    bottom: 100px;
+}
+
+.l-desc .item__pic {
+    height: 400px;
+}
+
+.b-height.item {
+    height: 600px;
+}
+.b-height .item__pic {
+    height: 405px;
+}
+
+.last {
+    height: 30px;
+    width: 100%;
+    opacity: 0;
+}
+.first {
+    margin-top: 30px;
+}
 .spo {
     width: 100%;
     display: inline-block;
