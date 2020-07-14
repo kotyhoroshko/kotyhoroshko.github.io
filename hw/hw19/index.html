@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Тестове завдання #2</title>
+    <link rel="stylesheet" type="text/css" href="jober.css">
+    <link rel="shortcut icon" href="../favicon.png" type="image/png" />
+</head>
+
+<body>
+    <div class="zadacha">
+        <a href="https://kotyhoroshko.github.io" title="Перейти вверх">
+            <div class="up">&#10060;</div>
+        </a>
+        <h3>Задача №2</h3>
+        <span>В линию выстроены n виновных людей, i-й из них держит в руках коготь длины L i . По звонку каждый человек убивает нескольких людей перед собой. Все люди убивают одновременно. А именно, i-й человек убивает j-го человека если и только если j &lt; i и
+            j ≥ i - L i.
+            <br>Вам даны длины когтей. Найдите число людей, которые останутся в живых после того, как прозвенит звонок.
+            Входные данные
+            <br>Первая строка содержит одно целое число n (1 ≤ n ≤ 10 6 ) — количество виновных
+            людей.
+            <br>Вторая строка содержит n целых чисел L 1 , L 2 , ..., L n (0 ≤ L i  ≤ 10 9 ), где L i — длина когтя в
+            руках i-го человека.
+            <br>Выходные данные
+            <br>Выведите одно число — количество человек, которые останутся в живых после того, как прозвенит звонок.            
+        </span>
+        <h4> Примеры:</h4>
+        <div class="flex">
+            <div class="example">входные данные:
+                <br>4
+                <br>0 1 0 10
+                <br>выходные данные:
+                <br>1
+            </div>
+            <div class="example">входные данные:
+                <br>2
+                <br>0 0
+                <br>выходные данные:
+                <br>2
+            </div>
+            <div class="example">входные данные:
+                <br>10
+                <br>1 1 3 0 0 0 2 1 0 3
+                <br>выходные данные:
+                <br>3
+            </div>
+            <div class="example rez">
+                <details>
+                    <summary>
+                        <b>Ответ (JS-функція):</b>
+                    </summary>
+                    <pre>
+                        <br>var guiltys = [L1,L2, ...,Ln], alive = 0, L = 0;
+                        <br>function findAlive() {
+                        <br>  for (var i = guiltys.length - 1; i >= 0; i--) {
+                        <br>    if (L == 0) { alive++; }
+                        <br>    if (L > +guiltys[i]) { L--;}
+                        <br>    else { L = guiltys[i]; }
+                        <br>  }
+                        <br>  return alive
+                        <br>}
+                    </pre>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="joberZone flex">
+        <div>
+            <label class="length" for="length">Число виновных людей (n)</label>
+            <input id="length" type="number" name="length" min="0" max="1000000000" step="1" required value="3">
+        </div>
+        <div class="showArr"></div>
+        <button class="bell">&#128276;</button>
+        <div class="showAlive"></div>
+    </div>
+
+    <script src="iklo.js"></script>
+    <script src="js3.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>Домашнє завдання 17.6</title>
+			<link rel="stylesheet" type="text/css" href="jober.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		</head>
+		<body>
+			<div  class="zadacha">
+				<a href="./index.html" title="Перейти вверх"><div class="up">&#10060;</div></a>
+				<span><b>Завдання 6.</b> Задание 6. Пошлите на сервер (goods.php) методом GET артикул товара (art). Сервер реагирует только на 2 артикула (1 или 2). Если все выполнено верно то сервер пришлет вам JSON строку с описанием товара. После раскодировки (JSON.parse) вы сможете вывести поля:</span>
+				<ul>
+					<li>name – имя товара</li>
+					<li>weight – вес товара</li>
+					<li>cost – стоимость товара</li>
+					<li>img – ссылка на картинку.</li>
+				</ul>				
+			</div>
+
+			<div class="joberZone">
+				
+				<input type="number" name="art" min="1" max="2" step="1" placeholder="Insert goods art" required>				
+				<button class="sentBtn">Show goods</button>
+				
+			</div>
+
+			<script src="js6.js"></script>
+			<script src="jquery.shuffleLetters.js"></script>
+			
+		</body>
+	</html>

@@ -1,0 +1,79 @@
+body {
+    background-image: url("../bckg2.jpg");
+	font-family: arial;
+	padding: 0;
+	margin: 0; }
+
+header {
+	display: block;
+	width: 940px;
+	height: 100px; }
+
+header > *,
+.logo {
+	height: 50px;
+	float: left;
+	margin: 30px 0 0 50px; }
+
+header > a {
+	width: auto; }
+
+header > h1 {
+	font-size: 54px;
+	margin-left: 7px;
+	font-weight: 100; }
+
+footer {
+	display: block;
+	height: 33px; }
+
+footer > p {
+	float: right;
+	margin: 0 33px 10px; }
+
+.wrapper {
+	width: 940px;
+	height: auto;
+	background-color: rgba(192,192,192,0.66);
+	margin: 50px auto;
+	box-shadow: 2px 2px 14px black; }
+
+.hw {
+	display: inline-block;
+	width: 250px;
+	color: #fff;
+	margin: 24px 30px;
+	background: linear-gradient(to bottom right, #000, #333);
+	box-shadow: 4px 4px 33px gray;
+	transition: 0.4s;
+	opacity: 0.9; }
+
+.hw:hover {
+	opacity: 1;
+	background: linear-gradient(to bottom right, #4d3200, #111);
+	transform: scale(1.1);}
+
+span {
+	display: inline-block;	
+	text-decoration: underline;
+	text-indent: 10px;
+	line-height: 30px;}
+
+h2 {
+	text-align: center;
+	line-height: 20px;}
+
+a {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	color: white;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;}
+
+h2 a {
+	display: inline;}
+
+h2 a.bonus:hover {
+	color: yellow;}

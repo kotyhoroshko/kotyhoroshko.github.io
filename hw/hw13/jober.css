@@ -1,0 +1,70 @@
+body {
+	background-image: url("../bckg2.jpg");
+	font-family: "century gothic", sans-serif, arial;
+	transition: .4s;	}
+
+p, input, span {	
+	font-size: 18px;}
+
+input {
+	display: block;
+	margin: 10px auto;
+	box-shadow: 1px 1px 3px gray;
+	height: 34px;
+	font-size: 21px;
+	font-weight: 900;
+	text-align: center; }
+
+input[type="submit"] {
+	background-color: #c00;
+	color: white;
+	transition: 0.4s;
+	height: 37px; 	}
+input[type="submit"]:hover {
+	background-color: darkred;
+	transform: 	scale(1.1);
+	font-size: 21px;
+	cursor: pointer; }
+
+input.error {
+	background-color: #ff6666; }
+
+input.error:after{
+	content: '!';
+	width: 50px;
+	height: 50px;
+	font-size: 20px;}
+
+.zadacha {
+	padding: 50px 20px;
+	background-color: #444;
+	color: snow;}
+
+.joberZone {			
+	position: relative;
+	margin: 50px 10px;
+	padding: 10px;
+	background-color: snow;
+	border: 1px solid #ddd;
+	box-shadow: 5px 5px 16px rgba(0,0,0,.6); }
+
+button {
+	display: block;
+	margin: 0 auto;
+	background-color: darkred;
+	color: snow;
+	font-size: 21px;
+	font-weight: 700; }
+
+img {
+	margin: 15px; }
+
+.img_center {
+	display: inline-block;
+	margin: 2%;
+	padding: 3%;
+	box-shadow: 2px 2px 10px rgba(0,0,0,.7);
+	max-width: 800px;
+	width: 40%;
+	font-size: 0;
+}

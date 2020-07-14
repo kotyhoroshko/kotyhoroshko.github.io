@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>Домашнє завдання 17.4</title>
+			<link rel="stylesheet" type="text/css" href="jober.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		</head>
+		<body>
+			<div  class="zadacha">
+				<a href="./index.html" title="Перейти вверх"><div class="up">&#10060;</div></a>
+				<span> <b>Завдання 4.</b> Измените предыдущее значение, чтобы рост задавался с помощью ползунка range. <br>
+				<i>(Создайте форму с radiobutton для выбора пола (мужчина или женщина). Добавьте поле для ввода роста (в сантиметрах). По нажатию кнопки “Идеальный вес”, пошлите запрос на файл a3.php. На сервер передается параметр пол – имя параметра sex, значения man или woman и рост ( имя height). Передача осуществляется методом AJAX, с помощью POST. <br>
+				Если все выполнено правильно, то будет возвращена строка с расчетом идеального веса под заданный пол. В противном случае – ошибка.)</i></span>
+			</div>
+
+			<div class="joberZone flex">
+
+				<div class="sex">
+					<div>
+						<label for="man">Man</label>
+						<input type="radio" id="man" name="sex" value="man" checked>
+					</div>
+					<div>
+						<label for="woman">Woman</label>
+						<input type="radio" id="woman" name="sex" value="woman">
+					</div>
+				</div>
+
+				<div>
+					<label class="height" for="height"></label>
+					<input type="range" id="height" name="height" min="100" max="250" step="1" >
+				</div>				
+
+				<button class="sentBtn">Идеальный вес</button>
+				
+			</div>
+
+			<script src="js4.js"></script>
+			<script src="jquery.shuffleLetters.js"></script>
+			
+		</body>
+	</html>

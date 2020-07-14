@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>Домашнє завдання 12.8</title>
+			<link rel="stylesheet" type="text/css" href="jober.css">
+		</head>
+		<body>
+			<div  class="zadacha">
+				<span> Спробуйте ввести в поля "..." або "+++" або "5.66" чи залиште пусте<br>
+				різниця між ними лиш в тому, що від другого JS забирає value. а від першого ні.
+				</span>
+			</div>
+
+			<div class="joberZone">
+				<form action="#">
+					<p style="text-align: center;">Цей input не прийме ". + - 1.3 ..."</p>
+					<input type="number" min="0" max="120" step="1" required class="us1">
+					<button>Перевірити</button>
+				</form>
+				<form  action="#">	
+					<p style="text-align: center;">А цей прийме ". + - 1.3 ..."</p>				
+					<input type="number" min="0" max="120" step="1" required class="us2">
+					<button onclick="checkOld()" class="checkOld">Перевірити</button>
+				</form>
+			</div>
+					
+			<script src="js18.js"></script>
+			
+		</body>
+	</html>

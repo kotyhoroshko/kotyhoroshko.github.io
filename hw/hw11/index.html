@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>Домашнє завдання 11</title>
+			<link rel="stylesheet" type="text/css" href="hw11.css">
+		</head>
+		<body>
+
+			<div class="wrapper">
+
+				<ol>
+					<li>Напишите функцию для вывода элементов массива в элемент <р id=”new”></р>.</li>
+					<li>Добавьте в предыдущую программу два элемента input, в которые можно ввести индекс массива и значение. По нажатию “ОК” - массив выводится.</li>
+					<li>Добавьте кнопку pop реализующую метод pop() для введенного выше массива./li>
+					<li>Добавьте кнопку shift реализующую метод shift() для введенного выше массива.</li>
+					<li>Добавьте кнопку push реализующую метод push() для введенного выше массива. Данные для записи необходимо считывать из input.</li>
+				</ol>
+				<br><hr><hr><br>
+				<p> Поточні значення масиву (" <b>|</b> " - роздільник )</p>
+				<p id='new'></p>
+				<input type="number" name="index" placeholder="Введіть індекс масиву">
+				<input name="val" placeholder="Введіть значення індексу">
+				<input type="submit" name="submit" value="ОК">				
+				<div class="method">
+					<button class="shift">SHIFT</button>
+					<button class="push">PUSH</button>
+					<button class="pop">POP</button>
+				</div>
+				<input name="pushValue" placeholder="Значення для push">
+				
+			</div>
+						
+			<script src="jober31.js"></script>
+			
+		</body>
+	</html>
