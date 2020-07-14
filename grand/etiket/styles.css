@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: black;
+    box-sizing: border-box;
+}
+
+.etiket {
+    width: 95vw;
+    margin: 20px auto;
+    padding: 1vw;
+    box-shadow: 0 0 12px black;
+}
+.rect {
+    display: inline-block;
+    background-color: #fff;
+    border:.2vw solid yellow;
+    padding: 0.1vw;
+}
+
+.etiket__title {    
+    font-size: 5vw;
+    line-height: 1;
+    text-align: center;
+    color: #d20000;
+    padding: 10px;
+}
+
+.etiket__weight {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    line-height: 6vw;
+    background-color: #d20000;
+    width: 6vw;
+    height: 6vw;
+}
+
+.etiket__img {    
+    width: 50%;
+}
