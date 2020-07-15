@@ -36,6 +36,7 @@
     box-shadow: 0 0 12px black;
     background-color: #fff;
     overflow: hidden;
+    border-radius: 4vw;
 }
 
 .rect {
