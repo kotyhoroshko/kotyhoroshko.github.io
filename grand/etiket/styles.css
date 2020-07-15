@@ -2,41 +2,138 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    color: black;
     box-sizing: border-box;
+    font-size: 2vw;
+}
+.wrapper {
+    background-color: #333;
+    padding: 3vw 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.half {
+    width: 49%;
+    margin-bottom: 0.2vw;
 }
 
 .etiket {
+    position: relative;
     width: 95vw;
-    margin: 20px auto;
-    padding: 1vw;
+    margin: 5vw auto;
     box-shadow: 0 0 12px black;
+    background-color: #fff;
+    overflow: hidden;
 }
+
 .rect {
     display: inline-block;
     background-color: #fff;
-    border:.2vw solid yellow;
-    padding: 0.1vw;
+    border:.15vw solid yellow;
+    padding: 1vw 2vw;
+    margin-bottom: 0.2vw;
+    margin-top: 0.2vw;
 }
 
-.etiket__title {    
-    font-size: 5vw;
+.etiket__title {
+    font-family: impact;
+    font-weight: 300;
+    font-size: 7vw;
     line-height: 1;
-    text-align: center;
+    text-align: right;    
+    /* text-shadow: .3vw .3vw 0 white; */
+    text-shadow: 0 0 2vw rgba(255,255,255,.66);
     color: #d20000;
     padding: 10px;
+    white-space: pre;
+}
+
+.etiket__logo {
+    width: 25%;
+    margin-bottom: 2vw;
+    margin-left: 1vw;
+}
+
+.etiket__bez-gmo {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 4vw;
+    width: 15%;
+    height: auto;
+    margin: 1vw 0 1vw auto;
 }
 
 .etiket__weight {
-    display: inline-block;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 1vw 0 10vw;
+}
+
+.etiket__weight-title {
+    font-weight: bold;
+    color: #d20000;
+    margin-right: 2vw;
+}
+
+.etiket__weight-value {    
     color: #fff;
+    font-weight: bold;
+    font-size: 3vw;
     text-align: center;
     line-height: 6vw;
     background-color: #d20000;
-    width: 6vw;
+    width: 8vw;
     height: 6vw;
+    border-radius: 2vw;
 }
 
-.etiket__img {    
-    width: 50%;
+.etiket__img {
+    position: absolute; 
+    /* width:100%; */
+    max-height: 50vw;
+    top: 0;
+    padding: 10vw 15vw 1vw 25vw;
+    z-index: 1;
+}
+
+.etiket__art {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    font-weight: bold;
+    text-align: right;
+    margin: 1vw 0;
+}
+
+.header {
+    display: inline-block;
+    position: relative;
+    width: 72%;
+    height: 48vw;
+    margin-right: 1vw;
+    vertical-align: top;
+    z-index: 2;
+}
+
+.footer {
+    position: relative;    
+    display: block;
+    background-color: #d20000;
+    color: white;
+    text-align: center;
+    padding: 1vw;
+    box-shadow: 0 -0.33vw 2vw rgba(0,0,0,.5);
+    z-index: 2;
+}
+
+.ps {
+    display: block;    
+    text-align: center;
 }
