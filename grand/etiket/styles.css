@@ -1,3 +1,12 @@
+@font-face {
+    font-family: din-black;
+    src: url(./font/DIN-Black.otf);
+  }
+  @font-face {
+    font-family: din-reg;
+    src: url(./font/DIN-Reg.otf);
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -39,7 +48,8 @@
 }
 
 .etiket__title {
-    font-family: impact;
+    font-family: din-reg;
+    font-family: din-black;
     font-weight: 300;
     font-size: 7vw;
     line-height: 1;
@@ -88,9 +98,10 @@
     text-align: center;
     line-height: 6vw;
     background-color: #d20000;
-    width: 8vw;
+    min-width: 8vw;
     height: 6vw;
     border-radius: 2vw;
+    padding: 0 1vw;
 }
 
 .etiket__img {
