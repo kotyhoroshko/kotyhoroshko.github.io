@@ -1,13 +1,17 @@
-body {
+body {	
     background-image: url("bckg2.jpg");
 	font-family: arial;
+	/* height: 101vh; */
 	padding: 0;
 	margin: 0;}
 
 header {
+	position: fixed;
 	display: block;
 	width: 940px;
-	height: 100px; }
+	height: 100px;
+	margin: 2vw;
+}
 
 header > * {
 	height: 50px;
@@ -20,36 +24,51 @@ header > h1 {
 	font-weight: 100; }
 
 footer {
+	position: fixed;
 	display: block;
-	height: 33px; }
+	height: 33px;
+	margin: 2vw;
+}
 
 footer > p {
 	float: right;
 	margin: 0 33px 10px; }
 
-.wrapper {
-	width: 940px;
-	height: auto;
+.wrapper {	
+	width: 90vw;
+	height: 90vh;
 	background-color: rgba(192,192,192,0.66);
-	margin: 50px auto;
-	box-shadow: 2px 2px 14px black;}
+	margin: 5vh auto 0;
+	box-shadow: 2px 2px 14px black;
+	z-index: 1;
+}
 
-.hw {
+.item {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	/* transform: translate(-50%, -50%); */
 	display: inline-block;
-	width: 250px;
+	width: 50%;
+	height: 33%;
 	color: #fff;
 	margin: 24px 30px;
 	background: linear-gradient(to bottom right, #000, #333);
-	box-shadow: 4px 4px 33px gray;
-	transition: 0.4s;
-	opacity: 0.9; }
+	box-shadow: 0 2vw 3vw rgba(0,0,0,.33);
+	transition-property: transform, left, top;
+	transition-duration: .4s, .4s, .4s;
+	z-index: 2;
+}
 
-.hw:hover {
+.item:hover {
+	top: 17%;
 	opacity: 1;
-	background: linear-gradient(to bottom right, #4d3200, #111);
-	transform: scale(1.1);}
+	background: linear-gradient(to bottom right, #4d3200, #111) !important;}
 
 span {
+	position: absolute;
+	top: 0;
+	left: 0;
 	display: inline-block;	
 	text-decoration: underline;
 	text-indent: 10px;
@@ -57,7 +76,13 @@ span {
 
 h2 {
 	text-align: center;
-	line-height: 20px;}
+	font-size: 5vw;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
 
 a {
 	display: inline-block;
