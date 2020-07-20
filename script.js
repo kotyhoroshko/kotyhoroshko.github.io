@@ -12,25 +12,28 @@ window.addEventListener('DOMContentLoaded', function(){
     Move();
 
     function Move(){
+        coor = [ 100 , 90 ]
         for (let j = 0, index = items.length-1, scale=1, opac=1; index >= 0; index--, j++) {
             proe = coor[0]*3
             // items[index].style.transform = `translate(${coor[0]-55}%, ${coor[1]-50}%) scale(${scale})`;
-            items[index].style.transform = `scale(${scale})`;
-            items[index].style.left = `${coor[0]}%`;
-            items[index].style.top = `${coor[1]}%`;
+            items[index].style.transform = `scale(${scale}) translate(-${60-scale*60}%, -0%)`;
+            items[index].style.left = `${coor[0]-(60*scale)}%`;
+            items[index].style.top = `${coor[1]-(33*scale)}%`;
 
             items[index].style.opacity = `${opac}`;
             items[index].style.zIndex = `${index}`;
-            coor[0] *= .9 ;
+            coor[0] *= .6 ;
             coor[1] *= .66;
             scale *= .8;
-            if (j>items.length-4){opac*=.6}
-            // console.log(coor[0])
+            if (j>items.length-4){opac*=.33}
+            console.log(index, coor[0])
         }
     }    
 
     function getX(e){
-        coor = [ (e.pageX/screenSizes[0]*50) , (e.screenY/screenSizes[1]*50) ]		
+        // coor = [ (e.pageX/screenSizes[0]*100) , (e.screenY/screenSizes[1]*50) ]		
+        		
+
         Move();
     }
 
@@ -38,7 +41,7 @@ window.addEventListener('DOMContentLoaded', function(){
         return Math.floor(Math.random() * 255) 
     }
 
-    window.addEventListener('mousemove', getX);
+    //window.addEventListener('mousemove', getX);
     window.addEventListener('wheel', function(e) {         
         slide(e)
     })
@@ -55,8 +58,8 @@ window.addEventListener('DOMContentLoaded', function(){
             items.unshift(items[items.length-1])
             items.pop()
         }
-        console.log (e)     
-       getX(e)
+             
+        Move()
     }
 
 
