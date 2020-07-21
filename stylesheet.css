@@ -1,5 +1,6 @@
 body {	
-    background: linear-gradient(rgba(255,255,255, .66), transparent), url("bckg.jpg");
+	background: linear-gradient(rgba(255,255,255, .66), transparent), url("bckg.jpg");
+	background-size: cover;
 	font-family: arial;
 	height: 101vh;
 	padding: 0;
