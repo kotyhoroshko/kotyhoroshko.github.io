@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', function(){
     
     window.addEventListener('wheel', function(e) {  
         let direction = false;
-        e.deltaY > 0 ?  direction = true : direction = false;
+        e.deltaY > 0 ?  direction = false : direction = true;
         slide(direction)
     })
 
@@ -97,7 +97,7 @@ window.addEventListener('DOMContentLoaded', function(){
         var yDiff = yDown - yUp;
 
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-            if ( xDiff > screenSizes[0]/10 ) {
+            if ( xDiff > screenSizes[0]/5 ) {
                 //console.log('left swipe ')
                 slide(true)
                 xDown=xUp
@@ -108,7 +108,7 @@ window.addEventListener('DOMContentLoaded', function(){
                 xDown=xUp
             }                       
         } else {
-            if ( yDiff > screenSizes[1]/10 ) {
+            if ( yDiff > screenSizes[1]/5 ) {
                 //console.log('up swipe ')
                 slide(true)
                 yDown=yUp

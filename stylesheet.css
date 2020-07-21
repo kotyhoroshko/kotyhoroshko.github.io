@@ -69,22 +69,20 @@ footer {
 	margin: 24px 30px;
 	background: linear-gradient(to bottom right, #000, #333);
 	box-shadow: 0 2vw 3vw rgba(0,0,0,.5);
-	transition-property: transform, left, top, opacity;
-	transition-duration: .42s, .42s, .42s, .9s;
-	transition-timing-function: ease, ease, ease, ease-out;
+	transition-property: transform, left, top, opacity, filter;
+	transition-duration: .42s, .42s, .42s, .9s, .2s;
+	transition-timing-function: ease, ease, ease, ease-out, ease;
 	z-index: 2;
 }
 .mirror {
 	height: 10vw;
-	opacity: .9;
+	opacity: .66;
 	transform: skewX(-60deg) translate(-16%, 0);
 	filter: blur(.66vw);
 }
 
 .item:hover {
-	/* top: 17%;
-	opacity: 1;
-	background: linear-gradient(to bottom right, #4d3200, #111) !important; */
+	filter: brightness(1.5);
 }
 
 span {
@@ -92,6 +90,7 @@ span {
 	position: absolute;
 	top: 0;
 	left: 0;
+	font-family: sans-serif;
 	text-decoration: underline;
 	font-size: 2vw;
 	font-weight: 100;
