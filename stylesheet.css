@@ -1,9 +1,22 @@
 body {	
-    background-image: url("bckg2.jpg");
+    background: linear-gradient(rgba(255,255,255, .66), transparent), url("bckg.jpg");
 	font-family: arial;
-	/* height: 101vh; */
+	height: 101vh;
 	padding: 0;
-	margin: 0;}
+	margin: 0;
+	overflow: hidden;
+}
+.video-bg {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+    min-width: 100vw;
+    min-height: 100vw;
+	z-index: -1;
+	opacity: .3;
+	filter: blur(.2vw) brightness(2);
+}
 
 header {
 	position: fixed;
@@ -39,17 +52,16 @@ footer {
 	width: 90vw;
 	height: 95vh;
 	margin: 2vh auto 0;
-	background-color: rgba(192,192,192,0.66);
-	box-shadow: 2px 2px 14px black;
+	/* background-color: rgba(192,192,192,0.66); */
+	/* box-shadow: 2px 2px 14px black; */
 	z-index: 1;
 }
 
 .item {
+	display: inline-block;
 	position: absolute;
 	top: 0;
-	left: 0;
-	/* transform: translate(-50%, -50%); */
-	display: inline-block;
+	left: 0;	
 	width: 60%;
 	height: 33%;
 	color: #fff;
@@ -57,9 +69,15 @@ footer {
 	background: linear-gradient(to bottom right, #000, #333);
 	box-shadow: 0 2vw 3vw rgba(0,0,0,.5);
 	transition-property: transform, left, top, opacity;
-	transition-duration: .33s, .33s, .33s, .8s;
+	transition-duration: .42s, .42s, .42s, .9s;
 	transition-timing-function: ease, ease, ease, ease-out;
 	z-index: 2;
+}
+.mirror {
+	height: 10vw;
+	opacity: .9;
+	transform: skewX(-60deg) translate(-16%, 0);
+	filter: blur(.66vw);
 }
 
 .item:hover {
@@ -69,20 +87,25 @@ footer {
 }
 
 span {
+	display: inline-block;	
 	position: absolute;
 	top: 0;
 	left: 0;
-	display: inline-block;	
 	text-decoration: underline;
+	font-size: 2vw;
+	font-weight: 100;
 	text-indent: 10px;
-	line-height: 30px;}
+	line-height: 30px;
+	margin: 1vw;
+}
 
 h2 {
 	text-align: center;
 	font-size: 5vw;
 	display: flex;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	text-shadow: .66vw .66vw 1vw rgba(0,0,0,.5);
     height: 100%;
     margin: 0;
 }
@@ -92,10 +115,5 @@ a {
 	height: 100%;
 	width: 100%;
 	color: white;
-	text-decoration: none;}
-
-h2 a {
-	display: inline;}
-
-h2 a.bonus:hover {
-	color: yellow;}
+	text-decoration: none;
+}

@@ -2,8 +2,11 @@ window.addEventListener('DOMContentLoaded', function(){
 
 
     let items = Array.from( document.querySelectorAll('.item'));
+    let mirrors = Array.from( document.querySelectorAll('.mirror'));
     for (let index = 0; index < items.length; index++) {
-        items[index].style.background=`linear-gradient(to bottom right, rgba(0, 0, 0, .66), rgba(51, 51, 51, .5)), rgba(${getRndColor()},${getRndColor()},${getRndColor()},1)`
+        let rndColor = `rgba(${getRndColor()},${getRndColor()},${getRndColor()}`
+        items[index].style.background=`linear-gradient(to bottom right, rgba(0, 0, 0, .66), rgba(104, 52, 0, .5)), ${rndColor},1)`
+        mirrors[index].style.background=`linear-gradient(to top right, rgba(0, 0, 0, 0) 18%, ${rndColor},.8))`
         
     } 
 
@@ -16,19 +19,24 @@ window.addEventListener('DOMContentLoaded', function(){
     Move();
 
     function Move(){
-        coor = [ 100 , 90 ]
-        for (let j = 0, index = items.length-1, scale=1, opac=1; index >= 0; index--, j++) {
-            // items[index].style.transform = `translate(${coor[0]-55}%, ${coor[1]-50}%) scale(${scale})`;
+        coor = [ 100 , 85 ]
+        for (let j = 0, index = items.length-1, scale=1, opac=1; index >= 0; index--, j++) {            
             items[index].style.transform = `scale(${scale}) translate(-${60-scale*60}%, -0%)`;
             items[index].style.left = `${coor[0]-(60*scale)}%`;
-            items[index].style.top = `${coor[1]-(33*scale)}%`;
+            items[index].style.top = `${coor[1]-16}%`;
+            if (index == items.length-1){
+                items[index].style.transform = `scale(1.1) translate(-10%, 10%)`;
+                items[index].style.left = `${coor[0]-(66*scale)}%`;
+                items[index].style.top = `${coor[1]-(33*scale)}%`;
+            }
             items[index].style.opacity = `${opac}`;
             items[index].style.zIndex = `${index}`;
             coor[0] *= .6 ;
-            coor[1] *= .66;
+            coor[1] *= .6;
             scale *= .8;
-            if ( j>items.length-4 ) { opac*=.33 }
+            if ( j>items.length-4 ) { opac*=.33 }            
         }
+        console.log(items.mirror)
     }    
 
     function getX(e){
@@ -40,7 +48,6 @@ window.addEventListener('DOMContentLoaded', function(){
     function getRndColor() { 
         return Math.floor(Math.random() * 255) 
     }
-
     
     window.addEventListener('wheel', function(e) {  
         let direction = false;
@@ -60,9 +67,7 @@ window.addEventListener('DOMContentLoaded', function(){
         Move()
     }
 
-
-
-
+    // SWIPE START
     document.addEventListener('touchstart', handleTouchStart, false);        
     document.addEventListener('touchmove', handleTouchMove, false);
 
@@ -93,28 +98,29 @@ window.addEventListener('DOMContentLoaded', function(){
 
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
             if ( xDiff > screenSizes[0]/10 ) {
-                //console.log('left swipe ', xDiff, xDown +" - "+ xUp)
+                //console.log('left swipe ')
                 slide(true)
                 xDown=xUp
             }
             if ( xDiff < 0 && Math.abs(xDiff) > screenSizes[0]/10 ) {
-                console.log('right swipe', xDiff, xDown +" - "+ xUp)
+                //console.log('right swipe')
                 slide(false)
                 xDown=xUp
             }                       
         } else {
-            // if ( yDiff > 0 ) {
-            //     console.log('up swipe ', xDiff, yDiff)
-            //     slide(true)
-            // } else { 
-            //     console.log('down swipe', xDiff, yDiff)
-            //     slide(false)
-            // }                                                                 
-        }
-        /* reset values */
-        // xDown = null;
-        // yDown = null;                                             
-    };
+            if ( yDiff > screenSizes[1]/10 ) {
+                //console.log('up swipe ')
+                slide(true)
+                yDown=yUp
+            } 
+            if(yDiff < 0 && Math.abs(yDiff)>screenSizes[1]/10) { 
+                //console.log('down swipe')
+                slide(false)
+                yDown=yUp
+
+            }                                                                 
+        }                                     
+    }; //swipe end
 
 
    
