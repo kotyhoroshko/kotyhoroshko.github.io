@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', function(){
 
-
+    let wrapper = document.querySelector('.wrapper');    
     let items = Array.from( document.querySelectorAll('.item'));
     let mirrors = Array.from( document.querySelectorAll('.mirror'));
     for (let index = 0; index < items.length; index++) {
@@ -35,15 +35,20 @@ window.addEventListener('DOMContentLoaded', function(){
             coor[1] *= .6;
             scale *= .8;
             if ( j>items.length-4 ) { opac*=.33 }            
-        }
-        console.log(items.mirror)
+        }        
     }    
 
-    function getX(e){
-        // coor = [ (e.pageX/screenSizes[0]*100) , (e.screenY/screenSizes[1]*50) ]
-        Move();
-    }
-    //window.addEventListener('mousemove', getX);
+    // function getX(e){
+    //     mouseCoor = [ (e.pageX/screenSizes[0]) , (e.screenY/screenSizes[1]) ]
+    //     wrapper.style.transform=`
+    //         skew(${2*(mouseCoor[0]-.5)}deg, ${2*(mouseCoor[1]-.5)}deg) 
+    //         scale(${1+(Math.abs(mouseCoor[0])/10)}, ${1+(Math.abs(mouseCoor[1])/10)})`
+    //     console.log(`
+    //         skew(${10*(mouseCoor[0]-.5)}deg, ${10*(mouseCoor[1]-.5)}deg) 
+    //         scale(${1-(Math.abs(mouseCoor[0])/10)}, ${1-(Math.abs(mouseCoor[1])/10)})`, mouseCoor)
+    // }
+    // //transform: skew(0deg, -1deg)
+    // window.addEventListener('mousemove', getX) ;
 
     function getRndColor() { 
         return Math.floor(Math.random() * 255) 
@@ -67,7 +72,10 @@ window.addEventListener('DOMContentLoaded', function(){
         Move()
     }
 
-    // SWIPE START
+
+
+    //----------------------------- SWIPE START-------------------------
+
     document.addEventListener('touchstart', handleTouchStart, false);        
     document.addEventListener('touchmove', handleTouchMove, false);
 
@@ -102,7 +110,7 @@ window.addEventListener('DOMContentLoaded', function(){
                 slide(true)
                 xDown=xUp
             }
-            if ( xDiff < 0 && Math.abs(xDiff) > screenSizes[0]/10 ) {
+            if ( xDiff < 0 && Math.abs(xDiff) > screenSizes[0]/5 ) {
                 //console.log('right swipe')
                 slide(false)
                 xDown=xUp
@@ -113,15 +121,13 @@ window.addEventListener('DOMContentLoaded', function(){
                 slide(true)
                 yDown=yUp
             } 
-            if(yDiff < 0 && Math.abs(yDiff)>screenSizes[1]/10) { 
+            if(yDiff < 0 && Math.abs(yDiff)>screenSizes[1]/5) { 
                 //console.log('down swipe')
                 slide(false)
                 yDown=yUp
-
             }                                                                 
         }                                     
     }; //swipe end
-
 
    
 }) //end
