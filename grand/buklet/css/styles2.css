@@ -216,7 +216,7 @@ p.toPrevMode:hover {
     box-shadow: 4px 8px 28px rgba(0,0,0,.33);
     border-radius: 9px;
     background: white;
-    border-radius: 0 0 50px 50px;
+    border-radius: .5vw;
 }
 
 .item>* {
