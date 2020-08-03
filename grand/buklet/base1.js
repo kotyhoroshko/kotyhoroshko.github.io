@@ -1,51 +1,68 @@
-let dataVid = '07.07'
-let dataDo = '28.07';
+let dataVid = '07.08'
+let dataDo = '31.08';
 let base = [
 
-{size:'l-desc', pic: '22', desc:`Торт "Малиновий"$100г`, disc: '40%', priceO: '1700', priceN:"990"},
-{size:'l-desc', pic: '24', desc:`Торт "Графський"$100г`, disc: '40%', priceO: '1600', priceN:"990"},
-{size:'l-desc', pic: '23', desc:`Торт "Батончик фруктовий"$100г`, disc: '40%', priceO: '1600', priceN:"990"},
-{size:'l-desc', pic: '21', desc:`Тістечко "Тіраміссу"$65г`, disc: '40%', priceO: '1700', priceN:"990"},
-{size:'', pic: '36', desc:`Круасан"GRAND FOOD" з пломбіром$100г`, disc: '40%', priceO: '1100', priceN:"660"},
-{size:'', pic: '29', desc:`Круасан "GRAND FOOD" з шинкою/ковбасою/Гурман$200г`, disc: '20%', priceO: '2000', priceN:"1590"},
-{size:'', pic: '35', desc:`Булочка "Ватрушка"$120г`, disc: '40%', priceO: '1100', priceN:"660"},
-{size:'', pic: '34', desc:`Хліб "Пшенично солодовий" подовий$600г`, disc: '30%', priceO: '2190', priceN:"1550"},
-{size:'l-desc', pic: '37', desc:`Стегенце куряче запечене$100г`, disc: '40%', priceO: '1699', priceN:"999"},
-{size:'l-desc', pic: '7', desc:`Гомілка куряча запечена$100г`, disc: '35%', priceO: '1499', priceN:"999"},
-{size:'l-desc', pic: '8', desc:`Крило куряче запечене$100г`, disc: '35%', priceO: '1499', priceN:"999"},
-{size:'l-desc', pic: '6', desc:`Четвертина куряча запечена$100г`, disc: '25%', priceO: '1299', priceN:"999"},
-{size:'l-desc', pic: '31', desc:`Гурка$100г`, disc: '30%', priceO: '1090', priceN:"770"},
-{size:'l-desc', pic: '33', desc:`Шойт$100г`, disc: '40%', priceO: '1290', priceN:"770"},
-{size:'l-desc', pic: '1', desc:`Стейк свинний охолоджений$100г`, disc: '35%', priceO: '1499', priceN:"999"},
-{size:'l-desc', pic: '5', desc:`Стейк "Арізона" свинний$100г`, disc: '30%', priceO: '1799', priceN:"1299"},
-{size:'l-desc', pic: '2', desc:`Бекон свинний з підчеревком$100г`, disc: '20%', priceO: '999', priceN:"799"},
-{size:'l-desc', pic: '4', desc:`Печінка свинна охолоджена$100г`, disc: '30%', priceO: '349', priceN:"245"},
-{size:'l-desc', pic: '39', desc:`Фарш (свинно-яловичий)$100г`, disc: '25%', priceO: '1199', priceN:"899"},
-{size:'l-desc', pic: '3', desc:`Набір кулінарний курячий$100г`, disc: '55%', priceO: '199', priceN:"089"},
-{size:'last', pic: '', desc:``, disc: '', priceO: '', priceN:""},
+    {pic:"21", desc:`Торт "Вечірній"$100г`, disc:"40%", priceO:"1900", priceN: "1140"},
+    {pic:"35", desc:`Торт "Лісова ягода"$100г`, disc:"40%", priceO:"1600", priceN: "990"},
+    {pic:"20", desc:`Торт "Горіхова ласунка"$100г`, disc:"40%", priceO:"1600", priceN: "990"},
+    {pic:"19", desc:`Тістечко "Прохолода"$100г`, disc:"40%", priceO:"2000", priceN: "1190"},
 
-{size:'b-height', pic: '27', desc:`Персики, кг`, disc: 'XIT', priceO: ' ', priceN:" "},
-{size:'b-height', pic: '25', desc:`Нектарин, кг`, disc: 'XIT', priceO: ' ', priceN:" "},
-{size:'b-height', pic: '26', desc:`Лохина, кг`, disc: 'XIT', priceO: ' ', priceN:" "},
-{size:'b-height', pic: '15', desc:`Сир плавлений "Лактіма"$в асортименті$130г`, disc: '25%', priceO: '2300', priceN:"1690"},
-{size:'b-height', pic: '11a', desc:`Сир "Сулугуні"$100г`, disc: '30%', priceO: '1700', priceN:"1190"},
-{size:'b-height', pic: '17', desc:`Йогурт "Савушкин Продукт"$в асортименті 2%$350г`, disc: '25%', priceO: '2800', priceN:"2090"},
-{size:'b-height', pic: '16a', desc:`Морозиво "Бліззард" шоколад печиво$500мл`, disc: '30%', priceO: '9990', priceN:"6990"},
-{size:'b-height', pic: '28', desc:`Морозиво "Полтавський" Каштан ТМ"Рудь"$70г`, disc: '45%', priceO: '1690', priceN:"890"},
-{size:'b-height', pic: '12', desc:`Кетчуп "Мадеро"$пікантний, лагідний$560г`, disc: '30%', priceO: '3800', priceN:"2590"},
-{size:'b-height', pic: '32', desc:`Ковбаски "Баварські" TM"Світ мяса"$100г`, disc: '20%', priceO: '1250', priceN:"990"},
-{size:'b-height', pic: '30', desc:`Смалець$500г`, disc: '35%', priceO: '3000', priceN:"1900"},
-{size:'b-height', pic: '41', desc:`Ікра червона лососева ТМ"Авача"$140г`, disc: '50%', priceO: '19500', priceN:"9900"},
-{size:'b-height', pic: '19', desc:`Печиво "Конті" День і Ніч$100г`, disc: '30%', priceO: '720', priceN:"499"},
-{size:'b-height', pic: '14', desc:`Мікропопкорн "Моді"$в асортименті$100г`, disc: '35%', priceO: '1500', priceN:"990"},
-{size:'b-height', pic: '13', desc:`Напій "Біола" Мохіто$1,5л`, disc: '35%', priceO: '2400', priceN:"1590"},
-{size:'b-height', pic: '40', desc:`Мінеральна вода "Свалявська"$1,5л`, disc: '30%', priceO: '1090', priceN:"790"},
-{size:'b-height', pic: '20', desc:`Пиво "ППБ" Закарпатське оригінальне$0,5л `, disc: '25%', priceO: '1550', priceN:"1190"},
-{size:'b-height', pic: '18', desc:`Антисептик "Галакс"$500г`, disc: 'XIT', priceO: ' ', priceN:" "},
-{size:'b-height', pic: '10', desc:`Рушники кухонні "Перфекс"$мега боні 2шар$2шт`, disc: '25%', priceO: '4300', priceN:"3300"},
-{size:'b-height', pic: '9',  desc:`Конд-р д/білизни "Коколіно"$в асортименті$960мл / 1,68мл`, disc: '20%', priceO: '10500', priceN:"8400"},
+    {pic:"31", desc:`Рулетик "З заварним кремом"$90г`, disc:"35%", priceO:"800", priceN: "480"},
+    {pic:"37", desc:`Круасан "GRAND FOOD" з шоколадною начинкою$100г`, disc:"40%", priceO:"1200", priceN: "700"},
+    {pic:"42", desc:`Хлібець "На живій заквасці"$з насінням  соняшника$350г`, disc:"30%", priceO:"1790", priceN: "1190"},
+    {pic:"34", desc:`Багет "GRAND FOOD"$в асортименті$230г`, disc:"25%", priceO:"2500", priceN: "1900"},
+
+    {pic:"27", desc:`Гомілка куряча запечена$100г`, disc:"35%", priceO:"1499", priceN: "999"},
+    {pic:"29", desc:`Стегенце куряче запечене$100г`, disc:"55%", priceO:"1699", priceN: "777"},
+    {pic:"28", desc:`Крило куряче запечене$100г`, disc:"35%", priceO:"1499", priceN: "999"},
+    {pic:"26", desc:`Четвертина куряча запечена$100г`, disc:"25%", priceO:"1299", priceN: "999"},
+
+    {pic:"5", desc:`Шашлик "По селянськи"$свинний охолоджений$100г`, disc:"25%", priceO:"1499", priceN: "1125"},
+    {pic:"3", desc:`Ребра свинні мясні охолодженні$100г`, disc:"25%", priceO:"1299", priceN: "999"},
+    {pic:"1", desc:`Бекон свинний охолоджений$100г`, disc:"20%", priceO:"999", priceN: "799"},
+    {pic:"25", desc:`Печінка свинна охолоджена$100г`, disc:"35%", priceO:"349", priceN: "245"},
+
+    {pic:"2", desc:`Телятина охолоджена$вищого гатуноку$100г`, disc:"30%", priceO:"1899", priceN: "1399"},
+    {pic:"4", desc:`Стегенце куряче охолоджене$100г`, disc:"30%", priceO:"799", priceN: "590"},
+    {pic:"30", desc:`Смалець$500г`, disc:"35%", priceO:"3000", priceN: "1900"},
+    {pic:"32", desc:`Капуста квашена білокачанна$з буряком або морквою$900г`, disc:"60%", priceO:"2490", priceN: "999"},
+
+    {pic:"17a", desc:`Курча "Тапака"$100г`, disc:"25%", priceO:"1299", priceN: "999"},
 
 
+    {size:"rozd", pic:"0", desc:` `, disc:" ", priceO:" ", priceN: " "},
 
-  
+    {pic:"22", desc:`Кавун`, disc:"XIT", priceO:"", priceN: ""},
+    {pic:"24", desc:`Перець салатний`, disc:"XIT", priceO:"", priceN: ""},
+    {pic:"23", desc:`Помідори`, disc:"XIT", priceO:"", priceN: ""},
+    {pic:"33a", desc:`Яйця курячі TM"Квочка" Домашні$10шт`, disc:"25%", priceO:"1790", priceN: "1350"},
+
+    {pic:"6", desc:`Морозиво "Пані ягода" вишня$ТМ "Ласка"$60г`, disc:"45%", priceO:"1200", priceN: "690"},
+    {pic:"7", desc:`Морозиво "Малюк-Ам" пломбір$ТМ"Ласунка"$90г`, disc:"40%", priceO:"1800", priceN: "1090"},
+    {pic:"8", desc:`Сир "Млековіта" Фета Фаворіта$270г`, disc:"20%", priceO:"3800", priceN: "2990"},
+    {pic:"9", desc:`Сир кремовий "Серек" топіоні$в асортименті$150г`, disc:"30%", priceO:"2400", priceN: "1650"},
+    
+    {pic:"10", desc:`Напій "Олімпія" Квас$2л`, disc:"25%", priceO:"1900", priceN: "1490"},
+    {pic:"12", desc:`Мінеральна вода$ТМ "Моршинська"$750мл`, disc:"25%", priceO:"1250", priceN: "950"},
+    {pic:"13", desc:`Пиво "Великопоповицький козел"$500мл`, disc:"25%", priceO:"2600", priceN: "1890"},
+    {pic:"11", desc:`Пиво "ППБ"$Свіжий розлив$650мл`, disc:"30%", priceO:"1950", priceN: "1390"},
+    
+    {pic:"18", desc:`Арахіс "Моді" смажений солоний$85г`, disc:"25%", priceO:"2290", priceN: "1790"},
+    {pic:"14", desc:`Соус "Давтона"$в асортименті$850г`, disc:"20%", priceO:"6900", priceN: "5690"},
+    {pic:"16", desc:`Вафлі "Грешкі" Грецькі$гофре молочний горіх$33г`, disc:"25%", priceO:"1300", priceN: "990"},
+    {pic:"39", desc:`Цукерки "Тоффіфе" 125г`, disc:"40%", priceO:"7700", priceN: "4890"},
+    
+    {pic:"36", desc:`Салака "Галс"$100г`, disc:"20%", priceO:"850", priceN: "699"},
+    {pic:"15", desc:`Ковбаса "На дровах з птиці"$400г  "Ранчо"`, disc:"30%", priceO:"5500", priceN: "3990"},
+    {pic:"41", desc:`Ковбаса "На дровах з яловичиною"$400г "Ранчо"`, disc:"30%", priceO:"5900", priceN: "4190"},
+    {pic:"40", desc:`Ковбаски "Угорські"$ТМ"Тисменські ковбаси$100г"`, disc:"25%", priceO:"1130", priceN: "880"},
+    
+    {pic:"38", desc:`Йогурт "Дольче" 2,5%$в асортименті$290мл`, disc:"30%", priceO:"2050", priceN: "1450"},
+
+// {pic:"0", desc:`Капуста квашена білокачанна з морквою 900г`, disc:"60%", priceO:"2490", priceN: "999"},
+//   " Багет "GRAND FOOD" з шовдарем 230г	25%	25,00	19
+// " Багет "GRAND FOOD" зі стейком 230г	25%	25,00	19
+// " Багет "GRAND FOOD" з шашликом 230г	25%	25,00	19
+// " Багет "GRAND FOOD" з філе курки 230г	25%	25,00	19
+// " Багет "GRAND FOOD" з відбивною 230г	25%	25,00	19
 ]
