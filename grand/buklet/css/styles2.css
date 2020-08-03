@@ -413,7 +413,7 @@ p.toPrevMode:hover {
 .item.sizerozd {
     width: 98%;
     box-shadow: none;
-    height: 1vw;
+    height: .66vw;
     overflow: hidden;
     background-color: #d20000;
 }
