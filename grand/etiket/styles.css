@@ -36,7 +36,7 @@
     box-shadow: 0 0 12px black;
     background-color: #fff;
     overflow: hidden;
-    border-radius: 4vw;
+    /* border-radius: 4vw; */
 }
 
 .rect {
@@ -52,7 +52,7 @@
     font-family: din-reg;
     font-family: din-black;
     font-weight: 300;
-    font-size: 7vw;
+    font-size: 6.4vw;
     line-height: 1;
     text-align: right;    
     /* text-shadow: .3vw .3vw 0 white; */
@@ -60,12 +60,15 @@
     color: #d20000;
     padding: 10px;
     white-space: pre;
+    padding-top: 1vw;
 }
 
 .etiket__logo {
-    width: 25%;
+    position: relative;
+    width: 30%;
     margin-bottom: 2vw;
-    margin-left: 1vw;
+    margin-left: 1.2vw;
+    z-index: 2;
 }
 
 .etiket__bez-gmo {
@@ -110,8 +113,8 @@
     /* width:100%; */
     max-height: 50vw;
     top: 0;
-    padding: 10vw 15vw 1vw 25vw;
-    z-index: 1;
+    padding: 10vw 0 1vw 28vw;
+    z-index: 0;
 }
 
 .etiket__art {
@@ -127,7 +130,7 @@
 .header {
     display: inline-block;
     position: relative;
-    width: 72%;
+    width: 65%;
     height: 48vw;
     margin-right: 1vw;
     vertical-align: top;

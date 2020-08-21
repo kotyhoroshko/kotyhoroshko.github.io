@@ -2,17 +2,7 @@ document.addEventListener("DOMContentLoaded", go);
 
 let db = [
 
-    {
-        title: `Смалець`,
-        weight: `250г`, 
-        art: '48725',
-        sklad: `Склад: сало свине`,
-        pozh: `Поживна цінність: Жири 99.7%.`,
-        kal: `Калорійність  897.61 кКал.`,
-        energy: `Енергетична цінність 3755.7 кДж.`,
-        termin: `Термін зберігання 30 діб.`,
-        pic:'3'
-    },
+    
     {
         title: `Шкварок молотий`,
         weight: `200г`,
@@ -34,6 +24,17 @@ let db = [
         energy: `Енергетична цінність 3755.7 кДж.`,
         termin: `Термін зберігання 30 діб.`,
         pic:'4'
+    },
+    {
+        title: `Смалець`,
+        weight: `250г`, 
+        art: '48725',
+        sklad: `Склад: сало свине`,
+        pozh: `Поживна цінність: Жири 99.7%.`,
+        kal: `Калорійність  897.61 кКал.`,
+        energy: `Енергетична цінність 3755.7 кДж.`,
+        termin: `Термін зберігання 30 діб.`,
+        pic:'3'
     },
     {
         title: `Смалець стаканчик`,
@@ -85,7 +86,7 @@ function go(){
                    
         inner +=`
             <div class="etiket ${db[index].art}">
-                <img class="etiket__logo" src="./img/logo.png" alt="">
+                <img class="etiket__logo" src="./img/logo2.png" alt="">
                 <div class="header">
                     <h2 class="etiket__title">${db[index].title}</h2>
                     <br>

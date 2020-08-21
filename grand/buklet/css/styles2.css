@@ -19,6 +19,15 @@
     /* src: url(../fonts/desc.ttf); */
 }
 
+@font-face {
+    font-family: din-black;
+    src: url(./font/DIN-Black.otf);
+  }
+  @font-face {
+    font-family: din-reg;
+    src: url(./font/DIN-Reg.otf);
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -285,7 +294,7 @@ p.toPrevMode:hover {
 
 .item__desc>span {
     width: 100%;
-    font-family: sans-serif;
+    font-family: din-reg, sans-serif;
     font-size: 46px;
     font-size: 37px;
     text-align: center;
