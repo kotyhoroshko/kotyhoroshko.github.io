@@ -12,6 +12,9 @@
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
+    font-size: 2.8vw;
+}
+.big *{
     font-size: 2vw;
 }
 .wrapper {
@@ -43,6 +46,12 @@
     display: inline-block;
     background-color: #fff;
     border:.15vw solid yellow;
+    padding: 1.2vw 2vw;
+    margin-bottom: 0.2vw;
+    margin-top: 0.2vw;
+}
+.big .rect {    
+    border:.15vw solid yellow;
     padding: 1vw 2vw;
     margin-bottom: 0.2vw;
     margin-top: 0.2vw;
@@ -66,9 +75,12 @@
 .etiket__logo {
     position: relative;
     width: 30%;
-    margin-bottom: 2vw;
+    margin-bottom: 1vw;
     margin-left: 1.2vw;
     z-index: 2;
+}
+.big .etiket__logo {
+    margin-bottom: 2vw;
 }
 
 .etiket__bez-gmo {
@@ -111,10 +123,14 @@
 .etiket__img {
     position: absolute; 
     /* width:100%; */
-    max-height: 50vw;
+    max-height: 45vw;
     top: 0;
-    padding: 10vw 0 1vw 28vw;
+    padding: 7vw 0 1vw 28vw;
     z-index: 0;
+}
+.big .etiket__img {
+    padding: 10vw 0 1vw 28vw;
+    max-height: 50vw;
 }
 
 .etiket__art {
@@ -131,10 +147,13 @@
     display: inline-block;
     position: relative;
     width: 65%;
-    height: 48vw;
+    height: 42vw;
     margin-right: 1vw;
     vertical-align: top;
     z-index: 2;
+}
+.big .header {
+    height: 48vw;
 }
 
 .footer {
@@ -143,9 +162,12 @@
     background-color: #d20000;
     color: white;
     text-align: center;
-    padding: 1vw;
+    padding: 1.3vw;
     box-shadow: 0 -0.33vw 2vw rgba(0,0,0,.5);
     z-index: 2;
+}
+.big .footer {
+    padding: 1vw;
 }
 
 .ps {

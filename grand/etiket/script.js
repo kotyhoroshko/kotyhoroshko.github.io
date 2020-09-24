@@ -12,7 +12,8 @@ let db = [
         kal: `Калорійність  897.61 кКал.`,
         energy: `Енергетична цінність 3755.7 кДж.`,
         termin: `Термін зберігання 30 діб.`,
-        pic:'4'
+        pic:'4',
+        size: 0
     },
     {
         title: `Шкварок стакан`,
@@ -23,7 +24,8 @@ let db = [
         kal: `Калорійність  897.61 кКал.`,
         energy: `Енергетична цінність 3755.7 кДж.`,
         termin: `Термін зберігання 30 діб.`,
-        pic:'4'
+        pic:'4',
+        size: 0
     },
     {
         title: `Смалець`,
@@ -34,7 +36,8 @@ let db = [
         kal: `Калорійність  897.61 кКал.`,
         energy: `Енергетична цінність 3755.7 кДж.`,
         termin: `Термін зберігання 30 діб.`,
-        pic:'3'
+        pic:'3',
+        size: 0
     },
     {
         title: `Смалець стаканчик`,
@@ -45,7 +48,8 @@ let db = [
         kal: `Калорійність  897.61 кКал.`,
         energy: `Енергетична цінність 3755.7 кДж.`,
         termin: `Термін зберігання 30 діб.`,
-        pic:'3'
+        pic:'3',
+        size: 1
     },
     {
         title: `Салат "Морква\nпо-корейськи"`,
@@ -55,7 +59,8 @@ let db = [
         pozh: `Поживна цінність в 100г продукту: Білки 1.9, Жири 12.6, Вуглеводи 5.4.`,
         kal: `Калорійність 141 кКал.`,
         termin: `Термін зберігання при температурі від +1°C до +4°С до 72 годин.`,
-        pic:'1'
+        pic:'1',
+        size: 1
     },  
     {
         title: `Салат "Морква\nпо-корейськи"`,
@@ -65,7 +70,8 @@ let db = [
         pozh: `Поживна цінність в 100г продукту: Білки 1.9, Жири 12.6, Вуглеводи 5.4.`,
         kal: `Калорійність 141 кКал.`,
         termin: `Термін зберігання при температурі від +1°C до +4°С до 72 годин.`,
-        pic:'1'
+        pic:'1',
+        size: 1
     },
     {
         title: `Буряк маринований\nз хріном`,
@@ -75,7 +81,8 @@ let db = [
         pozh: `Поживна цінність в 100г продукту: Білки 3.98, Жири 7.98, Вуглеводи 8.92.`,
         kal: `Калорійність 117.72.`,
         termin: `Термін зберігання при температурі від +1°C до +4°C до 72 годин.`,
-        pic:'2'
+        pic:'2',
+        size: 1
     }
 ]
 
@@ -85,8 +92,8 @@ function go(){
     for (let index = 0, j = 0, item =0; index < db.length; index++) {        
                    
         inner +=`
-            <div class="etiket ${db[index].art}">
-                <img class="etiket__logo" src="./img/logo2.png" alt="">
+            <div class="etiket ${db[index].size?'big':''}">
+                <img class="etiket__logo" src="./img/logo${db[index].size?'2':'-big'}.png" alt="">
                 <div class="header">
                     <h2 class="etiket__title">${db[index].title}</h2>
                     <br>
@@ -102,11 +109,11 @@ function go(){
                     <div class="flex">
                         <div class="half">
                             <p class="etiket__data">Дата виготовлення:</p>
-                            <p class="rect">14.06.2020</p>
+                            <p class="rect">14.06.2020 14.06.2020</p>
                         </div>
                         <div class="half">    
                             <p class="etiket__team">Бригадир:</p>
-                            <p class="rect">team Mate</p>
+                            <p class="rect">team Mate team Mate</p>
                         </div>
                     </div>                    
                 
