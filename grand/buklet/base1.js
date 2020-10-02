@@ -5,8 +5,8 @@ let base = [
     // {pic: '14', desc:`Корейка свинна$100г`, disc:'20%', priceO:'1390', priceN:'1120'},
     
 
-    {pic: '11', desc:`Торт "Шоколадний$100г`, disc:'40%', priceO:'1600', priceN:'990'},
-    {pic: '13', desc:`Торт "Златий клас"$100г`, disc:'40%', priceO:'1600', priceN:'990'},
+    {pic: '13', desc:`Торт "Шоколадний$100г`, disc:'40%', priceO:'1600', priceN:'990'},
+    {pic: '11', desc:`Торт "Златий клас"$100г`, disc:'40%', priceO:'1600', priceN:'990'},
     {pic: '12', desc:`Тістечко"Опера"$100г`, disc:'40%', priceO:'2100', priceN:'1250'},
     {pic: '29', desc:`Круасан "GRAND FOOD" з повидлом$100г`, disc:'45%', priceO:'1300', priceN:'700'},
 
