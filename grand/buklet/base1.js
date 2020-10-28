@@ -1,5 +1,5 @@
-let dataVid = '08.10'
-let dataDo = '29.10';
+let dataVid = '31.10'
+let dataDo = '20.11';
 let base = [
     //  {size:"rozd", pic:"0", desc: ` `, disc: " " priceO: " ", priceN: " "},  
     //  {pic: '14', desc:`Корейка свинна$100г`, disc:'20%' priceO:'1390', priceN:'1120'},
@@ -53,6 +53,6 @@ let base = [
     {pic:"27", desc:`Батончик "Конті" Брауні$в асортименті$35г`, disc:'35%',	priceO:'850',	priceN:'550'},
     {pic:"3", desc:`Шоколад "Рошен"$нач.з печивом,вафлею$115г`, disc:'25%',	priceO:'2300',	priceN:'1750'},    
     {pic:"0", desc:`Шоколадний десерт "Чоколада"$екстаза горіх$400г`, disc:'20%',	priceO:'3500',	priceN:'2800'},
-    
+
     {pic:"0", desc:`Макарони "Прополіс"$в асортимент$500г`, disc:'20%',	priceO:'1700',	priceN:'1350'},
 ]
