@@ -64,7 +64,7 @@
     font-size: 6.4vw;
     line-height: .85;
     text-align: right;
-    text-shadow: 0 0 2vw rgba(255,255,255,.66);
+    text-shadow: .1vw .1vw 1.33vw rgba(0,0,0,.4);
     color: #d20000;
     padding: 10px;
     white-space: pre;
