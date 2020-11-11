@@ -62,14 +62,16 @@
     font-family: din-black;
     font-weight: 300;
     font-size: 6.4vw;
-    line-height: 1;
-    text-align: right;    
-    /* text-shadow: .3vw .3vw 0 white; */
+    line-height: .85;
+    text-align: right;
     text-shadow: 0 0 2vw rgba(255,255,255,.66);
     color: #d20000;
     padding: 10px;
     white-space: pre;
     padding-top: 1vw;
+    -webkit-text-fill-color: #d20000;
+    -webkit-text-stroke-width: .2vw;
+    -webkit-text-stroke-color: white;
 }
 
 .etiket__logo {
