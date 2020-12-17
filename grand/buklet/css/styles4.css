@@ -196,8 +196,11 @@ p.toPrevMode:hover {
 .footer {
     /* width: 100%; */
     height: 270px;
-    background: linear-gradient(to bottom, #800 0%, #ff0000 7%, #cc0000 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,.66) 0%, rgba(0,0,0,.45) 3.3%, transparent 100%), url(../image/bg-autumn.jpg);
+    background: linear-gradient(to bottom, rgba(0,0,0,.66) 0%, rgba(0,0,0,.45) 3.3%, transparent 100%), url(../image/footer2.jpg);
+    background-size: cover;
+    background-position: center;
+    /* background: linear-gradient(to bottom, #800 0%, #ff0000 7%, #cc0000 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,.66) 0%, rgba(0,0,0,.45) 3.3%, transparent 100%), url(../image/bg-autumn.jpg); */
     text-shadow: 1px 1px 12px black;
     color: white;
     font: 1em sans-serif;
@@ -214,6 +217,7 @@ p.toPrevMode:hover {
     color: white;
     font-size: 49px;
     text-align: justify;
+    z-index: 1;
 }
 
 .item {
@@ -277,8 +281,34 @@ p.toPrevMode:hover {
     left: 12px;
     font-size: 100px;
     color: #d20000;
+    z-index: 2;
     /* transform: rotate(-6deg); */
     /* font-weight: 800; */
+}
+
+.item::before {
+    position: absolute;
+    content: '';
+    background: url(../image/sf.png) no-repeat center;
+    background-size: contain;
+    width: 225px;
+    height: 225px;
+    top: -20px;
+    left: -10px;
+    z-index: 2;
+    opacity: .8;
+}
+.item:nth-child(2n):before {
+    transform: rotate(10deg);
+}
+.item:nth-child(3n3):before {
+    transform: rotate(20deg);
+}
+.item:nth-child(4n):before {
+    transform: rotate(40deg);
+}
+.item:nth-child(5n):before {
+    transform: rotate(30deg);
 }
 
 .item__desc {
