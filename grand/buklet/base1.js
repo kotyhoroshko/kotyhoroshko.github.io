@@ -4,7 +4,7 @@ let base = [
     // {size:"rozd", pic:'0', desc: ` `, disc: " " priceO: " ", priceN: " "},
     // {pic: '14', desc:`Корейка свинна$100г`, disc:'20%' priceO:'1390', priceN:'1120'},
 
-{pic:'55a', desc: `Торт "Іриска"$100г`, disc:'35%', priceO:'1550', priceN:'1000'},
+{pic:'66', desc: `Торт "Іриска"$100г`, disc:'35%', priceO:'1550', priceN:'1000'},
 {pic:'32', desc: `Рулет "Шоколадне поліно"$100г`, disc:'30%', priceO:'1400', priceN:'1000'},
 {pic:'31', desc: `Торт "Графський"$100г`, disc:'35%', priceO:'1650', priceN:'1000'},
 
