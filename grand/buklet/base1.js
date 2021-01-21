@@ -8,6 +8,8 @@ let base = [
     {pic: '27', desc:`Торт"Трюфельний"$100г`,disc:'40%', priceO:'1650', priceN:'999'},
     {pic: '26', desc:`Торт"Добош"$г`,disc:'40%', priceO:'1600', priceN:'999'},
     {pic: '18', desc:`Круасан "GRAND FOOD" з повидлом$100г`,disc:'40%', priceO:'1300', priceN:'799'},
+    {pic: '42', desc:`Круасан "GRAND FOOD"$зі згущеним молоком$100г`,disc:'35%', priceO:'1200', priceN:'799'},
+
     {pic: '19', desc:`Пиріг з яблуками$100г`,disc:'20%', priceO:'1000', priceN:'799'},
 
     {pic: '37', desc:`Палочки "GRAND FOOD" з тмином$200г`,disc:'35%', priceO:'2200', priceN:'1499'},
@@ -30,13 +32,12 @@ let base = [
 
     {size:"rozd", pic:'0', desc: ` `, disc: " ", priceO: " ", priceN: " "},
 
-
     {pic: '13', desc:`Кефір "Ферма" 2,5%$840г`,disc:'25%', priceO:'3250', priceN:'2490'},
     {pic: '10', desc:`Йогурт "Дольче" в асортименті$280г`,disc:'30%', priceO:'2600', priceN:'1850'},
     {pic: '30', desc:`Десерт "Машенька" сирковий 5%$140г`,	disc:'25%', priceO:'2490', priceN:'1890'},
     {pic: '28', desc:`Сардельки "Царські"$ТМ"Добрі товари"$100г`, disc:'30%', priceO:'1100', priceN:'770'},
     {pic: '9', desc:`Ковбаса "Галицька"$ТМ"Світ мяса"$100г`,	disc:'25%', priceO:'1170', priceN:'890'},
-    {pic: '14', desc:`Скумбрія морожена;ТМ "ХустХолод"$100г`,	disc:'25%', priceO:'949', priceN:'749'},
+    {pic: '14', desc:`Скумбрія морожена$100г`,	disc:'25%', priceO:'949', priceN:'749'},
     {pic: '8', desc:`Ікра "Веладіс" тріски$100г`,disc:'30%', priceO:'2590', priceN:'1890'},
     {pic: '12', desc:`Hапій "Пепсі"$2л`,disc:'XIT', priceO:'2500', priceN:'2190'},
     {pic: '34', desc:`Вода мінеральна "Карпатська джерельна"$1.5л`,disc:'40%', priceO:'1290', priceN:'790'},
