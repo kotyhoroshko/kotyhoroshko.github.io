@@ -50,7 +50,7 @@ let base = [
     {pic: '35', desc:`Какао-напій" "Несквік"$200гр`,	disc:'25%', priceO:'4200', priceN:'3090'},
     {pic: '29', desc:`Вафлі "З Халвою"$ТМ "Бондей$100г`,	disc:'30%', priceO:'890', priceN:'640'},
     {pic: '15', desc:`Грейпфрут`,disc:'XIT', priceO:'', priceN:''},
-    {pic: '21', desc:`Лимон`,disc:'XIT', priceO:'', priceN:''},
+    {pic: '40', desc:`Лимон`,disc:'XIT', priceO:'', priceN:''},
 
 
 ]
