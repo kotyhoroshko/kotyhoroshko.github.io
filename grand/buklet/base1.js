@@ -11,26 +11,27 @@ let base = [
     {pic: '42', desc:`Круасан "GRAND FOOD"$зі згущеним молоком$100г`,disc:'35%', priceO:'1200', priceN:'799'},
 
     {pic: '19', desc:`Пиріг з яблуками$100г`,disc:'20%', priceO:'1000', priceN:'799'},
-
     {pic: '37', desc:`Палочки "GRAND FOOD" з тмином$200г`,disc:'35%', priceO:'2200', priceN:'1499'},
     {pic: '39', desc:`Міні багет по домашньому$200г`,disc:'35%', priceO:'1500', priceN:'999'},
     {pic: '23', desc:`Хотдог "GRAND FOOD"$180г`,disc:'20%', priceO:'1900', priceN:'1500'},
-    {pic: '25', desc:`Батон Нарізний подовий$300г`,disc:'30%', priceO:'1200', priceN:'899'},
 
+    {pic: '25', desc:`Батон Нарізний подовий$300г`,disc:'30%', priceO:'1200', priceN:'899'},
     {pic: '24', desc:`Булочка"Конвертик з яблуками"$110г`,disc:'30%', priceO:'700', priceN:'499'},
     {pic: '36', desc:`Булка "Виставочна"$250г`,disc:'30%', priceO:'1400', priceN:'999'},
-    {pic: '4', desc:`Шойт$100г`,disc:'10%', priceO:'999', priceN:'899'},
     {pic: '2', desc:`Крученики$100г`,disc:'30%', priceO:'1099', priceN:'769'},
 
     {pic: '5', desc:`Шкварок$250г`,disc:'20%', priceO:'3500', priceN:'2799'},
-    {pic: '16a', desc:`Шашлик в маринаді "Арізона" свинний з ошийка$100г`,disc:'20%', priceO:'1899', priceN:'1519'},
-
-    {pic: '21', desc:`Крило куряче охолоджене$100г`,disc:'25%', priceO:'599', priceN:'449'},
+    {pic: '4', desc:`Шойт$100г`,disc:'10%', priceO:'999', priceN:'899'},
+    {pic: '43', desc:`Rотлета свинно-яловича$100г`,disc:'25%', priceO:'1600', priceN:'1200'},
     {pic: '38', desc:`Фарш свинний охолоджений$100г`,disc:'10%', priceO:'109', priceN:'989'},
+    
+    {pic: '16a', desc:`Шашлик в маринаді "Арізона" свинний з ошийка$100г`,disc:'20%', priceO:'1899', priceN:'1519'},
+    {pic: '21', desc:`Крило куряче охолоджене$100г`,disc:'25%', priceO:'599', priceN:'449'},
     {pic: '1', desc:`Вирізка свинна охолоджена$100г`,disc:'20%', priceO:'1599', priceN:'1279'},
     {pic: '17a', desc:`Корейка свинна охолоджена$100г`,disc:'10%', priceO:'1399', priceN:'1259'},
 
-    {size:"rozd", pic:'0', desc: ` `, disc: " ", priceO: " ", priceN: " "},
+
+    // {size:"rozd", pic:'0', desc: ` `, disc: " ", priceO: " ", priceN: " "},
 
     {pic: '13', desc:`Кефір "Ферма" 2,5%$840г`,disc:'25%', priceO:'3250', priceN:'2490'},
     {pic: '10', desc:`Йогурт "Дольче" в асортименті$280г`,disc:'30%', priceO:'2600', priceN:'1850'},
