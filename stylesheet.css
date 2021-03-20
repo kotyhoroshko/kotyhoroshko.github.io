@@ -89,11 +89,11 @@ footer {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 1000vw;
-    height: 500vh;
-    transform: rotateX(-90deg) translateZ(-204vh) translate(-50%, 47%);
+    width: 400vw;
+    height: 200vh;
+    transform: rotateX(-90deg) translateZ(-54vh) translate(-50%, 47%);
     background: linear-gradient(rgb(15 32 39 / 80%), rgb(32 58 67 / 80%), rgb(44 83 100 / 80%)), url(bckg-black.jpg);
-    border-bottom: 10vw solid rgba(15,32,39, .33);
+    /* border-bottom: 10vw solid rgba(15,32,39, .33); */
 }
 .item::after {
 	display: block;
