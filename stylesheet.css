@@ -1,8 +1,13 @@
+* {
+	box-sizing: border-box;
+}
+html {
+	overflow: hidden;
+}
 body {	
 	background: linear-gradient(rgba(255,255,255, .66), transparent), url("bckg.jpg");
 	background-size: cover;
 	font-family: arial;
-	height: 101vh;
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
@@ -15,8 +20,8 @@ body {
     min-width: 100vw;
     min-height: 100vw;
 	z-index: -1;
-	opacity: .3;
-	filter: blur(.2vw) brightness(2);
+	opacity: .66;
+	filter: blur(.12vw) brightness(2.4);
 }
 
 header {
@@ -44,46 +49,68 @@ footer {
 	right: 3vw;
 	bottom: 0;
 	height: 33px;
+	color: #fff;
 	margin: 4vh 4vw;
 	z-index: 2;
 }
 
 .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 	position: relative;
-	width: 90vw;
-	height: 95vh;
-	margin: 2vh auto 0;
-	/* background-color: rgba(192,192,192,0.66); */
-	/* box-shadow: 2px 2px 14px black; */
-	z-index: 1;
+	margin: auto;
+	width: 95vw;
+	height: 100vh;
+	perspective: 66vw;
+}
+
+.scene {
+	width: 66vw;
+	height: 66vh;
+	transform-style: preserve-3d;
+	/* transition: .02s ease; */
 }
 
 .item {
-	display: inline-block;
 	position: absolute;
-	top: 0;
-	left: 0;	
-	width: 60%;
-	height: 33%;
+	display: flex;
+	align-items: center;
+	width: inherit;
+	height: inherit;
+	font: normal 12vmin Arial;
+	text-align: center;
 	color: #fff;
-	margin: 24px 30px;
-	background: linear-gradient(to bottom right, #000, #333);
-	box-shadow: 0 2vw 3vw rgba(0,0,0,.5);
-	transition-property: transform, left, top, opacity, filter;
-	transition-duration: .42s, .42s, .42s, .9s, .2s;
-	transition-timing-function: ease, ease, ease, ease-out, ease;
-	z-index: 2;
+    background-color: rgba(0,0,0,.9);
+	box-shadow: 0 4vmin 4vmin rgba(0,0,0,.33);
+	transition: .5s ease;
 }
-.mirror {
-	height: 10vw;
-	opacity: .66;
-	transform: skewX(-60deg) translate(-16%, 0);
-	filter: blur(.66vw);
+.ground {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1000vw;
+    height: 500vh;
+    transform: rotateX(-90deg) translateZ(-204vh) translate(-50%, 47%);
+    background: radial-gradient(#2c5364, #203a43, #0f2027);
+    border-bottom: 10vw solid rgba(15,32,39, .33);
+}
+.item::after {
+	display: block;
+    position: absolute;
+    top: 103%;
+    content: '';
+    height: 3vw;
+    width: 100%;
+    filter: blur(.75vw);
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.12);
+    z-index: 12;
 }
 
-.item:hover {
+/* .item:hover {
 	filter: brightness(1.5);
-}
+} */
 
 span {
 	display: inline-block;	

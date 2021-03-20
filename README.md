@@ -1,2 +1,2 @@
 # kotyhoroshko.github.io
-For HomeWork #2
+Some exampels of Kotyhoroshko works

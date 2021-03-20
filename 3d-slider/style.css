@@ -55,30 +55,6 @@ body {
     z-index: 12;
 }
 
-.front {
-	transform: translate3d(0, 0, 0);
-}
-
-.back {
-	transform: translate3d(-10vmin, 0, -5vmin);
-}
-
-.right {
-	transform: translate3d(-20vmin, 0, -10vmin);
-}
-
-.left {
-	transform: translate3d(-30vmin, 0, -15vmin);
-}
-
-.top {
-	transform: translate3d(-40vmin, 0, -20vmin);
-}
-
-.bottom {
-	transform: translate3d(-50vmin, 0, -25vmin);
-}
-
 /* .front {
 	transform: translateZ(150px);
 }

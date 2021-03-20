@@ -1,0 +1,79 @@
+{
+    "slides": [
+        {
+          "link" : "./hw/index.html",
+          "subtitle" : "HomeWorks",
+          "title" : "GO IT Homeworks"
+        },        
+        {
+          "link" : "otakoyi/otakoyi.html",
+          "subtitle" : "Test work",
+          "title" : "OTTAKOYI"
+        },        
+        {
+          "link" : "./visi/index.html",
+          "subtitle" : "Visit card showcase",
+          "title" : "Farmasi"
+        },        
+        {
+          "link" : "./coins/index.html",
+          "subtitle" : "Test work",
+          "title" : "TOSS COINS"
+        },        
+        {
+          "link" : "./scrumi-test/index.html",
+          "subtitle" : "Test work",
+          "title" : "Scrumi Test"
+        },        
+        {
+          "link" : "./purecss/index.html",
+          "subtitle" : "Test work",
+          "title" : "Pure CSS"
+        },        
+        {
+          "link" : "./parallax/index.html",
+          "subtitle" : "Test work",
+          "title" : "Paralax"
+        },        
+        {
+          "link" : "./parallax3/index.html",
+          "subtitle" : "Test work",
+          "title" : "Paralax3"
+        },        
+        {
+          "link" : "./europet/index.html",
+          "subtitle" : "Symple landing",
+          "title" : "Europet"
+        },        
+        {
+          "link" : "./op/index.html",
+          "subtitle" : "Osoznanoe pitanie",
+          "title" : "Landing"
+        },        
+        {
+          "link" : "./grand/index.html",
+          "subtitle" : "Showcase",
+          "title" : "SM Grand"
+        },        
+        {
+          "link" : "./balls/index.html",
+          "subtitle" : "Test work",
+          "title" : "Balls"
+        },        
+        {
+          "link" : "./grid/index.html",
+          "subtitle" : "Test work",
+          "title" : "Grid Gallery"
+        },
+        {
+          "link" : "./weather/index.html",
+          "subtitle" : "GC forecast",
+          "title" : "Weather"
+        },
+        {
+          "link" : "./3d-slider/index.html",
+          "subtitle" : "Test work",
+          "title" : "3d-Slider"
+        }
+    ]
+}

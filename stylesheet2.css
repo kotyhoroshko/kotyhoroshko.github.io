@@ -6,8 +6,6 @@ body {
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
-
-	/* perspective: 200vw; */
 }
 .video-bg {
 	position: fixed;
@@ -55,34 +53,28 @@ footer {
 	width: 90vw;
 	height: 95vh;
 	margin: 2vh auto 0;
-	background-color: rgba(192,192,192,0.66);
+	/* background-color: rgba(192,192,192,0.66); */
 	/* box-shadow: 2px 2px 14px black; */
 	z-index: 1;
-
-	perspective: 200vw;
-	/* transform: rotateX(66deg); */
 }
 
 .item {
 	display: inline-block;
 	position: absolute;
-	top: 50%;
-	left: 50%;	
+	top: 0;
+	left: 0;	
 	width: 60%;
 	height: 33%;
 	color: #fff;
 	margin: 24px 30px;
 	background: linear-gradient(to bottom right, #000, #333);
-	/* box-shadow: 0 2vw 3vw rgba(0,0,0,.5); */
+	box-shadow: 0 2vw 3vw rgba(0,0,0,.5);
 	transition-property: transform, left, top, opacity, filter;
 	transition-duration: .42s, .42s, .42s, .9s, .2s;
 	transition-timing-function: ease, ease, ease, ease-out, ease;
 	z-index: 2;
-
-	transform: rotateX(-90deg);
 }
 .mirror {
-	display: none;
 	height: 10vw;
 	opacity: .66;
 	transform: skewX(-60deg) translate(-16%, 0);

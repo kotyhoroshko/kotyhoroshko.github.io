@@ -1,6 +1,5 @@
 let scene = document.querySelector('.scene');
 let itemsQty = 21;
-;
 let inner = '';
 
 for (let index = 1; index <= itemsQty; index++) {

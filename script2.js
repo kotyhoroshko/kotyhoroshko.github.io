@@ -6,32 +6,29 @@ window.addEventListener('DOMContentLoaded', function(){
     for (let index = 0; index < items.length; index++) {
         let rndColor = `rgba(${getRndColor()},${getRndColor()},${getRndColor()}`
         items[index].style.background=`linear-gradient(to bottom right, rgba(0, 0, 0, .66), rgba(104, 52, 0, .5)), ${rndColor},1)`
-        // mirrors[index].style.background=`linear-gradient(to top right, rgba(0, 0, 0, 0) 18%, ${rndColor},.8))`
+        mirrors[index].style.background=`linear-gradient(to top right, rgba(0, 0, 0, 0) 18%, ${rndColor},.8))`
         
     } 
 
     let screenSizes = [window.innerWidth, window.innerHeight]
     window.addEventListener('resize', function () {
         screenSizes = [window.innerWidth, window.innerHeight];
-        console.log('resize: '+screenSizes)
+        console.log(screenSizes)
     })
-
     let coor = [ 100 , 90 ]
     Move();
 
     function Move(){
-        coor = [ 100 , 90 ]
+        coor = [ 100 , 85 ]
         for (let j = 0, index = items.length-1, scale=1, opac=1; index >= 0; index--, j++) {            
-            // items[index].style.transform = `scale(${scale}) translate(-${60-scale*60}%, -0%)`;
-            items[index].style.left = `${100-(50*scale)}%`;
-            items[index].style.top = `${100-(20*scale)}%`;
-            // if (index == items.length-1){
-            //     items[index].style.transform = `scale(1.1) translate(-10%, 10%)`;
-            //     items[index].style.left = `${coor[0]-(66*scale)}%`;
-            //     items[index].style.top = `${coor[1]-(33*scale)}%`;
-            // }
-            items[index].style.transform = `rotateX(0deg) translate(-50%, -50%) translateZ(${scale*30}vw)`;
-            console.log(`translate(0, 0, -${scale*60}%)`)
+            items[index].style.transform = `scale(${scale}) translate(-${60-scale*60}%, -0%)`;
+            items[index].style.left = `${coor[0]-(60*scale)}%`;
+            items[index].style.top = `${coor[1]-16}%`;
+            if (index == items.length-1){
+                items[index].style.transform = `scale(1.1) translate(-10%, 10%)`;
+                items[index].style.left = `${coor[0]-(66*scale)}%`;
+                items[index].style.top = `${coor[1]-(33*scale)}%`;
+            }
             items[index].style.opacity = `${opac}`;
             items[index].style.zIndex = `${index}`;
             coor[0] *= .6 ;
@@ -82,7 +79,8 @@ window.addEventListener('DOMContentLoaded', function(){
     document.addEventListener('touchstart', handleTouchStart, false);        
     document.addEventListener('touchmove', handleTouchMove, false);
 
-    let startTouchCoor = [null, null];
+    var xDown = null;                                                        
+    var yDown = null;
 
     function getTouches(evt) {
     return evt.touches ||             // browser API
@@ -91,42 +89,44 @@ window.addEventListener('DOMContentLoaded', function(){
 
     function handleTouchStart(evt) {
         const firstTouch = getTouches(evt)[0];                                      
-        startTouchCoor = [firstTouch.clientX, firstTouch.clientY];                
+        xDown = firstTouch.clientX;                                      
+        yDown = firstTouch.clientY;                                      
     };                                                
 
     function handleTouchMove(evt) {
-        if ( ! startTouchCoor[0] || ! startTouchCoor[1] ) {
+        if ( ! xDown || ! yDown ) {
             return;
         }
-       
-        let curCoor = [evt.touches[0].clientX, evt.touches[0].clientY];
-        let coorDelta = [startTouchCoor[0]-curCoor[0], startTouchCoor[1]-curCoor[1]];
 
-        if ( Math.abs( coorDelta[0] ) > Math.abs( coorDelta[1] ) ) {/*most significant*/
-            if ( coorDelta[0] > screenSizes[0]/6 ) {
+        var xUp = evt.touches[0].clientX;                                    
+        var yUp = evt.touches[0].clientY;
+
+        var xDiff = xDown - xUp;
+        var yDiff = yDown - yUp;
+
+        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+            if ( xDiff > screenSizes[0]/5 ) {
                 //console.log('left swipe ')
                 slide(true)
-                startTouchCoor = curCoor
+                xDown=xUp
             }
-            if ( coorDelta[0] < 0 && Math.abs(coorDelta[0]) > screenSizes[0]/6 ) {
+            if ( xDiff < 0 && Math.abs(xDiff) > screenSizes[0]/5 ) {
                 //console.log('right swipe')
                 slide(false)
-                startTouchCoor = curCoor
-            }           
+                xDown=xUp
+            }                       
         } else {
-            if ( coorDelta[1] > screenSizes[1]/6 ) {
+            if ( yDiff > screenSizes[1]/5 ) {
                 //console.log('up swipe ')
                 slide(true)
-                startTouchCoor = curCoor
+                yDown=yUp
             } 
-            if(coorDelta[1] < 0 && Math.abs(coorDelta[1])>screenSizes[1]/6) { 
+            if(yDiff < 0 && Math.abs(yDiff)>screenSizes[1]/5) { 
                 //console.log('down swipe')
                 slide(false)
-                startTouchCoor = curCoor
-            }            
-        }
-        //console.log(startTouchCoor, curCoor)
-                                           
+                yDown=yUp
+            }                                                                 
+        }                                     
     }; //swipe end
 
    
