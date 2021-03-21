@@ -108,9 +108,9 @@ document.addEventListener("DOMContentLoaded", function(){
   showcase();
   window.addEventListener("deviceorientation", function(event){
     // var absolute = event.absolute;
-    var z = event.alpha;
-    var x = event.beta;
-    var y = event.gamma;
+    var y = event.alpha;
+    var z = event.beta;
+    var x = event.gamma;
     scene.style.transform = `
       rotateY(${x}deg)
       rotateX(${y}deg)
