@@ -111,7 +111,8 @@ document.addEventListener("DOMContentLoaded", function(){
     var alpha    = event.alpha;
     var beta     = event.beta;
     var gamma    = event.gamma;
-    scene.style.transform = `rotateY(${event.alpha}deg) rotateY(${event.alpha}deg) rotateZ(${ event.gamma}deg)`
+    scene.style.transform = `rotateY(${event.alpha}deg)`;
+    // scene.style.transform = `rotateY(${event.alpha}deg) rotateX(${event.beta}deg) rotateZ(${ event.gamma}deg)`;
   });
   window.addEventListener('mousemove', function(e){
     console.log(((e.screenY/window.innerWidth)-.5)*10, (e.pageX/window.innerWidth)-.5)
