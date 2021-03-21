@@ -108,10 +108,13 @@ document.addEventListener("DOMContentLoaded", function(){
   showcase();
   window.addEventListener("deviceorientation", function(event){
     // var absolute = event.absolute;
-    var alpha    = event.alpha;
-    var beta     = event.beta;
-    var gamma    = event.gamma;
-    scene.style.transform = `rotateY(${event.alpha}deg) rotateX(${event.beta}deg) rotateZ(${ event.gamma}deg)`;
+    var x = event.alpha;
+    var y = event.beta;
+    var z = event.gamma;
+    scene.style.transform = `
+      rotateY(${x}deg)
+      rotateX(${y}deg)
+      rotateZ(${z}deg)`;
     // scene.style.transform = `rotateY(${event.alpha}deg) rotateX(${event.beta}deg) rotateZ(${ event.gamma}deg)`;
   });
   window.addEventListener('mousemove', function(e){
