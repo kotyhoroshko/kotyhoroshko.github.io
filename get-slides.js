@@ -108,18 +108,18 @@ document.addEventListener("DOMContentLoaded", function(){
   showcase();
   window.addEventListener("deviceorientation", function(event){
     // var absolute = event.absolute;
-    var y = event.alpha;
-    var z = event.beta;
+    var z = event.alpha;
+    var y = event.beta;
     var x = event.gamma;
     scene.style.transform = `
       rotateY(${x}deg)
-      rotateX(${y}deg)
-      rotateZ(${z}deg)`;
+      rotateX(${x}deg)`;
     // scene.style.transform = `rotateY(${event.alpha}deg) rotateX(${event.beta}deg) rotateZ(${ event.gamma}deg)`;
   });
   window.addEventListener('mousemove', function(e){
     console.log(((e.screenY/window.innerWidth)-.5)*10, (e.pageX/window.innerWidth)-.5)
-    scene.style.transform = `rotateY(${((e.screenX/window.innerWidth)-.5)*5}deg)
-    rotateX(${((e.screenY/window.innerWidth)-.5)*5}deg)`
+    scene.style.transform = `
+      rotateY(${((e.screenX/window.innerWidth)-.5)*5}deg)
+      rotateX(${((e.screenY/window.innerHeight)-.5)*5}deg)`
   });
 })

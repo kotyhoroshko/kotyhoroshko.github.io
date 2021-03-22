@@ -20,8 +20,8 @@ body {
     min-width: 100vw;
     min-height: 100vw;
 	z-index: -1;
-	opacity: .66;
-	filter: blur(.12vw) brightness(2.4);
+	/* opacity: .66; */
+	/* filter: blur(.12vw) brightness(2.4); */
 }
 
 header {
