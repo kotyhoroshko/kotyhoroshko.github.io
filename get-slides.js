@@ -98,29 +98,13 @@ document.addEventListener("DOMContentLoaded", function(){
         </a>
         </div>`
     }
-
-    scene.innerHTML = inner+'<div class="ground"></div>';
+    // inner+=<div class="ground"></div>'
+    scene.innerHTML = inner;
   }
 
   let items = null;
   let scene = document.querySelector('.scene');
   displayMainSlide(alternateSlideBase());
   showcase();
-  window.addEventListener("deviceorientation", function(e){
-    // var absolute = event.absolute;
-    // var z = e.alpha;
-    var y = e.beta;
-    var x = e.gamma;
-    scene.style.transform = `
-      rotateY(${x}deg)
-      rotateX(${y}deg)`;
-      console.log(((e.screenY/window.innerWidth)-.5)*10, (e.pageX/window.innerWidth)-.5);
-    // scene.style.transform = `rotateY(${event.alpha}deg) rotateX(${event.beta}deg) rotateZ(${ event.gamma}deg)`;
-  });
-  window.addEventListener('mousemove', function(e){
-    // console.log(((e.screenY/window.innerWidth)-.5)*10, (e.pageX/window.innerWidth)-.5)
-    scene.style.transform = `
-      rotateY(${((e.screenX/window.innerWidth)-.5)*5}deg)
-      rotateX(${((e.screenY/window.innerHeight)-.5)*5}deg)`
-  });
+  parallax();
 })
