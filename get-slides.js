@@ -106,18 +106,19 @@ document.addEventListener("DOMContentLoaded", function(){
   let scene = document.querySelector('.scene');
   displayMainSlide(alternateSlideBase());
   showcase();
-  window.addEventListener("deviceorientation", function(event){
+  window.addEventListener("deviceorientation", function(e){
     // var absolute = event.absolute;
-    var z = event.alpha;
-    var y = event.beta;
-    var x = event.gamma;
+    // var z = e.alpha;
+    var y = e.beta;
+    var x = e.gamma;
     scene.style.transform = `
       rotateY(${x}deg)
-      rotateX(${x}deg)`;
+      rotateX(${y}deg)`;
+      console.log(((e.screenY/window.innerWidth)-.5)*10, (e.pageX/window.innerWidth)-.5);
     // scene.style.transform = `rotateY(${event.alpha}deg) rotateX(${event.beta}deg) rotateZ(${ event.gamma}deg)`;
   });
   window.addEventListener('mousemove', function(e){
-    console.log(((e.screenY/window.innerWidth)-.5)*10, (e.pageX/window.innerWidth)-.5)
+    // console.log(((e.screenY/window.innerWidth)-.5)*10, (e.pageX/window.innerWidth)-.5)
     scene.style.transform = `
       rotateY(${((e.screenX/window.innerWidth)-.5)*5}deg)
       rotateX(${((e.screenY/window.innerHeight)-.5)*5}deg)`
