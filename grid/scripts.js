@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     gal[num].widthClass==2 ? gal[num].heightClass=1 : false;
     if(gal.length>192) {       
-      console.log(gal.length+' grids was created', gal);
+      console.log(gal.length+' grids was created');
       build(createField(gal.length), gal, gal.length, addGridToHtml);        
       return
     }
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(){
       field[index] = new Array(column+1);
       field[index].fill(0);
     }  
-    console.log(field)
+    // console.log(field)
     return field
   }
 
