@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
   function getImgs(num=1){
     let img = new Image();
     img.src = 'img/'+num+'.jpg'
-    img.onload = function () {
+    // img.onload = function () {
       gal[num] = {
         src    : img.src,
         name   : num,
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
         return
       }
       getImgs(num+1)
-    }    
+    // }  
   }
 
   function createGrids(num=1){ 

@@ -20,8 +20,8 @@ body {
     min-width: 100vw;
     min-height: 100vw;
 	z-index: -1;
-	/* opacity: .66; */
-	/* filter: blur(.12vw) brightness(2.4); */
+	opacity: .66;
+	filter: blur(.12vw) brightness(2.4);
 }
 
 header {
@@ -69,7 +69,7 @@ footer {
 	width: 66vw;
 	height: 66vh;
 	transform-style: preserve-3d;
-	/* transition: .02s ease; */
+	transition: .02s ease;
 }
 
 .item {
