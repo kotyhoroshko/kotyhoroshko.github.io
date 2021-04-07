@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function(){
         </a>
         </div>`
     }
-    inner+=`<div class="ground"></div>`
+    // inner+=`<div class="ground"></div>`
     scene.innerHTML = inner;
   }
 
