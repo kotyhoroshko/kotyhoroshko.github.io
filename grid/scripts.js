@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
   function getImgs(num=1){
     let img = new Image();
     img.src = 'img/'+num+'.jpg'
-    // img.onload = function () {
+    img.onload = function () {
       gal[num] = {
         src    : img.src,
         name   : num,
@@ -16,18 +16,20 @@ document.addEventListener("DOMContentLoaded", function(){
         heightClass : 1
       }      
       if (gal[num].width>(gal[num].height*1.7)) {
-        gal[num].widthClass=2
+        gal[num].widthClass=2;
+        getImgs(num+1)
       }
       if(gal[num].height>(gal[num].width*1.7)) {
-        gal[num].heightClass=2
-      }      
+        gal[num].heightClass=2;
+        getImgs(num+1)
+      }
       if(gal.length>192) {       
-        console.log(gal.length+' images was loaded', gal);
+        console.log(gal.length+' images was loaded');
+        console.table(gal);
         build(createField(gal.length), gal, gal.length, addPicToHtml);        
         return
-      }
-      getImgs(num+1)
-    // }  
+      }     
+    }  
   }
 
   function createGrids(num=1){ 
