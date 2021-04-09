@@ -93,6 +93,7 @@ page3()
 
 // --------------------------------------------------------------------------?
 function page4() {
+    // let inner = `<h2 class="title">${base.h4}</h2>`;
     let inner = '';
     for (let index = 0; index < base.p4.length; index++) {
         if(index==4 || index==6){
@@ -116,3 +117,48 @@ function page4() {
     content[3].innerHTML = inner;
 }
 page4()
+
+// ----------------------------------------------------------------------------
+
+function page5() {
+    let inner = `<h2 class="title">${base.h5[0]}</h2>`;
+    // let inner = '';
+    for (let index = 0; index < base.p5.length; index++) {
+        if(index==6){
+            inner += `<h2 class="title">${base.h5[1]}</h2>`;
+        }
+        inner += `<div class="item item--3">
+                    <div class="item__pic item__pic--3">
+                        <img src="./img/${ base.p5[index].pic}.png">
+                    </div>
+                    <div class="item__desc item__desc--3">
+                        <p>${base.p5[index].desc}</p>
+                    </div>
+                </div>`
+    }
+    content[4].innerHTML = inner;
+}
+page5()
+
+
+// ----------------------------------------------------------------------------
+
+function page6() {
+    let inner = `<h2 class="title">${base.h6}</h2>`;
+    // let inner = '';
+    for (let index = 0; index < base.p6.length; index++) {
+        if(index==6){
+            inner += `<div class="rozd"></div>`;
+        }
+        inner += `<div class="item item--4">
+                    <div class="item__pic item__pic--4">
+                        <img src="./img/${ base.p6[index].pic}.png">
+                    </div>
+                    <div class="item__desc item__desc--4">
+                        <p>${base.p6[index].desc}</p>
+                    </div>
+                </div>`
+    }
+    content[5].innerHTML = inner;
+}
+page6()
