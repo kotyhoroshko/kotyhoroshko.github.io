@@ -141,22 +141,22 @@ let base = {
         },
 
         {pic: '42',
-        desc: `<strong>Слойка з заварним кремом 100г</strong>`
+        desc: `<strong>Булочка «Паличка сирна» 90г</strong>`
         },
         {pic: '43',
-        desc: `<strong>Слойка з полуницею 100г</strong>`
+        desc: `<strong>Булочка «З кетчупом і сиром» 80г</strong>`
         },
         {pic: '44',
-        desc: `<strong>Слойка з сливою та горіхами 100г</strong>`
+        desc: `<strong>Міні багет «По Домашньому» 200г</strong>`
         },
         {pic: '45',
-        desc: `<strong>Слойка з маком 100г</strong>`
+        desc: `<strong>Булочка «Апетитна» 100г</strong>`
         },
         {pic: '46',
-        desc: `<strong>Слойка з сливою та горіхами 100г</strong>`
+        desc: `<strong>Булочка з часником 225г</strong>`
         },
         {pic: '47',
-        desc: `<strong>Слойка з маком 100г</strong>`
+        desc: `<strong>Палички слоєні з кунжутом 200г</strong>`
         },
     ],
     h6: 'Хліб та хлібобулочні вироби',
@@ -195,11 +195,11 @@ let base = {
         {pic: '58',
         desc: `<strong>Багет 400г</strong>`
         },
-        {pic: '59',
-        desc: `<strong>Корж для піцци 300г</strong>`
-        },
         {pic: '60',
         desc: `<strong>Рогалик прісний з повидлом 120г</strong>`
+        },
+        {pic: '59',
+        desc: `<strong>Корж для піцци 300г</strong>`
         },
         {pic: '61',
         desc: `<strong>Рогалик прісний 100г</strong>`
