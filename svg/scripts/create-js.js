@@ -1,13 +1,12 @@
 function create() {
   console.log('Create!')
 
+  paint(50, [.2, 1], .9, 'svg0', 'blur0', 1);
+  paint(5, [8, 11], .33, 'svg1', 'blur', 10);
+  paint(20, [4, 7], .66, 'svg2', 'blur2', 6);
+  paint(33, [1, 3], .85, 'svg3', 'blur3', 3);
 
-  paint(50, [.2, 1], .9, 'svg0', 'blur0', 1, 30);
-  paint(5, [8, 11], .33, 'svg1', 'blur', 10, 6);
-  paint(20, [4, 7], .66, 'svg2', 'blur2', 6, 12);
-  paint(33, [1, 3], .85, 'svg3', 'blur3', 3, 20);
-
-  function paint(qty, radius, alpha, clas, filter='', fValue=0, dur) {
+  function paint(qty, radius, alpha, clas, filter='', fValue=0) {
     let svg = document.querySelector(`.${clas}`);
     let inner = '';
 
@@ -17,28 +16,18 @@ function create() {
               </filter>`;      
     }
     
-    for (let index = 0; index < qty; index++) {
+    for (let index = 0; index < qty*2; index++) {
       let rad = getRandomArbitrary(radius[0],radius[1]);
       inner += `<circle
                   id="${clas}_${index+1}"
                   cx="${getRandomArbitrary(100)}%"
-                  cy="${0-rad*2}%"
+                  cy="${getRandomArbitrary(100)}%"
                   r="${rad}%"
                   fill="${getRandomColor(alpha)}"
                   ${filter ? 'filter="url(#'+filter+')"': ''}
                 />
-                <animate 
-                  xlink:href="#${clas}_${index+1}"
-                  attributeName="cy"
-                  dur="${dur}s"
-                  to="${100+rad}%"
-                  begin="${getRandomArbitrary(100)*10*dur}ms"
-                  repeatCount="indefinite"
-                  fill="freeze"
-                />
       `;
-    }
-    
+    }    
     svg.innerHTML = inner;
   }
 
