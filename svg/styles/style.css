@@ -4,6 +4,7 @@ html {
   background-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
   background-image: linear-gradient(25deg,#d64c7f,#ee4758 50%);
   background-image: linear-gradient(to right, #870000, #190a05);
+  background-image: radial-gradient(circle, rgba(50,48,50,1) 1%, rgba(46,35,35,1) 43%, rgba(1,34,41,1) 100%);
   overflow: hidden;
   min-width: 100%;
   min-height: 95vh;
@@ -40,8 +41,5 @@ body {
   z-index: 2;
 }
 
-circle {
-  /* transition: .01s ease; */
-}
 
 @media screen and (max-width: 768px) { }

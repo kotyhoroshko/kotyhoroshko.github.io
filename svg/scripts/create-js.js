@@ -24,7 +24,7 @@ function create() {
                   id="grad-${clas}_${index+1}"
                   cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25"
                   >
-                  <stop offset="0%" stop-color="${getRandomColor(1-(rad/15))}"/>
+                  <stop offset="0%" stop-color="rgba(255,255,255,${(1-(rad/15))})"/>
                   <stop offset="100%" stop-color="rgba(0,0,0,.8)"/>
                 </radialGradient>
               </defs>
