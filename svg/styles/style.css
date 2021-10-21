@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Didact+Gothic|Montserrat:400,600,900|Open+Sans:300,400,600,700,800&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Didact+Gothic|Montserrat:400,600,900|Open+Sans:300,400,600,700,800&display=swap"); */
 
 html {
   background-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
@@ -8,17 +8,36 @@ html {
   min-width: 100%;
   min-height: 95vh;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
 
 .bg {
-  width: 105vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 125vw;
   height: 105vh;
 }
 
 .svg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: 1s ease;
+  position: absolute;
+  /* transition: 1s ease; */
+}
+
+.svg0 {
+  z-index: 1;
+}
+.svg1 {
+  z-index: 5;
+}
+.svg2 {
+  z-index: 4;
+}
+.svg3 {
+  z-index: 2;
 }
 
 circle {

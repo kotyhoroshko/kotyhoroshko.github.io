@@ -83,6 +83,11 @@ document.addEventListener("DOMContentLoaded", function(){
       "link" : "./3d-slider/index.html",
       "subtitle" : "Test work",
       "title" : "3d-Slider"
+    },
+    {
+      "link" : "./svg/index.html",
+      "subtitle" : "Test work",
+      "title" : "SVG backgroun animation"
     }
   ]}
 

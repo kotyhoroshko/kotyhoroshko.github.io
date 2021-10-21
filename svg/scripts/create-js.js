@@ -1,29 +1,40 @@
 function create() {
   console.log('Create!')
 
-  paint(50, [.2, 1], .9, 'svg0', 'blur0', 1);
-  paint(5, [8, 11], .33, 'svg1', 'blur', 10);
-  paint(20, [4, 7], .66, 'svg2', 'blur2', 6);
-  paint(33, [1, 3], .85, 'svg3', 'blur3', 3);
-
-  function paint(qty, radius, alpha, clas, filter='', fValue=0) {
+  paint(5,  [8, 12], 'svg1', 'blur',);
+  paint(20, [4, 7],  'svg2', 'blur2');
+  paint(33, [1, 3],  'svg3', 'blur3');
+  paint(75, [.1, 1], 'svg0', 'blur0');
+  
+  function paint(qty, radius, clas, filter='') {
     let svg = document.querySelector(`.${clas}`);
-    let inner = '';
+    let inner = ``;
 
     if (filter) {
       inner =`<filter id="${filter}">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="${fValue}" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="${(getRandomArbitrary(radius[0],radius[1])+1)}" />
               </filter>`;      
     }
     
     for (let index = 0; index < qty*2; index++) {
       let rad = getRandomArbitrary(radius[0],radius[1]);
-      inner += `<circle
-                  id="${clas}_${index+1}"
+      inner += `
+                <defs>
+                <radialGradient
+                  id="grad-${clas}_${index+1}"
+                  cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25"
+                  >
+                  <stop offset="0%" stop-color="${getRandomColor(1-(rad/15))}"/>
+                  <stop offset="100%" stop-color="rgba(0,0,0,.8)"/>
+                </radialGradient>
+              </defs>
+                <circle
+                  id="circle-${clas}_${index+1}"
                   cx="${getRandomArbitrary(100)}%"
                   cy="${getRandomArbitrary(100)}%"
                   r="${rad}%"
-                  fill="${getRandomColor(alpha)}"
+                  fill="url(#grad-${clas}_${index+1})"
+                  fill="${getRandomColor(1-(rad/15))}"
                   ${filter ? 'filter="url(#'+filter+')"': ''}
                 />
       `;
@@ -43,6 +54,4 @@ function create() {
       return `rgba(${getRandomArbitrary(150, 255)},${getRandomArbitrary(50, 155)},${getRandomArbitrary(150, 255)},${alpha})`
     }
   }
-
-  moove()
 }

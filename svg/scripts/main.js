@@ -1,4 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-  create()
+  create();
+  moove();
+  mouseMoove();
 })
