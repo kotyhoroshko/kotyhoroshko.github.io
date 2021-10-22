@@ -1,59 +1,75 @@
 function create() {
-  console.log('Create!')
 
+  createCircles(333);
 
-  paint(50, [.2, 1], .9, 'svg0', 'blur0', 1, 30);
-  paint(5, [8, 11], .33, 'svg1', 'blur', 10, 6);
-  paint(20, [4, 7], .66, 'svg2', 'blur2', 6, 12);
-  paint(33, [1, 3], .85, 'svg3', 'blur3', 3, 20);
+  function createCircles(qty) {
+    let circlesRads = [];
 
-  function paint(qty, radius, alpha, clas, filter='', fValue=0, dur) {
-    let svg = document.querySelector(`.${clas}`);
-    let inner = '';
-
-    if (filter) {
-      inner =`<filter id="${filter}">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="${fValue}" />
-              </filter>`;      
-    }
-    
     for (let index = 0; index < qty; index++) {
-      let rad = getRandomArbitrary(radius[0],radius[1]);
-      inner += `<circle
-                  id="${clas}_${index+1}"
-                  cx="${getRandomArbitrary(100)}%"
-                  cy="${0-rad*2}%"
-                  r="${rad}%"
-                  fill="${getRandomColor(alpha)}"
-                  ${filter ? 'filter="url(#'+filter+')"': ''}
-                />
-                <animate 
-                  xlink:href="#${clas}_${index+1}"
-                  attributeName="cy"
-                  dur="${dur}s"
-                  to="${100+rad}%"
-                  begin="${getRandomArbitrary(100)*10*dur}ms"
-                  repeatCount="indefinite"
-                  fill="freeze"
+      if ((qty*.6) > index){
+        circlesRads[index] = getRnd(.1, 1)
+      }
+      else if ((qty*.9) > index) {
+        circlesRads[index] = getRnd(1, 3)
+      }
+      else if ((qty*.97) > index){
+        circlesRads[index] = getRnd(3, 8)
+      }
+      else {
+        circlesRads[index] = getRnd(9, 18)
+      }
+    }
+
+    circlesRads.sort(function(a, b) {
+      return a - b;
+    });
+
+    paint(circlesRads, 'svg-rnd');
+  }
+
+  
+  function paint(rads, clas) {
+    let svg = document.querySelector(`.${clas}`);
+    let inner = `<defs>
+                  <radialGradient
+                    id="grad-${clas}"
+                    cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25" >
+                    <stop offset="0%" stop-color="rgba(255,255,255,.9)"/>
+                    <stop offset="100%" stop-color="rgba(0,0,0,1)"/>
+                  </radialGradient>
+                </defs>
+    `;
+    
+    for (let index = 0; index < rads.length; index++) {      
+      inner += `
+                <circle
+                  id="circle-${clas}_${index+1}"
+                  cx="${getRnd(100)}%"
+                  cy="${getRnd(100)}%"
+                  r="${rads[index]}%"
+                  fill="url(#grad-${clas})"
+                  fill="${getRndColor(1-(rads[index]/15))}"
+                  opacity="${1.25-(rads[index]/20)}"
                 />
       `;
-    }
-    
+    }    
     svg.innerHTML = inner;
   }
 
-  function getRandomArbitrary(min, max=0) {
-    return Math.random() * (max - min) + min;
+  function getRnd(min, max=0) {
+    return (Math.random() * (max - min) + min).toFixed(2);
   }
 
-  function getRandomColor(alpha) {
+  function getRndColor(alpha) {
     if (Math.random()>.5) {
-      return `rgba(${getRandomArbitrary(150, 255)},${getRandomArbitrary(150, 255)},${getRandomArbitrary(50, 155)},${alpha})`
+      return `rgba(${getRnd(150, 255)},${getRnd(150, 255)},${getRnd(50, 155)},${alpha})`
     }
     else {
-      return `rgba(${getRandomArbitrary(150, 255)},${getRandomArbitrary(50, 155)},${getRandomArbitrary(150, 255)},${alpha})`
+      return `rgba(${getRnd(150, 255)},${getRnd(50, 155)},${getRnd(150, 255)},${alpha})`
     }
   }
-
-  moove()
 }
+
+/* <filter id="${filter}">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="${radius}" />
+</filter> */
