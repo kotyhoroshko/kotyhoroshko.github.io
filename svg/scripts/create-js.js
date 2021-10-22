@@ -1,41 +1,44 @@
 function create() {
   console.log('Create!')
 
-  paint(5,  [8, 12], 'svg1', 'blur',);
-  paint(20, [4, 7],  'svg2', 'blur2');
-  paint(33, [1, 3],  'svg3', 'blur3');
-  paint(75, [.1, 1], 'svg0', 'blur0');
+  paint(2,  [18, 33], 'svg-front', 'blur_front');
+  paint(6,  [8, 12], 'svg1', 'blur');
+  paint(33, [4, 7],  'svg2', 'blur2');
+  paint(66, [1, 3],  'svg3', 'blur3');
+  paint(200, [.1, 1], 'svg-back');
   
-  function paint(qty, radius, clas, filter='') {
+  function paint(qty, radius, clas, filter=false) {
+    filter=false /////////////////////////////////////////temporary
     let svg = document.querySelector(`.${clas}`);
-    let inner = ``;
-
+    let inner = `<defs>
+                  <radialGradient
+                    id="grad-${clas}"
+                    cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25" >
+                    <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
+                    <stop offset="100%" stop-color="rgba(0,0,0,1)"/>
+                  </radialGradient>`;
     if (filter) {
-      inner =`<filter id="${filter}">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="${(getRandomArbitrary(radius[0],radius[1])+1)}" />
-              </filter>`;      
+      inner += `<filter id="${filter}">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="${(getRandomArbitrary(radius[0],radius[1])/2)}" />
+                </filter>
+              </defs>`
+      }
+    else {
+      inner += '</defs>'
     }
     
-    for (let index = 0; index < qty*2; index++) {
+    for (let index = 0; index < qty; index++) {
       let rad = getRandomArbitrary(radius[0],radius[1]);
       inner += `
-                <defs>
-                <radialGradient
-                  id="grad-${clas}_${index+1}"
-                  cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25"
-                  >
-                  <stop offset="0%" stop-color="rgba(255,255,255,${(1-(rad/15))})"/>
-                  <stop offset="100%" stop-color="rgba(0,0,0,.8)"/>
-                </radialGradient>
-              </defs>
                 <circle
                   id="circle-${clas}_${index+1}"
                   cx="${getRandomArbitrary(100)}%"
                   cy="${getRandomArbitrary(100)}%"
                   r="${rad}%"
-                  fill="url(#grad-${clas}_${index+1})"
+                  fill="url(#grad-${clas})"
                   fill="${getRandomColor(1-(rad/15))}"
                   ${filter ? 'filter="url(#'+filter+')"': ''}
+                  opacity="${1.25-(rad/33)}"
                 />
       `;
     }    
