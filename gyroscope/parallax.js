@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 
   let tablo = document.querySelector('.table');
+  let indicator = document.querySelector('.indicator');
   // var z = e.alpha;
   var y = 0;
   var x = 0;
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   (function go(){
-    parseInt();
+    paint();
     window.requestAnimationFrame(go)
   })()
   
@@ -30,17 +31,9 @@ document.addEventListener("DOMContentLoaded", function(){
   function paint() {
     tablo.innerHTML= `
       <p>beta:<b>${y ? (y/36*10).toFixed() : 'none'}</b>^</p>
-      <p>gamma:<b>${x ? (x/36*10).toFixed() : 'none'}</b></p>
-      <span style="
-              background: red;
-              position: fixed;
-              width: 3vw;
-              height: 3vw;
-              top:${y ? (y/36*10).toFixed(): 50}%;
-              left:${x ? (x/36*10).toFixed(): 50}%
-            "
-      >+</span>
-    `
+      <p>gamma:<b>${x ? (x/36*10).toFixed() : 'none'}</b></p>`
+      indicator.style.top=`${y ? (y/36*10).toFixed(): 50}%`;
+      indicator.style.left=`${x ? (x/36*10).toFixed(): 50}%`;
   }
 
 })
