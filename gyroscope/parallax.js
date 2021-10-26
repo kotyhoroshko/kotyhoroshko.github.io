@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(){
 
   let tablo = document.querySelector('.table');
+  // var z = e.alpha;
+  var y = 0;
+  var x = 0;
 
   if(window.DeviceOrientationEvent) {    
 
@@ -10,20 +13,34 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     window.addEventListener("deviceorientation", function(e){
-        var absolute = e.absolute;
-        var z = e.alpha;
-        var y = e.beta;
-        var x = e.gamma;
-        tablo.innerHTML= `
-          <p style="background: linear-gradient(90deg, rgba(255,255,255,1) ${(z/36*10)}%, rgba(4,255,29,1) ${(z/36*10)+1}%)">alpha:<b>${z ? z.toFixed() : 'none'}</b></p>
-          <p style="background: linear-gradient(90deg, rgba(255,255,255,1) ${(y/36*10)}%, rgba(4,255,29,1) ${(y/36*10)+1}%)">beta:<b>${y ? y.toFixed() : 'none'}</b>^</p>
-          <p style="background: linear-gradient(90deg, rgba(255,255,255,1) ${(x/36*10)}%, rgba(4,255,29,1) ${(x/36*10)+1}%)">gamma:<b>${x ? x.toFixed() : 'none'}</b></p>
-        `
+        y = e.beta;
+        x = e.gamma;
     })
   }
   else {
     tablo.innerHTML= `DeviceOrientationEvent is not working`
   }
 
+  (function go(){
+    parseInt();
+    window.requestAnimationFrame(go)
+  })()
+  
+
+  function paint() {
+    tablo.innerHTML= `
+      <p>beta:<b>${y ? (y/36*10).toFixed() : 'none'}</b>^</p>
+      <p>gamma:<b>${x ? (x/36*10).toFixed() : 'none'}</b></p>
+      <span style="
+              background: red;
+              position: fixed;
+              width: 3vw;
+              height: 3vw;
+              top:${y ? (y/36*10).toFixed(): 50}%;
+              left:${x ? (x/36*10).toFixed(): 50}%
+            "
+      >+</span>
+    `
+  }
 
 })
