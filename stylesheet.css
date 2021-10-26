@@ -5,43 +5,48 @@ html {
 	overflow: hidden;
 }
 body {	
-	background: linear-gradient(rgba(255,255,125,.33), rgba(0,0,0,1)), url("bg6.jpg");
+	/* background: linear-gradient(rgba(255,255,125,.33), rgba(0,0,0,1)), url("bg6.jpg"); */
 	background-size: cover;
 	font-family: arial;
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
 }
-.video-bg {
+.bg {
 	position: fixed;
 	right: 0;
 	top: 0;
 	height: 100%;
     min-width: 100vw;
-    height: 50vh;
-	object-fit: cover;
+    height: 100%;
 	z-index: -1;
-	opacity: .66;
-	filter: blur(.1vw) brightness(1.8);
+	background-color: #000000;
+	background-image: radial-gradient(circle, #1d2a38 0%, #000000 100%);
 }
 
 header {
 	position: fixed;
 	display: block;
 	top: 0;
-	right: 4vw;	
-	height: 100px;
-	margin: 3.5vh 3vw;
+	left: 0;
+	height: 10vh;
+	padding: 1vh 1vw;
 	z-index: 2;
 }
 h1 {
-	font-size: 3vw;
-	font-weight: 700;
+	font-size: 2vw;
+	font-weight: 100;
 	letter-spacing: -.1vw;
 	margin: 0;
 }
 .logo {
 	height: 100%;
+}
+.logo-pic {
+	height: 100%;
+	background-color: yellow;
+	border-radius: 50%;
+	padding: 2%;
 }
 
 footer {

@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function(){
       "title" : "OTTAKOYI"
     },        
     {
-      "link" : "./visi/index.html",
-      "subtitle" : "Visit card showcase",
-      "title" : "Farmasi"
+      "link" : "./gyroscope/index.html",
+      "subtitle" : "Gyroscope test",
+      "title" : "Gyroscope"
     },        
     {
       "link" : "./coins/index.html",
@@ -87,13 +87,12 @@ document.addEventListener("DOMContentLoaded", function(){
     {
       "link" : "./svg/index.html",
       "subtitle" : "Test work",
-      "title" : "SVG backgroun animation"
+      "title" : "SVG Animation"
     }
   ]}
 
   function displayMainSlide(slideBase) {
     let scene = document.querySelector('.scene');
-    let itemsQty = slideBase.length;
     let inner = '';
     for (let index = 0; index < slideBase.length; index++) {
         inner +=`<div class="item item__${index+1}">
@@ -107,9 +106,8 @@ document.addEventListener("DOMContentLoaded", function(){
     scene.innerHTML = inner;
   }
 
-  let items = null;
-  let scene = document.querySelector('.scene');
   displayMainSlide(alternateSlideBase());
   showcase();
-  parallax();
+  createCircles();
+  moove();
 })

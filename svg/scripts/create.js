@@ -30,14 +30,15 @@ function create() {
   
   function paint(rads, clas) {
     let svg = document.querySelector(`.${clas}`);
-    let inner = `<defs>
-                  <radialGradient
-                    id="grad-${clas}"
-                    cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25" >
-                    <stop offset="0%" stop-color="rgba(255,255,255,.9)"/>
-                    <stop offset="100%" stop-color="rgba(0,0,0,1)"/>
-                  </radialGradient>
-                </defs>
+    let inner = `
+    <defs>
+      <radialGradient
+        id="grad-${clas}"
+        cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25" >
+        <stop offset="0%" stop-color="rgba(255,255,255,.9)"/>
+        <stop offset="100%" stop-color="rgba(0,0,0,1)"/>
+      </radialGradient>
+    </defs>
     `;
     
     for (let index = 0; index < rads.length; index++) {      

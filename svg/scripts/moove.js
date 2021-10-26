@@ -33,14 +33,9 @@ function moove() {
     }
   }
 
-  (function go(){
-    step(circles);    
-    window.requestAnimationFrame(go)
-  })()
+  window.addEventListener('mousemove', getCoor);
 
-  window.addEventListener('mousemove', getX);
-
-  function getX(e) {
+  function getCoor(e) {
     xMouseCoor = e.pageX/window.innerWidth * 100;
     yMouseCoor = e.screenY/window.innerHeight * 100;
   }
@@ -49,4 +44,8 @@ function moove() {
     return (Math.random() * (max - min) + min).toFixed(2);
   }
 
+  (function go(){
+    step(circles);
+    window.requestAnimationFrame(go)
+  })()
 }
