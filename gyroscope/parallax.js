@@ -11,16 +11,18 @@ document.addEventListener("DOMContentLoaded", function(){
 
     window.addEventListener("deviceorientation", function(e){
         var absolute = e.absolute;
-        var z = (e.alpha);
-        var y = (e.beta);
-        var x = (e.gamma);
+        var z = e.alpha;
+        var y = e.beta;
+        var x = e.gamma;
         tablo.innerHTML= `
-          <p>absolute:<b> ${e.absolute}</b></p>
-          <p>alpha:<b> ${z.toFixed()}</b></p>
-          <p>beta:<b> ${y.toFixed()}</b>^</p>
-          <p>gamma:<b> ${x.toFixed()}</b></p>
+          <p style="background: linear-gradient(90deg, rgba(255,255,255,1) ${(z/36*10)}%, rgba(4,255,29,1) ${(z/36*10)+1}%)">alpha:<b>${z ? z.toFixed() : 'none'}</b></p>
+          <p style="background: linear-gradient(90deg, rgba(255,255,255,1) ${(y/36*10)}%, rgba(4,255,29,1) ${(y/36*10)+1}%)">beta:<b>${y ? y.toFixed() : 'none'}</b>^</p>
+          <p style="background: linear-gradient(90deg, rgba(255,255,255,1) ${(x/36*10)}%, rgba(4,255,29,1) ${(x/36*10)+1}%)">gamma:<b>${x ? x.toFixed() : 'none'}</b></p>
         `
     })
+  }
+  else {
+    tablo.innerHTML= `DeviceOrientationEvent is not working`
   }
 
 
