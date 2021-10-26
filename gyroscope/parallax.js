@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
     window.addEventListener("deviceorientation", function(e){
         var absolute = e.absolute;
-        var z = e.alpha;
-        var y = e.beta;
-        var x = e.gamma;
+        var z = (e.alpha);
+        var y = (e.beta);
+        var x = (e.gamma);
         tablo.innerHTML= `
           <p>absolute:<b> ${e.absolute}</b></p>
-          <p>alpha:<b> ${e.alpha}</b></p>
-          <p>beta:<b> ${e.beta}</b></p>
-          <p>gamma:<b> ${e.gamma}</b></p>        
+          <p>alpha:<b> ${z.toFixed(2)}</b></p>
+          <p>beta:<b> ${y.toFixed(2)}</b></p>
+          <p>gamma:<b> ${x.toFixed(2)}</b></p>        
         `
     })
   }
