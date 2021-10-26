@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function(){
         var x = (e.gamma);
         tablo.innerHTML= `
           <p>absolute:<b> ${e.absolute}</b></p>
-          <p>alpha:<b> ${z.toFixed(2)}</b></p>
-          <p>beta:<b> ${y.toFixed(2)}</b></p>
-          <p>gamma:<b> ${x.toFixed(2)}</b></p>        
+          <p>alpha:<b> ${z.toFixed()}</b></p>
+          <p>beta:<b> ${y.toFixed()}</b>^</p>
+          <p>gamma:<b> ${x.toFixed()}</b></p>
         `
     })
   }
