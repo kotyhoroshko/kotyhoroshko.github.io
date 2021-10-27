@@ -54,16 +54,14 @@ function moove() {
 
   function getGyrosCoor(e) {
     xMouseCoor = (e.gamma/36*40).toFixed();
-    yMouseCoor = (e.beta/36*60).toFixed();
+    yMouseCoor = (e.beta/36*20).toFixed();
   }
 
   if (mobileAndTabletCheck()) {
     window.addEventListener("deviceorientation", getGyrosCoor);
-    console.log(mobileAndTabletCheck() +' - thisIs mob')
   }
   else {
     window.addEventListener('mousemove', getMouseCoor);
-    console.log(mobileAndTabletCheck() +' - thisIs PC')
   }
 
   (function go(){
