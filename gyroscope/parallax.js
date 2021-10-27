@@ -6,27 +6,20 @@ document.addEventListener("DOMContentLoaded", function(){
   var y = 0;
   var x = 0;
 
-  if(window.DeviceOrientationEvent) {    
-
-    function norm(value){
-        Math.abs(value) > 90 ? value=4 : value=value*4/190
-        return value
-    }
-
-    window.addEventListener("deviceorientation", function(e){
-        y = e.beta;
-        x = e.gamma;
-    })
+  if(!window.DeviceOrientationEvent) {
+    tablo.innerHTML= `DeviceOrientationEvent is not working`    
   }
   else {
-    tablo.innerHTML= `DeviceOrientationEvent is not working`
+    (function go(){
+      paint();
+      window.requestAnimationFrame(go)
+    })()
   }
 
-  (function go(){
-    paint();
-    window.requestAnimationFrame(go)
-  })()
-  
+  window.addEventListener("deviceorientation", function(e){
+    y = e.beta;
+    x = e.gamma;
+  })
 
   function paint() {
     tablo.innerHTML= `
@@ -35,5 +28,4 @@ document.addEventListener("DOMContentLoaded", function(){
       indicator.style.top=`${y ? (y/36*10).toFixed()+50 : 50}%`;
       indicator.style.left=`${x ? (x/36*10).toFixed()+50 : 50}%`;
   }
-
 })
