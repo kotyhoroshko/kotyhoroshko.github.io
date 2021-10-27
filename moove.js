@@ -43,7 +43,7 @@ function moove() {
     scene.style.transform = `
       rotateY(${(xMouseCoor-50)/20}deg)
       rotateX(${(yMouseCoor-50)/20}deg)`
-      indi.innerHTML = `${xMouseCoor} || ${yMouseCoor}`
+      indi.innerHTML = `${xMouseCoor} |0| ${yMouseCoor}`
   } 
 
   function getRnd(min, max=0) {
@@ -56,8 +56,8 @@ function moove() {
   }
 
   function getGyrosCoor(e) {
-    xMouseCoor = ( ((e.gamma*10)/36).toFixed() +20 ) * 2.5;
-    yMouseCoor = ( ((e.beta*10)/36).toFixed() + 10 ) * 2;
+    xMouseCoor = ( ((e.gamma*10)/36).toFixed());
+    yMouseCoor = ( ((e.beta*10)/36).toFixed());
   }
 
   if (mobileAndTabletCheck()) {
