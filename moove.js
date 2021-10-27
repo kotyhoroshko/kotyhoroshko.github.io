@@ -8,6 +8,8 @@ function moove() {
 
   let circles = document.querySelectorAll('.svg > circle');
   let scene = document.querySelector('.scene');
+  let indi = document.querySelector('.indi');
+
   let xMouseCoor = 0;
   let yMouseCoor = 0;
   
@@ -41,6 +43,7 @@ function moove() {
     scene.style.transform = `
       rotateY(${(xMouseCoor-50)/20}deg)
       rotateX(${(yMouseCoor-50)/20}deg)`
+      indi.innerHTML = `${xMouseCoor} || ${yMouseCoor}`
   } 
 
   function getRnd(min, max=0) {
@@ -53,8 +56,8 @@ function moove() {
   }
 
   function getGyrosCoor(e) {
-    xMouseCoor = (e.gamma/36*40).toFixed();
-    yMouseCoor = (e.beta/36*20).toFixed();
+    xMouseCoor = ((e.gamma*10)/36).toFixed();
+    yMouseCoor = ((e.beta*10)/36).toFixed();
   }
 
   if (mobileAndTabletCheck()) {

@@ -51,13 +51,14 @@ h1 {
 
 footer {
 	position: fixed;
-	display: block;
-	right: 3vw;
+	display: flex;
+	justify-content: flex-end;
 	bottom: 0;
-	height: 33px;
 	color: #fff;
-	margin: 4vh 4vw;
+	padding: 3vh 4vw;
+	width: 100%;
 	z-index: 2;
+
 }
 
 .wrapper {
@@ -149,4 +150,12 @@ a {
 	width: 100%;
 	color: white;
 	text-decoration: none;
+}
+
+.indi {
+	margin: auto;
+	background: rgba(255,255,255,.8);
+	color: black;
+	padding: .5vh 2vw;
+	font-weight: bold;
 }
