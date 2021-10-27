@@ -56,8 +56,8 @@ function moove() {
   }
 
   function getGyrosCoor(e) {
-    xMouseCoor = ((e.gamma*10)/36).toFixed();
-    yMouseCoor = ((e.beta*10)/36).toFixed();
+    xMouseCoor = ( ((e.gamma*10)/36).toFixed() +20 ) * 2.5;
+    yMouseCoor = ( ((e.beta*10)/36).toFixed() + 10 ) * 2;
   }
 
   if (mobileAndTabletCheck()) {
