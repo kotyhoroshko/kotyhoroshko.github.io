@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function(){
     tablo.innerHTML= `
       <p>beta:<b>${y ? (y/36*10).toFixed() : 'none'}</b>^</p>
       <p>gamma:<b>${x ? (x/36*10).toFixed() : 'none'}</b></p>`
-      indicator.style.top=`${y ? (y/36*10).toFixed(): 50}%`;
-      indicator.style.left=`${x ? (x/36*10).toFixed(): 50}%`;
+      indicator.style.top=`${y ? (y/36*10).toFixed()+50 : 50}%`;
+      indicator.style.left=`${x ? (x/36*10).toFixed()+50 : 50}%`;
   }
 
 })
