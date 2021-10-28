@@ -42,9 +42,11 @@ function moove() {
     }
 
     scene.style.transform = `
-      rotateY(${(xMouseCoor-50)/20}deg)
-      rotateX(${(yMouseCoor-50)/20}deg)`
-      indi.innerHTML = `${xMouseCoor.toFixed()} |+| ${yMouseCoor.toFixed()}`
+      rotateY(${(xMouseCoor-50)/10}deg)
+      rotateX(${(yMouseCoor-50)/10}deg)
+    `
+
+    indi.innerHTML = `${xMouseCoor.toFixed()} |+| ${yMouseCoor.toFixed()}`
   } 
 
   function getRnd(min, max=0) {
