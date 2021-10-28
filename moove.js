@@ -57,8 +57,8 @@ function moove() {
   }
 
   function getGyrosCoor(e) {
-    xMouseCoor = normalize( (20+ ( (e.gamma*10) /36) *3 ) )
-    yMouseCoor = normalize( (10+ ( (e.beta*10) /36) *3 ) )
+    xMouseCoor = normalize( ((((e.gamma*10) /36)) +20) *3)
+    yMouseCoor = normalize( ((((e.beta*10) /36)) +10) *3)
   }
 
   function normalize(val) {
