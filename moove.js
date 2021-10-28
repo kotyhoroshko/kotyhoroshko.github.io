@@ -44,7 +44,7 @@ function moove() {
     scene.style.transform = `
       rotateY(${(xMouseCoor-50)/20}deg)
       rotateX(${(yMouseCoor-50)/20}deg)`
-      indi.innerHTML = `${xMouseCoor.toFixed()} |V| ${yMouseCoor.toFixed()}`
+      indi.innerHTML = `${xMouseCoor.toFixed()} |+| ${yMouseCoor.toFixed()}`
   } 
 
   function getRnd(min, max=0) {
@@ -57,8 +57,8 @@ function moove() {
   }
 
   function getGyrosCoor(e) {
-    xMouseCoor = normalize( ((((e.gamma*10) /36)) +20) *3)
-    yMouseCoor = normalize( ((((e.beta*10) /36)) +10) *3)
+    xMouseCoor = normalize( ((((e.gamma*10) /36)) +20) *4)
+    yMouseCoor = normalize( ((((e.beta*10) /36)) +10) *2)
   }
 
   function normalize(val) {
