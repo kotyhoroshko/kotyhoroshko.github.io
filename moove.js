@@ -20,8 +20,8 @@ function moove() {
       let x = bg[index].cx.baseVal.valueInSpecifiedUnits
       let y = bg[index].cy.baseVal.valueInSpecifiedUnits
 
-      bg[index].cy.baseVal.valueInSpecifiedUnits += (50-yMouseCoor)/150*(radius);
-      bg[index].cx.baseVal.valueInSpecifiedUnits += (50-xMouseCoor)/150*(radius);
+      bg[index].cy.baseVal.valueInSpecifiedUnits += (50-yMouseCoor)/100*(radius);
+      bg[index].cx.baseVal.valueInSpecifiedUnits += (50-xMouseCoor)/100*(radius);
 
       if (y > 100 + radius*2) {
         bg[index].cy.baseVal.valueInSpecifiedUnits = 0 - radius;
@@ -42,11 +42,11 @@ function moove() {
     }
 
     scene.style.transform = `
-      rotateY(${(xMouseCoor-50)/10}deg)
-      rotateX(${(yMouseCoor-50)/10}deg)
+      rotateY(${(xMouseCoor-50)/5}deg)
+      rotateX(${(yMouseCoor-50)/5}deg)
     `
 
-    indi.innerHTML = `${xMouseCoor.toFixed()} |+| ${yMouseCoor.toFixed()}`
+    indi.innerHTML = `${xMouseCoor.toFixed()} |-| ${yMouseCoor.toFixed()}`
   } 
 
   function getRnd(min, max=0) {
