@@ -52,13 +52,13 @@ function moove() {
   }
 
   function getMouseCoor(e) {
-    xMouseCoor = normalize(e.screenX/window.innerWidth * 100);
-    yMouseCoor = normalize(e.pageY/window.innerHeight * 100);
+    xMouseCoor = e.screenX/window.innerWidth * 100;
+    yMouseCoor = e.pageY/window.innerHeight * 100;
   }
 
   function getGyrosCoor(e) {
-    xMouseCoor = normalize( ((((e.gamma*10) /36)) +20) *4)
-    yMouseCoor = normalize( ((((e.beta*10) /36)) +10) *2)
+    xMouseCoor = normalize( ((((e.gamma*10) /36)) +20) *2.5);
+    yMouseCoor = normalize( ((((e.beta*10) /36)) +10) *2);
   }
 
   function normalize(val) {
