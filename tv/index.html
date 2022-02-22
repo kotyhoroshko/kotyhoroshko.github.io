@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>"Accu Weather"</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <video autoplay muted loop class="video-bg" id="video">
+        <source src="img/bg.mp4" type="video/mp4">
+    </video>
+    <header>
+        <div class="container">
+            <div class="locs">
+                <div class="locs__item" data-lockey="326289" data-point-name="Берегові">
+                    <img src="img/loc1.png" title="Погода в Берегові" alt="">
+                    <p>Берегово</p>
+                </div>
+                <div class="locs__item" data-lockey="326287" data-point-name="Виноградові">
+                    <img src="img/loc2.png" title="Погода в Виноградові" alt="">
+                    <p>Виноградів</p>
+                </div>
+                <div class="locs__item" data-lockey="1214319" data-point-name="Королеві">
+                    <img src="img/loc3.png" title="Погода в Королеві" alt="">
+                    <p>Королево</p>
+                </div>
+                <div class="locs__item" data-lockey="126761" data-point-name="Тепліце">
+                    <img src="img/loc4.png" title="Погода в Тепліце" alt="">
+                    <p>Тепліце</p>
+                </div>
+                <div class="locs__item" data-lockey="326310" data-point-name="Ужгороді">
+                    <img src="img/loc5.png" title="Погода в Ужгороді" alt="">
+                    <p>Ужгород</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-info">
+                <!-- MAIN INFO -->
+            </div>            
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="days-info">
+                <!-- DAYS INFO -->
+            </div>
+        </div>
+        <div class="radio">
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">Secret agent</h2>
+                <img class="radio-item__img" src="radio/secretagent-400.png" alt="">
+                <audio data-src="https://ice2.somafm.com/secretagent-128-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">boot liquor</h2>
+                <img class="radio-item__img" src="radio/bootliquor-400.png" alt="">
+                <audio data-src="https://ice2.somafm.com/bootliquor-320-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">christmas</h2>
+                <img class="radio-item__img" src="radio/christmaslounge120.png" alt="">
+                <audio data-src="https://ice2.somafm.com/christmas-256-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">dubstep</h2>
+                <img class="radio-item__img" src="radio/dubstep-400.png" alt="">
+                <audio data-src="https://ice2.somafm.com/dubstep-256-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">folkfwd</h2>
+                <img class="radio-item__img" src="radio/folkfwd-400.jpg" alt="">
+                <audio data-src="https://ice2.somafm.com/folkfwd-128-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">Illinois Streett</h2>
+                <img class="radio-item__img" src="radio/illstreet-400.jpg" alt="">
+                <audio data-src="https://ice2.somafm.com/illstreet-128-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">groove salad classic</h2>
+                <img class="radio-item__img" src="radio/groovesalad-400.png" alt="">
+                <audio data-src="https://ice2.somafm.com/gsclassic-128-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">jolly soul</h2>
+                <img class="radio-item__img" src="radio/jollysoul120.png" alt="">
+                <audio data-src="https://ice2.somafm.com/jollysoul-128-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">live</h2>
+                <img class="radio-item__img" src="radio/live-400.jpg" alt="">
+                <audio data-src="https://ice2.somafm.com/live-128-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">reggae</h2>
+                <img class="radio-item__img" src="radio/reggae400.png" alt="">
+                <audio data-src="https://ice2.somafm.com/reggae-256-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">seventies</h2>
+                <img class="radio-item__img" src="radio/seventies400.jpg" alt="">
+                <audio data-src="https://ice2.somafm.com/seventies-320-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">spacestation</h2>
+                <img class="radio-item__img" src="radio/spacestation-400.png" alt="">
+                <audio data-src="https://ice2.somafm.com/spacestation-128-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">suburbsofgoa</h2>
+                <img class="radio-item__img" src="radio/suburbsofgoa-400.png" alt="">
+                <audio data-src="https://ice2.somafm.com/suburbsofgoa-128-mp3">
+                </audio>
+            </div>
+            <div class="radio-item" data-active="false">
+                <h2 class="radio-item__title">xmas in frisko</h2>
+                <img class="radio-item__img" src="radio/xmasinfrisco120.jpg" alt="">
+                <audio data-src="https://ice2.somafm.com/xmasinfrisko-128-mp3">
+                </audio>
+            </div>
+        </div>      
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script class="radio-item__img" src="radio.js"></script>
+</body>
+</html>
