@@ -36,10 +36,6 @@ header {
   background-color: rgba(0, 0, 0, 0.33);
 }
 
-main {
-  padding-top: 20px;
-}
-
 .container {
   background: rgba(0,0,0,.5);
   width: 100%;
@@ -68,13 +64,23 @@ main {
   line-height: 1;
 }
 
+.clock {
+  display: inline-block;
+  width: 32%;
+  color: white;
+  font-weight: bold;
+  font-size: 200%;
+  text-align: right;
+}
 .main-info {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   color: white;
   padding: 15px;
+  width: 65%;
+  font-size: 150%;
 }
 .main-info .loc {
   display: inline-block;
@@ -94,7 +100,6 @@ main {
 .main-info__desc {
   display: flex;
   align-items: center;
-  font-size: 21px;
   height: 25px;
   line-height: 1;
   margin: 10px;
