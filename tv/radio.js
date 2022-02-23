@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     let currentRadio = null;
+    let prevRadio = null;
 
     document.querySelector('.radio').addEventListener('click', function(e){
         playStopRadio(e.target)
@@ -13,9 +14,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 currentRadio.parentElement.dataset.active = false
             }
             currentRadio = el.closest('.radio-item').querySelector('audio')
-            currentRadio.src = currentRadio.dataset.src
-            currentRadio.play()
-            currentRadio.parentElement.dataset.active = true
+            if(!prevRadio || prevRadio.dataset.src != currentRadio.dataset.src) {
+                currentRadio.src = currentRadio.dataset.src
+                currentRadio.parentElement.dataset.active = true
+                currentRadio.play()
+                prevRadio = currentRadio
+            }
+            else {
+                prevRadio= false
+            }
+            
         }
     }
 })

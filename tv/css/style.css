@@ -41,9 +41,11 @@ main {
 }
 
 .container {
+  background: rgba(0,0,0,.5);
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1250px;
+  padding: 20px;
+  margin: 0 auto 1vmin;
 }
 
 .locs {
@@ -109,26 +111,30 @@ main {
 
 .days-info {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 0 0 25px;
+  justify-content: space-between;
 }
 .days-info__item {
-  width: 300px;
+  box-sizing: border-box;
+  width: 19.5%;
   background: linear-gradient(
     360deg,
     rgba(0, 0, 0, 0.4),
-    rgba(255, 255, 255, 0.4)
+    rgba(66, 66, 66, 0.4)
   );
-  background-color: #333;
+  background-color: rgba(0,0,0,.8);
   color: white;
-  margin: 10px;
-  padding: 15px;
+  padding: 1vmin;
   box-shadow: 15px 15px 42px rgba(0, 0, 0, 0.5);
 }
 .days-info__item .date {
   font-size: 200%;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.84);
+  text-align: center;
+}
+.days-info__item .date--day {
+  font-size: 150%;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.84);
+  text-align: center;
 }
 .days-info__item .temperatures {
   padding: 15px 0;
@@ -159,16 +165,49 @@ main {
 }
 
 .radio {
+  background: rgba(0,0,0,.5);
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  max-width: 1250px;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 .radio-item {
+  box-sizing: border-box;
   width: 24vmin;  
   height: 23vmin;
   position: relative;
   margin: .5vmin;
+  min-width: 300px;
+  min-height: 300px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.radio-item[data-active="true"]::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10vmin solid transparent;
+  border-bottom: 10vmin solid transparent;
+  border-left: 15vmin solid rgb(255, 255, 255);
+  opacity: .5;
+  left: 30%;
+  top: 20%;
+}
+
+.radio-item[data-active="false"] {
+  opacity: .75;
+  filter: grayscale(.75);
+}
+
+.radio-item:hover {
+  border: 1vmin solid white;
+  box-shadow: 0 0 2vw white;
 }
 
 .radio-item__title {
@@ -187,11 +226,6 @@ main {
   height: 100%;
   top: 0;
   z-index: 0;
-}
-
-.radio-item[data-active="false"] {
-  opacity: .66;
-  filter: grayscale(.75);
 }
 
 @media screen and (max-width: 768px) {
