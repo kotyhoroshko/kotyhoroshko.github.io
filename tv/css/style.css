@@ -5,6 +5,12 @@
   font-family: "Didact Gothic", sans-serif;
 }
 
+main {
+  background: url('../img/b1.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
 a {
   text-decoration: none;
   color: unset;
