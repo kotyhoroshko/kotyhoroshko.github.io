@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    let currentRadio = null;
-    let prevRadio = null;
+    var currentRadio = null;
+    var prevRadio = null;
 
     document.querySelector('.radio').addEventListener('click', function(e){
         playStopRadio(e.target)
@@ -44,3 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //     https://ice2.somafm.com/suburbsofgoa-128-mp3
 //     https://ice2.somafm.com/xmasinfrisko-128-mp3
 // }
+
+setTimeout(() => {
+    let t = t
+}, 2000);

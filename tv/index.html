@@ -123,9 +123,21 @@
     </main>
 
     <footer>
-
+        <div id="debugDiv"></div>
     </footer>
+    <script>
+        if (typeof console  != "undefined") 
+    if (typeof console.log != 'undefined')
+        console.olog = console.log;
+    else
+        console.olog = function() {};
 
+console.log = function(message) {
+    console.olog(message);
+    document.querySelector('#debugDiv').append('<p>' + message + '</p>');
+};
+console.error = console.debug = console.info =  console.log
+    </script>
     <!-- <script src="weather.js"></script> -->
     <script src="radio.js"></script>
     <script src="time.js"></script>

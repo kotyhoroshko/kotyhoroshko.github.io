@@ -6,7 +6,7 @@
 }
 
 main {
-  background: url('../img/b1.jpg');
+  background: url('../img/b3.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -269,4 +269,9 @@ header {
     width: 25px;
     height: 25px;
   }
+}
+
+#debugDiv {
+  background: black;
+  color: white;
 }
