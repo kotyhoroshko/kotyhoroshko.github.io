@@ -188,8 +188,8 @@ header {
   height: 23vmin;
   position: relative;
   margin: .5vmin;
-  min-width: 300px;
-  min-height: 300px;
+  min-width: 275px;
+  min-height: 275px;
   cursor: pointer;
   transition: .3s ease;
 }
