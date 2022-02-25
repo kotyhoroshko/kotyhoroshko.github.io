@@ -196,16 +196,33 @@ header {
 
 .radio-item[data-active="true"]::after {
   content: '';
+  background: url('../radio/play.svg') no-repeat;
+  background-size: contain;
   display: block;
   position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 10vmin solid transparent;
-  border-bottom: 10vmin solid transparent;
-  border-left: 15vmin solid rgb(255, 255, 255);
-  opacity: .5;
-  left: 30%;
-  top: 20%;
+  width: 50%;
+  height: 66%;
+  margin: 17% 25%;
+  opacity: .75;
+  animation: play 4s ease 1s infinite;
+}
+
+@keyframes play {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.33);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .radio-item[data-active="false"] {
