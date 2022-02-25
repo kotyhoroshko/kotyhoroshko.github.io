@@ -1,14 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Didact+Gothic|Montserrat:400,600,900|Open+Sans:300,400,600,700,800&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Didact Gothic", sans-serif;
-}
-
 main {
-  background: url('../img/b3.jpg');
+  /* background: url('../img/b3.jpg'); */
   background-position: center;
   background-size: cover;
+  font-family: sans-serif;
 }
 
 a {
@@ -77,7 +71,7 @@ header {
   width: 32%;
   color: white;
   font-weight: bold;
-  font-size: 200%;
+  font-size: 300%;
   text-align: right;
 }
 .main-info {
@@ -137,27 +131,28 @@ header {
   background-color: rgba(0,0,0,.8);
   color: white;
   padding: 1vmin;
-  box-shadow: 15px 15px 42px rgba(0, 0, 0, 0.5);
 }
 .days-info__item .date {
   font-size: 200%;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.84);
   text-align: center;
+  margin: 0;
 }
 .days-info__item .date--day {
   font-size: 150%;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.84);
   text-align: center;
+  margin: 0;
 }
 .days-info__item .temperatures {
-  padding: 15px 0;
+  padding: 15px 0 0;
 }
 .days-info__item .temperatures__item {
   display: inline-block;
   width: 49%;
   text-align: center;
   font-size: 200%;
-  text-shadow: 0 0 6px rgba(0, 0, 0, 0.66);
+  margin: 0;
 }
 .days-info__item .day,
 .days-info__item .night {
@@ -271,9 +266,4 @@ header {
     width: 25px;
     height: 25px;
   }
-}
-
-#debugDiv {
-  background: black;
-  color: white;
 }
