@@ -27,6 +27,7 @@ function Time() {
     minute = update(minute);
     // Adding time elements to the div
     document.getElementById("digital-clock").innerText = hour + ":" + minute + " " + period;
+    document.querySelector(".saver-clock").innerText = hour + ":" + minute + " " + period;
     // Set Timer to 1 sec (1000 ms)
     setTimeout(Time, 10000);
    }
