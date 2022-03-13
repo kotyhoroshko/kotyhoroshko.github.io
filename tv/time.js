@@ -9,8 +9,10 @@ function Time() {
     hour = update(hour);
     minute = update(minute);
     // Adding time elements to the div
-    document.getElementById("digital-clock").innerText = hour + ":" + minute;
-    document.querySelector(".saver-clock").innerText = hour + ":" + minute;
+    let clock = document.getElementById("digital-clock");
+    let saverClock = document.querySelector(".saver-clock");
+    clock.innerText = hour + ":" + minute;
+    saverClock.innerText = hour + ":" + minute;
     // Set Timer to 1 sec (1000 ms)
     setTimeout(Time, 10000);
    }

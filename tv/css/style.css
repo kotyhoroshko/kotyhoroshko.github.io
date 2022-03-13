@@ -18,8 +18,7 @@ body {
 }
 
 .main {
-  /* background: url('../img/b1.jpg'); */
-  /* background-color: blue; */
+  background: linear-gradient(to right, rgba(15,12,41,.8), rgba(48,43,99,.8), rgba(36,36,62,.8));
   background-position: center;
   background-size: cover;
   font-family: sans-serif;
@@ -50,12 +49,14 @@ body {
 
 .video-bg {
   position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  min-width: 100vw;
+  min-height: 100vh;
   z-index: -1;
 }
+
 .saver-clock {
   display: inline-block;
   color: white;
@@ -65,9 +66,11 @@ body {
   width: 100%;
   height: 90vh;
   line-height: 90vh;
-  position: absolute;
+  position: fixed;
   font-family: sans-serif;
   z-index: -1;
+  text-shadow: 0 0 2vmin #000;
+  opacity: 0;
 }
 
 header {
@@ -76,9 +79,10 @@ header {
 }
 
 .container {
+  box-sizing: border-box;
   background: rgba(0,0,0,.5);
   width: 100%;
-  max-width: 1250px;
+  max-width: 1200px;
   padding: 20px;
   margin: 0 auto 1vmin;
 }
@@ -105,11 +109,11 @@ header {
 
 .clock {
   display: inline-block;
-  width: 32%;
+  width: 30%;
   color: white;
   font-weight: bold;
   font-size: 300%;
-  text-align: right;
+  text-align: center;
 }
 .main-info {
   display: inline-flex;
@@ -167,7 +171,6 @@ header {
   );
   background-color: rgba(0,0,0,.8);
   color: white;
-  padding: 1vmin;
 }
 .days-info__item .date {
   font-size: 200%;
@@ -210,11 +213,12 @@ header {
 }
 
 .radio {
+  box-sizing: border-box;
   background: rgba(0,0,0,.5);
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  max-width: 1250px;
+  max-width: 1200px;
   padding: 20px;
   margin: 0 auto;
 }
