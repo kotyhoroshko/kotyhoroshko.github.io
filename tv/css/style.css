@@ -248,6 +248,12 @@ header {
   animation: play 4s ease 1s infinite;
 }
 
+.radio-item[data-active="true"] > .radio-item__title {
+  opacity: 1;
+  margin-left: 1vmin;
+  top: 85%;
+}
+
 @keyframes play {
   0% {
     transform: scale(1);
@@ -278,12 +284,19 @@ header {
 
 .radio-item__title {
   z-index: 1;
-  background-color: rgba(0,0,0,.66);
   color: white;
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
-  display: none;
+  font-size: 2vmin;
+  color: white;
+  top: 100%;
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+  transition: .4s;
+  text-shadow: 0 0 .5vmin #000;
+  margin: 1vmin 0;
 }
 
 .radio-item__img {
@@ -294,15 +307,16 @@ header {
   z-index: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
+ 
   .days-info {
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
   .days-info__item {
-    width: 50vw;
-    min-width: 300px;
+    width: 300px;
+    padding: 1%;
+    margin: 1% 0;
   }
   .locs__item p {
     font-size: 3vw;
@@ -310,18 +324,43 @@ header {
   .main-info {
     display: block;
     text-align: center;
+    margin: 0;
+    width: 100%;
+    /* order: 2; */
   }
   .main-info__desc {
     justify-content: center;
     width: 100%;
     margin-top: 10px;
   }
-  .main-info__desc::before {
-    content: none;
-    display: inline-block;
-    background: url("../img/info.png") no-repeat center;
-    background-size: contain;
-    width: 25px;
-    height: 25px;
+
+  .radio-item {
+    margin-bottom: 30px;
   }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .clock {
+    width: 100%;
+    order: -1;
+  }
+
+  .radio-item:hover .radio-item__title  {
+    opacity: 1;
+  }
+
+  .radio-item__title {
+    opacity: 0;
+    font-size: 20px;
+  }
+
+  .full-screen-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+  }
+
 }
