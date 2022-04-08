@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     let main = document.querySelector('.main');
+    let videoBg = document.querySelector('.video-bg');
     let saverClock = document.querySelector(".saver-clock");
     let nonActiveTime = false;
 
     document.addEventListener('mousemove', function(){
       nonActiveTime = false;
-      main.style.opacity = "1"
-      saverClock.style.opacity = "0"
+      main.style.opacity = "1";
+      saverClock.style.opacity = "0";
+      videoBg.style.opacity = ".2";
     })
 
     setInterval(() => {
@@ -16,14 +18,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 20000);
 
     function screenSaver() {
-      main.style.opacity = "0"
-      saverClock.style.opacity = "1"
+      main.style.opacity = "0";
+      saverClock.style.opacity = "1";
+      videoBg.style.opacity = "1";
     }
 
     function screenSaverStop() {
-      main.style.opacity = "1"
+      main.style.opacity = "1";
       nonActiveTime = false;
-      saverClock.style.opacity = "0"
+      saverClock.style.opacity = "0";
+      videoBg.style.opacity = ".2";
     }
 
 })
