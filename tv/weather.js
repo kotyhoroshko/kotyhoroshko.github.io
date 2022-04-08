@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(response => response.json())  
     .then(json => go(json, '1214319'))  
     .then(json => console.log("Weather forecast was succesfully loaded"))
-    .catch(error => console.log('Weather forecast not loaded'))
+    .catch(error => console.log('ERROR. Weather forecast not loaded'))
   }
 
   if ( (7400000 - (new Date() - new Date(JSON.parse(window.localStorage.getItem('timestamp'))) ) )>0) {
-    go( 
+    go(
       JSON.parse(window.localStorage.getItem('1214319')),
       '1214319'
     )

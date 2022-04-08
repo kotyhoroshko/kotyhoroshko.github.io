@@ -88,7 +88,17 @@ document.addEventListener("DOMContentLoaded", function(){
       "link" : "./svg/index.html",
       "subtitle" : "Test work",
       "title" : "SVG Animation"
-    }
+    },
+    {
+      "link" : "./tv/index.html",
+      "subtitle" : "app for kitchen-TV",
+      "title" : "TV App"
+    },
+    {
+      "link" : "./tv-app-2/index.html",
+      "subtitle" : "Test work",
+      "title" : "TV New"
+    },
   ]}
 
   function displayMainSlide(slideBase) {
