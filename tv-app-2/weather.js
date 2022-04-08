@@ -1,40 +1,60 @@
+
 document.addEventListener("DOMContentLoaded", function() {
-
-  function getWeatherFromAccu() {
-    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/1214319?apikey=0tV5rkAIYVjrGg5OsD0wjbr4iGAMiU9A&language=uk-ua&metric=true`)
+  
+  function getWeatherFromAccu(e) {
+    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${e.getAttribute('data-lockey')}?apikey=0tV5rkAIYVjrGg5OsD0wjbr4iGAMiU9A&language=uk-ua&metric=true`)
     .then(response => response.json())  
-    .then(json => go(json, '1214319'))  
+    .then(json => go(json, e.getAttribute('data-point-name'), e.getAttribute('data-lockey')) )  
     .then(json => console.log("Weather forecast was succesfully loaded"))
-    .catch(error => console.log('ERROR. Weather forecast not loaded'))
+    .catch(error => console.log('Weather forecast not loaded'))  
   }
 
-  if ( (7400000 - (new Date() - new Date(JSON.parse(window.localStorage.getItem('timestamp'))) ) )>0) {
-    go(
-      JSON.parse(window.localStorage.getItem('1214319')),
-      '1214319'
-    )
-    console.log('Weather forecast was loaded from Locale Storage')
-    console.log(JSON.parse(window.localStorage.getItem('1214319')))
-  }
-  else {
-    getWeatherFromAccu()
-    window.localStorage.setItem('timestamp', JSON.stringify(new Date()))
-  }
+  document.querySelector('.locs').addEventListener('click', function(e) {
+    if (e.target.parentElement.className == "locs__item") {
+
+      if ( (7400000 - ((+new Date()) - new Date((JSON.parse(window.localStorage.getItem(e.target.parentElement.getAttribute('data-lockey')+'stamp'))))) )>0) {
+        go( 
+          JSON.parse(window.localStorage.getItem(e.target.parentElement.getAttribute('data-lockey'))),
+          e.target.parentElement.getAttribute('data-point-name'),
+          e.target.parentElement.getAttribute('data-lockey'))
+        console.log ('Weather was load from LS')
+        
+      }
+
+      else {
+        getWeatherFromAccu(e.target.parentElement)
+      }
+
+    }
+  })
 
 })
 
-function go(db2, locKey){
+function go(db2, locName, locKey){
+
+  console.log(db2);
 
   window.localStorage.setItem(locKey, JSON.stringify(db2))
+  window.localStorage.setItem(locKey+'stamp', JSON.stringify(new Date()))
 
   function getDate(date) {
     let clearDate = date.slice(8, 10)+'.'+date.slice(5, 7)+'.'+date.slice(2, 4)
     return clearDate
   }
 
+  function getWeatherColor(temp) {
+    let opacity=.66;
+    let color = [(255/60*(temp+20)),(255-temp+20),(255-(255/60*(temp+20)))];
+        color =color.map(Math.round);
+    return `rgba(${color[0]},${color[1]},${color[2]},${opacity})`
+  }
+
   function showMainInfo(){
     document.querySelector('.main-info').innerHTML = `
-      <p class="main-info__desc">${db2.Headline.Text}</p>
+      <p class="main-info__dates"><span class="loc">Прогноз погоди <span class="loc__name">в ${locName}</span> на</span> <br> ${getDate(db2.DailyForecasts[0].Date)} 
+       - 
+       ${getDate(db2.DailyForecasts[4].Date)}</p>
+      <p class="main-info__desc">${db2.Headline.Text}</p>      
     `
   }
 
@@ -42,9 +62,12 @@ function go(db2, locKey){
     inn=''
     for (let index = 0; index < 5; index++) {   
       inn+=`
-        <div class="days-info__item days-info__item--${index+1} item item__${index+1}">
-            <p class="date">${getDayName(db2.DailyForecasts[index].Date)}</p>
-            <p class="date--day">${getDate(db2.DailyForecasts[index].Date)}</p>
+        <div class="days-info__item days-info__item--${index+1}" 
+          style="background: linear-gradient(TRANSPARENT 20%, rgba(0,0,0,.66) ), linear-gradient(90deg, 
+            ${getWeatherColor(db2.DailyForecasts[index].Temperature.Maximum.Value)}, 
+            ${getWeatherColor(db2.DailyForecasts[index].Temperature.Minimum.Value)});"
+          >
+            <p class="date">${getDate(db2.DailyForecasts[index].Date)}</p>
             <div class="temperatures">
               <p class="temperatures__item">${db2.DailyForecasts[index].Temperature.Maximum.Value}&#176;</p>              
               <p class="temperatures__item">${db2.DailyForecasts[index].Temperature.Minimum.Value}&#176;</p>
@@ -60,32 +83,8 @@ function go(db2, locKey){
         </div>
       `
     }
-
     document.querySelector('.days-info').innerHTML = inn;
-    items = document.querySelectorAll('.item');
-    halfItemsQty = (items.length-1-(items.length-1)%2)/2;
-    
-    items.forEach((element, index) => {
-        element.style.backgroundColor = `rgb(${getRndColor()},${getRndColor()},${getRndColor()})`;
-        element.dataset.slideNumber = `${index+1}`
-    });
-    addStyles()
-    console.log(items)
   }
-
-  let dayName = [
-    "Неділя",
-    "Понеділок",
-    "Вівторок",
-    "Середа",
-    "Четвер",
-    "Пятниця",
-    "Субота"
-  ]
-  function getDayName(date) {
-    return dayName[new Date(date).getDay()]
-  }
-
   showMainInfo()
   showDaysInfo()
 };

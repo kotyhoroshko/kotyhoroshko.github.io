@@ -7,9 +7,21 @@ html {
 
 body {
 	background-color: beige;
-	background: beige radial-gradient(transparent, rgba(0,0,0,.66));
+	background: #333 radial-gradient(transparent, rgba(0,0,0,.66));
     margin: 0;
     overflow: hidden;
+}
+
+.video-bg {
+	position: fixed;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	min-width: 100vw;
+	min-height: 100vh;
+	z-index: -1;
+	transition: 5s ease;
+	opacity: .33;
 }
 
 .container {
@@ -27,15 +39,14 @@ body {
 	width: 66vmin;
 	height: 66vmin;
 	transform-style: preserve-3d;
+	transform: rotateY(16deg) rotateX(-20deg) rotateZ(-9deg);
 }
 
 .item {
 	position: absolute;
 	width: inherit;
 	height: inherit;
-	font: normal 12vmin Arial;
 	text-align: center;
-	line-height: 66vmin;
 	color: #fff;
     background-color: rgba(0,0,0,.9);
 	box-shadow: 0 4vmin 4vmin rgba(0,0,0,.33);
@@ -55,26 +66,75 @@ body {
     z-index: 12;
 }
 
-/* .front {
-	transform: translateZ(150px);
+.radio-item__img {
+	position: absolute;
+	left: 0;
+	top: 0;
+    width: 100%;
+	z-index: 3;
+	cursor: pointer;
 }
 
-.back {
-	transform: rotateY(180deg) translateZ(150px);
+.radio-item__title {
+	position: absolute;
+	bottom: 50%;
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;	
+	font: normal 2vmin sans-serif;
+	margin: 0;
+	padding: 1vmin;
+	text-shadow: 0 0 1vmin #000;
+	background: rgba(0,0,0,.66);
+	transition: 1s ease;
+	z-index: 2;
 }
-
-.right {
-	transform: rotateY(90deg) translateZ(150px);
+.radio-item[data-active="true"] {
+	box-shadow: 0 4vmin 4vmin rgba(255,255,255,.33);
 }
+.radio-item[data-active="true"]::before {
+	content: '';
+	background: url('./radio/play.svg') no-repeat;
+	background-size: contain;
+	display: block;
+	position: absolute;
+	width: 50%;
+	height: 66%;
+	margin: 17% 25%;
+	opacity: .75;
+	animation: play 4s ease 1s infinite;
+	z-index: 4;
+  }
+  
+  .radio-item[data-active="true"] > .radio-item__title {
+	bottom: 100%;
+  }
+  
+  @keyframes play {
+	0% {
+	  transform: scale(1);
+	}
+	33% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(1.33);
+	}
+	75% {
+	  transform: scale(1);
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
 
-.left {
-	transform: rotateY(-90deg) translateZ(150px);
+  input[type=range][orient=vertical] {
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical; /* Chromium */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
+	position: absolute;
+	right: 20px;
+	cursor: pointer;
 }
-
-.top {
-	transform: rotateX(90deg) translateZ(150px);
-}
-
-.bottom {
-	transform: rotateX(-90deg) translateZ(150px);
-} */
