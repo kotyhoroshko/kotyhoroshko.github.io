@@ -128,7 +128,7 @@ body {
 	}
   }
 
-  input[type=range][orient=vertical] {
+.volume {
     writing-mode: bt-lr;
     -webkit-appearance: slider-vertical; /* Chromium */
     width: 8px;
@@ -137,4 +137,5 @@ body {
 	position: absolute;
 	right: 20px;
 	cursor: pointer;
+	z-index: 5;
 }
