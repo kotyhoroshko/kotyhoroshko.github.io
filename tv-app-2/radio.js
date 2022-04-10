@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", function() {
             if (currentRadio) {
                 currentRadio.src='';
                 currentRadio.parentElement.dataset.active = false;
-                currentRadio.parentElement.style.boxShadow = '0 4vmin 4vmin rgb(0 0 0 / 33%)';
+                // currentRadio.parentElement.style.boxShadow = '0 4vmin 4vmin rgb(0 0 0 / 33%)';
             }
             currentRadio = el.closest('.radio-item').querySelector('audio')
             if(!prevRadio || prevRadio.dataset.src != currentRadio.dataset.src) {
                 currentRadio.src = currentRadio.dataset.src;
                 currentRadio.volume = volume.value;
                 currentRadio.parentElement.dataset.active = true;
-                lightBox(currentRadio.parentElement);
+                // lightBox(currentRadio.parentElement);
                 currentRadio.play()
                 prevRadio = currentRadio
             }

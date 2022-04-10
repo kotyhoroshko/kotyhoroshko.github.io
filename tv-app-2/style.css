@@ -6,8 +6,8 @@ html {
 }
 
 body {
-	background-color: beige;
-	background: #333 radial-gradient(transparent, rgba(0,0,0,.66));
+	background: rgb(51,51,51);
+	background: linear-gradient(165deg, #222 10%, #366 80%, #fb6 112%);
     margin: 0;
     overflow: hidden;
 }
@@ -23,6 +23,23 @@ body {
 	transition: 5s ease;
 	opacity: .33;
 }
+
+.full-screen-btn {
+	position: fixed;
+	width: 4vmin;
+	height: 4vmin;
+	bottom: 2vmin;
+	left: 2vmin;
+	color: white;
+	font-size: 3vmin;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 1vmin;
+	background: rgba(0,0,0,.5);
+	text-align: center;
+	z-index: 2;
+	border: 1vmin solid white;
+  }
 
 .container {
     display: flex;
@@ -48,8 +65,8 @@ body {
 	height: inherit;
 	text-align: center;
 	color: #fff;
-    background-color: rgba(0,0,0,.9);
-	box-shadow: 0 4vmin 4vmin rgba(0,0,0,.33);
+    background-color: #111;
+	/* box-shadow: 0 4vmin 4vmin rgba(0,0,0,.33); */
 	transition: .5s ease;
 }
 
@@ -60,10 +77,9 @@ body {
     content: '';
     height: 3vw;
     width: 100%;
-    filter: blur(.75vw);
     border-radius: 50%;
-    background-color: rgba(0,0,0,.12);
-    z-index: 12;
+    box-shadow: 0 0 3vmin rgb(0 0 0 / 33%);
+    background: radial-gradient(rgba(0,0,0,.33) 40%, transparent 95%);
 }
 
 .radio-item__img {
@@ -73,6 +89,9 @@ body {
     width: 100%;
 	z-index: 3;
 	cursor: pointer;
+	border: .5vmin solid black;
+	opacity: .33;
+	transition: .5s ease-in-out;
 }
 
 .radio-item__title {
@@ -86,12 +105,13 @@ body {
 	padding: 1vmin;
 	text-shadow: 0 0 1vmin #000;
 	background: rgba(0,0,0,.66);
+	opacity: 0;
 	transition: 1s ease;
 	z-index: 2;
 }
-.radio-item[data-active="true"] {
+/* .radio-item[data-active="true"] {
 	box-shadow: 0 4vmin 4vmin rgba(255,255,255,.33);
-}
+} */
 .radio-item[data-active="true"]::before {
 	content: '';
 	background: url('./radio/play.svg') no-repeat;
@@ -108,6 +128,10 @@ body {
   
   .radio-item[data-active="true"] > .radio-item__title {
 	bottom: 100%;
+	opacity: 1;
+  }
+  .radio-item[data-active="true"] > .radio-item__img {
+	opacity: 1;
   }
   
   @keyframes play {
@@ -138,4 +162,5 @@ body {
 	right: 20px;
 	cursor: pointer;
 	z-index: 5;
+	box-shadow: 0 0 1vmin rgba(0,0,0,.33);
 }
