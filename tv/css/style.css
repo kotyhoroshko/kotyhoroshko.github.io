@@ -241,10 +241,11 @@ header {
   animation: play 4s ease 1s infinite;
 }
 
-.radio-item[data-active="true"] > .radio-item__title {
+/* .radio-item[data-active="true"] > .radio-item__title {
   margin-left: 1vmin;
   top: 85%;
-}
+  opacity: 1;
+} */
 
 .radio-item[data-active="false"] {
   filter: grayscale(1);
@@ -355,10 +356,6 @@ header {
   .clock {
     width: 100%;
     order: -1;
-  }
-
-  .radio-item:hover .radio-item__title  {
-    opacity: 1;
   }
 
   .radio-item__title {
