@@ -34,20 +34,11 @@ body {
   opacity: 0;
 }
 
-.full-screen-btn {
-  position: fixed;
-  width: 4vmin;
-  height: 4vmin;
-  bottom: 2vmin;
-  left: 2vmin;
-  color: white;
-  font-size: 3vmin;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 1vmin;
-  background: rgba(0,0,0,.5);
-  text-align: center;
-  z-index: 2;
+.full-screen-btn,
+.reweather {
+  width: 3%;
+  height: 3vmin;
+	cursor: pointer;
 }
 
 .video-bg {
@@ -115,7 +106,7 @@ header {
 
 .clock {
   display: inline-block;
-  width: 15%;
+  width: 12%;
   color: white;
   font-weight: bold;
   font-size: 300%;
@@ -128,7 +119,7 @@ header {
   flex-wrap: wrap;
   color: white;
   padding: 0 0 5px;
-  width: 83%;
+  width: 80%;
   font-size: 150%;
 }
 .main-info .loc {
@@ -314,6 +305,16 @@ header {
   z-index: 0;
 }
 
+.volume {
+  display: block;
+  width: 90%;
+  padding: 0;
+  cursor: pointer;
+  margin: 0 auto;
+  z-index: 5;
+  box-shadow: 0 0 1vmin rgba(0,0,0,.33);
+}
+
 @media screen and (max-width: 1200px) {
  
   .days-info {
@@ -364,10 +365,17 @@ header {
     font-size: 20px;
   }
 
-  .full-screen-btn {
+  .full-screen-btn,
+  .reweather {
     width: 30px;
     height: 30px;
-    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+  }
+  
+  .reweather {
+    left: 10px;
   }
 
 }

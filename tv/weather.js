@@ -8,19 +8,23 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch(error => console.log('ERROR. Weather forecast not loaded'))
   }
 
-  if ( (7400000 - (new Date() - new Date(JSON.parse(window.localStorage.getItem('timestamp'))) ) )>0) {
-    go(
-      JSON.parse(window.localStorage.getItem('1214319')),
-      '1214319'
-    )
-    console.log('Weather forecast was loaded from Locale Storage')
-    console.log(JSON.parse(window.localStorage.getItem('1214319')))
+  function checkWeatherUpd() {
+    if ( (7400000 - (new Date() - new Date(JSON.parse(window.localStorage.getItem('timestamp'))) ) )>0) {
+      go(
+        JSON.parse(window.localStorage.getItem('1214319')),
+        '1214319'
+      )
+      console.log('Weather forecast was loaded from Locale Storage');
+    }
+    else {
+      getWeatherFromAccu()
+      window.localStorage.setItem('timestamp', JSON.stringify(new Date()))
+    }
+  }
+  
+  checkWeatherUpd()
 
-  }
-  else {
-    getWeatherFromAccu()
-    window.localStorage.setItem('timestamp', JSON.stringify(new Date()))
-  }
+  document.querySelector('.reweather').addEventListener('click', checkWeatherUpd);
 
 })
 
