@@ -5,12 +5,15 @@ document.addEventListener("DOMContentLoaded", function() {
     let saverClock = document.querySelector(".saver-clock");
     let nonActiveTime = false;
 
-    document.addEventListener('mousemove', function(){
+    document.addEventListener('mousemove', getUp)
+    document.addEventListener('touchstart', getUp)
+
+    function getUp(){
       nonActiveTime = false;
       main.style.opacity = "1";
       saverClock.style.opacity = "0";
       videoBg.style.opacity = ".2";
-    })
+    }
 
     setInterval(() => {
       nonActiveTime ? screenSaver() : screenSaverStop();

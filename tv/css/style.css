@@ -338,6 +338,8 @@ header {
   }
   .main-info__desc {
     justify-content: center;
+    text-align: left;
+    height: auto;
     width: 100%;
     margin-top: 10px;
   }
@@ -377,5 +379,7 @@ header {
   .reweather {
     left: 10px;
   }
-
+  .volume {
+    padding: 10px 0;
+  }
 }
