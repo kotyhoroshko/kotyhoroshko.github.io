@@ -19,9 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             currentRadio = el.closest('.radio-item').querySelector('audio')
             if(!prevRadio || prevRadio.dataset.src != currentRadio.dataset.src) {
-                currentRadio.src = currentRadio.dataset.src
-                currentRadio.parentElement.dataset.active = true
-                currentRadio.play()
+                currentRadio.src = currentRadio.dataset.src;
+                currentRadio.parentElement.dataset.active = true;
+                currentRadio.volume = volume.value;
+                currentRadio.play();
                 prevRadio = currentRadio
             }
             else {

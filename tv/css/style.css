@@ -1,9 +1,3 @@
-a {
-  text-decoration: none;
-  color: unset;
-  color: white;
-}
-
 .hidden {
   display: none;
 }
@@ -248,9 +242,23 @@ header {
 }
 
 .radio-item[data-active="true"] > .radio-item__title {
-  opacity: 1;
   margin-left: 1vmin;
   top: 85%;
+}
+
+.radio-item[data-active="false"] {
+  filter: grayscale(1);
+}
+
+.radio-item[data-active="true"] {
+  transform: scale(1.2) rotate(-9deg);
+  z-index: 9;
+  border: .75vmin solid white;
+  box-shadow: 0 0 2vmin black;
+}
+
+.radio-item:hover {
+  border: .25vmin solid white;
 }
 
 @keyframes play {
@@ -269,16 +277,6 @@ header {
   100% {
     transform: scale(1);
   }
-}
-
-.radio-item[data-active="false"] {
-  opacity: .75;
-  filter: grayscale(1);
-}
-
-.radio-item:hover {
-  border: 1vmin solid white;
-  box-shadow: 0 0 2vw white;
 }
 
 .radio-item__title {
@@ -309,9 +307,9 @@ header {
 .volume {
   display: block;
   width: 90%;
-  padding: 0;
+  padding: 5px 0;
   cursor: pointer;
-  margin: 0 auto;
+  margin: 5px auto 0;
   z-index: 5;
   box-shadow: 0 0 1vmin rgba(0,0,0,.33);
 }
