@@ -1,0 +1,225 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
+         url('../fonts/Roboto-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.woff2') format('woff2'),
+         url('../fonts/Roboto-Medium.woff') format('woff');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
+         url('../fonts/Roboto-Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Black.woff2') format('woff2'),
+         url('../fonts/Roboto-Black.woff') format('woff');
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Bold.woff2') format('woff2'),
+         url('../fonts/Raleway-Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+}
+
+:root { 
+    --dark-background: #2F303A;
+    --gray-background: #F5F4FA;
+    --main-text-color: #212121;
+    --secondary-text-color: #757575;
+    --link-text-color: #2196F3;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    color: var( --main-text-color);
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+.header {
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    justify-content: stretch;
+    margin: 0 auto;
+    max-width: 1170px;
+    padding: 25px 0;
+}
+
+.logo__link {
+    color: var(--main-text-color);
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+}
+
+.logo__link span {
+    color: var(--link-text-color);
+}
+
+.logo__link--footer {
+    color: #fff
+}
+
+.menu {
+    margin-left: 43px;
+}
+
+.menu__item {
+    margin-left: 50px;
+}
+
+.menu__item.active a,
+.menu__item a:hover,
+.contacts__email:hover,
+.contacts__tel:hover {
+    color: var(--link-text-color);
+}
+
+.contacts {
+    margin-left: auto;
+}
+
+.contacts__email {
+    margin-left: 50px;
+}
+
+.contacts__tel {
+    margin-left: 50px;
+}
+
+.portfolio {
+    padding: 44px 0 94px;
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+.filters {
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 20px;
+}
+
+.filters__item {
+    background-color: var( --gray-background);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0 4px;
+    padding: 6px 22px;
+}
+
+.filters__item.active {
+    background-color: var(--link-text-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    color: #fff;
+}
+
+.examples {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.example {
+    border: 1px solid #EEEEEE;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: .45s ease;
+}
+
+.example:hover {
+    box-shadow: 2px 2px 18px rgba(0,0,0,.66);
+    transform: scale(1.01);
+}
+
+.example__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 36px;
+    margin: 20px 0 0 24px;
+}
+
+.example__desc {
+    color: var( --secondary-text-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 4px 0 20px 24px;
+}
+
+.footer {
+    background-color: var(--dark-background);
+    padding: 60px 0;
+}
+
+.find-us__address {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+    letter-spacing: 0.03em;
+    line-height: 24px;
+    margin: 20px 0 0;
+}
+
+.find-us__email,
+.find-us__tel {
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    margin: 9px 0 0;
+}
