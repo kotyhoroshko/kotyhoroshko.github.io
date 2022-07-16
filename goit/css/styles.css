@@ -50,7 +50,7 @@
     --secondary-text-color: #757575;
     --link-text-color: #2196F3;
     --main-font: Roboto, sans-serif;
-    --container-width: 1170px;
+    --container-width: 1200px;
 }
 
 body {
@@ -77,16 +77,18 @@ a {
 .container {
     margin: 0 auto;
     max-width: var(--container-width);
+    padding: 0 15px;
 }
 
 .header {
-    align-items: center;
     border-bottom: 1px solid #ececec;
+    padding: 25px 0;
+}
+
+.header__container {
+    align-items: center;
     display: flex;
     justify-content: stretch;
-    margin: 0 auto;
-    max-width: var(--container-width);
-    padding: 25px 0;
 }
 
 .logo__link {
@@ -108,11 +110,11 @@ a {
 }
 
 .menu {
-    margin-left: 43px;
+    margin-left: 93px;
 }
 
 .menu__item {
-    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .menu__item a {
@@ -192,6 +194,7 @@ a {
     margin: 0 auto;
     max-width: 700px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .hero-baner__button {
@@ -218,23 +221,20 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 auto;
-    padding: 24px 0;
-    max-width: var(--container-width);
 }
 
 .benefit {
     max-width: 270px;
+    padding: 24px 0;
 }
 
 .benefit__title {
     color: var(--main-text-color);
-color: var(--main-tex-color);
     font-family: var(--main-font);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.03em;
-    line-height: 1.43;
+    line-height: 1.14;
     margin: 0;
     text-transform: uppercase;
 }
@@ -251,8 +251,6 @@ color: var(--main-tex-color);
 
 .activity {
     padding: 30px 0 70px;
-    margin: 0 auto;
-    max-width: var(--container-width);
 }
 
 .activity__title {
@@ -269,7 +267,7 @@ color: var(--main-tex-color);
 .activity__images {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 24px;
+    margin-bottom: 24px;
 }
 
 .team {
@@ -282,19 +280,16 @@ color: var(--main-tex-color);
     font-family: var(--main-font);
     font-size: 36px;
     font-weight: 700;    
-    margin: 0 auto 50px;
-    max-width: var(--container-width);
     letter-spacing: 0.03em;
     line-height: 1.16;
+    margin: 0 auto 50px;
     text-align: center;
 }
 
 .team__members {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
-    max-width: var(--container-width);
-    padding-bottom: 24px;
+    margin: 0 auto 24px;
 }
 
 .member {
@@ -328,18 +323,16 @@ color: var(--main-tex-color);
 /* ----------- PORTFOLIO -------------- */
 
 .portfolio {
-    padding: 44px 0 94px;
+    padding: 94px 0;
     margin: 0 auto;
-    max-width: var(--container-width);
 }
 
 .filters {
     align-items: center;
     margin: 0 auto;
-    max-width: var(--container-width);
     display: flex;
     justify-content: center;
-    padding: 50px 0 20px;
+    margin-bottom: 50px;
 }
 
 .filters__item {
@@ -366,12 +359,13 @@ color: var(--main-tex-color);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    row-gap: 30px;
 }
 
 .example {
     border: 1px solid #EEEEEE;
     cursor: pointer;
-    margin-top: 30px;
+    padding-bottom: 20px;
     transition: .45s ease;
 }
 
@@ -387,7 +381,8 @@ color: var(--main-tex-color);
     font-weight: 700;
     letter-spacing: 0.06em;
     line-height: 2;
-    margin: 20px 0 0 24px;
+    margin: 20px 0 0;
+    padding: 0 24px;
 }
 
 .example__desc {
@@ -397,5 +392,6 @@ color: var(--main-tex-color);
     font-weight: 400;
     letter-spacing: 0.03em;
     line-height: 1.875;
-    margin: 4px 0 20px 24px;
+    margin: 4px 0 0;
+    padding: 0 24px;
 }

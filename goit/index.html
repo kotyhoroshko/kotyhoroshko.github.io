@@ -5,32 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebStudio - HomeWork</title>
+    <link rel="stylesheet" href="./css/modern-normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <header class="header">
-        <div class="logo">
-            <a class="logo__link" href="#"><span>Web</span>Studio</a>
-        </div>
-        <nav class="menu">
-            <ul>
-                <li class="menu__item"><a href="./index.html">Студія</a></li>
-                <li class="menu__item active"><a href="./portfolio.html">Портфоліо</a></li>
-                <li class="menu__item"><a href="#">Контакти</a></li>
-            </ul>
-        </nav>
-        <div class="contacts">
-            <a href="mailto:info@devstudio.com" class="contacts__email">info@devstudio.com</a>
-            <a href="tel:+380961111111" class="contacts__tel">+38 096 111 11 11</a>
+        <div class="container header__container">
+            <div class="logo">
+                <a class="logo__link" href="#"><span>Web</span>Studio</a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="menu__item"><a href="./index.html">Студія</a></li>
+                    <li class="menu__item active"><a href="./portfolio.html">Портфоліо</a></li>
+                    <li class="menu__item"><a href="#">Контакти</a></li>
+                </ul>
+            </nav>
+            <div class="contacts">
+                <a href="mailto:info@devstudio.com" class="contacts__email">info@devstudio.com</a>
+                <a href="tel:+380961111111" class="contacts__tel">+38 096 111 11 11</a>
+            </div>
         </div>
     </header>
     <main>
         <section class="hero-baner">
-            <h1 class="hero-baner__text">Ефективні рішення для Вашого бізнесу</h1>
-            <button class="hero-baner__button" type="button">Замовити послугу</button>
+            <div class="container">
+                <h1 class="hero-baner__text">Ефективні рішення для Вашого бізнесу</h1>
+                <button class="hero-baner__button" type="button">Замовити послугу</button>
+            </div>
         </section>
         <section class="benefits">
-            <ul class="benefits__container">
+            <ul class="container benefits__container">
                 <li class="benefit">
                     <h3 class="benefit__title">Увага до деталей</h3>
                     <p class="benefit__description">Ідейні міркування, і навіть початок повсякденної роботи з формування позиції.</p>
@@ -50,43 +55,47 @@
             </ul>
         </section>
         <section class="activity">
-            <h2 class="activity__title">Чим ми займаємось</h2>
-            <ul class="activity__images">
-                <li>
-                    <img src="./images/1.jpg" width="370" height="294" alt="Час кодусати">
-                </li>
-                <li>
-                    <img src="./images/2.jpg" width="370" height="294" alt="Час для адаптиву">
-                </li>
-                <li>
-                    <img src="./images/3.jpg" width="370" height="294" alt="час обирати кольори">
-                </li>
-            </ul>
+            <div class="container">
+                <h2 class="activity__title">Чим ми займаємось</h2>
+                <ul class="activity__images">
+                    <li>
+                        <img src="./images/1.jpg" width="370" height="294" alt="Час кодусати">
+                    </li>
+                    <li>
+                        <img src="./images/2.jpg" width="370" height="294" alt="Час для адаптиву">
+                    </li>
+                    <li>
+                        <img src="./images/3.jpg" width="370" height="294" alt="час обирати кольори">
+                    </li>
+                </ul>
+            </div>
         </section>
         <section class="team">
-            <h2 class="team__title">Наша команда</h2>
-            <ul class="team__members">
-                <li class="member">
-                    <img src="./images/member1.jpg" alt="Фото Ігоря" class="member__pic" width="270" height="260">
-                    <p class="member__name">Ігор Демиденко</p>
-                    <p class="member__role">Product Designer</p>
-                </li>
-                <li class="member">
-                    <img src="./images/member2.jpg" alt="Фото Ольги" class="member__pic" width="270" height="260">
-                    <p class="member__name">Ольга Репіна</p>
-                    <p class="member__role">Frontend Developer</p>
-                </li>
-                <li class="member">
-                    <img src="./images/member3.jpg" alt="Фото Миколи" class="member__pic" width="270" height="260">
-                    <p class="member__name">Микола Тарасов</p>
-                    <p class="member__role">Marketing</p>
-                </li>
-                <li class="member">
-                    <img src="./images/member4.jpg" alt="Фото Михайла" class="member__pic" width="270" height="260">
-                    <p class="member__name">Михайло Єрмак</p>
-                    <p class="member__role">UI Designer</p>
-                </li>
-            </ul>
+            <div class="container">
+                <h2 class="team__title">Наша команда</h2>
+                <ul class="team__members">
+                    <li class="member">
+                        <img src="./images/member1.jpg" alt="Фото Ігоря" class="member__pic" width="270" height="260">
+                        <p class="member__name">Ігор Демиденко</p>
+                        <p class="member__role">Product Designer</p>
+                    </li>
+                    <li class="member">
+                        <img src="./images/member2.jpg" alt="Фото Ольги" class="member__pic" width="270" height="260">
+                        <p class="member__name">Ольга Репіна</p>
+                        <p class="member__role">Frontend Developer</p>
+                    </li>
+                    <li class="member">
+                        <img src="./images/member3.jpg" alt="Фото Миколи" class="member__pic" width="270" height="260">
+                        <p class="member__name">Микола Тарасов</p>
+                        <p class="member__role">Marketing</p>
+                    </li>
+                    <li class="member">
+                        <img src="./images/member4.jpg" alt="Фото Михайла" class="member__pic" width="270" height="260">
+                        <p class="member__name">Михайло Єрмак</p>
+                        <p class="member__role">UI Designer</p>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
     <footer class="footer">
