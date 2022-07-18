@@ -214,7 +214,7 @@ a {
 }
 
 .benefits {
-    padding: 70px 0 40px;
+    padding: 94px 0 64px;
 }
 
 .benefits__container {
@@ -225,7 +225,6 @@ a {
 
 .benefit {
     max-width: 270px;
-    padding: 24px 0;
 }
 
 .benefit__title {
@@ -250,7 +249,7 @@ a {
 }
 
 .activity {
-    padding: 30px 0 70px;
+    padding: 30px 0 94px;
 }
 
 .activity__title {
@@ -267,12 +266,11 @@ a {
 .activity__images {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 24px;
 }
 
 .team {
     background-color: var(--gray-background);
-    padding: 70px 0;
+    padding: 94px 0;
 }
 
 .team__title {
@@ -289,7 +287,7 @@ a {
 .team__members {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto 24px;
+    margin: 0 auto;
 }
 
 .member {
@@ -374,6 +372,10 @@ a {
     transform: scale(1.01);
 }
 
+.example__desc {
+    padding: 20px 24px;
+}
+
 .example__title {
     color: var(--main-text-color);
     font-family: var(--main-font);
@@ -381,17 +383,15 @@ a {
     font-weight: 700;
     letter-spacing: 0.06em;
     line-height: 2;
-    margin: 20px 0 0;
-    padding: 0 24px;
+    margin: 0;
 }
 
-.example__desc {
+.example__subtitle {
     color: var( --secondary-text-color);
     font-family: var(--main-font);
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.03em;
     line-height: 1.875;
-    margin: 4px 0 0;
-    padding: 0 24px;
+    margin: 0;
 }
