@@ -46,6 +46,7 @@
 :root { 
     --dark-background: #2F303A;
     --gray-background: #F5F4FA;
+    --icons-color: #AFB1B8;
     --main-text-color: #212121;
     --secondary-text-color: #757575;
     --link-text-color: #2196F3;
@@ -78,6 +79,11 @@ a {
     margin: 0 auto;
     max-width: var(--container-width);
     padding: 0 15px;
+}
+
+.container.container--footer {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .header {
@@ -134,23 +140,41 @@ a {
 }
 
 .contacts {
+    align-items: center;
     margin-left: auto;
+    display: flex;
 }
 
 .contacts__email,
 .contacts__tel {
+    align-items: center;
     color: var(--secondary-text-color);
+    display: flex;
     font-family: var(--main-font);
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.02em;
     line-height: 1.14;
-    margin-left: 50px;
+    margin-left: 30px;
+}
+
+.contacts svg {
+    fill: currentColor;
+    margin-right: 10px;
+}
+
+.contacts__email:hover svg,
+.contacts__tel:hover svg {
+    fill: var(--link-text-color);
 }
 
 .footer {
     background-color: var(--dark-background);
     padding: 60px 0;
+}
+
+.footer__column {
+    width: 25%;
 }
 
 .find-us__address {
@@ -180,7 +204,10 @@ a {
 /* ------------ STUDIA --------------- */
 
 .hero-baner {
-    background-color: var(--dark-background);
+    background: var(--dark-background);
+    background-image: linear-gradient(rgba(47,48,58,.4), rgba(47,48,58,.4)), url("../images/hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 200px 20px;
 }
 
@@ -227,6 +254,16 @@ a {
     max-width: 270px;
 }
 
+.benefit__icon {
+    align-items: center;
+    background-color: var(--gray-background);
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+    width: 100%;
+}
+
 .benefit__title {
     color: var(--main-text-color);
     font-family: var(--main-font);
@@ -234,7 +271,7 @@ a {
     font-weight: 700;
     letter-spacing: 0.03em;
     line-height: 1.14;
-    margin: 0;
+    margin: 30px 0 0;
     text-transform: uppercase;
 }
 
@@ -317,6 +354,118 @@ a {
     margin: 10px auto 0;
     text-align: center;
 }
+
+.member__links {
+    margin-top: 16px;
+}
+
+.social {
+    align-items: center;
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.social.social--footer {
+    justify-content: flex-start;
+}
+
+.social__link {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 44px;
+    justify-content: center;
+    transition: .3s ease;
+    width: 44px;
+}
+
+.social__link.social__link--footer {
+    background-color: rgba(255,255,255,0.1) ;
+}
+
+.social__link svg {
+    fill: var(--icons-color);
+}
+
+.social__link.social__link--footer svg {
+    fill: #fff;
+}
+
+.social__link:hover,
+.social__link:focus {
+    background-color: var(--link-text-color);
+}
+
+.social__link:hover svg,
+.social__link:focus svg {
+    fill: #fff;
+}
+
+.follow-us {
+    padding: 10px 0;
+
+}
+
+.follow-us__title {
+    color: #fff;
+    font-family: var(--main-font);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.follow-us__links {
+    padding: 20px 0;
+}
+
+.clients {
+    padding: 94px 0;
+}
+
+.clients__title {
+    color: var(--main-text-color);
+    font-family: var(--main-font);
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.03em;
+    line-height: 1.16;
+    text-align: center;
+}
+
+.clients__logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.clients-link {
+    align-items: center;
+    border: 1px solid var(--icons-color);
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 16px 32px;
+    transition: .3s ease;
+}
+
+.clients-link:hover {
+    border: 1px solid var(--link-text-color);
+
+}
+
+.clients-link:hover .clients-link__logo {
+    fill: var(--link-text-color);
+}
+
+.clients-link__logo {
+    fill: var(--icons-color);
+}
+
 
 /* ----------- PORTFOLIO -------------- */
 
