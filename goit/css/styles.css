@@ -147,6 +147,7 @@ a {
     border-bottom: 2px solid var(--link-text-color);
     bottom: -32px;
     content: "";
+    left: 0;
     position: absolute;
     width: 100%;
 }
@@ -240,7 +241,7 @@ a {
     left: 50%;
     min-height: 40%;
     min-width: 40%;
-    padding: 48px 24px 32px;
+    padding: 48px 32px;
     position: absolute;
     top: 50%;
     transition: top .5s cubic-bezier(0.4, 0, 0.2, 1);
