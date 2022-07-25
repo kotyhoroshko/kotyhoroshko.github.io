@@ -35,36 +35,54 @@
         <section class="hero-baner">
             <div class="container">
                 <h1 class="hero-baner__text">Ефективні рішення для Вашого бізнесу</h1>
-                <button class="hero-baner__button" type="button">Замовити послугу</button>
+                <button class="hero-baner__button" data-modal-open type="button">Замовити послугу</button>
+                <div class="modal">
+                    <div class="modal__backdrop" data-modal>
+                        <div class="modal__window">
+                            <div class="modal__close" data-modal-close>
+                                <img src="./images/close.svg" alt="Закрити">
+                            </div>
+                            <div class="modal__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, laborum?</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="benefits">
             <ul class="container benefits__container">
                 <li class="benefit">
-                    <svg class="benefit__icon" width="70" height="70">
-                        <use href="./images/icons.svg#icon-antenna"></use>
-                    </svg>
+                    <div class="benefit__icon">
+                        <svg width="70" height="70">
+                            <use href="./images/icons.svg#icon-antenna"></use>
+                        </svg>
+                    </div>
                     <h3 class="benefit__title">Увага до деталей</h3>
                     <p class="benefit__description">Ідейні міркування, і навіть початок повсякденної роботи з формування позиції.</p>
                 </li>
                 <li class="benefit">
-                    <svg class="benefit__icon" width="70" height="70">
-                        <use href="./images/icons.svg#icon-astronaut"></use>
-                    </svg>
+                    <div class="benefit__icon">
+                        <svg width="70" height="70">
+                            <use href="./images/icons.svg#icon-astronaut"></use>
+                        </svg>
+                    </div>
                     <h3 class="benefit__title">Пунктуальність</h3>
                     <p class="benefit__description">Завдання організації, особливо рамки і місце навчання кадрів тягне у себе.</p>
                 </li>
                 <li class="benefit">
-                    <svg class="benefit__icon" width="70" height="70">
-                        <use href="./images/icons.svg#icon-clock"></use>
-                    </svg>
+                    <div class="benefit__icon">
+                        <svg width="70" height="70">
+                            <use href="./images/icons.svg#icon-clock"></use>
+                        </svg>
+                    </div>
                     <h3 class="benefit__title">Планування</h3>
                     <p class="benefit__description">Так само консультація з широким активом значною мірою зумовлює.</p>
                 </li>
                 <li class="benefit">
-                    <svg class="benefit__icon" width="70" height="70">
-                        <use href="./images/icons.svg#icon-diagram"  ></use>
-                    </svg>
+                    <div class="benefit__icon">
+                        <svg width="70" height="70">
+                            <use href="./images/icons.svg#icon-diagram"  ></use>
+                        </svg>
+                    </div>
                     <h3 class="benefit__title">Сучасні технології</h3>
                     <p class="benefit__description">Значимість цих проблем настільки очевидна, що реалізація планових завдань.</p>
                 </li>
@@ -74,14 +92,17 @@
             <div class="container">
                 <h2 class="activity__title">Чим ми займаємось</h2>
                 <ul class="activity__images">
-                    <li>
-                        <img src="./images/1.jpg" width="370" height="294" alt="Час кодусати">
+                    <li class="activity-card">
+                        <img class="activity-card__img" src="./images/1.jpg" width="370" height="294" alt="Час кодусати">
+                        <p class="activity-card__desc">Десктопні додатки</p>
                     </li>
-                    <li>
-                        <img src="./images/2.jpg" width="370" height="294" alt="Час для адаптиву">
+                    <li class="activity-card">
+                        <img class="activity-card__img" src="./images/2.jpg" width="370" height="294" alt="Час для адаптиву">
+                        <p class="activity-card__desc">Мобільні додатки</p>
                     </li>
-                    <li>
-                        <img src="./images/3.jpg" width="370" height="294" alt="час обирати кольори">
+                    <li class="activity-card">
+                        <img class="activity-card__img" src="./images/3.jpg" width="370" height="294" alt="час обирати кольори">
+                        <p class="activity-card__desc">Дизайнерські рішення</p>
                     </li>
                 </ul>
             </div>
@@ -212,38 +233,50 @@
         <section class="clients">
             <div class="container">
                 <h2 class="clients__title">Постійні клієнти</h2>
-                <div class="clients__logos">
-                    <a href="" class="clients-link">
-                        <svg class="clients-link__logo" width="106" height="60">
-                            <use href="./images/icons.svg#icon-logo1" />
-                        </svg>
-                    </a>
-                    <a href="" class="clients-link">
-                        <svg class="clients-link__logo" width="106" height="60">
-                            <use href="./images/icons.svg#icon-logo2" />
-                        </svg>
-                    </a>
-                    <a href="" class="clients-link">
-                        <svg class="clients-link__logo" width="106" height="60">
-                            <use href="./images/icons.svg#icon-logo3" />
-                        </svg>
-                    </a>
-                    <a href="" class="clients-link">
-                        <svg class="clients-link__logo" width="106" height="60">
-                            <use href="./images/icons.svg#icon-logo4" />
-                        </svg>
-                    </a>
-                    <a href="" class="clients-link">
-                        <svg class="clients-link__logo" width="106" height="60">
-                            <use href="./images/icons.svg#icon-logo5" />
-                        </svg>
-                    </a>
-                    <a href="" class="clients-link">
-                        <svg class="clients-link__logo" width="106" height="60">
-                            <use href="./images/icons.svg#icon-logo6" />
-                        </svg>
-                    </a>
-                </div>
+                <ul class="clients__cards">
+                    <li class="client-card">
+                        <a href="#" class="client-card__link">
+                            <svg class="client-card__logo" width="106" height="60">
+                                <use href="./images/icons.svg#icon-logo1" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="client-card">
+                        <a href="#" class="client-card__link">
+                            <svg class="client-card__logo" width="106" height="60">
+                                <use href="./images/icons.svg#icon-logo2" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="client-card">
+                        <a href="#" class="client-card__link">
+                            <svg class="client-card__logo" width="106" height="60">
+                                <use href="./images/icons.svg#icon-logo3" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="client-card">
+                        <a href="#" class="client-card__link">
+                            <svg class="client-card__logo" width="106" height="60">
+                                <use href="./images/icons.svg#icon-logo4" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="client-card">
+                        <a href="#" class="client-card__link">
+                            <svg class="client-card__logo" width="106" height="60">
+                                <use href="./images/icons.svg#icon-logo5" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="client-card">
+                        <a href="#" class="client-card__link">
+                            <svg class="client-card__logo" width="106" height="60">
+                                <use href="./images/icons.svg#icon-logo6" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
@@ -290,5 +323,21 @@
             </div>
         </div>
     </footer>
+    <script>
+        (() => {
+            const refs = {
+                openModalBtn: document.querySelector("[data-modal-open]"),
+                closeModalBtn: document.querySelector("[data-modal-close]"),
+                modal: document.querySelector("[data-modal]"),
+            };
+
+            refs.openModalBtn.addEventListener("click", toggleModal);
+            refs.closeModalBtn.addEventListener("click", toggleModal);
+
+            function toggleModal() {
+                refs.modal.classList.toggle("is-hidden");
+            }
+            })();
+    </script>
 </body>
 </html>

@@ -121,6 +121,7 @@ a {
 
 .menu__item {
     margin-right: 50px;
+    position: relative;
 }
 
 .menu__item a {
@@ -135,8 +136,19 @@ a {
 .menu__item.active a,
 .menu__item a:hover,
 .contacts__email:hover,
-.contacts__tel:hover {
+.contacts__tel:hover,
+.menu__item a:focus,
+.contacts__email:focus,
+.contacts__tel:focus {
     color: var(--link-text-color);
+}
+
+.menu__item.active::after {
+    border-bottom: 2px solid var(--link-text-color);
+    bottom: -32px;
+    content: "";
+    position: absolute;
+    width: 100%;
 }
 
 .contacts {
@@ -161,11 +173,6 @@ a {
 .contacts svg {
     fill: currentColor;
     margin-right: 10px;
-}
-
-.contacts__email:hover svg,
-.contacts__tel:hover svg {
-    fill: var(--link-text-color);
 }
 
 .footer {
@@ -201,7 +208,72 @@ a {
     margin: 9px 0 0;
 }
 
-/* ------------ STUDIA --------------- */
+.modal__backdrop {
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .2);
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    transition: opacity .25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.modal__backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal__backdrop.is-hidden .modal__window{
+    top: -200%;
+}
+
+.modal__window {
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow:
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    min-height: 40%;
+    min-width: 40%;
+    padding: 48px 24px 32px;
+    position: absolute;
+    top: 50%;
+    transition: top .5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-50%, -50%);
+}
+
+.modal__close {
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    right: 8px;
+    position: absolute;
+    top: 8px;
+    transition: .25s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 30px;
+}
+
+.modal__close:hover {
+    box-shadow: 2px 2px 12px rgba(0,0,0,.66)
+
+}
+
+.modal__content {
+
+}
+
+
+/* -------------------- STUDIA -------------------- */
 
 .hero-baner {
     background: var(--dark-background);
@@ -257,11 +329,10 @@ a {
 .benefit__icon {
     align-items: center;
     background-color: var(--gray-background);
-    box-sizing: content-box;
     display: flex;
+    height: 120px;
     justify-content: center;
-    padding: 25px 0;
-    width: 100%;
+    width: 270px;
 }
 
 .benefit__title {
@@ -305,6 +376,27 @@ a {
     justify-content: space-between;
 }
 
+.activity-card {
+    position: relative;
+}
+
+.activity-card__desc {
+    background: rgba(47, 48, 58, 0.8);
+    bottom: 0;
+    color: #fff;
+    font-family: var(--main-font);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    margin: 0;
+    padding: 27px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
 .team {
     background-color: var(--gray-background);
     padding: 94px 0;
@@ -328,6 +420,7 @@ a {
 }
 
 .member {
+    background-color: white;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
     padding-bottom: 30px;
@@ -376,7 +469,7 @@ a {
     display: flex;
     height: 44px;
     justify-content: center;
-    transition: .3s ease;
+    transition: background .25s cubic-bezier(0.4, 0, 0.2, 1);
     width: 44px;
 }
 
@@ -435,37 +528,39 @@ a {
     text-align: center;
 }
 
-.clients__logos {
+.clients__cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 50px;
 }
 
-.clients-link {
+.client-card__link {
     align-items: center;
     border: 1px solid var(--icons-color);
     border-radius: 4px;
     display: flex;
     flex-wrap: wrap;
+    height: 94px;
     justify-content: center;
-    padding: 16px 32px;
-    transition: .3s ease;
+    transition: border-color .25s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 172px;
 }
 
-.clients-link:hover {
+.client-card__link:hover,
+.client-card__link:active {
     border: 1px solid var(--link-text-color);
-
 }
 
-.clients-link:hover .clients-link__logo {
+.client-card__logo {
+    fill: var(--icons-color);
+    transition: fill .25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client-card__link:hover .client-card__logo,
+.client-card__link:focus .client-card__logo {
     fill: var(--link-text-color);
 }
-
-.clients-link__logo {
-    fill: var(--icons-color);
-}
-
 
 /* ----------- PORTFOLIO -------------- */
 
@@ -493,12 +588,20 @@ a {
     letter-spacing: 0.03em;
     line-height: 1.625;
     margin: 0 4px;
-    padding: 6px 22px;
+    padding: 6px 22px;    
+    transition:
+        background-color .25s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow .25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.filters__item.active {
+.filters__item.active,
+.filters__item:hover,
+.filters__item:focus {
     background-color: var(--link-text-color);
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
     color: #fff;
 }
 
@@ -512,17 +615,37 @@ a {
 .example {
     border: 1px solid #EEEEEE;
     cursor: pointer;
-    padding-bottom: 20px;
-    transition: .45s ease;
+    max-width: 370px;
+    position: relative;
+    transition: box-shadow .25s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.example a {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .example:hover {
-    box-shadow: 2px 2px 18px rgba(0,0,0,.66);
-    transform: scale(1.01);
+    box-shadow: 
+        0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.example:hover .example__text {
+    top: 0;
+}
+
+.example__img {
+    display: block;
 }
 
 .example__desc {
+    background: #FFF;
     padding: 20px 24px;
+    width: 100%;
+    z-index: 2;
 }
 
 .example__title {
@@ -542,5 +665,22 @@ a {
     font-weight: 400;
     letter-spacing: 0.03em;
     line-height: 1.875;
+    margin: 4px 0 0;
+}
+
+.example__text {
+    background-color: rgba(33, 150, 243, 0.9);
+    color: white;
+    font-family: var(--main-font);
+    font-size: 18px;
+    font-weight: 400;
+    height: 100%;
+    letter-spacing: 0.03em;
+    line-height: 1.33;
     margin: 0;
+    padding: 63px 24px;
+    position: absolute;
+    top: 100%;
+    transition: top .25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
 }
