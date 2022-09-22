@@ -17,9 +17,11 @@
         <div class="container">
             <div class="main-info">
                 <!-- MAIN INFO -->
-            </div> 
+            </div>
+            <div class="currency">
+            </div>
             <div id="digital-clock" class="clock"></div>
-            <img class="pin" src="./img/pin.svg" alt="location">
+            <!-- <img class="pin" src="./img/pin.svg" alt="location"> -->
             <img class="reweather" src="./img/reload.svg" alt="refresh weather">
             <img class="full-screen-btn" src="./img/fscreen.svg"  data-full-screen="true" alt="full screen">
             <div class="days-info">
@@ -116,6 +118,7 @@
                 <h2 class="radio-item__title">Yeden</h2>
                 <img class="radio-item__img" src="radio/yeden.webp" alt="">
                 <audio data-src="http://31.128.79.192:8000/live">
+                    <source type="audio/mpeg" src="https://cors.bitwize.com.lb/http://31.128.79.192:8000/live">
                     <!-- <source type="audio/mpeg" src="http://31.128.79.192:8000/live"> -->
                 </audio>
             </div>
@@ -129,6 +132,7 @@
     </main>
 
     <script src="weather.js"></script>
+    <script src="currency.js"></script>
     <script src="radio.js"></script>
     <script src="time.js"></script>
     <script src="full-screen.js"></script>

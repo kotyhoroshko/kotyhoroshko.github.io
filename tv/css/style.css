@@ -98,6 +98,19 @@ header {
   text-align: center;
   line-height: 1;
 }
+.currency {
+  color: white;
+  display: inline-block;
+  min-width: 12%;
+}
+
+.currency>p {
+  margin: 3px;
+}
+
+.currency b {
+  color: gold;
+}
 
 .clock {
   display: inline-block;
@@ -114,7 +127,7 @@ header {
   flex-wrap: wrap;
   color: white;
   padding: 0 0 5px;
-  width: 76%;
+  width: 66%;
   font-size: 150%;
 }
 .main-info .loc {
