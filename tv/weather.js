@@ -26,6 +26,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.querySelector('.reweather').addEventListener('click', checkWeatherUpd);
 
+  setInterval(() => {
+    checkWeatherUpd()
+}, 3600000);
+
 })
 
 function go(db2, locKey){
