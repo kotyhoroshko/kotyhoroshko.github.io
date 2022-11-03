@@ -99,6 +99,11 @@ document.addEventListener("DOMContentLoaded", function(){
       "subtitle" : "Test work",
       "title" : "TV New"
     },
+    {
+      "link" : "./picanteria/index.html",
+      "subtitle" : "Menu",
+      "title" : "Picanteria"
+    },
   ]}
 
   function displayMainSlide(slideBase) {
