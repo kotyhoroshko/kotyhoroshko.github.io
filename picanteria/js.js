@@ -17,8 +17,13 @@ document.addEventListener('keydown', function(e) {
 })
     
 function checkDirection() {
-  if (touchendX < touchstartX)  {currentPage --}
-  if (touchendX > touchstartX)  {currentPage ++}
+  if (touchendX < touchstartX-200)  {
+    currentPage --
+}
+  if (touchendX > touchstartX+200)  {
+    currentPage ++
+}
+    console.log(touchendX - touchstartX)
   switchPage()
 }
 
