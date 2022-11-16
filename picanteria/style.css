@@ -1,6 +1,22 @@
+@font-face {
+    font-family: roboto;
+    src: url(fonts/Roboto-Regular.ttf);
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: roboto;
+    src: url(fonts/Roboto-Bold.ttf);
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: roboto;
+    src: url(fonts/Roboto-Light.ttf);
+    font-weight: 200;
+  }
 body {
     margin: 0;
     width: 100%;
+    font-family: roboto, sans-serif;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: rgb(90, 45, 45);
     background: url(../bckg2.jpg);
@@ -20,7 +36,7 @@ body {
     content: "";
     background: black;
     width: 2px;
-    height: 90vh;
+    height: 99vh;
     position: absolute;
     top: 7vh;
     left: 50%;
@@ -42,11 +58,11 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     column-gap: 5%;
-    height: 90vh;
+    height: 99vh;
 }
 
 .menuList--2 .block  {
-    padding: 1vh 0.5vh;
+    padding: .6vh 0.5vh;
 }
 
 .menuList--2 .block--title {
@@ -109,31 +125,46 @@ body {
     /* font-family: 'Oswald', sans-serif; */
     font-weight: bold;
     /* letter-spacing: -.033vh; */
-    font-size: 2vh;
+    font-size: 1.5vh;
     margin: 0;
 }
 .ing {
     margin: 0;
-    font-size: 1.5vh;
+    font-size: 1.3vh;
     line-height: 1.1;
     /* font-family: 'Pacifico', cursive; */
 }
-.price {
-    position: relative;
-    margin: 0 0 .7vh;
-    min-width: 17%;
+
+.priceBlock {
+    width: 17%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 2vh;
-    font-weight: 500;
+    position: relative;
 }
 
-.price::after {
+.price {
+    position: relative;
+    font-size: 2vh;
+    line-height: 2vh;
+    height: 2vh;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    width: 100%;
+    margin: 0;
+}
+
+.grn {
     content: "грн";
-    position: absolute;
-    top: 56%;
     font-size: 1.3vh;
+    line-height: 1.3vh;
+    height: 1.3vh;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    margin-top: -.5vh;
 }
 
 .footer {
