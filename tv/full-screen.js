@@ -1,10 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    document.addEventListener("click", function(e) {
+  let fullScreen = document.querySelector('.full-screen-btn')
+  
+  fullScreen.addEventListener("click", function(e) {
         if (e.target.dataset.fullScreen) {
           toggleFullScreen();
         }
     }, false);
+
+    fullScreen.addEventListener("keypress", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        toggleFullScreen()
+        console.log("yes")
+      }
+      console.log("no")
+    })
 
     function toggleFullScreen() {
         if (!document.fullscreenElement) {

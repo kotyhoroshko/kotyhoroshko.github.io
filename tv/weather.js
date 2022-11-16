@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
   checkWeatherUpd()
 
   document.querySelector('.reweather').addEventListener('click', checkWeatherUpd);
+  document.querySelector('.reweather').addEventListener("keypress", function(e) {
+    if (e.key === "Enter" || e.key === " ") {
+      checkWeatherUpd()
+    }
+  })
 
   setInterval(() => {
     checkWeatherUpd()
