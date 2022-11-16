@@ -308,6 +308,7 @@ header {
   transition: .4s;
   text-shadow: 0 0 .5vmin #000;
   margin: 1vmin 0;
+  display: none;
 }
 
 .radio-item__img {
@@ -369,11 +370,6 @@ header {
   .clock {
     width: 100%;
     order: -1;
-  }
-
-  .radio-item__title {
-    opacity: 0;
-    font-size: 20px;
   }
 
   .full-screen-btn,

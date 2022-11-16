@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
         playStopRadio(e.target)
     });
 
+    document.querySelector('.radio').addEventListener("keypress", function(e) {
+        if (e.key === "Enter" || e.key === " ") {
+            playStopRadio(e.target)
+        }
+    })
+
     function playStopRadio(el) {
         if(el.closest('.radio-item')) {
             if (currentRadio) {

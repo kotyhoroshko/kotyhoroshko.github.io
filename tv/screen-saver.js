@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(() => {
       nonActiveTime ? screenSaver() : screenSaverStop();
       nonActiveTime = true;
-    }, 20000);
+    }, 40000);
 
     function screenSaver() {
       main.style.opacity = "0";
