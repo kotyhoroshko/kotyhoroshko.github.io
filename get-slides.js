@@ -104,6 +104,11 @@ document.addEventListener("DOMContentLoaded", function(){
       "subtitle" : "Menu",
       "title" : "Picanteria"
     },
+    {
+      "link" : "./tysq/index.html",
+      "subtitle" : "Graph",
+      "title" : "tysQ"
+    },
   ]}
 
   function displayMainSlide(slideBase) {

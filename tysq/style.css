@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header,
+footer {
+    background: #666;
+    color:wheat;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,.66);
+
+}
+
+.footer {
+    text-align: right;
+}
+
+.wrapper {
+    padding: 20px;
+    width: 100%;
+    background: #666;
+}
+
+.graf {
+    width: 100%;
+    position: relative;
+    transform: scaleY(-1);
+    box-shadow: 2px 2px 12px rgba(0,0,0,.66);
+    font-size: 8px;
+}
+
+svg {
+    width: auto;
+    height: auto;
+}
