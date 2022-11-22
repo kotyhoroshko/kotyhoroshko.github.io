@@ -14,23 +14,33 @@ footer {
     color:wheat;
     padding: 10px 20px;
     box-shadow: 2px 2px 12px rgba(0,0,0,.66);
+}
 
+.header {
+    border-bottom: 1px solid white;
+    min-height: 10vh;
 }
 
 .footer {
     text-align: right;
+    min-height: 7vh;
+    bottom: 0;
+    width: 100%;
 }
 
 .wrapper {
+    display: flex;
+    align-items: center;
     padding: 20px;
     width: 100%;
     background: #666;
+    min-height: 83vh;
 }
 
 .graf {
     width: 100%;
     position: relative;
-    transform: scaleY(-1);
+    /* transform: scaleY(-1); */
     box-shadow: 2px 2px 12px rgba(0,0,0,.66);
     font-size: 8px;
 }
