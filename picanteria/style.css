@@ -73,15 +73,19 @@ body {
     font-size: 1.4vh;
 }
 
+.menuList--3 .block  {
+    padding: 2vh 0.5vh;
+}
+
 .block {
     border-top: 0.006756756756756757vh solid black;
-    padding: 1vh .5vh;
+    padding: 1.6vh .5vh;
     display: flex;
     justify-content: space-between;
     width: 46%;
 }
 
-.block--title {
+.block.block--title {
     background: black;
     color: white;
     max-width: 46%;
@@ -94,7 +98,7 @@ body {
     margin-top: 0;
 }
 
-.block--title h3{
+.block--title h3 {
     margin: 0;
     text-transform: uppercase;
     padding-left: 1.5vh;
@@ -159,12 +163,12 @@ body {
 .grn {
     content: "грн";
     font-size: 1.3vh;
-    line-height: 1.3vh;
-    height: 1.3vh;
+    line-height: 2vh;
+    height: 2vh;
     width: 100%;
     text-align: center;
     margin: 0;
-    margin-top: -.5vh;
+    margin-top: -0.5vh;
 }
 
 .footer {

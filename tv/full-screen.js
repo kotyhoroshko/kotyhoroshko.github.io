@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     fullScreen.addEventListener("keypress", function(e) {
       if (e.key === "Enter" || e.key === " ") {
         toggleFullScreen()
-        console.log("yes")
       }
-      console.log("no")
     })
 
     function toggleFullScreen() {
