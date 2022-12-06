@@ -44,17 +44,18 @@ let db = [
     [124, 79, 57], [125, 79, 61], [123,	82,	58],
     [125, 74, 59], [121, 74, 62], [114,	71,	57],
     [111, 77, 62], [129, 81, 60], [120,	73,	55],
-    [118, 72, 59],	[136, 82, 59], [135, 80, 64],
-    [119, 77, 64],	[119, 78, 73], [108, 72, 58],
-    [121, 74, 57],	[117, 72, 60], [122, 70, 70],
-    [117, 77, 61],
+    [118, 72, 59], [136, 82, 59], [135, 80, 64],
+    [119, 77, 64], [119, 78, 73], [108, 72, 58],
+    [121, 74, 57], [117, 72, 60], [122, 70, 70],
+    [117, 77, 61], [120, 80, 57], [127, 82, 63],
+    [128, 78, 66], [145, 85, 75],
 ]
 let viewBox = {x:150, y:300}
 let step = viewBox.y/(db.length-1);
 let pulse = '';
 let inner = `
-<svg viewBox="0 120 ${viewBox.y} ${viewBox.x}" preserveAspectRatio="none" style="background:#ffffff;stroke:green;stroke-width:1">
-    <polygon points="`
+<svg viewBox="0 120 ${viewBox.y} ${viewBox.x}" preserveAspectRatio="none" style="background:#000000;">
+    <polygon style="stroke:#ffff00;stroke-width:0.5;fill:rgba(255,255,0,.42);" points="`
 
 for (let index = 0, st = 0; index < db.length; index++) {
     inner += `
@@ -73,16 +74,16 @@ for (let index = db.length-1, st = step * (db.length-1); index >= 0; index--) {
 }
 
 
-inner += `"style="fill:rgba(0,255,0,.33)" />
-<polyline points="${pulse}" style="fill:none;stroke:#cc66cc;stroke-width:3" />
-<line x1="0" y1="${viewBox.y-120}" x2="300" y2="${viewBox.y-120}" style="stroke:rgba(255,0,0,.4);stroke-width:1" />
-<text x="0" y="${viewBox.y-120-1}" fill="black">120</text>
-<line x1="0" y1="${viewBox.y-140}" x2="300" y2="${viewBox.y-140}" style="stroke:rgba(255,0,0,.4);stroke-width:1" />
-<text x="0" y="${viewBox.y-140-1}" fill="black">140</text>
-<line x1="0" y1="${viewBox.y-80}" x2="300" y2="${viewBox.y-80}" style="stroke:rgba(255,0,0,.4);stroke-width:1" />
-<text x="0" y="${viewBox.y-80-1}" fill="black">80</text>
-<line x1="0" y1="${viewBox.y-60}" x2="300" y2="${viewBox.y-60}" style="stroke:rgba(255,0,0,.4);stroke-width:1" />
-<text x="0" y="${viewBox.y-60-1}" fill="black">60</text>
+inner += `" />
+<polyline points="${pulse}" style="fill:none;stroke:#ff66ff;stroke-width:2" />
+<line x1="0" y1="${viewBox.y-120}" x2="300" y2="${viewBox.y-120}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
+<text x="0" y="${viewBox.y-120-1}" fill="white" stroke-eidth="0">120</text>
+<line x1="0" y1="${viewBox.y-140}" x2="300" y2="${viewBox.y-140}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
+<text x="0" y="${viewBox.y-140-1}" fill="white" stroke-eidth="0">140</text>
+<line x1="0" y1="${viewBox.y-80}" x2="300" y2="${viewBox.y-80}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
+<text x="0" y="${viewBox.y-80-1}" fill="white" stroke-eidth="0">80</text>
+<line x1="0" y1="${viewBox.y-60}" x2="300" y2="${viewBox.y-60}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
+<text x="0" y="${viewBox.y-60-1}" fill="white" stroke-eidth="0">60</text>
 
 
 Sorry, your browser does not support inline SVG.
