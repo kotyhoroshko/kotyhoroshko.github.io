@@ -10,7 +10,7 @@ body {
 
 .header,
 footer {
-    background: #666;
+    background: #333;
     color:wheat;
     padding: 10px 20px;
     box-shadow: 2px 2px 12px rgba(0,0,0,.66);

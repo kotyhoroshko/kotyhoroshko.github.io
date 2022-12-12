@@ -4,7 +4,7 @@ let db = [
     [122, 76, 66], [124, 77, 67], [127,	78, 68],
     [133, 79, 58], [123, 74, 60], [120,	73, 62],
     [115, 75, 57], [122, 69, 64], [122,	76, 62],
-    [130, 75, 59], [000, 00, 00], [107,	72, 66],
+    [130, 75, 59], [0, 0, 0], [107,	72, 66],
     [123, 81, 59], [125, 80, 64], [120,	75, 59],
     [119, 73, 63], [109, 75, 68], [120,	73, 70],
     [125, 78, 63], [000, 00, 00], [122,	85, 75],
@@ -28,9 +28,9 @@ let db = [
     [000, 00, 00], [141, 87, 72], [126,	87, 68],
     [128, 80, 68], [128, 81, 78], [119,	71, 66],
     [000, 00, 00], [122, 76, 70], [105,	72, 62],
-    [114, 75, 65], [117, 75, 66], [120, 80, 66],		
+    [114, 75, 65], [117, 75, 66], [120, 80, 66],
     [000, 00, 00], [125, 81, 65], [119,	77, 66],
-    [116, 75, 65], [132, 85, 72], [000, 00, 00],										
+    [116, 75, 65], [132, 85, 72], [000, 00, 00],
     [150, 90, 67], [143, 82, 76], [115,	70, 60],
     [125, 73, 67], [113, 72, 61], [122,	74, 64],
     [130, 82, 60], [130, 83, 65], [122,	79, 68],
@@ -48,34 +48,53 @@ let db = [
     [119, 77, 64], [119, 78, 73], [108, 72, 58],
     [121, 74, 57], [117, 72, 60], [122, 70, 70],
     [117, 77, 61], [120, 80, 57], [127, 82, 63],
-    [128, 78, 66], [145, 85, 75],
+    [128, 78, 66], [145, 85, 75], [106, 74, 61],
+    [127, 79, 65], [0, 0, 0], [127, 73,65],
+    [127, 77, 70], [111, 79, 69], [127, 74,70],
+    [132, 81, 68], [0, 0, 0], [112, 76,67],
+    [136, 86, 63], [0, 0, 0], [114, 71,65],
+    [133, 79, 68], [0, 0, 0], [115, 70,65],
 ]
+
+let tysqVerkh = [];
+let tysqNyz = [];
+let pulse = [];
+
+for (let index = 0; index < db.length; index++) {
+
+    if(db[index][0]==0) {
+        tysqVerkh[index] = (db[(index-1)][0]+db[(index+1)][0])/2;
+        tysqNyz[index] = (db[(index-1)][1]+db[(index+1)][1])/2;
+        pulse[index] = (db[(index-1)][2]+db[(index+1)][2])/2;
+    }
+    else {
+        tysqVerkh[index] = db[index][0]
+        tysqNyz[index] = db[index][1]
+        pulse[index] = db[index][2]
+    }
+}
+
 let viewBox = {x:150, y:300}
 let step = viewBox.y/(db.length-1);
-let pulse = '';
+
 let inner = `
-<svg viewBox="0 120 ${viewBox.y} ${viewBox.x}" preserveAspectRatio="none" style="background:#000000;">
-    <polygon style="stroke:#ffff00;stroke-width:0.5;fill:rgba(255,255,0,.42);" points="`
+<svg viewBox="0 120 ${viewBox.y} ${viewBox.x}" preserveAspectRatio="none" style="background:#000000;">`
 
-for (let index = 0, st = 0; index < db.length; index++) {
-    inner += `
-    ${st},${db[index][1]==0 ? (viewBox.y-db[index-1][1]+viewBox.y-db[index+1][1])/2 : viewBox.y-db[index][1]}
-    `
-    pulse += `${st},${db[index][2]==0 ? (viewBox.y-db[index-1][2]+viewBox.y-db[index+1][2])/2 : viewBox.y-db[index][2]}
-    `
-    st += step
+let tysQ = ``
+let pulseLine = ``
+
+for (let index = 0; index < tysqVerkh.length; index++) {
+    tysQ +=` ${step*index},${viewBox.y-tysqVerkh[index]} `
+    pulseLine += ` ${step*index},${viewBox.y-pulse[index]} `
 }
 
-for (let index = db.length-1, st = step * (db.length-1); index >= 0; index--) {
-    inner += `
-    ${st},${db[index][0]==0 ? (viewBox.y-db[index-1][0]+viewBox.y-db[index+1][0])/2 : viewBox.y-db[index][0]}
-    `
-    st -= step
+for (let index = tysqVerkh.length-1; index >= 0; index--) {
+    tysQ +=` ${step*index},${viewBox.y-tysqNyz[index]} `
 }
 
-
-inner += `" />
-<polyline points="${pulse}" style="fill:none;stroke:#ff66ff;stroke-width:2" />
+inner += `
+<polygon style="stroke:#ffff00;stroke-width:0.5;fill:rgba(255,255,0,.42);" points="${tysQ}"/>
+<polyline points="${pulseLine}" style="fill:none;stroke:#ff66ff;stroke-width:2" />
 <line x1="0" y1="${viewBox.y-120}" x2="300" y2="${viewBox.y-120}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
 <text x="0" y="${viewBox.y-120-1}" fill="white" stroke-eidth="0">120</text>
 <line x1="0" y1="${viewBox.y-140}" x2="300" y2="${viewBox.y-140}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
@@ -84,7 +103,6 @@ inner += `" />
 <text x="0" y="${viewBox.y-80-1}" fill="white" stroke-eidth="0">80</text>
 <line x1="0" y1="${viewBox.y-60}" x2="300" y2="${viewBox.y-60}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
 <text x="0" y="${viewBox.y-60-1}" fill="white" stroke-eidth="0">60</text>
-
 
 Sorry, your browser does not support inline SVG.
 </svg>`
