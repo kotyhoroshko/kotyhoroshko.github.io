@@ -54,6 +54,14 @@ let db = [
     [132, 81, 68], [0, 0, 0], [112, 76,67],
     [136, 86, 63], [0, 0, 0], [114, 71,65],
     [133, 79, 68], [0, 0, 0], [115, 70,65],
+    [122, 72, 63], [0, 0, 0], [113, 72, 63],
+    [114, 71, 59], [111, 70, 60], [116, 68, 59],
+    [111, 76, 58], [128, 77, 61], [122, 75, 62],
+    [112, 70, 59], [0, 0, 0], [103, 66, 59],
+    [126, 77, 57], [125, 76, 58], [122, 72, 60],
+    [119, 76, 59], [122, 75, 62], [112, 65, 61],
+    [123, 73, 62], [112, 73, 64], [117, 74, 58],
+    [122, 61, 58],
 ]
 
 let tysqVerkh = [];
@@ -84,12 +92,14 @@ let tysQ = ``
 let pulseLine = ``
 
 for (let index = 0; index < tysqVerkh.length; index++) {
-    tysQ +=` ${step*index},${viewBox.y-tysqVerkh[index]} `
+    tysQ +=` ${(step*index).toFixed(2)},${viewBox.y-tysqVerkh[index]}
+    `
     pulseLine += ` ${step*index},${viewBox.y-pulse[index]} `
 }
 
 for (let index = tysqVerkh.length-1; index >= 0; index--) {
-    tysQ +=` ${step*index},${viewBox.y-tysqNyz[index]} `
+    tysQ +=` ${(step*index).toFixed(2)},${viewBox.y-tysqNyz[index]}
+    `
 }
 
 inner += `
