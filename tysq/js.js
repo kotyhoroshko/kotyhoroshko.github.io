@@ -67,6 +67,7 @@ let db = [
 let tysqVerkh = [];
 let tysqNyz = [];
 let pulse = [];
+let desc = '';
 
 for (let index = 0; index < db.length; index++) {
 
@@ -95,6 +96,14 @@ for (let index = 0; index < tysqVerkh.length; index++) {
     tysQ +=` ${(step*index).toFixed(2)},${viewBox.y-tysqVerkh[index]}
     `
     pulseLine += ` ${step*index},${viewBox.y-pulse[index]} `
+    desc += `
+        <g class="desc">
+            <line x1="${(step*index).toFixed(2)}" y1="${viewBox.y-tysqVerkh[index]}" x2="${(step*index).toFixed(2)}" y2="${viewBox.y-tysqNyz[index]}" style="stroke: rgba(255,255,255,1);stroke-width:1" />
+            <circle cx="${(step*index).toFixed(2)}" cy="${viewBox.y-tysqVerkh[index]}" r="2" stroke="black" stroke-width=".5" fill="yellow" />
+            <circle cx="${(step*index).toFixed(2)}" cy="${viewBox.y-tysqNyz[index]}" r="2" stroke="black" stroke-width=".5" fill="yellow" />
+            <text x="${(step*index).toFixed(2)}" y="${viewBox.y-tysqVerkh[index]-5}" stroke="black" stroke-width="2">${tysqVerkh[index]}/${tysqNyz[index]}, ${pulse[index]}</text>
+            <text x="${(step*index).toFixed(2)}" y="${viewBox.y-tysqVerkh[index]-5}" fill="white" stroke-width="0">${tysqVerkh[index]}/${tysqNyz[index]}, ${pulse[index]}</text>
+        </g>`
 }
 
 for (let index = tysqVerkh.length-1; index >= 0; index--) {
@@ -105,14 +114,15 @@ for (let index = tysqVerkh.length-1; index >= 0; index--) {
 inner += `
 <polygon style="stroke:#ffff00;stroke-width:0.5;fill:rgba(255,255,0,.42);" points="${tysQ}"/>
 <polyline points="${pulseLine}" style="fill:none;stroke:#ff66ff;stroke-width:2" />
+${desc}
 <line x1="0" y1="${viewBox.y-120}" x2="300" y2="${viewBox.y-120}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
-<text x="0" y="${viewBox.y-120-1}" fill="white" stroke-eidth="0">120</text>
+<text x="0" y="${viewBox.y-120-1}" fill="white" stroke-width="0">120</text>
 <line x1="0" y1="${viewBox.y-140}" x2="300" y2="${viewBox.y-140}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
-<text x="0" y="${viewBox.y-140-1}" fill="white" stroke-eidth="0">140</text>
+<text x="0" y="${viewBox.y-140-1}" fill="white" stroke-width="0">140</text>
 <line x1="0" y1="${viewBox.y-80}" x2="300" y2="${viewBox.y-80}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
-<text x="0" y="${viewBox.y-80-1}" fill="white" stroke-eidth="0">80</text>
+<text x="0" y="${viewBox.y-80-1}" fill="white" stroke-width="0">80</text>
 <line x1="0" y1="${viewBox.y-60}" x2="300" y2="${viewBox.y-60}" style="stroke:rgba(255,255,255,.4);stroke-width:1" />
-<text x="0" y="${viewBox.y-60-1}" fill="white" stroke-eidth="0">60</text>
+<text x="0" y="${viewBox.y-60-1}" fill="white" stroke-width="0">60</text>
 
 Sorry, your browser does not support inline SVG.
 </svg>`

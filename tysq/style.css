@@ -49,3 +49,12 @@ svg {
     width: auto;
     height: auto;
 }
+
+
+.desc {
+    opacity: 0;
+    transition: .1s ease-out;
+}
+.desc:hover {
+    opacity: 1;
+}
