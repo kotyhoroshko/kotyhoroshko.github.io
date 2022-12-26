@@ -2,17 +2,18 @@
     font-family: roboto;
     src: url(fonts/Roboto-Regular.ttf);
     font-weight: 400;
-  }
-  @font-face {
+}
+@font-face {
     font-family: roboto;
     src: url(fonts/Roboto-Bold.ttf);
     font-weight: bold;
-  }
-  @font-face {
+}
+@font-face {
     font-family: roboto;
     src: url(fonts/Roboto-Light.ttf);
     font-weight: 200;
-  }
+}
+
 body {
     margin: 0;
     width: 100%;
@@ -25,8 +26,8 @@ body {
 .a4 {
     position: relative;
     background-color: white;
-    width: 70vh;
-    height: 97vh;
+    width: 69vh;
+    height: 100vh;
     box-shadow: 0 0 2vw rgba(0,0,0,.66);
     margin: 0 auto;
     padding: 7vh 3vh 3vh;
@@ -62,7 +63,7 @@ body {
 }
 
 .menuList--2 .block  {
-    padding: .6vh 0.5vh;
+    padding: 1vh 0.5vh;
 }
 
 .menuList--2 .block--title {
@@ -76,10 +77,26 @@ body {
 .menuList--3 .block  {
     padding: 2vh 0.5vh;
 }
+.menuList--3 .name {
+    font-size: 1.75vh;
+}
+.menuList--3 .ing {
+    font-size: 1.75vh;
+}
+
+.menuList--5 .block  {
+    padding: 1.4vh 0.5vh;
+}
+.menuList--5 .name {
+    font-size: 1.6vh;
+}
+.menuList--5 .ing {
+    font-size: 1.5vh;
+}
 
 .block {
     border-top: 0.006756756756756757vh solid black;
-    padding: 1.6vh .5vh;
+    padding: .3vh .5vh;
     display: flex;
     justify-content: space-between;
     width: 46%;
