@@ -45,8 +45,8 @@ function moove() {
       rotateY(${(xMouseCoor-50)/5}deg)
       rotateX(${(yMouseCoor-50)/5}deg)
     `
-
-    indi.innerHTML = `${xMouseCoor.toFixed()} |-| ${yMouseCoor.toFixed()}`
+    //indicator
+    // indi.innerHTML = `${xMouseCoor.toFixed()} |-| ${yMouseCoor.toFixed()}`
   } 
 
   function getRnd(min, max=0) {
