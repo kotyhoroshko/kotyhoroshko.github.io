@@ -1,0 +1,44 @@
+{
+    "backblaze": {
+        "name": " backblaze.com",
+        "logo": "/imges/logo1.png",
+        "color": "#888",
+        "min": "7",
+        "max": "false",
+        "storage": "0.005",
+        "transfer": "0.01"
+    },
+    "bunny": {
+        "name": "bunny.net",
+        "logo": "/imges/logo4.png",
+        "color": "#888",
+        "min": "false",
+        "max": "10",
+        "storage": {
+            "hdd": "0.01",
+            "ssd": "0.02"
+        },
+        "transfer": "0.01"
+    },
+    "scaleway": {
+        "name": "scaleway.com",
+        "logo": "/imges/logo2.png",
+        "color": "#888",
+        "min": "false",
+        "max": "false",
+        "storage": {
+            "multi": "0.06",
+            "single": "0.03"
+        },
+        "transfer": "0.02"
+    },
+    "vultr": {
+        "name": "vultr.com",
+        "logo": "/imges/logo3.png",
+        "color": "#888",
+        "min": "5",
+        "max": "false",
+        "storage": "0.01",
+        "transfer": "0.01"
+    }
+}
