@@ -109,6 +109,12 @@ document.addEventListener("DOMContentLoaded", function(){
       "subtitle" : "Graph",
       "title" : "tysQ"
     },
+    {
+      "link" : "./ByteCloud/index.html",
+      "subtitle" : "Test Work",
+      "title" : "Byte Cloud Tech"
+    },
+    
   ]}
 
   function displayMainSlide(slideBase) {

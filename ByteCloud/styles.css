@@ -11,9 +11,11 @@ body {
     color: #333;
     display: flex;
     align-items: center;
-    padding: 0 5vw;
+    padding: 1vh 5vw;
     box-shadow: 0 0 3vh rgba(0,0,0,.88);
     background: snow;
+    background: linear-gradient(#666 20%, #555, #666 80%);
+    color: whitesmoke;
 }
 .header {
     min-height: 10vh;
@@ -21,11 +23,13 @@ body {
     flex-direction: column;
     align-items: start;
     font-weight: bold;
+    border-bottom: 1px solid whitesmoke;
 }
 .footer {
     min-height: 5vh;
     justify-content: end;
     font-weight: bold;
+    border-top: 1px solid whitesmoke;
 }
 main {
     min-height: 85vh;
@@ -59,7 +63,124 @@ main {
 }
 
 .graf {
-    border: 1px solid #666;
-    padding: 3vmin;
-    margin: 2vmin;
+    /* border: 1px solid #666; */
+    padding: 3vmin 2vmin;
+    margin: 2vmin 0;
+}
+
+.graf-item {
+    display: flex;
+    align-items: center;
+}
+
+.graf-item__desc {
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.graf-item__title {
+    font-weight: bold;
+    text-align: right;
+    width: 100%;
+}
+.graf-item__switchers {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    font-style: italic;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.graf-item__switcher {
+    display: flex;
+    align-items: center;
+}
+.graf-item__img {
+    width: 50px;
+    height: 50px;
+    margin: 0 1vmin;
+}
+.graf-item__value {
+    align-items: center;
+    min-width: 65px;
+    font-weight: bold;
+    position: absolute;
+    left: calc(100% + 5px);
+    top:50%;
+    transform: translate(0, -50%)
+}
+.graf-item__level-wrapper {
+    background: linear-gradient(to right, rgba(0,0,0,.12), rgba(255,255,255,.33));
+    display: inline-block;
+    width: 100%;
+    border-left: 2px solid #454545;
+    padding: 2vh 0;
+    margin-right: 50px;
+}
+.graf-item__level {
+    position: relative;
+    transition: .33s ease-out;
+    height: 50px;
+    box-shadow: .33vmin .33vmin .99vmin rgba(0,0,0,.66);
+    background: linear-gradient(rgba(255,255,255,.33), rgba(0,0,0,.33));
+}
+
+@media screen and (max-width: 767px) {
+    .header__title {        
+        font-size: 24px;
+    }
+    .ranges-block {
+        flex-wrap: wrap;
+    }
+    .range__range {
+        width: 90vw;
+    }
+    .graf {
+        padding: 3vmin 0;
+        display: flex;
+    }
+    .graf-item {
+        flex-direction: column;
+        width: 25%;
+    }
+    .graf-item__level-wrapper{
+        align-items: flex-end;
+        height: 50vh;
+        display: flex;
+        order: 1;
+        margin: 0;
+        border-left: none;
+        border-bottom: 2px solid #454545;
+        padding: 0 1vh;
+        background: linear-gradient(rgba(0,0,0,.1), transparent, rgba(0,0,0,.12));
+    }
+    .graf-item__level {
+        width: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,.33), rgba(0,0,0,.33));
+    }
+    .graf-item__value {
+        left: 50%;
+        top: auto;
+        bottom:calc(100% + 5px);
+        transform: translate(-50%, 0)
+    }
+    .graf-item__img {
+        margin-top: 1vh;
+        order: 2;
+    }
+    .graf-item__desc {
+        min-width: initial;
+        order: 3;
+    }
+    .graf-item__title {
+        font-size: 14px;
+    }
+    .graf-item__switchers{
+        flex-direction: column;
+    }
 }
