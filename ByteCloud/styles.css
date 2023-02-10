@@ -153,6 +153,10 @@ main {
         font-weight: normal;
     }
 
+    .range {
+        margin-bottom: 15px;
+    }
+
     .ranges-block {
         flex-wrap: wrap;
     }
