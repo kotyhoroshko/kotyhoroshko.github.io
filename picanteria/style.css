@@ -109,6 +109,19 @@ body {
     padding: .5vh .5vh;
     border-top: none;
     margin-top: 1vh;
+    position: relative;
+}
+.block.block--title.wine::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background: url(wine.svg) no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-position: center;
+    right: 12px;
+    top: -1px;
 }
 
 .block--title:first-of-type {
@@ -163,6 +176,9 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+}
+.priceBlock.wine {
+    width: 20%;
 }
 
 .price {

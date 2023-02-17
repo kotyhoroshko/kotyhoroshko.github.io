@@ -62,7 +62,7 @@ function printPage(page) {
         }
         else if (page[index].name === "title") {
             inner += `
-                <div class="block block--title">
+                <div class="block block--title ${page[index].title == "Вино" ? 'wine': ''}">
                     <h3>${page[index].title}</h3>
                 </div>
             `
@@ -74,7 +74,7 @@ function printPage(page) {
                     <h4 class="name">${page[index].name}</h4>
                     <p class="ing">${page[index].ing}</p>
                 </div>
-                <div class="priceBlock">
+                <div class="priceBlock ${(page[index].name).slice(0, 4) == "Вино" ? 'wine': ''}">
                     <input class="price" value="${page[index].price}"/>
                     <p class="grn">грн</p>
                 </div>
@@ -282,14 +282,13 @@ let db =[
         {name:`Пиво Staropramen`, ing:`ж/б 0.5л`, price:`45`},
 
         {name:`title`, title:`Вино`},
-        {name:`Вино Chizay Chersegi`,ing:`біле сухе 0.75л`, price:`225 `},
-        {name:`Вино Chizay Cuvee`,ing:`червоне сухе 0.75л`, price:`320`},
-        {name:`Вино Chizay GewurzTraminer`,ing:`біле сухе 0.75л`, price:`228`},
-        {name:`Вино Chizay Moscato`,ing:`біле напівсолодке 0.75л`, price:`229`},
-        {name:`Вино Chizay Ігристе`,ing:`біле напівсолодке 0.75л`, price:`240`},
-        {name:`Вино Chizay Brut`,ing:`біле ігристе 0.75л`, price:`240`},
-        {name:`Вино Chizay Pinot Noir`,ing:`червоне напівсолодке 0.75л`, price:`229`},
-        {name:`Вино Chizay`,ing:`150мл в асортименті`, price:`50`},
+        {name:`Вино Chizay Chersegi`, ing:`біле сухе 0.75л`, price:'245/60'},
+        {name:`Вино Chizay Cuvee`, ing:`червоне сухе 0.75л`, price:'365/80'},
+        {name:`Вино Chizay GewurzTraminer`, ing:`біле сухе 0.75л`, price:'250/60'},
+        {name:`Вино Chizay Moscato`, ing:`біле напівсолодке 0.75л`, price:'250/60'},
+        {name:`Вино ігристе Chizay`, ing:`напівсолодке біле 0.75л`, price:'260/65'},
+        {name:`Вино Chizay Brut`, ing:`ігристе біле 0.75л`, price:'260/65'},
+        {name:`Вино Chizay Pinot Noir`, ing:`червоне напівсолодке 0.75л`, price:'250/60'},
     ]
 ]
 
