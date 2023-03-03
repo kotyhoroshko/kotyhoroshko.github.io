@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function(){
     scene.innerHTML = inner;
   }
 
-  displayMainSlide(alternateSlideBase());
+  displayMainSlide(alternateSlideBase().reverse());
   showcase();
   createCircles();
   moove();
