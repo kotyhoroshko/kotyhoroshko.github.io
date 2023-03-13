@@ -114,6 +114,11 @@ document.addEventListener("DOMContentLoaded", function(){
       "subtitle" : "Test Work",
       "title" : "Byte Cloud Tech"
     },
+    {
+      "link" : "./nice-shop/index.html",
+      "subtitle" : "Test Work",
+      "title" : "XoroShop"
+    },
     
   ]}
 
