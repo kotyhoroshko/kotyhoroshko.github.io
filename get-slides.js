@@ -116,8 +116,13 @@ document.addEventListener("DOMContentLoaded", function(){
     },
     {
       "link" : "./nice-shop/index.html",
-      "subtitle" : "Test Work",
+      "subtitle" : "Vue JS",
       "title" : "XoroShop"
+    },
+    {
+      "link" : "./us-zip-codes/index.html",
+      "subtitle" : "Vue JS",
+      "title" : "US ZIP codes"
     },
     
   ]}
