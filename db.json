@@ -96,7 +96,7 @@
             "desc": "This Cofee mug elegant is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup04",
             "price": "22.5",
-            "vol": "90",
+            "vol": "80",
             "color": "white",
             "material": "porcelain"
         },
@@ -106,7 +106,7 @@
             "desc": "This Cofee mug elegant is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup04-blue",
             "price": "22.5",
-            "vol": "90",
+            "vol": "80",
             "color": "blue",
             "material": "porcelain"
         },
@@ -116,7 +116,7 @@
             "desc": "This Cofee mug elegant is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup04-green",
             "price": "22.5",
-            "vol": "90",
+            "vol": "80",
             "color": "green",
             "material": "porcelain"
         },
@@ -126,7 +126,7 @@
             "desc": "This Cofee mug elegant is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup04-red",
             "price": "22.5",
-            "vol": "90",
+            "vol": "80",
             "color": "red",
             "material": "porcelain"
         },
@@ -156,7 +156,7 @@
             "desc": "This One-time plastic cup is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup07",
             "price": "1",
-            "vol": "110",
+            "vol": "100",
             "color": "transparent",
             "material": "plastic"
         },
@@ -166,7 +166,7 @@
             "desc": "This Baby cup is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup08",
             "price": "33",
-            "vol": "145",
+            "vol": "165",
             "color": "green",
             "material": "plastic"
         },
@@ -176,7 +176,7 @@
             "desc": "This Baby cup is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup08-red",
             "price": "33",
-            "vol": "145",
+            "vol": "165",
             "color": "red",
             "material": "plastic"
         },
@@ -186,9 +186,9 @@
             "desc": "This Metal mug is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup09",
             "price": "17.5",
-            "vol": "200",
-            "color": "red",
-            "material": "porcelain"
+            "vol": "220",
+            "color": "metalic",
+            "material": "metal"
         },
         {
             "id": "701642853100",
