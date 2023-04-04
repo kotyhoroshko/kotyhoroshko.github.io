@@ -195,7 +195,7 @@
             "title": "Standart mug",
             "desc": "This Standart mug is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup10",
-            "price": "17.5",
+            "price": "12",
             "vol": "200",
             "color": "white",
             "material": "porcelain"
@@ -205,7 +205,7 @@
             "title": "Standart mug",
             "desc": "This Standart mug is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup10-blue",
-            "price": "17.5",
+            "price": "12",
             "vol": "200",
             "color": "blue",
             "material": "porcelain"
@@ -215,7 +215,7 @@
             "title": "Standart mug",
             "desc": "This Standart mug is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup10-green",
-            "price": "17.5",
+            "price": "12",
             "vol": "200",
             "color": "green",
             "material": "porcelain"
@@ -225,7 +225,7 @@
             "title": "Standart mug",
             "desc": "This Standart mug is lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             "img": "cup10-red",
-            "price": "17.5",
+            "price": "12",
             "vol": "200",
             "color": "red",
             "material": "porcelain"
