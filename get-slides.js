@@ -124,6 +124,11 @@ document.addEventListener("DOMContentLoaded", function(){
       "subtitle" : "Vue JS",
       "title" : "US ZIP codes"
     },
+    {
+      "link" : "./mugs-shop/index.html",
+      "subtitle" : "Vue JS",
+      "title" : "Mugs shop"
+    },
     
   ]}
 
