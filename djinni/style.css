@@ -1,0 +1,226 @@
+:root {
+    --white-bg: #ffffff;
+    --dark-bg: #292929;
+    --gray-bg: #eeeeee;
+    --highlight-bg: #ed7135;
+    --border-color: #ebebeb;
+    --dark-font: #292929;
+    --secondary-font: #666666;
+    --white-font: #ffffff;
+    --main-font: "Commissioner", sans-serif;
+}
+
+body.dark-mode {
+    --white-bg: #000000;
+    --dark-bg: #bebebe;
+    --gray-bg: #333333;
+    --highlight-bg: #ed7135;
+    --border-color: #161616;
+    --dark-font: #bebebe;
+    --secondary-font: #999999;
+    --white-font: #000000;
+}
+
+body {
+    background: var(--white-bg);
+    color: var(--secondary-font);
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.container {
+    max-width: 1140px;
+}
+
+h1 {
+    font-weight: 700;
+    color: var(--dark-font);
+}
+
+.btn:hover {
+    color: var(--dark-font);
+    background-color: var(--gray-bg);
+    border-color: var(--border-color);
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+nav {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+    color: var(--secondary-font);
+    margin-right: 1.75rem;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    color: var(--dark-font);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--dark-font);
+    font-weight: 700;
+    border-bottom: 2px solid var(--highlight-bg);
+}
+
+.navbar-toggler {
+    background: rgba(255,255,255,.66);
+}
+
+.form-control {
+    color: var(--secondary-font);
+    padding-block: 0.5rem;
+    padding-left: 2.5rem;
+}
+
+.form-control:focus {
+    color: var(--dark-font);
+}
+
+.form-control::placeholder {
+    color: var(--secondary-font);
+}
+
+.search {
+    color: var(--secondary-font);
+    background: var(--gray-bg);
+    position: relative;
+}
+
+.search i {
+    color: var(--secondary-font);
+}
+
+.lang {
+    background: var(--white-bg);
+    color: var(--secondary-font);
+    max-width: 50%;
+}
+
+.login-btn {
+    color: var(--secondary-font);
+}
+
+.filters a {
+    color: var(--secondary-font);
+    display: inline-block;
+    font-weight: 700;
+    display: block;
+    border-radius: 8px;
+    padding: 8px 15px;
+}
+
+.filters a:hover {
+    background-color: var(--gray-bg);
+}
+
+.filters a.active {
+    background: var(--highlight-bg);
+    color: var(--white-font);
+}
+
+.sort>button {
+    border: 2px solid var(--border-color);
+    color: var(--dark-font);
+    background: var(--white-bg);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+}
+
+.sort>button.active {
+    color: var(--white-font);
+    background: var(--dark-bg);
+    border-color: var(--dark-bg);
+}
+
+.portfolio {
+    gap: 1.5rem;
+    padding-block: 0.5rem;
+}
+
+.card {
+    border-color: var(--border-color);
+    background: var(--white-bg);
+    width: calc(50% - 1.25rem);
+    min-width: 300px;
+    flex-grow: 1;
+}
+
+.card-body {
+    padding: 1.2rem 1.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: var(--dark-font);
+    font-weight: 700;
+}
+
+.card-img-top {
+    object-fit: cover;
+    aspect-ratio: 1.78;
+}
+
+.card-text {
+    line-height: 24px;
+    transition: 0.3s ease;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    color: var(--secondary-font);
+}
+
+.clamped>.card-text {
+    -webkit-line-clamp: 2;
+}
+
+.show-more {
+    transition: 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--dark-font);
+    font-weight: 500;
+}
+
+.clamped>.show-more {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.card-actions {
+    padding: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-save {
+    background: var(--highlight-bg);
+    color: var(--white-font);
+    padding: 7px 16px 9px;
+    font-weight: 700;
+    margin-right: 1rem;
+    border: 2px solid var(--highlight-bg);
+}
+
+.btn-share {
+    background-color: var(--white-bg);
+    color: var(--dark-font);
+    border: 2px solid var(--border-color);
+    font-weight: 700;
+    padding: 7px 16px 9px;
+}
+
+@media (min-width: 767.98px) {
+    .dark-mode-switch {
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 12;
+    }    
+}

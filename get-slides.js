@@ -129,6 +129,11 @@ document.addEventListener("DOMContentLoaded", function(){
       "subtitle" : "Vue JS",
       "title" : "Mugs shop"
     },
+    {
+      "link" : "./djinni/index.html",
+      "subtitle" : "Test work",
+      "title" : "Djinni"
+    },
     
   ]}
 
