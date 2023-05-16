@@ -334,6 +334,7 @@ header {
   .days-info {
     flex-wrap: wrap;
     justify-content: space-evenly;
+    order: 5;
   }
   .days-info__item {
     width: 300px;
@@ -348,13 +349,13 @@ header {
     text-align: center;
     margin: 0;
     width: 100%;
-    /* order: 2; */
+    order: 4;
   }
   .main-info__desc {
     justify-content: center;
     text-align: left;
     height: auto;
-    width: 100%;
+    width: 95%;
     margin-top: 10px;
   }
 
@@ -369,7 +370,7 @@ header {
 
   .clock {
     width: 100%;
-    order: -1;
+    order: 1;
   }
 
   .full-screen-btn,
@@ -378,17 +379,27 @@ header {
     width: 30px;
     height: 30px;
     position: absolute;
-    right: 10px;
+    right: 24px;
     top: 20px;
   }
   
   .reweather {
-    left: 10px;
+    left: 24px;
   }
   .pin {
     left: 45px;
   }
   .volume {
     padding: 10px 0;
+  }
+
+  .currency {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-block: 10px;
+    order: 3;
   }
 }
