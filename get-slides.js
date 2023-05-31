@@ -134,6 +134,11 @@ document.addEventListener("DOMContentLoaded", function(){
       "subtitle" : "Test work",
       "title" : "Djinni"
     },
+    {
+      "link" : "./calendar/index.html",
+      "subtitle" : "Vue JS",
+      "title" : "Calendar"
+    },
     
   ]}
 
