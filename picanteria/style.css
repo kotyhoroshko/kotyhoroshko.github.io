@@ -24,22 +24,23 @@ body {
 }
 
 .a4 {
+    box-sizing: border-box;
     position: relative;
     background-color: white;
-    width: 69vh;
+    width: 69.4vh;
     height: 100vh;
     box-shadow: 0 0 2vw rgba(0,0,0,.66);
     margin: 0 auto;
-    padding: 7vh 3vh 3vh;
+    padding: 5vh 2vh 2.5vh;
 }
 
 .a4::after {
     content: "";
     background: black;
     width: 2px;
-    height: 99vh;
+    height: 92.5vh;
     position: absolute;
-    top: 7vh;
+    top: 5vh;
     left: 50%;
 }
 
@@ -55,15 +56,16 @@ body {
 }
 
 .menuList {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     column-gap: 5%;
-    height: 99vh;
+    height: 100%;
 }
 
 .menuList--2 .block  {
-    padding: .24vh 0.5vh;
+    padding: .2vh 0.5vh;
 }
 
 .menuList--2 .block--title {
@@ -75,13 +77,13 @@ body {
 }
 
 .menuList--3 .block  {
-    padding: 1vh 0.5vh;
+    padding: .4vh 0.5vh;
 }
 .menuList--3 .name {
-    font-size: 1.75vh;
+    font-size: 1.5vh;
 }
 .menuList--3 .ing {
-    font-size: 1.75vh;
+    font-size: 1.4vh;
 }
 
 .menuList--5 .block  {
@@ -125,6 +127,37 @@ body {
     background-position: center;
     right: 12px;
     top: -1px;
+}
+
+.block.block--title.pizza::after {
+    content: "30/50cm";
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    color: white;
+}
+
+.block.block--title.burger::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background: url(burger.svg) no-repeat;
+    width: 100px;
+    height: 30px;
+    background-size: contain;
+    background-position: center;
+    right: 12px;
+    top: -1px;
+}
+
+.block.block--title.beer::after {
+    content: "300/500ml";
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    color: white;
 }
 
 .block--title:first-of-type {
