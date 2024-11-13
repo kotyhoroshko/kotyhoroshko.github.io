@@ -75,6 +75,9 @@ body {
 .menuList--2 .name {
     font-size: 1.4vh;
 }
+.menuList--2 .ing {
+    font-size: 1.15vh;
+}
 
 .menuList--3 .block  {
     padding: .4vh 0.5vh;
@@ -83,14 +86,14 @@ body {
     font-size: 1.5vh;
 }
 .menuList--3 .ing {
-    font-size: 1.4vh;
+    font-size: 1.3vh;
 }
 
 .menuList--5 .block  {
     padding: 1vh 0.5vh;
 }
 .menuList--5 .name {
-    font-size: 1.6vh;
+    font-size: 1.5vh;
 }
 .menuList--5 .ing {
     font-size: 1.5vh;
@@ -98,6 +101,16 @@ body {
 .menuList--5 .priceBlock {
     width: 19%;
 }
+
+.menuList--6 .block  {
+    padding-block: .5vh;
+ }
+ .menuList--6 .name {
+     font-size: 1.5vh;
+ }
+ .menuList--6 .ing {
+     font-size: 1.3vh;
+ }
 
 .block {
     border-top: 0.006756756756756757vh solid black;
@@ -129,7 +142,8 @@ body {
     top: -1px;
 }
 
-.block.block--title.pizza::after {
+.block.block--title.pizza::after,
+.block.block--title.pizza2::after {
     content: "30/50cm";
     display: inline-block;
     position: absolute;
@@ -188,28 +202,28 @@ body {
 }
 
 .desc {
-    max-width: 80%;
+    max-width: 75%;
 }
 .name {
     text-transform: uppercase;
     /* font-family: 'Oswald', sans-serif; */
     font-weight: bold;
     /* letter-spacing: -.033vh; */
-    font-size: 1.5vh;
+    font-size: 1.3vh;
     margin: 0;
 }
 .ing {
     margin: 0;
-    font-size: 1.3vh;
-    line-height: 1.1;
+    font-size: 1vh;
+    line-height: 1;
     /* font-family: 'Pacifico', cursive; */
 }
 
 .priceBlock {
-    width: 17%;
+    width: 25%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     position: relative;
 }
