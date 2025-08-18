@@ -33,7 +33,7 @@ body {
 .pin {
   width: 3%;
   height: 3vmin;
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .video-bg {
@@ -49,33 +49,74 @@ body {
 }
 
 .bg {
-  animation:slide 13s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, rgb(204, 171, 51) 50%, rgb(0, 0, 0) 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
+  animation: slide 13s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    rgb(204, 171, 51) 50%,
+    rgb(0, 0, 0) 50%
+  );
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
 }
 
 .bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:9s;
+  animation-direction: alternate-reverse;
+  animation-duration: 9s;
 }
 
 .bg3 {
-  animation-duration:16s;
+  animation-duration: 16s;
 }
 
 @keyframes slide {
   0% {
-    transform:translateX(-25%);
+    transform: translateX(-25%);
   }
   100% {
-    transform:translateX(25%);
+    transform: translateX(25%);
   }
+}
+@keyframes pulse-loader {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+div.loader {
+  background: radial-gradient(#ffffff00 33%, #ffe100);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto auto;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.loader:nth-child(1) {
+  animation: pulse-loader 4s infinite;
+}
+.loader:nth-child(2) {
+  animation: pulse-loader 4s infinite 0.5s;
+}
+.loader:nth-child(3) {
+  animation: pulse-loader 4s infinite 0.8s;
 }
 
 .saver-clock {
@@ -101,7 +142,7 @@ header {
 
 .container {
   box-sizing: border-box;
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 1200px;
   padding: 5px;
@@ -134,7 +175,7 @@ header {
   min-width: 12%;
 }
 
-.currency>p {
+.currency > p {
   margin: 3px;
 }
 
@@ -204,7 +245,7 @@ header {
     rgba(0, 0, 0, 0.4),
     rgba(66, 66, 66, 0.4)
   );
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 5px 0;
 }
@@ -260,28 +301,28 @@ header {
 
 .radio-item {
   box-sizing: border-box;
-  width: 11.5vmin;  
+  width: 11.5vmin;
   height: 11.5vmin;
   position: relative;
-  margin: .5vmin;
+  margin: 0.5vmin;
   min-width: 135px;
   min-height: 135px;
   cursor: pointer;
-  transition: .3s ease;
-  opacity: .5;
+  transition: 0.3s ease;
+  opacity: 0.5;
   filter: grayscale(1);
 }
 
 .radio-item[data-active="true"]::after {
-  content: '';
-  background: url('../radio/play.svg') no-repeat;
+  content: "";
+  background: url("../radio/play.svg") no-repeat;
   background-size: contain;
   display: block;
   position: absolute;
   width: 50%;
   height: 66%;
   margin: 17% 25%;
-  opacity: .75;
+  opacity: 0.75;
   animation: play 4s ease 1s infinite;
 }
 
@@ -294,14 +335,14 @@ header {
 .radio-item[data-active="true"] {
   transform: scale(1.2) rotate(-9deg);
   z-index: 9;
-  border: .75vmin solid white;
+  border: 0.75vmin solid white;
   box-shadow: 0 0 2vmin black;
   filter: grayscale(0);
   opacity: 1;
 }
 
 .radio-item:hover {
-  border: .25vmin solid white;
+  border: 0.25vmin solid white;
 }
 
 @keyframes play {
@@ -334,8 +375,8 @@ header {
   position: absolute;
   display: inline-block;
   opacity: 0;
-  transition: .4s;
-  text-shadow: 0 0 .5vmin #000;
+  transition: 0.4s;
+  text-shadow: 0 0 0.5vmin #000;
   margin: 1vmin 0;
   display: none;
 }
@@ -355,11 +396,10 @@ header {
   cursor: pointer;
   margin: 5px auto 0;
   z-index: 5;
-  box-shadow: 0 0 1vmin rgba(0,0,0,.33);
+  box-shadow: 0 0 1vmin rgba(0, 0, 0, 0.33);
 }
 
 @media screen and (max-width: 1200px) {
- 
   .days-info {
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -411,7 +451,7 @@ header {
     right: 24px;
     top: 20px;
   }
-  
+
   .reweather {
     left: 24px;
   }
@@ -420,6 +460,11 @@ header {
   }
   .volume {
     padding: 10px 0;
+  }
+  .saver-clock {
+    top: 40%;
+    height: 100vh;
+    line-height: 0100%;
   }
 
   .currency {

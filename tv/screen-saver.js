@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
       nonActiveTime = false;
       main.style.opacity = "1";
       saverClock.style.opacity = "0";
-      videoBg.style.opacity = ".2";
+      videoBg.style.opacity = ".33";
     }
 
     setInterval(() => {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
       main.style.opacity = "1";
       nonActiveTime = false;
       saverClock.style.opacity = "0";
-      videoBg.style.opacity = ".2";
+      videoBg.style.opacity = ".5";
     }
 
 })

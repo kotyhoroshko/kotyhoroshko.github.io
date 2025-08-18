@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,23 @@
     <title>TVapp</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!-- <video autoplay muted loop class="video-bg" id="video">
         <source src="video/10.mp4" type="video/mp4">
     </video> -->
     <div class="video-bg">
-        <div class="bg"></div>
-        <div class="bg bg2"></div>
-        <div class="bg bg3"></div>
+        <div class="loader">
+            <div class="loader"></div>
+            <div class="loader"></div>
+            <div class="loader"></div>
+            </div>
     </div>
+    <!-- <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div> -->
+    </div>
+
     <div class="saver-clock"></div>
 
     <main class="main">
@@ -28,12 +37,12 @@
             <div id="digital-clock" class="clock"></div>
             <!-- <img class="pin" src="./img/pin.svg" alt="location"> -->
             <img class="reweather" tabindex="0" src="./img/reload.svg" alt="refresh weather">
-            <img class="full-screen-btn" tabindex="0" src="./img/fscreen.svg"  data-full-screen="true" alt="full screen">
+            <img class="full-screen-btn" tabindex="0" src="./img/fscreen.svg" data-full-screen="true" alt="full screen">
             <div class="days-info">
                 <!-- DAYS INFO -->
             </div>
         </div>
-        <input class="volume" type="range" orient="vertical" min="0" max="1" step="0.05"/>
+        <input class="volume" type="range" orient="vertical" min="0" max="1" step="0.05" />
         <div class="radio">
             <div class="radio-item" tabindex="0" data-active="false">
                 <h2 class="radio-item__title">Secret agent</h2>
@@ -144,4 +153,5 @@
     <script src="screen-saver.js"></script>
 
 </body>
+
 </html>
