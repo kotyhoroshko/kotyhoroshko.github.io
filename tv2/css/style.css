@@ -1,0 +1,269 @@
+:root {
+  --accent: #58a6ff;
+  --bg-color: #0d1117;
+  --border: #30363d;
+  --card-bg: #161b22;
+  --card-bg-hover: #1c2128;
+  --radius: 16px;
+  --radius-sm: 12px;
+  --text-main: #f0f6fc;
+  --text-secondary: #8b949e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  align-items: flex-start;
+  background: var(--bg-color);
+  background-image: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(88, 166, 255, 0.08),
+    transparent
+  );
+  color: var(--text-main);
+  display: flex;
+  font-family:
+    "Inter",
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  justify-content: center;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 100dvh;
+  padding: 24px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.weather-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  width: 100%;
+}
+
+.weather-card--current {
+  min-width: 0;
+}
+
+.weather-card--forecast {
+  grid-column: 2 / 4;
+  min-width: 0;
+}
+
+.weather-card--daily {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.card-title {
+  color: var(--text-main);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+}
+
+.location {
+  color: var(--text-main);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.main-icon {
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+  margin: -4px auto;
+  object-fit: contain;
+  width: 90%;
+}
+
+.temp-container  {
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.current-temp, .feels-like {
+  color: var(--text-main);
+  font-size: 3.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.feels-like {
+  color: var(--text-secondary);
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.description {
+  color: var(--accent);
+  font-size: 1.0625rem;
+  font-weight: 500;
+}
+
+.time-stamp {
+  margin-bottom: 24px;
+}
+
+.details {
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
+.detail-item {
+  align-items: center;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 8px;
+  width: 30%;
+}
+
+.detail-label {
+  color: var(--text-secondary);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.detail-value {
+  color: var(--text-main);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.section-title {
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+.hourly {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.hourly-item {
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 16px;
+  transition: border-color 0.15s ease;
+  width: 100%;
+  position: relative;
+}
+
+.hourly-time {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+
+.hourly-temp-feels {
+  color: var(--text-secondary);
+  margin-left: 4px;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.daily {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  text-align: left;
+  width: 100%;
+}
+
+.daily-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  transition: border-color 0.15s ease;
+}
+
+.daily-date {
+  color: var(--text-main);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  min-width: 52px;
+}
+
+.hourly-icon,
+.daily-icon {
+  flex-shrink: 0;
+  object-fit: contain;
+  width: 80px;
+  height: auto;
+}
+
+.hourly-temp,
+.daily-temp {
+  color: var(--text-main);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.hourly-desc,
+.daily-desc {
+  color: var(--accent);
+  font-size: 0.8125rem;
+  margin-top: 2px;
+  width: 100%;
+}
+
+.hourly-extra,
+.daily-extra {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.hourly-precip,
+.daily-precip {
+  color: var(--text-secondary);
+  font-size: 0.6875rem;
+  margin-top: 4px;
+}
+
+.loading {
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 24px 0;
+}
