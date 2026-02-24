@@ -120,9 +120,10 @@ async function updateWeather() {
           ${himgPath ? `<img src="${himgPath}" alt="" class="hourly-icon" />` : ""}
           <span class="hourly-temp">${Math.round(hourly.temperature_2m[i])}° <span class="hourly-temp-feels">${Math.round(hourly.apparent_temperature[i])}°</span></span>
           <span class="hourly-desc">${hc.label || "—"}</span>
-          <span class="hourly-extra">Вітер: ${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]} км/год</span>
-          <span class="hourly-extra">Хмарність ${hourly.cloud_cover[i]}%</span>
-          <span class="hourly-extra">Опади: ${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%</span>
+          <span class="hourly-extra">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]} км/год</span>
+          <span class="hourly-extra">${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%</span>
+          <span class="hourly-extra">Хмарність: ${hourly.cloud_cover[i]}%</span>
+          <span class="hourly-extra">УФ індекс: ${hourly.uv_index[i]}</span>
         </div>
       `;
     }

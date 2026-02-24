@@ -172,9 +172,9 @@ body {
 
 .hourly {
   display: flex;
-  flex-direction: column;
   gap: 8px;
   width: 100%;
+  height: 100%;
 }
 
 .hourly-item {
@@ -182,20 +182,23 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 14px 16px;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 12px 4px;
   transition: border-color 0.15s ease;
   width: 100%;
   position: relative;
 }
 
 .hourly-time {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+
 }
 
+.hourly-temp {
+  color: var(--text-main);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
 
 .hourly-temp-feels {
   color: var(--text-secondary);
@@ -204,10 +207,23 @@ body {
   font-weight: 700;
 }
 
+.hourly-desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 0.8125rem;
+  margin-top: 2px;
+  width: 100%;
+  line-height: 1.1;
+  min-height: 3.3em;
+  
+}
+
 .daily {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   text-align: left;
   width: 100%;
 }
@@ -234,14 +250,12 @@ body {
   height: auto;
 }
 
-.hourly-temp,
 .daily-temp {
   color: var(--text-main);
   font-size: 1.125rem;
   font-weight: 700;
 }
 
-.hourly-desc,
 .daily-desc {
   color: var(--accent);
   font-size: 0.8125rem;
