@@ -191,7 +191,8 @@ body {
 }
 
 .hourly-time {
-
+  font-size: 0.75rem;
+  color: var(--text-secondary);
 }
 
 .hourly-temp {
@@ -267,6 +268,35 @@ body {
 .daily-extra {
   color: var(--text-secondary);
   font-size: 0.75rem;
+}
+
+.hourly-range {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hourly-range-track {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.hourly-range-fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.hourly-range--wind .hourly-range-fill {
+  background: linear-gradient(180deg, #4fc3f7, #0288d1);
+}
+
+.hourly-range--temp .hourly-range-fill {
+  background: linear-gradient(180deg, #808080, #474747);
 }
 
 .hourly-precip,

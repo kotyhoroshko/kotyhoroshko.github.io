@@ -63,6 +63,31 @@ function getIconPath(config, dateOrIso, weatherCode) {
   return "";
 }
 
+function getGlobalMinMax(...seriesArrays) {
+  const allValues = seriesArrays.flat();
+  const min = Math.min(...allValues);
+  const max = Math.max(...allValues);
+  return { min, max };
+}
+
+function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = "") {
+  const low = Math.min(value1, value2);
+  const high = Math.max(value1, value2);
+
+  const range = globalMax - globalMin || 1;
+  const startPercent = ((low - globalMin) / range) * 100;
+  const widthPercent = ((high - low) / range) * 100;
+
+  return `
+    <div class="hourly-range ${extraClass}">
+      <div class="hourly-range-track">
+        <div class="hourly-range-fill"
+             style="bottom:${startPercent}%;height:${widthPercent}%;"></div>
+      </div>
+    </div>
+  `;
+}
+
 async function updateWeather() {
   const lat = 48.1573;
   const lon = 23.1377;
@@ -110,17 +135,50 @@ async function updateWeather() {
 
     // Погодинний прогноз — hourly
     const hourly = data.hourly;
+
+    const { min: windMin, max: windMax } = getGlobalMinMax(
+      hourly.wind_speed_10m,
+      hourly.wind_gusts_10m
+    );
+
+    const { min: tempMin, max: tempMax } = getGlobalMinMax(
+        hourly.temperature_2m,
+        hourly.apparent_temperature
+      );
+
     let hourlyHtml = '<div class="hourly">';
     for (let i = 0; i < hourly.time.length; i++) {
       const hc = weatherConfig[hourly.weather_code[i]] || { label: "—" };
       const himgPath = getIconPath(hc, hourly.time[i], hourly.weather_code[i]);
+
+      const windRangeHtml = buildRangeBarHTML(
+        hourly.wind_speed_10m[i],
+        hourly.wind_gusts_10m[i],
+        windMin,
+        windMax,
+        "hourly-range--wind"
+      );
+
+      const tempRangeHtml = buildRangeBarHTML(
+        hourly.temperature_2m[i],
+        hourly.apparent_temperature[i],
+        tempMin,
+        tempMax,
+        "hourly-range--temp"
+      )
+
       hourlyHtml += `
         <div class="hourly-item">
           <span class="hourly-time">${formatTime(hourly.time[i])}</span>
           ${himgPath ? `<img src="${himgPath}" alt="" class="hourly-icon" />` : ""}
-          <span class="hourly-temp">${Math.round(hourly.temperature_2m[i])}° <span class="hourly-temp-feels">${Math.round(hourly.apparent_temperature[i])}°</span></span>
           <span class="hourly-desc">${hc.label || "—"}</span>
-          <span class="hourly-extra">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]} км/год</span>
+          <span class="hourly-temp">
+            ${Math.round(hourly.temperature_2m[i])}°
+            <span class="hourly-temp-feels">${Math.round(hourly.apparent_temperature[i])}°</span>
+          </span>
+          ${tempRangeHtml}
+          <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
+          ${windRangeHtml}
           <span class="hourly-extra">${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%</span>
           <span class="hourly-extra">Хмарність: ${hourly.cloud_cover[i]}%</span>
           <span class="hourly-extra">УФ індекс: ${hourly.uv_index[i]}</span>
