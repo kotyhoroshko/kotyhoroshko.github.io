@@ -76,17 +76,66 @@ function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = ""
 
   const range = globalMax - globalMin || 1;
   const startPercent = ((low - globalMin) / range) * 100;
-  const widthPercent = ((high - low) / range) * 100;
+  const deltaPercent = ((high - low) / range) * 100;
+  const maxPercent = ((high - globalMin) / range) * 100;
+  let styles;
+
+  if (extraClass == 'temp') {
+    styles = `
+        bottom:${startPercent}%;
+        height:${deltaPercent}%;
+        background:
+            linear-gradient(TRANSPARENT 20%,
+            rgba(0,0,0,.66) ),
+            linear-gradient(90deg,
+                ${getTemperatureColor(low)},
+                ${getTemperatureColor(high)}
+            )
+        `
+  } else if (extraClass == 'wind') {
+    styles = `
+        bottom: 0%;
+        height: 100%;
+        background:
+            linear-gradient(
+                transparent 20%,
+                rgba(0,0,0,.66)
+            ),
+            linear-gradient(0deg,
+                ${getWindColor(low)} ${startPercent}%,
+                ${getWindColor(low, .33)} ${startPercent}%,
+                ${getWindColor(high, .2)} ${maxPercent}%,
+                transparent
+            )
+        `
+  }
 
   return `
-    <div class="hourly-range ${extraClass}">
+    <div class="hourly-range hourly-range--${extraClass}">
       <div class="hourly-range-track">
         <div class="hourly-range-fill"
-             style="bottom:${startPercent}%;height:${widthPercent}%;"></div>
+            style="${styles}">
+        </div>
       </div>
     </div>
   `;
 }
+
+function getTemperatureColor(temp) {
+    let opacity=1;
+    let color = [(255/60*(temp+20)),(255-temp+20),(255-(255/60*(temp+20)))];
+        color = color.map(Math.round);
+    return `rgba(${color[0]},${color[1]},${color[2]},${opacity})`
+}
+
+function getWindColor(wind, opacity=1) {
+    // hsl(200 100% 50% / 1)  - 0 km
+    // hsl(360 100% 50% / 1)  - 118 km/hour
+    let color = ((1.3*wind)+200);
+        color = Math.round(color);
+    return `hsl(${color} 100% 50% / ${opacity})`
+}
+
 
 async function updateWeather() {
   const lat = 48.1573;
@@ -156,7 +205,7 @@ async function updateWeather() {
         hourly.wind_gusts_10m[i],
         windMin,
         windMax,
-        "hourly-range--wind"
+        "wind"
       );
 
       const tempRangeHtml = buildRangeBarHTML(
@@ -164,7 +213,7 @@ async function updateWeather() {
         hourly.apparent_temperature[i],
         tempMin,
         tempMax,
-        "hourly-range--temp"
+        "temp"
       )
 
       hourlyHtml += `
@@ -173,8 +222,8 @@ async function updateWeather() {
           ${himgPath ? `<img src="${himgPath}" alt="" class="hourly-icon" />` : ""}
           <span class="hourly-desc">${hc.label || "—"}</span>
           <span class="hourly-temp">
-            ${Math.round(hourly.temperature_2m[i])}°
-            <span class="hourly-temp-feels">${Math.round(hourly.apparent_temperature[i])}°</span>
+            ${hourly.temperature_2m[i]}°
+            <span class="hourly-temp-feels">${hourly.apparent_temperature[i]}°</span>
           </span>
           ${tempRangeHtml}
           <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
