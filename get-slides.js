@@ -136,8 +136,13 @@ document.addEventListener("DOMContentLoaded", function(){
     },
     {
       "link" : "./calendar/index.html",
-      "subtitle" : "Vue JS",
+      "subtitle" : "Test Work",
       "title" : "Calendar"
+    },
+    {
+      "link" : "./tv2/index.html",
+      "subtitle" : "TV v2.0",
+      "title" : "Soul kithen project"
     },
     
   ]}
