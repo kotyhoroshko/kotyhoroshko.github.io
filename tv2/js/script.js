@@ -75,9 +75,10 @@ function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = ""
   const high = Math.max(value1, value2);
 
   const range = globalMax - globalMin || 1;
-  const startPercent = ((low - globalMin) / range) * 100;
-  const deltaPercent = ((high - low) / range) * 100;
-  const maxPercent = ((high - globalMin) / range) * 100;
+  const bottomPercent = Math.round(((globalMin) / range) * 100);
+  const startPercent = Math.round(((low - globalMin) / range) * 100);
+  const endPercent = Math.round(((high - globalMin) / range) * 100);
+  const deltaPercent = Math.round(((high - low) / range) * 100);
   let styles;
 
   if (extraClass == 'temp') {
@@ -97,14 +98,12 @@ function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = ""
         bottom: 0%;
         height: 100%;
         background:
-            linear-gradient(
-                transparent 20%,
-                rgba(0,0,0,.66)
-            ),
-            linear-gradient(0deg,
+            linear-gradient(to top,
+                ${getWindColor(globalMin)} 0%,
                 ${getWindColor(low)} ${startPercent}%,
-                ${getWindColor(low, .33)} ${startPercent}%,
-                ${getWindColor(high, .2)} ${maxPercent}%,
+                ${getWindColor(low, .66)} ${startPercent}%,
+                ${getWindColor(high, .12)} ${endPercent}%,
+                transparent ${endPercent + 1}%,
                 transparent
             )
         `

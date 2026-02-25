@@ -35,13 +35,13 @@ body {
   line-height: 1.5;
   margin: 0;
   min-height: 100dvh;
-  padding: 24px;
+  padding: 12px;
   -webkit-font-smoothing: antialiased;
 }
 
 .cards-grid {
   display: grid;
-  gap: 24px;
+  gap: 12px;
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 1200px;
   width: 100%;
@@ -51,7 +51,7 @@ body {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px;
+  padding: 12px;
   text-align: center;
   width: 100%;
 }
@@ -179,7 +179,7 @@ body {
 
 .hourly-item {
   align-items: center;
-  border: 1px solid var(--border);
+  /* border: 1px solid var(--border); */
   border-radius: var(--radius-sm);
   display: flex;
   flex-direction: column;
@@ -280,8 +280,12 @@ body {
   position: relative;
   width: 100%;
   height: 6rem;
-  background: rgba(255, 255, 255, 0.05);
+  /* background: rgba(255, 255, 255, 0.05); */
+  border-block: 1px solid rgba(255,255,255, .1);
   overflow: hidden;
+}
+.hourly-range--wind .hourly-range-track {
+  border-top: none;
 }
 
 .hourly-range-fill {
