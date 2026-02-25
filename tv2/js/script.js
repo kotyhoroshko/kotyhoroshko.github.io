@@ -10,7 +10,7 @@ const OW_BASE = "https://openweathermap.org/img/wn";
 function isDaytime(dateOrIso) {
   const d = dateOrIso ? new Date(dateOrIso) : new Date();
   const hour = d.getHours();
-  return hour >= 6 && hour < 20;
+  return hour >= 7 && hour < 20;
 }
 
 // WMO → OpenWeather icon IDs (день/ніч) — маппінг з https://gist.github.com/stellasphere/9490c195ed2b53c707087c8c2db4ec0c
@@ -139,7 +139,7 @@ function getWindColor(wind, opacity=1) {
 async function updateWeather() {
   const lat = 48.1573;
   const lon = 23.1377;
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=48.1573&longitude=23.1377&daily=weather_code,temperature_2m_max,temperature_2m_min,uv_index_max,wind_speed_10m_max,wind_gusts_10m_max,precipitation_sum,precipitation_hours&hourly=temperature_2m,weather_code,precipitation,precipitation_probability,cloud_cover,wind_gusts_10m,wind_speed_10m,uv_index,apparent_temperature&current=temperature_2m,rain,showers,snowfall,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m,apparent_temperature&timezone=auto&forecast_days=3&forecast_hours=6`;
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=48.1573&longitude=23.1377&daily=weather_code,temperature_2m_max,temperature_2m_min,uv_index_max,wind_speed_10m_max,wind_gusts_10m_max,precipitation_sum,precipitation_hours&hourly=temperature_2m,weather_code,precipitation_probability,cloud_cover,wind_gusts_10m,wind_speed_10m,uv_index,apparent_temperature,precipitation&current=temperature_2m,rain,showers,snowfall,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m,apparent_temperature&timezone=auto&forecast_hours=6`;
 
   try {
     const response = await fetch(url);
@@ -274,6 +274,7 @@ async function updateWeather() {
       ${currentDetails}
     `;
   } catch (error) {
+    console.error("Деталі помилки:", error);
     document.getElementById("weather-card").innerHTML = "Помилка завантаження";
     document.getElementById("hourly-card").innerHTML = "Помилка завантаження";
     document.getElementById("daily-card").innerHTML = "Помилка завантаження";
