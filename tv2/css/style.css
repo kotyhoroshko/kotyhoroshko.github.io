@@ -40,34 +40,45 @@ body {
 }
 
 .cards-grid {
-  display: grid;
+  display: flex;
   gap: 12px;
-  grid-template-columns: 1fr 1fr 1fr;
+  flex-wrap: wrap;
   max-width: 1200px;
   width: 100%;
+  justify-content: center;
 }
 
 .weather-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 12px;
+  padding: 20px 12px;
   text-align: center;
-  width: 100%;
 }
 
 .weather-card--current {
-  min-width: 0;
+  min-width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 30%;
 }
 
 .weather-card--forecast {
-  grid-column: 2 / 4;
-  min-width: 0;
+  flex-grow: 2;
+  flex-basis: 66%;
 }
 
 .weather-card--daily {
-  grid-column: 1 / -1;
-  min-width: 0;
+  width: 100%;
+}
+
+.main-info {
+  width: 100%;
+  max-width: 320px;
 }
 
 .card-title {
@@ -77,12 +88,16 @@ body {
   letter-spacing: -0.01em;
   margin: 0 0 20px;
 }
-
+.main-icon, .date, .location {
+  /* max-width: 300px; */
+}
 .location {
   color: var(--text-main);
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  width: 100%;
+  line-height: 1.1;
 }
 
 .date {
@@ -90,6 +105,7 @@ body {
   flex-direction: column;
   color: var(--text-secondary);
   font-size: 0.875rem;
+  width: 100%;
 }
 
 .main-icon {
@@ -136,7 +152,8 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-top: 20px;
+  padding-top: 12px;
+  margin-top: 12px;
 }
 
 .detail-item {
@@ -183,7 +200,7 @@ body {
   border-radius: var(--radius-sm);
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  /* gap: .5rem; */
   padding: 12px 4px;
   transition: border-color 0.15s ease;
   width: 100%;
@@ -197,14 +214,15 @@ body {
 
 .hourly-temp {
   color: var(--text-main);
-  font-size: 1.125rem;
+  font-size: .875rem;
   font-weight: 700;
+  margin-top: 1rem;
 }
 
 .hourly-temp-feels {
   color: var(--text-secondary);
   margin-left: 4px;
-  font-size: 1.125rem;
+  font-size: .875rem;
   font-weight: 700;
 }
 
@@ -214,7 +232,7 @@ body {
   justify-content: center;
   color: var(--accent);
   font-size: 0.8125rem;
-  margin-top: 2px;
+  margin-top: -8px;
   width: 100%;
   line-height: 1.1;
   min-height: 3.3em;
@@ -274,6 +292,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
 .hourly-range-track {

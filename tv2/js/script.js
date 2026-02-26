@@ -102,12 +102,19 @@ function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = ""
                 ${getWindColor(globalMin)} 0%,
                 ${getWindColor(low)} ${startPercent}%,
                 ${getWindColor(low, .66)} ${startPercent}%,
-                ${getWindColor(high, .12)} ${endPercent}%,
+                ${getWindColor(high, .1)} ${endPercent}%,
                 transparent ${endPercent + 1}%,
                 transparent
             )
         `
-  }
+      } else if (extraClass == 'precip') {
+        styles = `
+            bottom: 0%;
+            height: ${value1*10}%;
+            background: rgba(0, 120, 255, ${value2 / 100});
+        `;
+    }
+
 
   return `
     <div class="hourly-range hourly-range--${extraClass}">
@@ -130,9 +137,9 @@ function getTemperatureColor(temp) {
 function getWindColor(wind, opacity=1) {
     // hsl(200 100% 50% / 1)  - 0 km
     // hsl(360 100% 50% / 1)  - 118 km/hour
-    let color = ((1.3*wind)+200);
+    let color = ((1.4*wind)+200);
         color = Math.round(color);
-    return `hsl(${color} 100% 50% / ${opacity})`
+    return `hsl(${color} 100% ${100 - wind/2}% / ${opacity})`
 }
 
 
@@ -171,7 +178,7 @@ async function updateWeather() {
 
     // Поточна погода — всі поля current
     const currentDetails = `
-      <div class="details details--wide">
+      <div class="details">
         <div class="detail-item"><span class="detail-label" title="км/год">Вітер</span><span class="detail-value">${curr.wind_speed_10m}</span></div>
         <div class="detail-item"><span class="detail-label" title="км/год">Пориви</span><span class="detail-value">${curr.wind_gusts_10m}</span></div>
         <div class="detail-item"><span class="detail-label" title="${curr.wind_direction_10m}°">Напрям</span><span class="detail-value">${dirLabel(curr.wind_direction_10m)}</span></div>
@@ -194,6 +201,7 @@ async function updateWeather() {
         hourly.apparent_temperature
       );
 
+
     let hourlyHtml = '<div class="hourly">';
     for (let i = 0; i < hourly.time.length; i++) {
       const hc = weatherConfig[hourly.weather_code[i]] || { label: "—" };
@@ -215,6 +223,14 @@ async function updateWeather() {
         "temp"
       )
 
+      const precipRangeHtml = buildRangeBarHTML(
+        hourly.precipitation[i],
+        hourly.precipitation_probability[i],
+        0,
+        10,                             // max для масштабу (наприклад 10мм)
+        "precip"
+    )
+
       hourlyHtml += `
         <div class="hourly-item">
           <span class="hourly-time">${formatTime(hourly.time[i])}</span>
@@ -228,6 +244,7 @@ async function updateWeather() {
           <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
           ${windRangeHtml}
           <span class="hourly-extra">${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%</span>
+          ${precipRangeHtml}
           <span class="hourly-extra">Хмарність: ${hourly.cloud_cover[i]}%</span>
           <span class="hourly-extra">УФ індекс: ${hourly.uv_index[i]}</span>
         </div>
@@ -262,8 +279,8 @@ async function updateWeather() {
     const card = document.getElementById("weather-card");
     card.innerHTML = `
       <div class="location">Королево</div>
-      <div class="date">${new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" })}
-      
+      <div class="date">${new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" })}</div>
+      <div class="main-info">
       <img src="${imgPath}" alt="${config.label}" class="main-icon" />
       <div class="temp-container">
         <div class="current-temp">${Math.round(curr.temperature_2m)}°</div>
@@ -271,6 +288,7 @@ async function updateWeather() {
       </div>
       <div class="description">${config.label}</div>
       <span class="time-stamp">Станом на ${formatTime(curr.time)}</span>
+      </div>
       ${currentDetails}
     `;
   } catch (error) {
