@@ -81,6 +81,8 @@ function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = ""
   const deltaPercent = Math.round(((high - low) / range) * 100);
   let styles;
 
+  if (extraClass == 'precip' || extraClass == 'uv' && globalMax == 0) {return ''}
+
   if (extraClass == 'temp') {
     styles = `
         bottom:${startPercent}%;
@@ -102,7 +104,7 @@ function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = ""
                 ${getWindColor(globalMin)} 0%,
                 ${getWindColor(low)} ${startPercent}%,
                 ${getWindColor(low, .66)} ${startPercent}%,
-                ${getWindColor(high, .1)} ${endPercent}%,
+                ${getWindColor(high, 0.066)} ${endPercent}%,
                 transparent ${endPercent + 1}%,
                 transparent
             )
@@ -111,10 +113,17 @@ function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = ""
         styles = `
             bottom: 0%;
             height: ${value1*10}%;
-            background: rgba(0, 120, 255, ${value2 / 100});
+            background: rgba(0, 120, 255, ${value2 / 100}
+          );
         `;
-    }
-
+      } else if (extraClass == 'uv') {
+        styles = `
+            bottom: 0%;
+            height: ${value1*10}%;
+            background: linear-gradient(to top,
+              hsl(260 66% 45% / 1), hsl(${260+value1*10} 66% 45% / 1));
+        `
+      }
 
   return `
     <div class="hourly-range hourly-range--${extraClass}">
@@ -139,7 +148,7 @@ function getWindColor(wind, opacity=1) {
     // hsl(360 100% 50% / 1)  - 118 km/hour
     let color = ((1.4*wind)+200);
         color = Math.round(color);
-    return `hsl(${color} 100% ${100 - wind/2}% / ${opacity})`
+    return `hsl(${color} 100% ${80 - wind/4}% / ${opacity})`
 }
 
 
@@ -201,7 +210,6 @@ async function updateWeather() {
         hourly.apparent_temperature
       );
 
-
     let hourlyHtml = '<div class="hourly">';
     for (let i = 0; i < hourly.time.length; i++) {
       const hc = weatherConfig[hourly.weather_code[i]] || { label: "—" };
@@ -226,26 +234,33 @@ async function updateWeather() {
       const precipRangeHtml = buildRangeBarHTML(
         hourly.precipitation[i],
         hourly.precipitation_probability[i],
-        0,
-        10,                             // max для масштабу (наприклад 10мм)
+        Math.max(...hourly.precipitation),
+        10,
         "precip"
     )
+
+    const uvRangeHtml = buildRangeBarHTML(
+      hourly.uv_index[i],
+      0,
+      Math.max(...hourly.uv_index),
+      10,
+      "uv"
+  )
 
       hourlyHtml += `
         <div class="hourly-item">
           <span class="hourly-time">${formatTime(hourly.time[i])}</span>
           ${himgPath ? `<img src="${himgPath}" alt="" class="hourly-icon" />` : ""}
           <span class="hourly-desc">${hc.label || "—"}</span>
-          <span class="hourly-temp">
-            ${hourly.temperature_2m[i]}°
-            <span class="hourly-temp-feels">${hourly.apparent_temperature[i]}°</span>
-          </span>
           ${tempRangeHtml}
-          <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
+          <span class="hourly-temp">${Math.round(hourly.temperature_2m[i])}°
+            <span class="hourly-temp-feels" >${Math.round(hourly.apparent_temperature[i])}°</span>
+          </span>
           ${windRangeHtml}
-          <span class="hourly-extra">${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%</span>
+          <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
           ${precipRangeHtml}
-          <span class="hourly-extra">Хмарність: ${hourly.cloud_cover[i]}%</span>
+          <span class="hourly-extra">${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%</span>
+          ${uvRangeHtml}
           <span class="hourly-extra">УФ індекс: ${hourly.uv_index[i]}</span>
         </div>
       `;

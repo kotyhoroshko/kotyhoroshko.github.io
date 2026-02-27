@@ -216,7 +216,7 @@ body {
   color: var(--text-main);
   font-size: .875rem;
   font-weight: 700;
-  margin-top: 1rem;
+  margin-top: .2rem;
 }
 
 .hourly-temp-feels {
@@ -282,7 +282,12 @@ body {
   width: 100%;
 }
 
-.hourly-extra,
+.hourly-extra {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-block: .2rem;
+}
+
 .daily-extra {
   color: var(--text-secondary);
   font-size: 0.75rem;
@@ -292,7 +297,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .hourly-range-track {
