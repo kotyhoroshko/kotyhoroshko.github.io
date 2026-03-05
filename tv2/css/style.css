@@ -236,22 +236,23 @@ body {
   width: 100%;
   line-height: 1.1;
   min-height: 3.3em;
-  
 }
 
 .daily {
-  display: grid;
+  /* display: grid;
   gap: 12px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  text-align: left;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  display: flex;
   width: 100%;
 }
 
 .daily-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 16px;
-  transition: border-color 0.15s ease;
 }
 
 .daily-date {
@@ -286,6 +287,9 @@ body {
   color: var(--text-secondary);
   font-size: 0.75rem;
   margin-block: .2rem;
+}
+.hourly-extra.hiden {
+  display: none;
 }
 
 .daily-extra {

@@ -81,16 +81,15 @@ function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = ""
   const deltaPercent = Math.round(((high - low) / range) * 100);
   let styles;
 
-  if (extraClass == 'precip' || extraClass == 'uv' && globalMax == 0) {return ''}
+  if ((extraClass == 'precip' || extraClass == 'uv') && globalMin == 0) {
+    return ''}
 
   if (extraClass == 'temp') {
     styles = `
         bottom:${startPercent}%;
         height:${deltaPercent}%;
         background:
-            linear-gradient(TRANSPARENT 20%,
-            rgba(0,0,0,.66) ),
-            linear-gradient(90deg,
+            linear-gradient(to top,
                 ${getTemperatureColor(low)},
                 ${getTemperatureColor(high)}
             )
@@ -110,10 +109,13 @@ function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = ""
             )
         `
       } else if (extraClass == 'precip') {
+        console.log(value1, value2, globalMin )
         styles = `
             bottom: 0%;
             height: ${value1*10}%;
-            background: rgba(0, 120, 255, ${value2 / 100}
+            background: linear-gradient(to top,
+            hsl(192.67deg 100% 49.22% / ${value2}),
+            hsl(${value1*9+190}deg 100% 45.88% / ${value2})
           );
         `;
       } else if (extraClass == 'uv') {
@@ -138,7 +140,7 @@ function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = ""
 
 function getTemperatureColor(temp) {
     let opacity=1;
-    let color = [(255/60*(temp+20)),(255-temp+20),(255-(255/60*(temp+20)))];
+    let color = [(255/60*(temp+20)),(255-temp),(255-(255/60*(temp+20)))];
         color = color.map(Math.round);
     return `rgba(${color[0]},${color[1]},${color[2]},${opacity})`
 }
@@ -155,7 +157,7 @@ function getWindColor(wind, opacity=1) {
 async function updateWeather() {
   const lat = 48.1573;
   const lon = 23.1377;
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=48.1573&longitude=23.1377&daily=weather_code,temperature_2m_max,temperature_2m_min,uv_index_max,wind_speed_10m_max,wind_gusts_10m_max,precipitation_sum,precipitation_hours&hourly=temperature_2m,weather_code,precipitation_probability,cloud_cover,wind_gusts_10m,wind_speed_10m,uv_index,apparent_temperature,precipitation&current=temperature_2m,rain,showers,snowfall,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m,apparent_temperature&timezone=auto&forecast_hours=6`;
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=48.1573&longitude=23.1377&daily=weather_code,temperature_2m_max,temperature_2m_min,uv_index_max,wind_speed_10m_max,wind_gusts_10m_max,precipitation_sum,precipitation_hours&hourly=temperature_2m,weather_code,precipitation_probability,cloud_cover,wind_gusts_10m,wind_speed_10m,uv_index,apparent_temperature,precipitation&current=temperature_2m,rain,showers,snowfall,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m,apparent_temperature,is_day&timezone=auto&forecast_hours=6`;
 
   try {
     const response = await fetch(url);
@@ -220,32 +222,38 @@ async function updateWeather() {
         hourly.wind_gusts_10m[i],
         windMin,
         windMax,
-        "wind"
+        "wind",
       );
 
+      // hourly.temperature_2m[i]=i+30
+      // hourly.apparent_temperature[i] = i-30
       const tempRangeHtml = buildRangeBarHTML(
         hourly.temperature_2m[i],
         hourly.apparent_temperature[i],
         tempMin,
         tempMax,
-        "temp"
-      )
+        "temp",
+      );
 
+      // hourly.precipitation[i] = i+3
+      // hourly.precipitation_probability[i] = i*10 +20
+      const maxPrecipProbability = Math.max(...hourly.precipitation_probability)
       const precipRangeHtml = buildRangeBarHTML(
         hourly.precipitation[i],
         hourly.precipitation_probability[i],
-        Math.max(...hourly.precipitation),
+        maxPrecipProbability,
         10,
-        "precip"
-    )
+        "precip",
+      );
 
-    const uvRangeHtml = buildRangeBarHTML(
-      hourly.uv_index[i],
-      0,
-      Math.max(...hourly.uv_index),
-      10,
-      "uv"
-  )
+      // hourly.uv_index[i] = i+4
+      const uvRangeHtml = buildRangeBarHTML(
+        hourly.uv_index[i],
+        0,
+        Math.max(...hourly.uv_index),
+        10,
+        "uv",
+      );
 
       hourlyHtml += `
         <div class="hourly-item">
@@ -259,14 +267,16 @@ async function updateWeather() {
           ${windRangeHtml}
           <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
           ${precipRangeHtml}
-          <span class="hourly-extra">${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%</span>
+          <span class="hourly-extra ${!maxPrecipProbability ? "hiden" : ""}">
+            ${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%
+          </span>
           ${uvRangeHtml}
-          <span class="hourly-extra">УФ індекс: ${hourly.uv_index[i]}</span>
+          <span class="hourly-extra ${!Math.max(...hourly.uv_index) ? "hiden" : ""}">УФ індекс: ${hourly.uv_index[i]}</span>
         </div>
       `;
     }
-    hourlyHtml += "</div>";
 
+    hourlyHtml += "</div>";
     document.getElementById("hourly-card").innerHTML = hourlyHtml;
 
     // Денний прогноз — daily
@@ -282,8 +292,9 @@ async function updateWeather() {
           ${dimgPath ? `<img src="${dimgPath}" alt="" class="daily-icon" />` : ""}
           <span class="daily-desc">${dc.label || "—"}</span>
           <span class="daily-temp">${Math.round(daily.temperature_2m_max[i])}° / ${Math.round(daily.temperature_2m_min[i])}°</span>
-          <span class="daily-extra">УФ ${daily.uv_index_max[i]} · вітер ${daily.wind_speed_10m_max[i]} км/год (пориви ${daily.wind_gusts_10m_max[i]})</span>
-          <span class="daily-precip">опади ${daily.precipitation_sum[i]} mm за ${daily.precipitation_hours[i]} год</span>
+          <span class="daily-extra">${daily.wind_speed_10m_max[i]} / ${daily.wind_gusts_10m_max[i]} км.год</span>
+          <span class="daily-extra">УФ ${daily.uv_index_max[i]}</span>
+          <span class="daily-precip">${daily.precipitation_sum[i]} mm за ${daily.precipitation_hours[i]} год</span>
         </div>
       `;
     }
@@ -309,8 +320,6 @@ async function updateWeather() {
   } catch (error) {
     console.error("Деталі помилки:", error);
     document.getElementById("weather-card").innerHTML = "Помилка завантаження";
-    document.getElementById("hourly-card").innerHTML = "Помилка завантаження";
-    document.getElementById("daily-card").innerHTML = "Помилка завантаження";
   }
 }
 
