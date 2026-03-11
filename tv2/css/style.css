@@ -84,7 +84,7 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 .weather-card--daily::-webkit-scrollbar, .weather-card--forecast::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari, and Opera */
+  display: none;  /* Chrome, Safari and Opera */
 }
 
 .main-info {
@@ -92,16 +92,6 @@ body {
   max-width: 320px;
 }
 
-.card-title {
-  color: var(--text-main);
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin: 0 0 20px;
-}
-.main-icon, .date, .location {
-  /* max-width: 300px; */
-}
 .location {
   color: var(--text-main);
   font-size: 1.5rem;
@@ -190,14 +180,6 @@ body {
   font-weight: 600;
 }
 
-.section-title {
-  color: var(--accent);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  margin: 0 0 16px;
-  text-align: left;
-}
-
 .hourly {
   display: flex;
   gap: 4px;
@@ -208,7 +190,6 @@ body {
 
 .hourly-item, .daily-item {
   align-items: center;
-  /* border: 1px solid var(--border); */
   border-radius: var(--radius-sm);
   display: flex;
   flex-direction: column;
@@ -296,7 +277,8 @@ body {
   font-size: 0.75rem;
   margin-block: .2rem;
 }
-.hourly-extra.hiden {
+
+.hourly-extra.hidden {
   display: none;
 }
 
@@ -311,10 +293,10 @@ body {
   position: relative;
   width: 100%;
   height: 6rem;
-  /* background: rgba(255, 255, 255, 0.05); */
   border-block: 1px solid rgba(255,255,255, .1);
   overflow: hidden;
 }
+
 .hourly-range--wind .hourly-range-track {
   border-top: none;
 }
@@ -326,6 +308,7 @@ body {
   bottom: 0;
 }
 
+/* Фолбек, якщо JS не задав inline background */
 .hourly-range--wind .hourly-range-fill {
   background: linear-gradient(180deg, #4fc3f7, #0288d1);
 }
