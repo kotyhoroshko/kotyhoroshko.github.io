@@ -235,8 +235,8 @@ async function updateWeather() {
         "temp",
       );
 
-      // hourly.precipitation[i] = i+3
-      // hourly.precipitation_probability[i] = i*10 +20
+      // hourly.precipitation[i] = i+4
+      // hourly.precipitation_probability[i] = i*10 +40
       const maxPrecipProbability = Math.max(...hourly.precipitation_probability)
       const precipRangeHtml = buildRangeBarHTML(
         hourly.precipitation[i],
@@ -264,12 +264,12 @@ async function updateWeather() {
           <span class="hourly-temp">${Math.round(hourly.temperature_2m[i])}°
             <span class="hourly-temp-feels" >${Math.round(hourly.apparent_temperature[i])}°</span>
           </span>
-          ${windRangeHtml}
-          <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
           ${precipRangeHtml}
           <span class="hourly-extra ${!maxPrecipProbability ? "hiden" : ""}">
             ${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%
           </span>
+          ${windRangeHtml}
+          <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
           ${uvRangeHtml}
           <span class="hourly-extra ${!Math.max(...hourly.uv_index) ? "hiden" : ""}">УФ індекс: ${hourly.uv_index[i]}</span>
         </div>
@@ -292,9 +292,9 @@ async function updateWeather() {
           ${dimgPath ? `<img src="${dimgPath}" alt="" class="daily-icon" />` : ""}
           <span class="daily-desc">${dc.label || "—"}</span>
           <span class="daily-temp">${Math.round(daily.temperature_2m_max[i])}° / ${Math.round(daily.temperature_2m_min[i])}°</span>
-          <span class="daily-extra">${daily.wind_speed_10m_max[i]} / ${daily.wind_gusts_10m_max[i]} км.год</span>
+          <span class="daily-precip">${daily.precipitation_sum[i]}mm / ${daily.precipitation_hours[i]}год</span>
+          <span class="daily-extra">${daily.wind_speed_10m_max[i]} / ${daily.wind_gusts_10m_max[i]}</span>
           <span class="daily-extra">УФ ${daily.uv_index_max[i]}</span>
-          <span class="daily-precip">${daily.precipitation_sum[i]} mm за ${daily.precipitation_hours[i]} год</span>
         </div>
       `;
     }

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Погода в Королево</title>
+</head>
+<body>
+
+<div class="cards-grid">
+    <div class="weather-card weather-card--current" id="weather-card">
+        <div class="loading">Завантаження прогнозу...</div>
+    </div>
+    <div class="weather-card weather-card--forecast" id="hourly-card">
+        <div class="loading">Завантаження погодинного прогнозу...</div>
+    </div>
+    <div class="weather-card weather-card--daily" id="daily-card">
+        <div class="loading">Завантаження денного прогнозу...</div>
+    </div>
+</div>
+
+<div>
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="200" height="200" style="background: transparent;">
+    <style>
+      .drop {
+        fill: #a0c8d7;
+        animation: rainDrop 2s linear infinite;
+        /* Початковий стан — приховані зверху */
+        opacity: 0;
+      }
+  
+      /* Різна затримка для кожної краплі */
+      .drop1 { animation-delay: 0s; }
+      .drop2 { animation-delay: 0.66s; }
+      .drop3 { animation-delay: 1.33s; }
+  
+      @keyframes rainDrop {
+        0% {
+          transform: translateY(-80px);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(80px);
+          opacity: 0;
+        }
+      }
+    </style>
+  
+    <!-- Крапля 1 (Центральна велика) -->
+    <path class="drop drop1" d="M67 66.1c0 16.1-7.4 23.2-16.4 23.2s-16.4-7.1-16.4-23.2 16.4-35.8 16.4-35.8S67 50.1 67 66.1z" />
+    
+    <!-- Крапля 2 (Права середня) -->
+    <path class="drop drop2" d="M90 34.5C90 45.2 85.2 50 79.2 50c-6 0-10.8-4.7-10.8-15.4s10.8-23.8 10.8-23.8S90 23.8 90 34.5z" />
+    
+    <!-- Крапля 3 (Ліва мала) -->
+    <path class="drop drop3" d="M27.8 52.8c0 9.9-4 14.3-8.9 14.3S10 62.8 10 52.8s8.9-22.1 8.9-22.1 8.9 12.2 8.9 22.1z" />
+  </svg>
+
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org" width="200" height="200" style="background: transparent;">
+    <style>
+      .wind {
+        fill: none;
+        stroke-width: 3;
+        stroke-linecap: round;
+        /* Та сама швидкість і циклічність, що й у дощу */
+        animation: windFlow 2s linear infinite;
+        opacity: 0;
+      }
+  
+      /* Рівномірні затримки для синхронізації з краплями */
+      .w1 { stroke: #a0c8d7; animation-delay: 0s; }
+      .w2 { stroke: #a0c8d7; animation-delay: 0.5s; }
+      .w3 { stroke: #77a4bd; animation-delay: 1s; }
+      .w4 { stroke: #a0c8d7; animation-delay: 1.5s; }
+  
+      @keyframes windFlow {
+        0% {
+          transform: translateX(-40px);
+          opacity: 0;
+        }
+        /* Поява */
+        20% { opacity: 1; }
+        /* Утримання видимості */
+        80% { opacity: 1; }
+        100% {
+          transform: translateX(40px);
+          opacity: 0;
+        }
+      }
+    </style>
+  
+    <g transform="scale(0.8) translate(10, 10)">
+      <path class="wind w1" d="M29.5 46.3c4.6-3.9 10.7-5.9 16.6-5.5 7.1.5 13.9 4.1 20.9 3.3 2-.2 4-.8 5.6-2 2.3-1.7 3.7-4.7 3.3-7.6-.4-2.9-2.7-5.4-5.5-6-2.8-.6-6 1-7.1 3.7-.7 1.7-.5 3.9.8 5.2 1.3 1.3 3.7 1.5 5 .1" />
+      <path class="wind w2" d="M25.9 53.9c4.7-3.5 10-6.2 15.6-8" />
+      <path class="wind w3" d="M36.4 54.7c4.6-3.8 10.6-5.9 16.5-5.9 9.5 0 18.3 5.2 27.8 5.2 2.7 0 5.7-.6 7.6-2.6 2.1-2.2 2.3-6.1.3-8.3-2.1-2.3-6.2-2.2-8.1.2-1 1.3-1.3 3.3-.2 4.6s3.5 1.2 4.2-.3" />
+      <path class="wind w4" d="M10 67.1c4.4 3.2 10.7 2.5 15.9.7 6.2-2.2 11.9-5.7 17.8-8.8 2.2-1.2 4.4-2.3 6.8-2.9 3.2-.8 6.6-.7 9.7.4 1.6.6 3.1 1.4 4.2 2.6 2.1 2.3 2.5 6 1 8.7-1.6 2.7-5 4.2-8 3.5-.8-.2-1.7-.5-2.3-1.1-2.3-2.2-1.5-7.3 2.4-7 1.1.1 2.1.7 2.6 1.7" />
+    </g>
+  </svg>
+
+
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="200" height="200" style="background: transparent;">
+    <style>
+      /* Сонце в цілому повільно обертається */
+      .sun-group {
+        transform-origin: 50px 50px;
+        animation: sunRotate 10s linear infinite;
+      }
+  
+      /* Ефект пульсації для м'якості */
+      .sun-core {
+        transform-origin: 50px 50px;
+        animation: sunPulse 2s ease-in-out infinite alternate;
+      }
+  
+      @keyframes sunRotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+  
+      @keyframes sunPulse {
+        from { transform: scale(0.95); }
+        to { transform: scale(1.05); }
+      }
+    </style>
+  
+    <g class="sun-group">
+      <!-- Центр сонця -->
+      <circle class="sun-core" fill="#ffdc6c" r="27" cy="50" cx="50" />
+      
+      <!-- Промені -->
+      <g fill="#f8b26a">
+        <path d="M50 19.3c1.2 0 2.3.1 3.5.2L50 7.5l-3.5 12c1.2-.1 2.3-.2 3.5-.2z" />
+        <path d="M37.7 21.9l-9-8.7 3 12.1c1.9-1.4 3.9-2.5 6-3.4z" />
+        <path d="M25.3 31.8l-12.1-3 8.7 9c.9-2.2 2-4.2 3.4-6z" />
+        <path d="M92.5 50l-12-3.5c.1 1.1.2 2.3.2 3.5s-.1 2.3-.2 3.5l12-3.5z" />
+        <path d="M78.1 37.7l8.7-9-12.1 3c1.4 1.9 2.5 3.9 3.4 6z" />
+        <path d="M68.2 25.3l3-12.1-9 8.7c2.2.9 4.2 2 6 3.4z" />
+        <path d="M62.3 78.1l9 8.7-3-12.1c-1.9 1.4-3.9 2.5-6 3.4z" />
+        <path d="M74.7 68.2l12.1 3-8.7-9c-.9 2.2-2 4.2-3.4 6z" />
+        <path d="M50 80.7c-1.2 0-2.3-.1-3.5-.2l3.5 12 3.5-12c-1.2.1-2.3.2-3.5.2z" />
+        <path d="M21.9 62.3l-8.7 9 12.1-3c-1.4-1.9-2.5-3.9-3.4-6z" />
+        <path d="M31.8 74.7l-3 12.1 9-8.7c-2.2-.9-4.2-2-6-3.4z" />
+        <path d="M19.3 50c0-1.2.1-2.3.2-3.5L7.5 50l12 3.5c-.1-1.2-.2-2.3-.2-3.5z" />
+      </g>
+    </g>
+  </svg>
+</div>
+  
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -45,7 +45,6 @@ body {
   flex-wrap: wrap;
   max-width: 1200px;
   width: 100%;
-  justify-content: center;
 }
 
 .weather-card {
@@ -70,10 +69,22 @@ body {
 .weather-card--forecast {
   flex-grow: 2;
   flex-basis: 66%;
+  width: 100%;
+  overflow-x: scroll;
+  padding: 20px 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .weather-card--daily {
   width: 100%;
+  overflow-x: scroll;
+  padding: 20px 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.weather-card--daily::-webkit-scrollbar, .weather-card--forecast::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, and Opera */
 }
 
 .main-info {
@@ -189,20 +200,19 @@ body {
 
 .hourly {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   width: 100%;
   height: 100%;
+  padding-inline: 0;
 }
 
-.hourly-item {
+.hourly-item, .daily-item {
   align-items: center;
   /* border: 1px solid var(--border); */
   border-radius: var(--radius-sm);
   display: flex;
   flex-direction: column;
-  /* gap: .5rem; */
   padding: 12px 4px;
-  transition: border-color 0.15s ease;
   width: 100%;
   position: relative;
 }
@@ -239,20 +249,12 @@ body {
 }
 
 .daily {
-  /* display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
-  display: flex;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat( 7, 1fr);
   width: 100%;
-}
+  padding-inline: 0;
 
-.daily-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 16px;
 }
 
 .daily-date {
@@ -277,24 +279,25 @@ body {
 }
 
 .daily-desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--accent);
   font-size: 0.8125rem;
-  margin-top: 2px;
+  margin-top: -8px;
   width: 100%;
+  line-height: 1.1;
+  min-height: 3.3em;
 }
 
-.hourly-extra {
+.hourly-extra,
+.daily-extra {
   color: var(--text-secondary);
   font-size: 0.75rem;
   margin-block: .2rem;
 }
 .hourly-extra.hiden {
   display: none;
-}
-
-.daily-extra {
-  color: var(--text-secondary);
-  font-size: 0.75rem;
 }
 
 .hourly-range {
