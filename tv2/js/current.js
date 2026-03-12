@@ -27,8 +27,7 @@ export function renderCurrent(data) {
     </div>
   `;
 
-  const card = document.getElementById("weather-card");
-  card.innerHTML = `
+  return `
     <div class="location">Королево</div>
     <div class="date">${new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" })}</div>
     <div class="main-info">

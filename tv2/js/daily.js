@@ -5,6 +5,7 @@ import {
   buildRangeBarHTML,
   formatDate,
 } from "./config.js";
+import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 
 export function renderDaily(data) {
   const daily = data.daily;
@@ -28,6 +29,8 @@ export function renderDaily(data) {
     const dailyNoon = daily.time[i] + "T12:00:00";
     const dimgPath = getIconPath(dc, dailyNoon, daily.weather_code[i]);
 
+    // daily.temperature_2m_min[i] = i*5;
+    // daily.temperature_2m_max[i] = i*5 + 10;
     const dailyTempRangeHtml = buildRangeBarHTML(
       daily.temperature_2m_min[i],
       daily.temperature_2m_max[i],
@@ -42,6 +45,7 @@ export function renderDaily(data) {
       dailyWindMax,
       "wind"
     );
+    // daily.precipitation_sum[i] = i*5;
     const dailyPrecipRangeHtml = buildRangeBarHTML(
       0,
       daily.precipitation_sum[i],
@@ -57,6 +61,10 @@ export function renderDaily(data) {
       "uv-daily"
     );
 
+    const precipBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getRainSvg()}</div><div class="viz-wrap__content">${dailyPrecipRangeHtml}</div></div>`;
+    const windBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getWindSvg()}</div><div class="viz-wrap__content">${dailyWindRangeHtml}</div></div>`;
+    const uvBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getSunSvg()}</div><div class="viz-wrap__content">${dailyUvRangeHtml}</div></div>`;
+
     items.push(`
       <div class="daily-item">
         <span class="daily-date">${formatDate(daily.time[i])}</span>
@@ -64,15 +72,15 @@ export function renderDaily(data) {
         <span class="daily-desc">${dc.label || "—"}</span>
         ${dailyTempRangeHtml}
         <span class="daily-temp">${Math.round(daily.temperature_2m_max[i])}° / ${Math.round(daily.temperature_2m_min[i])}°</span>
-        ${dailyPrecipRangeHtml}
-        <span class="daily-precip">${daily.precipitation_sum[i]}mm / ${daily.precipitation_hours[i]}год</span>
-        ${dailyWindRangeHtml}
+        ${precipBlock}
+        <span class="daily-precip">${daily.precipitation_sum[i]} mm / ${daily.precipitation_hours[i]} год</span>
+        ${windBlock}
         <span class="daily-extra" title="Вітер км/год">${daily.wind_speed_10m_max[i]} / ${daily.wind_gusts_10m_max[i]}</span>
-        ${dailyUvRangeHtml}
+        ${uvBlock}
         <span class="daily-extra">УФ ${daily.uv_index_max[i]}</span>
       </div>
     `);
   }
 
-  document.getElementById("daily-card").innerHTML = `<div class="daily">${items.join("")}</div>`;
+  return `<div class="daily">${items.join("")}</div>`;
 }

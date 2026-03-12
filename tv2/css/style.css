@@ -330,6 +330,88 @@ body {
   padding: 24px 0;
 }
 
+/* Обгортка для блоку візуалізації з фоном (опади / вітер / УФ) */
+.viz-wrap {
+  position: relative;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.viz-wrap__bg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+.viz-wrap__bg .svg-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.066;
+}
+.viz-wrap__content {
+  position: relative;
+  z-index: 1;
+}
+.viz-wrap .hourly-range {
+  margin-top: 0;
+}
+
+/* SVG-анімації: дощ */
+.drop {
+  fill: #a0c8d7;
+  animation: rainDrop 2s linear infinite;
+  opacity: 0;
+}
+.drop1 { animation-delay: 0s; }
+.drop2 { animation-delay: 0.66s; }
+.drop3 { animation-delay: 1.33s; }
+@keyframes rainDrop {
+  0% { transform: translateY(-80px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(80px); opacity: 0; }
+}
+
+/* SVG-анімації: вітер */
+.wind {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  animation: windFlow 2s linear infinite;
+  opacity: 0;
+}
+.w1 { stroke: #a0c8d7; animation-delay: 0s; }
+.w2 { stroke: #a0c8d7; animation-delay: 0.5s; }
+.w3 { stroke: #77a4bd; animation-delay: 1s; }
+.w4 { stroke: #a0c8d7; animation-delay: 1.5s; }
+@keyframes windFlow {
+  0% { transform: translateX(-40px); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateX(40px); opacity: 0; }
+}
+
+/* SVG-анімації: сонце */
+.sun-group {
+  transform-origin: 50px 50px;
+  animation: sunRotate 10s linear infinite;
+}
+.sun-core {
+  transform-origin: 50px 50px;
+  animation: sunPulse 2s ease-in-out infinite alternate;
+}
+@keyframes sunRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes sunPulse {
+  from { transform: scale(0.95); }
+  to { transform: scale(1.05); }
+}
 
 :root {
   /* Шкала швидкості вітру (км/год) */

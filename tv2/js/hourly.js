@@ -5,6 +5,7 @@ import {
   buildRangeBarHTML,
   formatTime,
 } from "./config.js";
+import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 
 export function renderHourly(data) {
   const hourly = data.hourly;
@@ -60,6 +61,10 @@ export function renderHourly(data) {
       "uv"
     );
 
+    const precipBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getRainSvg()}</div><div class="viz-wrap__content">${precipRangeHtml}</div></div>`;
+    const windBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getWindSvg()}</div><div class="viz-wrap__content">${windRangeHtml}</div></div>`;
+    const uvBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getSunSvg()}</div><div class="viz-wrap__content">${uvRangeHtml}</div></div>`;
+
     items.push(`
       <div class="hourly-item">
         <span class="hourly-time">${formatTime(hourly.time[i])}</span>
@@ -69,17 +74,17 @@ export function renderHourly(data) {
         <span class="hourly-temp">${Math.round(hourly.temperature_2m[i])}°
           <span class="hourly-temp-feels">${Math.round(hourly.apparent_temperature[i])}°</span>
         </span>
-        ${precipRangeHtml}
+        ${precipBlock}
         <span class="hourly-extra ${!maxPrecipProbability ? "hidden" : ""}">
           ${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%
         </span>
-        ${windRangeHtml}
+        ${windBlock}
         <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
-        ${uvRangeHtml}
+        ${uvBlock}
         <span class="hourly-extra ${!maxUv ? "hidden" : ""}">УФ індекс: ${hourly.uv_index[i]}</span>
       </div>
     `);
   }
 
-  document.getElementById("hourly-card").innerHTML = `<div class="hourly">${items.join("")}</div>`;
+  return `<div class="hourly">${items.join("")}</div>`;
 }

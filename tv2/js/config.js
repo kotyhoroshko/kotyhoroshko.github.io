@@ -67,11 +67,26 @@ export function getGlobalMinMax(...seriesArrays) {
   return { min, max };
 }
 
+const TEMP_COLOR_STOPS = [
+  { temp: -26, r: 0, g: 0, b: 255 },   // #0000ff і нижче
+  { temp: 0, r: 126, g: 127, b: 127 }, // #7e7f7f
+  { temp: 13, r: 0, g: 255, b: 0 },   // #00ff00
+  { temp: 26, r: 255, g: 255, b: 0 }, // #ffff00
+  { temp: 40, r: 255, g: 0, b: 0 },   // #ff0000 і вище
+];
+
 export function getTemperatureColor(temp) {
-  const r = Math.round(255/60 * (temp + 20));
-  const g = Math.round(255 - temp);
-  const b = Math.round(255 - 255/60 * (temp + 20));
-  return `rgba(${r},${g},${b},1)`;
+  const t = Math.max(-26, Math.min(40, temp));
+  let i = 0;
+  while (i < TEMP_COLOR_STOPS.length - 1 && TEMP_COLOR_STOPS[i + 1].temp < t) i++;
+  const a = TEMP_COLOR_STOPS[i];
+  const b = TEMP_COLOR_STOPS[i + 1];
+  const range = b.temp - a.temp || 1;
+  const f = (t - a.temp) / range;
+  const r = Math.round(a.r + (b.r - a.r) * f);
+  const g = Math.round(a.g + (b.g - a.g) * f);
+  const bl = Math.round(a.b + (b.b - a.b) * f);
+  return `rgba(${r},${g},${bl},1)`;
 }
 
 export function getWindColor(wind, opacity = 1) {
