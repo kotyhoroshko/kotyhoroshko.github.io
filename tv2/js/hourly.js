@@ -23,11 +23,14 @@ export function renderHourly(data) {
   const maxPrecipProbability = Math.max(...hourly.precipitation_probability);
   const maxUv = Math.max(...hourly.uv_index);
 
+  const daily = data.daily || {};
   const items = [];
   const len = hourly.time.length;
   for (let i = 0; i < len; i++) {
+    const sunrise = daily.sunrise[0] || "07:00";
+    const sunset = daily.sunset[0] || "20:00";
     const hc = weatherConfig[hourly.weather_code[i]] || { label: "—" };
-    const himgPath = getIconPath(hc, hourly.time[i], hourly.weather_code[i]);
+    const himgPath = getIconPath(hc, hourly.time[i], hourly.weather_code[i], { sunrise, sunset });
 
     const windRangeHtml = buildRangeBarHTML(
       hourly.wind_speed_10m[i],

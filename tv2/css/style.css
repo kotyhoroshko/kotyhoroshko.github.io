@@ -396,6 +396,12 @@ body {
 }
 
 /* SVG-анімації: сонце */
+.svg-bg.svg-bg-sun {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
 .sun-group {
   transform-origin: 50px 50px;
   animation: sunRotate 10s linear infinite;

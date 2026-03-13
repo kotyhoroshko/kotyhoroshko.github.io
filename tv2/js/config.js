@@ -3,9 +3,21 @@
 export const iconSource = "accu";
 export const OW_BASE = "https://openweathermap.org/img/wn";
 
-export function isDaytime(dateOrIso) {
-  const d = dateOrIso ? new Date(dateOrIso) : new Date();
-  const hour = d.getHours();
+/**
+ * Визначає, чи є момент часу днем (між сходом і заходом сонця).
+ * @param {string|Date} dateOrIso - час (ISO рядок або Date)
+ * @param {string} [sunriseIso] - час сходу (ISO), з daily.sunrise
+ * @param {string} [sunsetIso] - час заходу (ISO), з daily.sunset
+ * @returns {boolean} true якщо день (між sunrise і sunset), інакше ніч
+ */
+export function isDaytime(dateOrIso, sunriseIso, sunsetIso) {
+  const t = dateOrIso ? new Date(dateOrIso).getTime() : Date.now();
+  if (sunriseIso && sunsetIso) {
+    const rise = new Date(sunriseIso).getTime();
+    const set = new Date(sunsetIso).getTime();
+    return t >= rise && t < set;
+  }
+  const hour = new Date(t).getHours();
   return hour >= 7 && hour < 20;
 }
 
@@ -43,10 +55,16 @@ export const weatherConfig = {
 
 const WMO_KNOWN_CODES = new Set([0,1,2,3,45,48,51,53,55,56,57,61,63,65,66,67,71,73,75,77,80,81,82,85,86,95,96,99]);
 
-export function getIconPath(config, dateOrIso, weatherCode) {
+/**
+ * @param {object} options - опційно { isDay?: boolean } або { sunrise: string, sunset: string }
+ */
+export function getIconPath(config, dateOrIso, weatherCode, options = {}) {
   if (!config) return "";
+  const day = typeof options.isDay === "boolean"
+    ? options.isDay
+    : isDaytime(dateOrIso, options.sunrise, options.sunset);
   if (iconSource === "openweather-cdn" && config.ow) {
-    const suffix = isDaytime(dateOrIso) ? "d" : "n";
+    const suffix = day ? "d" : "n";
     return `${OW_BASE}/${config.ow}${suffix}@4x.png`;
   }
   if (iconSource === "wmo" && weatherCode != null) {
@@ -54,7 +72,7 @@ export function getIconPath(config, dateOrIso, weatherCode) {
     return `img/wmo/WeatherSymbol_WMO_PresentWeather_ww_${code}.svg`;
   }
   if (iconSource === "accu") {
-    const img = isDaytime(dateOrIso) ? (config.img || config.imgNight) : (config.imgNight || config.img);
+    const img = day ? (config.img || config.imgNight) : (config.imgNight || config.img);
     return img ? `img/accu/${img}.png` : "";
   }
   return "";

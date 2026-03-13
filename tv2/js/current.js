@@ -14,7 +14,8 @@ export function renderCurrent(data) {
     color: "#000",
   };
 
-  const imgPath = getIconPath(config, curr.time, code);
+  const daily = data.daily || {};
+  const imgPath = getIconPath(config, curr.time, code, !!curr.is_day);
 
   const currentDetails = `
     <div class="details">

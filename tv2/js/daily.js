@@ -26,8 +26,7 @@ export function renderDaily(data) {
   const len = daily.time.length;
   for (let i = 0; i < len; i++) {
     const dc = weatherConfig[daily.weather_code[i]] || { label: "—" };
-    const dailyNoon = daily.time[i] + "T12:00:00";
-    const dimgPath = getIconPath(dc, dailyNoon, daily.weather_code[i]);
+    const dimgPath = getIconPath(dc, daily.time[i] + "T12:00:00", daily.weather_code[i]);
 
     // daily.temperature_2m_min[i] = i*5;
     // daily.temperature_2m_max[i] = i*5 + 10;
