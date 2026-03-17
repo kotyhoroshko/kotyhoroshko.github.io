@@ -9,9 +9,9 @@ import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 
 export function renderDaily(data) {
   const daily = data.daily;
-
-  const maxDailyPrecip = Math.max(...daily.precipitation_sum, 0.001);
-  const maxDailyUv = Math.max(...daily.uv_index_max, 0.001);
+  let isWeekUvEnough = Math.max(...daily.uv_index_max, 0) < 5;
+  let isWeekPrecipEnough = Math.max(...(daily.precipitation_sum || []), 0) < 0.5;
+  // isWeekPrecipEnough = false;
 
   const { min: dailyTempMin, max: dailyTempMax } = getGlobalMinMax(
     daily.temperature_2m_min,
@@ -44,25 +44,25 @@ export function renderDaily(data) {
       dailyWindMax,
       "wind"
     );
-    // daily.precipitation_sum[i] = i*5;
+    // daily.precipitation_sum[i] = i*5
     const dailyPrecipRangeHtml = buildRangeBarHTML(
       0,
       daily.precipitation_sum[i],
       0,
-      maxDailyPrecip,
+      30, //maxDailyPrecipRange
       "precip-sum"
     );
     const dailyUvRangeHtml = buildRangeBarHTML(
       0,
       daily.uv_index_max[i],
       0,
-      maxDailyUv,
+      10, // maxDailyUvRange
       "uv-daily"
     );
 
-    const precipBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getRainSvg()}</div><div class="viz-wrap__content">${dailyPrecipRangeHtml}</div></div>`;
+    const precipBlock = `<div class="viz-wrap ${isWeekPrecipEnough ? "hidden" : ""}"><div class="viz-wrap__bg">${getRainSvg()}</div><div class="viz-wrap__content">${dailyPrecipRangeHtml}</div></div>`;
     const windBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getWindSvg()}</div><div class="viz-wrap__content">${dailyWindRangeHtml}</div></div>`;
-    const uvBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getSunSvg()}</div><div class="viz-wrap__content">${dailyUvRangeHtml}</div></div>`;
+    const uvBlock = `<div class="viz-wrap ${isWeekUvEnough ? "hidden" : ""}"><div class="viz-wrap__bg">${getSunSvg()}</div><div class="viz-wrap__content">${dailyUvRangeHtml}</div></div>`;
 
     items.push(`
       <div class="daily-item">
@@ -72,11 +72,11 @@ export function renderDaily(data) {
         ${dailyTempRangeHtml}
         <span class="daily-temp">${Math.round(daily.temperature_2m_max[i])}° / ${Math.round(daily.temperature_2m_min[i])}°</span>
         ${precipBlock}
-        <span class="daily-precip">${daily.precipitation_sum[i]} mm / ${daily.precipitation_hours[i]} год</span>
+        <span class="daily-precip ${isWeekPrecipEnough ? "hidden" : ""}">${daily.precipitation_sum[i]}мм / ${daily.precipitation_hours[i]}год</span>
         ${windBlock}
         <span class="daily-extra" title="Вітер км/год">${daily.wind_speed_10m_max[i]} / ${daily.wind_gusts_10m_max[i]}</span>
         ${uvBlock}
-        <span class="daily-extra">УФ ${daily.uv_index_max[i]}</span>
+        <span class="daily-extra ${isWeekUvEnough ? "hidden" : ""}">УФ ${daily.uv_index_max[i]}</span>
       </div>
     `);
   }

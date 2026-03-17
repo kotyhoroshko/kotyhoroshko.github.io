@@ -282,6 +282,10 @@ body {
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .hourly-range {
   width: 100%;
   display: flex;
@@ -404,7 +408,7 @@ body {
 }
 .sun-group {
   transform-origin: 50px 50px;
-  animation: sunRotate 10s linear infinite;
+  animation: sunRotate 40s linear infinite;
 }
 .sun-core {
   transform-origin: 50px 50px;
