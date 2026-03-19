@@ -47,7 +47,7 @@ export function renderHourly(data) {
       tempMax,
       "temp"
     );
-
+    // hourly.precipitation[i] = i;
     const precipRangeHtml = buildRangeBarHTML(
       hourly.precipitation[i],
       hourly.precipitation_probability[i],
@@ -55,7 +55,7 @@ export function renderHourly(data) {
       10,
       "precip"
     );
-
+    // hourly.uv_index[i] = i*1.5;
     const uvRangeHtml = buildRangeBarHTML(
       hourly.uv_index[i],
       0,

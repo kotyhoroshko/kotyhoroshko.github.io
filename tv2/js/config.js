@@ -142,22 +142,22 @@ export function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraCla
         bottom: 0%;
         height: 100%;
         background:
-            linear-gradient(to top,
-                ${getWindColor(globalMin)} 0%,
-                ${getWindColor(low)} ${startPercent}%,
-                ${getWindColor(low, .66)} ${startPercent}%,
-                ${getWindColor(high, 0.066)} ${endPercent}%,
-                transparent ${endPercent + 1}%,
-                transparent
-            )
+          linear-gradient(to top,
+            ${getWindColor(globalMin)} 0%,
+            ${getWindColor(low)} ${startPercent}%,
+            ${getWindColor(low, .66)} ${startPercent}%,
+            ${getWindColor(high, 0.066)} ${endPercent}%,
+            transparent ${endPercent + 1}%,
+            transparent
+          )
         `;
   } else if (extraClass === 'precip') {
     styles = `
             bottom: 0%;
             height: ${value1*10}%;
             background: linear-gradient(to top,
-            hsl(192.67deg 100% 49.22% / ${value2}),
-            hsl(${value1*9+190}deg 100% 45.88% / ${value2})
+            rgba(0, 122, 255, ${value2/10}),
+            hsl(${value1*10 +230}deg 100% ${50-value1*2}% / ${value2})
           );
         `;
   } else if (extraClass === 'uv') {
@@ -165,19 +165,7 @@ export function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraCla
             bottom: 0%;
             height: ${value1*10}%;
             background: linear-gradient(to top,
-              hsl(260 66% 45% / 1), hsl(${260+value1*10} 66% 45% / 1));
-        `;
-  } else if (extraClass === 'precip-sum') {
-    styles = `
-            bottom: 0%;
-            height: ${deltaPercent}%;
-            background: linear-gradient(to top, hsl(192 100% 49% / 0.9), hsl(200 100% 45% / 0.9));
-        `;
-  } else if (extraClass === 'uv-daily') {
-    styles = `
-            bottom: 0%;
-            height: ${deltaPercent}%;
-            background: linear-gradient(to top, hsl(260 66% 45%), hsl(280 66% 45%));
+              rgb(255 255 0), rgb(255 ${255-value1*25.5} 0));
         `;
   } else {
     styles = '';

@@ -240,9 +240,10 @@ body {
 
 .daily-date {
   color: var(--text-main);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
   min-width: 52px;
+  white-space: nowrap;
 }
 
 .hourly-icon,
