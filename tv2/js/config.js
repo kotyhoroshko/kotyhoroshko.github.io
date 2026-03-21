@@ -108,7 +108,7 @@ export function getTemperatureColor(temp) {
 }
 
 export function getWindColor(wind, opacity = 1) {
-  let color = ((1.4 * wind) + 200);
+  let color = ((2 * wind) + 200);
   color = Math.round(color);
   return `hsl(${color} 100% ${80 - wind/4}% / ${opacity})`;
 }
@@ -123,7 +123,7 @@ export function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraCla
   const deltaPercent = Math.round(((high - low) / range) * 100);
   let styles;
 
-  if ((extraClass === 'precip' || extraClass === 'uv') && globalMin === 0) {
+  if ((extraClass === 'precip' || extraClass === 'uv') && !globalMin) {
     return '';
   }
 
@@ -154,16 +154,16 @@ export function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraCla
   } else if (extraClass === 'precip') {
     styles = `
             bottom: 0%;
-            height: ${value1*10}%;
+            height: ${value1*10 < 100 ? value1*10 : 100}%;
             background: linear-gradient(to top,
-            rgba(0, 122, 255, ${value2/10}),
-            hsl(${value1*10 +230}deg 100% ${50-value1*2}% / ${value2})
+            rgba(0, 122, 255, ${value2/100}),
+            hsl(${value1*10 +230}deg 100% 50% / ${value2})
           );
         `;
   } else if (extraClass === 'uv') {
     styles = `
             bottom: 0%;
-            height: ${value1*10}%;
+            height: ${value1*10 < 100 ? value1*10 : 100}%;
             background: linear-gradient(to top,
               rgb(255 255 0), rgb(255 ${255-value1*25.5} 0));
         `;

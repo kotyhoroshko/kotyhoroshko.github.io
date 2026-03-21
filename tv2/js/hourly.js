@@ -47,26 +47,35 @@ export function renderHourly(data) {
       tempMax,
       "temp"
     );
-    // hourly.precipitation[i] = i;
+    // hourly.precipitation[i] = i*1.5;
+    // hourly.precipitation_probability[i] = i*12.5;
     const precipRangeHtml = buildRangeBarHTML(
       hourly.precipitation[i],
       hourly.precipitation_probability[i],
-      maxPrecipProbability,
+      maxPrecipProbability > 30,
       10,
       "precip"
     );
-    // hourly.uv_index[i] = i*1.5;
     const uvRangeHtml = buildRangeBarHTML(
       hourly.uv_index[i],
       0,
-      maxUv,
+      maxUv > 5,
       10,
       "uv"
     );
 
-    const precipBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getRainSvg()}</div><div class="viz-wrap__content">${precipRangeHtml}</div></div>`;
-    const windBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getWindSvg()}</div><div class="viz-wrap__content">${windRangeHtml}</div></div>`;
-    const uvBlock = `<div class="viz-wrap"><div class="viz-wrap__bg">${getSunSvg()}</div><div class="viz-wrap__content">${uvRangeHtml}</div></div>`;
+    const precipBlock = maxPrecipProbability > 20 ? `<div class="viz-wrap">
+      <div class="viz-wrap__bg">${getRainSvg()}</div>
+      <div class="viz-wrap__content">${precipRangeHtml}</div>
+      </div>` : "";
+    const windBlock = `<div class="viz-wrap">
+      <div class="viz-wrap__bg">${getWindSvg()}</div>
+      <div class="viz-wrap__content">${windRangeHtml}</div>
+      </div>`;
+    const uvBlock = maxUv > 5 ? `<div class="viz-wrap">
+      <div class="viz-wrap__bg">${getSunSvg()}</div>
+      <div class="viz-wrap__content">${uvRangeHtml}</div>
+      </div>` : "";
 
     items.push(`
       <div class="hourly-item">

@@ -10,10 +10,9 @@ import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 export function renderDaily(data) {
   const daily = data.daily;
   let isWeekUvEnough = Math.max(...daily.uv_index_max, 0) > 5;
-  // isWeekUvEnough = true;
+
   let isWeekPrecipEnough =
     Math.max(...(daily.precipitation_sum || []), 0) > 0.5;
-  // isWeekPrecipEnough = true;
 
   const { min: dailyTempMin, max: dailyTempMax } = getGlobalMinMax(
     daily.temperature_2m_min,
@@ -34,8 +33,6 @@ export function renderDaily(data) {
       daily.weather_code[i],
     );
 
-    // daily.temperature_2m_min[i] = i*5;
-    // daily.temperature_2m_max[i] = i*5 + 10;
     const dailyTempRangeHtml = buildRangeBarHTML(
       daily.temperature_2m_min[i],
       daily.temperature_2m_max[i],
@@ -50,19 +47,19 @@ export function renderDaily(data) {
       dailyWindMax,
       "wind",
     );
-    // daily.precipitation_sum[i] = i * 5;
+
     const dailyPrecipRangeHtml = buildRangeBarHTML(
       daily.precipitation_sum[i] / 3, // scale range from 0 to 30
-      10, // range bar to be always visible 100% of range
-      1,
+      100, // range bar to be always visible 100% of range
+      isWeekPrecipEnough,
       30, //maxDailyPrecipRange
       "precip",
     );
-    // daily.uv_index_max[i] = i*1.5;
+
     const dailyUvRangeHtml = buildRangeBarHTML(
       daily.uv_index_max[i],
       0,
-      1,
+      isWeekUvEnough,
       10, // maxDailyUvRange
       "uv",
     );
