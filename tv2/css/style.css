@@ -25,8 +25,7 @@ body {
   color: var(--text-main);
   display: flex;
   font-family:
-    "Inter",
-    "SF Pro Display",
+    "Montserrat Alternates",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -51,6 +50,7 @@ body {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  min-height: min(650px, 100dvh);
   padding: 20px 12px;
   text-align: center;
 }
@@ -94,6 +94,7 @@ body {
 
 .location {
   color: var(--text-main);
+  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -107,6 +108,18 @@ body {
   color: var(--text-secondary);
   font-size: 0.875rem;
   width: 100%;
+}
+
+.sun-times {
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.sun-times__sep {
+  margin: 0 0.35em;
+  opacity: 0.7;
 }
 
 .main-icon {
@@ -126,6 +139,7 @@ body {
 
 .current-temp, .feels-like {
   color: var(--text-main);
+  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
   font-size: 3.25rem;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -199,12 +213,14 @@ body {
 }
 
 .hourly-time {
+  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
   font-size: 0.75rem;
   color: var(--text-secondary);
 }
 
 .hourly-temp {
   color: var(--text-main);
+  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
   font-size: .875rem;
   font-weight: 700;
   margin-top: .2rem;
@@ -212,6 +228,7 @@ body {
 
 .hourly-temp-feels {
   color: var(--text-secondary);
+  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
   margin-left: 4px;
   font-size: .875rem;
   font-weight: 700;
@@ -240,6 +257,7 @@ body {
 
 .daily-date {
   color: var(--text-main);
+  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   min-width: 52px;
@@ -256,6 +274,7 @@ body {
 
 .daily-temp {
   color: var(--text-main);
+  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
 }

@@ -108,9 +108,9 @@ export function getTemperatureColor(temp) {
 }
 
 export function getWindColor(wind, opacity = 1) {
-  let color = ((2 * wind) + 200);
+  let color = ((wind*1.33) + 200);
   color = Math.round(color);
-  return `hsl(${color} 100% ${80 - wind/4}% / ${opacity})`;
+  return `hsl(${color} 100% 50% / ${opacity})`;
 }
 
 export function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraClass = "") {
@@ -146,9 +146,8 @@ export function buildRangeBarHTML(value1, value2, globalMin, globalMax, extraCla
             ${getWindColor(globalMin)} 0%,
             ${getWindColor(low)} ${startPercent}%,
             ${getWindColor(low, .66)} ${startPercent}%,
-            ${getWindColor(high, 0.066)} ${endPercent}%,
-            transparent ${endPercent + 1}%,
-            transparent
+            ${getWindColor(high, 0.33)} ${endPercent}%,
+            transparent ${endPercent + 1}%
           )
         `;
   } else if (extraClass === 'precip') {

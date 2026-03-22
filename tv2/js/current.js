@@ -15,7 +15,18 @@ export function renderCurrent(data) {
   };
 
   const daily = data.daily || {};
-  const imgPath = getIconPath(config, curr.time, code, !!curr.is_day);
+  const sunrise0 = daily.sunrise?.[0];
+  const sunset0 = daily.sunset?.[0];
+  const iconOpts =
+    typeof curr.is_day === "number"
+      ? { isDay: curr.is_day === 1 }
+      : { sunrise: sunrise0, sunset: sunset0 };
+  const imgPath = getIconPath(config, curr.time, code, iconOpts);
+
+  const sunTimesHtml =
+    sunrise0 && sunset0
+      ? `<div class="sun-times"><span>Схід ${formatTime(sunrise0)}</span><span class="sun-times__sep">·</span><span>Захід ${formatTime(sunset0)}</span></div>`
+      : "";
 
   const currentDetails = `
     <div class="details">
@@ -31,6 +42,7 @@ export function renderCurrent(data) {
   return `
     <div class="location">Королево</div>
     <div class="date">${new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" })}</div>
+    ${sunTimesHtml}
     <div class="main-info">
       <img src="${imgPath}" alt="${config.label}" class="main-icon" />
       <div class="temp-container">
