@@ -72,19 +72,20 @@ body {
   width: 100%;
   overflow-x: scroll;
   padding: 20px 0;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .weather-card--daily {
   width: 100%;
   overflow-x: scroll;
   padding: 20px 0;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
-.weather-card--daily::-webkit-scrollbar, .weather-card--forecast::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+.weather-card--daily::-webkit-scrollbar,
+.weather-card--forecast::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 .main-info {
@@ -130,14 +131,15 @@ body {
   width: 90%;
 }
 
-.temp-container  {
+.temp-container {
   margin-bottom: 4px;
   display: flex;
   justify-content: center;
   align-items: baseline;
 }
 
-.current-temp, .feels-like {
+.current-temp,
+.feels-like {
   color: var(--text-main);
   font-family: "Montserrat", "Montserrat Alternates", sans-serif;
   font-size: 3.25rem;
@@ -202,7 +204,8 @@ body {
   padding-inline: 0;
 }
 
-.hourly-item, .daily-item {
+.hourly-item,
+.daily-item {
   align-items: center;
   border-radius: var(--radius-sm);
   display: flex;
@@ -210,6 +213,7 @@ body {
   padding: 12px 4px;
   width: 100%;
   position: relative;
+  justify-content: stretch;
 }
 
 .hourly-time {
@@ -221,16 +225,16 @@ body {
 .hourly-temp {
   color: var(--text-main);
   font-family: "Montserrat", "Montserrat Alternates", sans-serif;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 700;
-  margin-top: .2rem;
+  margin-top: 0.2rem;
 }
 
 .hourly-temp-feels {
   color: var(--text-secondary);
   font-family: "Montserrat", "Montserrat Alternates", sans-serif;
   margin-left: 4px;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 
@@ -249,10 +253,9 @@ body {
 .daily {
   display: grid;
   gap: 4px;
-  grid-template-columns: repeat( 7, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   width: 100%;
   padding-inline: 0;
-
 }
 
 .daily-date {
@@ -295,13 +298,11 @@ body {
 .daily-extra {
   color: var(--text-secondary);
   font-size: 0.75rem;
-  margin-block: .2rem;
+  margin-block: 0.2rem;
 }
 
-.hourly-extra.hidden {
-  display: none;
-}
-
+.hourly-extra.hidden,
+.viz-wrap.hidden,
 .hidden {
   display: none;
 }
@@ -311,13 +312,15 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 1.5rem;
+  flex-grow: 1;
 }
 
 .hourly-range-track {
   position: relative;
   width: 100%;
-  height: 6rem;
-  border-block: 1px solid rgba(255,255,255, .1);
+  height: 100%;
+  min-height: 6rem;
+  border-block: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
 }
 
@@ -359,6 +362,12 @@ body {
   position: relative;
   width: 100%;
   margin-top: 1.5rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 .viz-wrap__bg {
   position: absolute;
@@ -377,8 +386,10 @@ body {
   opacity: 0.066;
 }
 .viz-wrap__content {
+  display: flex;
   position: relative;
   z-index: 1;
+  height: 100%;
 }
 .viz-wrap .hourly-range {
   margin-top: 0;
@@ -390,14 +401,30 @@ body {
   animation: rainDrop 2s linear infinite;
   opacity: 0;
 }
-.drop1 { animation-delay: 0s; }
-.drop2 { animation-delay: 0.66s; }
-.drop3 { animation-delay: 1.33s; }
+.drop1 {
+  animation-delay: 0s;
+}
+.drop2 {
+  animation-delay: 0.66s;
+}
+.drop3 {
+  animation-delay: 1.33s;
+}
 @keyframes rainDrop {
-  0% { transform: translateY(-80px); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateY(80px); opacity: 0; }
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
 }
 
 /* SVG-анімації: вітер */
@@ -408,15 +435,37 @@ body {
   animation: windFlow 2s linear infinite;
   opacity: 0;
 }
-.w1 { stroke: #a0c8d7; animation-delay: 0s; }
-.w2 { stroke: #a0c8d7; animation-delay: 0.5s; }
-.w3 { stroke: #77a4bd; animation-delay: 1s; }
-.w4 { stroke: #a0c8d7; animation-delay: 1.5s; }
+.w1 {
+  stroke: #a0c8d7;
+  animation-delay: 0s;
+}
+.w2 {
+  stroke: #a0c8d7;
+  animation-delay: 0.5s;
+}
+.w3 {
+  stroke: #77a4bd;
+  animation-delay: 1s;
+}
+.w4 {
+  stroke: #a0c8d7;
+  animation-delay: 1.5s;
+}
 @keyframes windFlow {
-  0% { transform: translateX(-40px); opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { transform: translateX(40px); opacity: 0; }
+  0% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
 }
 
 /* SVG-анімації: сонце */
@@ -435,23 +484,31 @@ body {
   animation: sunPulse 2s ease-in-out infinite alternate;
 }
 @keyframes sunRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 @keyframes sunPulse {
-  from { transform: scale(0.95); }
-  to { transform: scale(1.05); }
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }
 
 :root {
   /* Шкала швидкості вітру (км/год) */
-  --wind-calm: #E0F2F1;     /* Штиль: 0–5 км/год */
-  --wind-light: #B2DFDB;    /* Тихий вітер: 6–11 км/год */
-  --wind-breeze: #4DB6AC;   /* Легкий бриз: 12–28 км/год */
-  --wind-moderate: #AFB42B; /* Помірний: 29–38 км/год */
-  --wind-fresh: #FBC02D;    /* Свіжий: 39–49 км/год */
-  --wind-strong: #F57C00;   /* Сильний: 50–61 км/год */
-  --wind-gale: #D32F2F;     /* Шторм: 62–88 км/год */
-  --wind-storm: #C2185B;    /* Сильний шторм: 89–117 км/год */
-  --wind-extreme: #7B1FA2;  /* Ураган: понад 118 км/год */
+  --wind-calm: #e0f2f1; /* Штиль: 0–5 км/год */
+  --wind-light: #b2dfdb; /* Тихий вітер: 6–11 км/год */
+  --wind-breeze: #4db6ac; /* Легкий бриз: 12–28 км/год */
+  --wind-moderate: #afb42b; /* Помірний: 29–38 км/год */
+  --wind-fresh: #fbc02d; /* Свіжий: 39–49 км/год */
+  --wind-strong: #f57c00; /* Сильний: 50–61 км/год */
+  --wind-gale: #d32f2f; /* Шторм: 62–88 км/год */
+  --wind-storm: #c2185b; /* Сильний шторм: 89–117 км/год */
+  --wind-extreme: #7b1fa2; /* Ураган: понад 118 км/год */
 }
