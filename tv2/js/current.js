@@ -5,7 +5,7 @@ function dirLabel(deg) {
   return dirs[Math.round(deg / 45) % 8];
 }
 
-export function renderCurrent(data) {
+export function renderCurrent(data, locationName = LOCATION.name) {
   const curr = data.current;
   const code = curr.weather_code;
   const config = weatherConfig[code] || {
@@ -29,7 +29,7 @@ export function renderCurrent(data) {
       : "";
 
   return `
-    <div class="location">${LOCATION.name}</div>
+    <div class="location">${locationName}</div>
     <div class="date">${new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" })}</div>
     ${sunTimesHtml}
     <div class="main-info">
