@@ -8,6 +8,16 @@
   --radius-sm: 12px;
   --text-main: #f0f6fc;
   --text-secondary: #8b949e;
+
+  --wind-calm: #e0f2f1;
+  --wind-light: #b2dfdb;
+  --wind-breeze: #4db6ac;
+  --wind-moderate: #afb42b;
+  --wind-fresh: #fbc02d;
+  --wind-strong: #f57c00;
+  --wind-gale: #d32f2f;
+  --wind-storm: #c2185b;
+  --wind-extreme: #7b1fa2;
 }
 
 * {
@@ -70,18 +80,16 @@ body {
   flex-grow: 2;
   flex-basis: 66%;
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 20px 0;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
 .weather-card--daily {
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 20px 0;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 .weather-card--daily::-webkit-scrollbar,
 .weather-card--forecast::-webkit-scrollbar {
@@ -238,7 +246,8 @@ body {
   font-weight: 700;
 }
 
-.hourly-desc {
+.hourly-desc,
+.daily-desc {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -281,18 +290,6 @@ body {
   font-family: "Montserrat", "Montserrat Alternates", sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
-}
-
-.daily-desc {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-  font-size: 0.8125rem;
-  margin-top: -8px;
-  width: 100%;
-  line-height: 1.1;
-  min-height: 3.3em;
 }
 
 .hourly-extra,
@@ -487,15 +484,3 @@ body {
   }
 }
 
-:root {
-  /* Шкала швидкості вітру (км/год) */
-  --wind-calm: #e0f2f1; /* Штиль: 0–5 км/год */
-  --wind-light: #b2dfdb; /* Тихий вітер: 6–11 км/год */
-  --wind-breeze: #4db6ac; /* Легкий бриз: 12–28 км/год */
-  --wind-moderate: #afb42b; /* Помірний: 29–38 км/год */
-  --wind-fresh: #fbc02d; /* Свіжий: 39–49 км/год */
-  --wind-strong: #f57c00; /* Сильний: 50–61 км/год */
-  --wind-gale: #d32f2f; /* Шторм: 62–88 км/год */
-  --wind-storm: #c2185b; /* Сильний шторм: 89–117 км/год */
-  --wind-extreme: #7b1fa2; /* Ураган: понад 118 км/год */
-}

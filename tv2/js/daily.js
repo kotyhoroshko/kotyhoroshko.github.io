@@ -1,96 +1,46 @@
 import {
-  weatherConfig,
-  getIconPath,
-  getGlobalMinMax,
-  buildRangeBarHTML,
-  formatDate,
+  weatherConfig, getIconPath, getGlobalMinMax,
+  buildTempBar, buildWindBar, buildPrecipBar, buildUvBar,
+  buildVizBlock, formatDate,
 } from "./config.js";
 import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 
+const UV_THRESHOLD = 5;
+const PRECIP_THRESHOLD_MM = 0.5;
+const DAILY_MAX_PRECIP_MM = 30;
+
 export function renderDaily(data) {
-  const daily = data.daily;
-  let isWeekUvEnough = Math.max(...daily.uv_index_max, 0) > 5;
+  const { daily } = data;
+  const showUv = Math.max(...daily.uv_index_max, 0) > UV_THRESHOLD;
+  const showPrecip = Math.max(...(daily.precipitation_sum || []), 0) > PRECIP_THRESHOLD_MM;
 
-  let isWeekPrecipEnough =
-    Math.max(...(daily.precipitation_sum || []), 0) > 0.5;
+  const { min: tempMin, max: tempMax } = getGlobalMinMax(daily.temperature_2m_min, daily.temperature_2m_max);
+  const { min: windMin, max: windMax } = getGlobalMinMax(daily.wind_speed_10m_max, daily.wind_gusts_10m_max);
 
-  const { min: dailyTempMin, max: dailyTempMax } = getGlobalMinMax(
-    daily.temperature_2m_min,
-    daily.temperature_2m_max,
-  );
-  const { min: dailyWindMin, max: dailyWindMax } = getGlobalMinMax(
-    daily.wind_speed_10m_max,
-    daily.wind_gusts_10m_max,
-  );
+  const items = daily.time.map((time, i) => {
+    const config = weatherConfig[daily.weather_code[i]] || { label: "—" };
+    const iconPath = getIconPath(config, time + "T12:00:00", daily.weather_code[i]);
 
-  const items = [];
-  const len = daily.time.length;
-  for (let i = 0; i < len; i++) {
-    const dc = weatherConfig[daily.weather_code[i]] || { label: "—" };
-    const dimgPath = getIconPath(
-      dc,
-      daily.time[i] + "T12:00:00",
-      daily.weather_code[i],
-    );
+    const tempBar = buildTempBar(daily.temperature_2m_min[i], daily.temperature_2m_max[i], tempMin, tempMax);
+    const windBar = buildWindBar(daily.wind_speed_10m_max[i], daily.wind_gusts_10m_max[i], windMin, windMax);
+    const precipBar = showPrecip ? buildPrecipBar(daily.precipitation_sum[i], 100, DAILY_MAX_PRECIP_MM) : "";
+    const uvBar = showUv ? buildUvBar(daily.uv_index_max[i]) : "";
 
-    const dailyTempRangeHtml = buildRangeBarHTML(
-      daily.temperature_2m_min[i],
-      daily.temperature_2m_max[i],
-      dailyTempMin,
-      dailyTempMax,
-      "temp",
-    );
-    const dailyWindRangeHtml = buildRangeBarHTML(
-      daily.wind_speed_10m_max[i],
-      daily.wind_gusts_10m_max[i],
-      dailyWindMin,
-      dailyWindMax,
-      "wind",
-    );
-
-    const dailyPrecipRangeHtml = buildRangeBarHTML(
-      daily.precipitation_sum[i] / 3, // scale range from 0 to 30
-      100, // range bar to be always visible 100% of range
-      isWeekPrecipEnough,
-      30, //maxDailyPrecipRange
-      "precip",
-    );
-
-    const dailyUvRangeHtml = buildRangeBarHTML(
-      daily.uv_index_max[i],
-      0,
-      isWeekUvEnough,
-      10, // maxDailyUvRange
-      "uv",
-    );
-
-    const precipBlock = `
-      <div class="viz-wrap ${isWeekPrecipEnough ? "" : "hidden"}">
-        <div class="viz-wrap__bg">${getRainSvg(daily.precipitation_sum[i], 'daily')}</div>
-        <div class="viz-wrap__content">${dailyPrecipRangeHtml}</div>
-      </div>`;
-    const windBlock = `<div class="viz-wrap">
-        <div class="viz-wrap__bg">${getWindSvg(daily.wind_speed_10m_max[i], daily.wind_gusts_10m_max[i])}</div>
-        <div class="viz-wrap__content">${dailyWindRangeHtml}</div>
-      </div>`;
-    const uvBlock = `<div class="viz-wrap ${isWeekUvEnough ? "" : "hidden"}"><div class="viz-wrap__bg">${getSunSvg()}</div><div class="viz-wrap__content">${dailyUvRangeHtml}</div></div>`;
-
-    items.push(`
+    return `
       <div class="daily-item">
-        <span class="daily-date">${formatDate(daily.time[i])}</span>
-        ${dimgPath ? `<img src="${dimgPath}" alt="" class="daily-icon" />` : ""}
-        <span class="daily-desc">${dc.label || "—"}</span>
-        ${dailyTempRangeHtml}
+        <span class="daily-date">${formatDate(time)}</span>
+        ${iconPath ? `<img src="${iconPath}" alt="" class="daily-icon" />` : ""}
+        <span class="daily-desc">${config.label || "—"}</span>
+        ${tempBar}
         <span class="daily-temp">${Math.round(daily.temperature_2m_max[i])}° / ${Math.round(daily.temperature_2m_min[i])}°</span>
-        ${precipBlock}
-        <span class="daily-precip ${isWeekPrecipEnough ? "" : "hidden"}">${daily.precipitation_sum[i]}мм / ${daily.precipitation_hours[i]}год</span>
-        ${windBlock}
+        ${showPrecip ? buildVizBlock(getRainSvg(daily.precipitation_sum[i], "daily"), precipBar) : ""}
+        ${showPrecip ? `<span class="daily-precip">${daily.precipitation_sum[i]}мм / ${daily.precipitation_hours[i]}год</span>` : ""}
+        ${buildVizBlock(getWindSvg(daily.wind_speed_10m_max[i], daily.wind_gusts_10m_max[i]), windBar)}
         <span class="daily-extra" title="Вітер км/год">${daily.wind_speed_10m_max[i]} / ${daily.wind_gusts_10m_max[i]}</span>
-        ${uvBlock}
-        <span class="daily-extra ${isWeekUvEnough ? "" : "hidden"}">УФ ${daily.uv_index_max[i]}</span>
-      </div>
-    `);
-  }
+        ${showUv ? buildVizBlock(getSunSvg(), uvBar) : ""}
+        ${showUv ? `<span class="daily-extra">УФ ${daily.uv_index_max[i]}</span>` : ""}
+      </div>`;
+  });
 
   return `<div class="daily">${items.join("")}</div>`;
 }
