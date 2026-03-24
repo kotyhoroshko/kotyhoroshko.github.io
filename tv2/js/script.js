@@ -4,7 +4,7 @@ import { renderHourly } from "./hourly.js";
 import { renderDaily } from "./daily.js";
 
 /** false = реальний Open-Meteo; true = дані з js/dummy.json */
-const USE_DUMMY_JSON = true;
+const USE_DUMMY_JSON = false;
 
 const API_PARAMS = {
   daily: [
