@@ -3,25 +3,73 @@
  * Класи .svg-bg-rain, .svg-bg-wind, .svg-bg-sun — обгортки для стилів у CSS.
  */
 
-export function getRainSvg() {
+export function getRainSvg(precipAmount = 0, type = 'hourly') {
+  if (precipAmount <= 0) {
+    return `<svg class="svg-bg svg-bg-rain" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
+  }
+
+  let drops = '';
+  // Максимум опадів: для погодинного 10мм = 150 крапель, для денного 30мм = 150 крапель
+  const maxPrecip = type === 'daily' ? 30 : 10;
+  
+  // Розраховуємо кількість крапель
+  let dropCount = Math.round((precipAmount / maxPrecip) * 150);
+  
+  // Мінімум 10 крапель (оскільки опади > 0), максимум 150
+  dropCount = Math.min(150, Math.max(10, dropCount));
+
+  for (let i = 0; i < dropCount; i++) {
+    const x = (Math.random() * 160 - 30).toFixed(1); // від -30 до 130
+    const y = -20; // вище верхнього краю
+    const delay = (Math.random() * 2).toFixed(2); // випадкова затримка
+    const duration = (0.5 + Math.random() * 0.5).toFixed(2); // випадкова швидкість
+    
+    // Нахил: x зміщується на -1, y на 10
+    const x2 = (parseFloat(x) - 1).toFixed(1);
+    const y2 = y + 10;
+
+    drops += `  <line class="drop" x1="${x}" y1="${y}" x2="${x2}" y2="${y2}" style="animation-delay: ${delay}s; animation-duration: ${duration}s;" />\n`;
+  }
+  
   return `
 <svg class="svg-bg svg-bg-rain" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path class="drop drop1" d="M67 66.1c0 16.1-7.4 23.2-16.4 23.2s-16.4-7.1-16.4-23.2 16.4-35.8 16.4-35.8S67 50.1 67 66.1z" />
-  <path class="drop drop2" d="M90 34.5C90 45.2 85.2 50 79.2 50c-6 0-10.8-4.7-10.8-15.4s10.8-23.8 10.8-23.8S90 23.8 90 34.5z" />
-  <path class="drop drop3" d="M27.8 52.8c0 9.9-4 14.3-8.9 14.3S10 62.8 10 52.8s8.9-22.1 8.9-22.1 8.9 12.2 8.9 22.1z" />
-</svg>`;
+${drops}</svg>`;
 }
 
-export function getWindSvg() {
+export function getWindSvg(windSpeed = 0, windGust = 0) {
+  // windSpeed in km/h. Minimal wind lines for 0-5 km/h.
+  let lines = '';
+  
+  if (windSpeed < 2 && windGust < 2) {
+    return `<svg class="svg-bg svg-bg-wind" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
+  }
+
+  // Кількість ліній залежить від базової швидкості вітру
+  // 120 км/год = 40 ліній
+  let lineCount = Math.round((windSpeed / 120) * 40);
+  lineCount = Math.min(40, Math.max(3, lineCount)); // від 3 до 40 ліній
+
+  // Швидкість анімації залежить від поривів вітру (чим сильніший порив, тим швидше)
+  const speedFactor = Math.max(5, Math.min(120, windGust || windSpeed));
+
+  for (let i = 0; i < lineCount; i++) {
+    const y = (Math.random() * 100).toFixed(1);
+    const length = (10 + Math.random() * 30).toFixed(1); // Довжина від 10 до 40
+    
+    // Базовий розрахунок тривалості анімації (чим більший speedFactor, тим менша тривалість)
+    // 120 км/год -> ~0.2с, 5 км/год -> ~5с
+    const duration = (25 / speedFactor + Math.random() * 0.5).toFixed(2);
+    const delay = (Math.random() * 2).toFixed(2);
+    
+    const strokeWidth = (0.3 + Math.random() * 1.2).toFixed(1);
+    const opacity = (0.2 + Math.random() * 0.6).toFixed(2);
+
+    lines += `  <line class="wind-line" x1="-${length}" y1="${y}" x2="0" y2="${y}" style="stroke-width: ${strokeWidth}; --line-opacity: ${opacity}; animation-delay: ${delay}s; animation-duration: ${duration}s;" />\n`;
+  }
+
   return `
 <svg class="svg-bg svg-bg-wind" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g transform="scale(0.8) translate(10, 10)">
-    <g transform="translate(0, -4)"><path class="wind w1" d="M29.5 46.3c4.6-3.9 10.7-5.9 16.6-5.5 7.1.5 13.9 4.1 20.9 3.3 2-.2 4-.8 5.6-2 2.3-1.7 3.7-4.7 3.3-7.6-.4-2.9-2.7-5.4-5.5-6-2.8-.6-6 1-7.1 3.7-.7 1.7-.5 3.9.8 5.2 1.3 1.3 3.7 1.5 5 .1" /></g>
-    <path class="wind w2" d="M25.9 53.9c4.7-3.5 10-6.2 15.6-8" />
-    <path class="wind w3" d="M36.4 54.7c4.6-3.8 10.6-5.9 16.5-5.9 9.5 0 18.3 5.2 27.8 5.2 2.7 0 5.7-.6 7.6-2.6 2.1-2.2 2.3-6.1.3-8.3-2.1-2.3-6.2-2.2-8.1.2-1 1.3-1.3 3.3-.2 4.6s3.5 1.2 4.2-.3" />
-    <g transform="translate(0, 4)"><path class="wind w4" d="M10 67.1c4.4 3.2 10.7 2.5 15.9.7 6.2-2.2 11.9-5.7 17.8-8.8 2.2-1.2 4.4-2.3 6.8-2.9 3.2-.8 6.6-.7 9.7.4 1.6.6 3.1 1.4 4.2 2.6 2.1 2.3 2.5 6 1 8.7-1.6 2.7-5 4.2-8 3.5-.8-.2-1.7-.5-2.3-1.1-2.3-2.2-1.5-7.3 2.4-7 1.1.1 2.1.7 2.6 1.7" /></g>
-  </g>
-</svg>`;
+${lines}</svg>`;
 }
 
 export function getSunSvg() {

@@ -65,11 +65,11 @@ export function renderHourly(data) {
     );
 
     const precipBlock = maxPrecipProbability > 20 ? `<div class="viz-wrap">
-      <div class="viz-wrap__bg">${getRainSvg()}</div>
+      <div class="viz-wrap__bg">${getRainSvg(hourly.precipitation[i], 'hourly')}</div>
       <div class="viz-wrap__content">${precipRangeHtml}</div>
       </div>` : "";
     const windBlock = `<div class="viz-wrap">
-      <div class="viz-wrap__bg">${getWindSvg()}</div>
+      <div class="viz-wrap__bg">${getWindSvg(hourly.wind_speed_10m[i], hourly.wind_gusts_10m[i])}</div>
       <div class="viz-wrap__content">${windRangeHtml}</div>
       </div>`;
     const uvBlock = maxUv > 5 ? `<div class="viz-wrap">

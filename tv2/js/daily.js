@@ -66,11 +66,11 @@ export function renderDaily(data) {
 
     const precipBlock = `
       <div class="viz-wrap ${isWeekPrecipEnough ? "" : "hidden"}">
-        <div class="viz-wrap__bg">${getRainSvg()}</div>
+        <div class="viz-wrap__bg">${getRainSvg(daily.precipitation_sum[i], 'daily')}</div>
         <div class="viz-wrap__content">${dailyPrecipRangeHtml}</div>
       </div>`;
     const windBlock = `<div class="viz-wrap">
-        <div class="viz-wrap__bg">${getWindSvg()}</div>
+        <div class="viz-wrap__bg">${getWindSvg(daily.wind_speed_10m_max[i], daily.wind_gusts_10m_max[i])}</div>
         <div class="viz-wrap__content">${dailyWindRangeHtml}</div>
       </div>`;
     const uvBlock = `<div class="viz-wrap ${isWeekUvEnough ? "" : "hidden"}"><div class="viz-wrap__bg">${getSunSvg()}</div><div class="viz-wrap__content">${dailyUvRangeHtml}</div></div>`;
