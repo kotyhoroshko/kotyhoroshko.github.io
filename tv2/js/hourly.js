@@ -93,7 +93,7 @@ export function renderHourly(data) {
         ${windBlock}
         <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
         ${uvBlock}
-        <span class="hourly-extra ${!maxUv ? "hidden" : ""}">УФ індекс: ${hourly.uv_index[i]}</span>
+        <span class="hourly-extra ${maxUv > 5 ? "" : "hidden"}">УФ індекс: ${hourly.uv_index[i]}</span>
       </div>
     `);
   }
