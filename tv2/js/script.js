@@ -38,20 +38,17 @@ function buildApiUrl(lat, lon) {
   );
 }
 
-async function resolveLocation() {
-  const saved = loadSavedLocation();
-  if (saved) return saved;
+function resolveLocation() {
+  return loadSavedLocation() || LOCATION;
+}
 
-  try {
-    const pos = await getUserGPSPosition();
-    const { latitude: lat, longitude: lon } = pos.coords;
-    const name = (await reverseGeocode(lat, lon)) || "Моя локація";
-    const loc = { lat, lon, name };
-    saveLocation(loc);
-    return loc;
-  } catch {
-    return LOCATION;
-  }
+async function geolocateUser() {
+  const pos = await getUserGPSPosition();
+  const { latitude: lat, longitude: lon } = pos.coords;
+  const name = (await reverseGeocode(lat, lon)) || "Моя локація";
+  const loc = { lat, lon, name };
+  saveLocation(loc);
+  return loc;
 }
 
 const DUMMY_JSON_URL = new URL("./dummy.json", import.meta.url);
@@ -96,13 +93,18 @@ async function updateWeather() {
 }
 
 async function init() {
-  currentLocation = await resolveLocation();
+  currentLocation = resolveLocation();
   await updateWeather();
   initLocationSearch(weatherCard, {
     getLocation: () => currentLocation,
     selectLocation: async (loc) => {
       currentLocation = loc;
       saveLocation(loc);
+      await updateWeather();
+    },
+    geolocateUser: async () => {
+      const loc = await geolocateUser();
+      currentLocation = loc;
       await updateWeather();
     },
   });

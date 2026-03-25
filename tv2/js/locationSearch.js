@@ -2,18 +2,51 @@ import { searchLocations } from "./geocoding.js";
 import { escapeHtml } from "./config.js";
 
 /**
- * Ініціалізує пошук локації з dropdown-підказками.
+ * Ініціалізує пошук локації з dropdown-підказками та GPS-кнопкою.
  * @param {HTMLElement} containerEl - елемент-контейнер (weather card)
  * @param {() => {name: string}} getLocation - повертає поточну локацію
  * @param {(loc: {lat: number, lon: number, name: string}) => Promise<void>} selectLocation - обробник вибору
+ * @param {() => Promise<void>} geolocateUser - обробник GPS-запиту (викликається по user gesture)
  */
-export function initLocationSearch(containerEl, { getLocation, selectLocation }) {
+export function initLocationSearch(containerEl, { getLocation, selectLocation, geolocateUser }) {
   if (!containerEl) return;
 
   containerEl.addEventListener("click", (e) => {
+    const gpsBtn = e.target.closest(".location__gps-btn");
+    if (gpsBtn) {
+      e.stopPropagation();
+      handleGpsClick(gpsBtn);
+      return;
+    }
+
     const locationEl = e.target.closest(".location");
     if (!locationEl || locationEl.querySelector(".location-input")) return;
 
+    openSearchInput(locationEl);
+  });
+
+  async function handleGpsClick(btn) {
+    const locationEl = btn.closest(".location");
+    if (!locationEl) return;
+
+    btn.classList.add("location__gps-btn--loading");
+    btn.disabled = true;
+    try {
+      await geolocateUser();
+    } catch (err) {
+      console.warn("GPS недоступний:", err.message || err);
+      const nameEl = locationEl.querySelector(".location__name");
+      if (nameEl) {
+        nameEl.textContent = "GPS недоступний";
+        setTimeout(() => { nameEl.textContent = getLocation().name; }, 2000);
+      }
+    } finally {
+      btn.classList.remove("location__gps-btn--loading");
+      btn.disabled = false;
+    }
+  }
+
+  function openSearchInput(locationEl) {
     const input = document.createElement("input");
     input.type = "text";
     input.className = "location-input";
@@ -71,7 +104,8 @@ export function initLocationSearch(containerEl, { getLocation, selectLocation })
     function restoreText() {
       if (locationEl.contains(input)) {
         clearTimeout(debounceTimer);
-        locationEl.textContent = getLocation().name;
+        const loc = getLocation();
+        locationEl.innerHTML = `<span class="location__name">${escapeHtml(loc.name)}</span><button type="button" class="location__gps-btn" title="Визначити моє місцезнаходження" aria-label="Визначити моє місцезнаходження"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg></button>`;
       }
     }
 
@@ -134,5 +168,5 @@ export function initLocationSearch(containerEl, { getLocation, selectLocation })
         if (!input.disabled) restoreText();
       }, 150);
     });
-  });
+  }
 }

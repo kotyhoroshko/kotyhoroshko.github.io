@@ -1,4 +1,11 @@
-import { weatherConfig, getIconPath, formatTime, escapeHtml, LOCATION } from "./config.js";
+import {
+  weatherConfig,
+  getIconPath,
+  formatTime,
+  escapeHtml,
+  round1,
+  LOCATION,
+} from "./config.js";
 
 function dirLabel(deg) {
   const dirs = ["Пн", "ПнСх", "Сх", "ПдСх", "Пд", "ПдЗх", "Зх", "ПнЗх"];
@@ -28,7 +35,10 @@ export function renderCurrent(data, locationName = LOCATION.name) {
       : "";
 
   return `
-    <div class="location">${escapeHtml(locationName)}</div>
+    <div class="location">
+      <button type="button" class="location__gps-btn" title="Визначити моє місцезнаходження" aria-label="Визначити моє місцезнаходження"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg></button>
+      <span class="location__name">${escapeHtml(locationName)}</span>
+    </div>
     <div class="date">${new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" })}</div>
     ${sunTimesHtml}
     <div class="main-info">
@@ -41,12 +51,12 @@ export function renderCurrent(data, locationName = LOCATION.name) {
       <span class="time-stamp">Станом на ${formatTime(curr.time)}</span>
     </div>
     <div class="details">
-      <div class="detail-item"><span class="detail-label" title="км/год">Вітер</span><span class="detail-value">${curr.wind_speed_10m}</span></div>
-      <div class="detail-item"><span class="detail-label" title="км/год">Пориви</span><span class="detail-value">${curr.wind_gusts_10m}</span></div>
+      <div class="detail-item"><span class="detail-label" title="км/год">Вітер</span><span class="detail-value">${round1(curr.wind_speed_10m)}</span></div>
+      <div class="detail-item"><span class="detail-label" title="км/год">Пориви</span><span class="detail-value">${round1(curr.wind_gusts_10m)}</span></div>
       <div class="detail-item"><span class="detail-label" title="${curr.wind_direction_10m}°">Напрям</span><span class="detail-value">${dirLabel(curr.wind_direction_10m)}</span></div>
-      <div class="detail-item"><span class="detail-label" title="(mm)">Дощ</span><span class="detail-value">${curr.rain ?? 0}</span></div>
-      <div class="detail-item"><span class="detail-label" title="(mm)">Зливи</span><span class="detail-value">${curr.showers ?? 0}</span></div>
-      <div class="detail-item"><span class="detail-label" title="(cm)">Сніг</span><span class="detail-value">${curr.snowfall ?? 0}</span></div>
+      <div class="detail-item"><span class="detail-label" title="(mm)">Дощ</span><span class="detail-value">${round1(curr.rain ?? 0)}</span></div>
+      <div class="detail-item"><span class="detail-label" title="(mm)">Зливи</span><span class="detail-value">${round1(curr.showers ?? 0)}</span></div>
+      <div class="detail-item"><span class="detail-label" title="(cm)">Сніг</span><span class="detail-value">${round1(curr.snowfall ?? 0)}</span></div>
     </div>
   `;
 }

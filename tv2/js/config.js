@@ -5,6 +5,10 @@ export const UV_THRESHOLD = 5;
 export const iconSource = "accu";
 export const OW_BASE = "https://openweathermap.org/img/wn";
 
+export function round1(n) {
+  return Math.round(n * 10) / 10;
+}
+
 export function escapeHtml(str) {
   return String(str)
     .replace(/&/g, "&amp;")

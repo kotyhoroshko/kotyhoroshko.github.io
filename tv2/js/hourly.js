@@ -1,5 +1,5 @@
 import {
-  weatherConfig, getIconPath, getGlobalMinMax, UV_THRESHOLD,
+  weatherConfig, getIconPath, getGlobalMinMax, UV_THRESHOLD, round1,
   buildTempBar, buildWindBar, buildPrecipBar, buildUvBar,
   buildVizBlock, formatTime,
 } from "./config.js";
@@ -42,12 +42,12 @@ export function renderHourly(data) {
         </span>
         ${showPrecipBlock ? buildVizBlock(getRainSvg(hourly.precipitation[i], "hourly"), precipBar) : ""}
         <span class="hourly-extra ${maxPrecipProb ? "" : "hidden"}">
-          ${hourly.precipitation[i]}mm, ${hourly.precipitation_probability[i]}%
+          ${round1(hourly.precipitation[i])}mm, ${hourly.precipitation_probability[i]}%
         </span>
         ${buildVizBlock(getWindSvg(hourly.wind_speed_10m[i], hourly.wind_gusts_10m[i]), windBar)}
-        <span class="hourly-extra" title="Вітер км/год">${hourly.wind_speed_10m[i]} / ${hourly.wind_gusts_10m[i]}</span>
+        <span class="hourly-extra" title="Вітер км/год">${round1(hourly.wind_speed_10m[i])} / ${round1(hourly.wind_gusts_10m[i])}</span>
         ${showUv ? buildVizBlock(getSunSvg(), uvBar) : ""}
-        <span class="hourly-extra ${showUv ? "" : "hidden"}">УФ: ${hourly.uv_index[i]}</span>
+        <span class="hourly-extra ${showUv ? "" : "hidden"}">УФ: ${round1(hourly.uv_index[i])}</span>
       </div>`;
   });
 
