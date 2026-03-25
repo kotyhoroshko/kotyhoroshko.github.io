@@ -8,16 +8,6 @@
   --radius-sm: 12px;
   --text-main: #f0f6fc;
   --text-secondary: #8b949e;
-
-  --wind-calm: #e0f2f1;
-  --wind-light: #b2dfdb;
-  --wind-breeze: #4db6ac;
-  --wind-moderate: #afb42b;
-  --wind-fresh: #fbc02d;
-  --wind-strong: #f57c00;
-  --wind-gale: #d32f2f;
-  --wind-storm: #c2185b;
-  --wind-extreme: #7b1fa2;
 }
 
 * {
@@ -386,7 +376,7 @@ body {
   display: none;
 }
 
-.hourly-range {
+.range-bar {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -394,7 +384,7 @@ body {
   flex-grow: 1;
 }
 
-.hourly-range-track {
+.range-bar__track {
   position: relative;
   width: 100%;
   height: 100%;
@@ -403,11 +393,11 @@ body {
   overflow: hidden;
 }
 
-.hourly-range--wind .hourly-range-track {
+.range-bar--wind .range-bar__track {
   border-top: none;
 }
 
-.hourly-range-fill {
+.range-bar__fill {
   position: absolute;
   left: 0;
   right: 0;
@@ -415,11 +405,11 @@ body {
 }
 
 /* Фолбек, якщо JS не задав inline background */
-.hourly-range--wind .hourly-range-fill {
+.range-bar--wind .range-bar__fill {
   background: linear-gradient(180deg, #4fc3f7, #0288d1);
 }
 
-.hourly-range--temp .hourly-range-fill {
+.range-bar--temp .range-bar__fill {
   background: linear-gradient(180deg, #808080, #474747);
 }
 
@@ -476,7 +466,7 @@ body {
   z-index: 1;
   height: 100%;
 }
-.viz-wrap .hourly-range {
+.viz-wrap .range-bar {
   margin-top: 0;
 }
 
@@ -562,6 +552,29 @@ body {
   }
   to {
     transform: scale(1.05);
+  }
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 900px) {
+  .cards-grid {
+    flex-direction: column;
+  }
+  .weather-card--current {
+    min-width: unset;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 6px;
+  }
+  .cards-grid {
+    gap: 8px;
+  }
+  .daily {
+    grid-template-columns: repeat(7, minmax(90px, 1fr));
   }
 }
 

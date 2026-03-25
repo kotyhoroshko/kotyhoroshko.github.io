@@ -1,11 +1,10 @@
 import {
-  weatherConfig, getIconPath, getGlobalMinMax,
+  weatherConfig, getIconPath, getGlobalMinMax, UV_THRESHOLD,
   buildTempBar, buildWindBar, buildPrecipBar, buildUvBar,
   buildVizBlock, formatDate,
 } from "./config.js";
 import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 
-const UV_THRESHOLD = 5;
 const PRECIP_THRESHOLD_MM = 0.5;
 const DAILY_MAX_PRECIP_MM = 30;
 

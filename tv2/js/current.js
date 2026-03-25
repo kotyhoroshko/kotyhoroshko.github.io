@@ -1,4 +1,4 @@
-import { weatherConfig, getIconPath, formatTime, LOCATION } from "./config.js";
+import { weatherConfig, getIconPath, formatTime, escapeHtml, LOCATION } from "./config.js";
 
 function dirLabel(deg) {
   const dirs = ["Пн", "ПнСх", "Сх", "ПдСх", "Пд", "ПдЗх", "Зх", "ПнЗх"];
@@ -11,7 +11,6 @@ export function renderCurrent(data, locationName = LOCATION.name) {
   const config = weatherConfig[code] || {
     label: "Невідомо",
     img: "weather-many-clouds",
-    color: "#000",
   };
 
   const daily = data.daily || {};
@@ -29,11 +28,11 @@ export function renderCurrent(data, locationName = LOCATION.name) {
       : "";
 
   return `
-    <div class="location">${locationName}</div>
+    <div class="location">${escapeHtml(locationName)}</div>
     <div class="date">${new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" })}</div>
     ${sunTimesHtml}
     <div class="main-info">
-      <img src="${imgPath}" alt="${config.label}" class="main-icon" />
+      <img src="${imgPath}" alt="${escapeHtml(config.label)}" class="main-icon" />
       <div class="temp-container">
         <div class="current-temp">${Math.round(curr.temperature_2m)}°</div>
         <div class="feels-like">${Math.round(curr.apparent_temperature)}°</div>

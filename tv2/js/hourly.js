@@ -1,5 +1,5 @@
 import {
-  weatherConfig, getIconPath, getGlobalMinMax,
+  weatherConfig, getIconPath, getGlobalMinMax, UV_THRESHOLD,
   buildTempBar, buildWindBar, buildPrecipBar, buildUvBar,
   buildVizBlock, formatTime,
 } from "./config.js";
@@ -7,7 +7,6 @@ import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 
 const PRECIP_BLOCK_THRESHOLD = 20;
 const PRECIP_BAR_THRESHOLD = 30;
-const UV_THRESHOLD = 5;
 
 export function renderHourly(data) {
   const { hourly, daily = {} } = data;
