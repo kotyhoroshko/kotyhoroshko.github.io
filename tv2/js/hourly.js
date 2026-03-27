@@ -1,7 +1,7 @@
 import {
   weatherConfig, getIconPath, getGlobalMinMax, UV_THRESHOLD, round1,
   buildTempBar, buildWindBar, buildPrecipBar, buildUvBar,
-  buildVizBlock, formatTime,
+  buildVizBlock, formatTime, windTitle, uvTitle,
 } from "./config.js";
 import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 
@@ -45,9 +45,9 @@ export function renderHourly(data) {
           ${round1(hourly.precipitation[i])}mm, ${hourly.precipitation_probability[i]}%
         </span>
         ${buildVizBlock(getWindSvg(hourly.wind_speed_10m[i], hourly.wind_gusts_10m[i]), windBar)}
-        <span class="hourly-extra" title="Вітер км/год">${round1(hourly.wind_speed_10m[i])} / ${round1(hourly.wind_gusts_10m[i])}</span>
+        <span class="hourly-extra tip" tabindex="0" data-tip="${windTitle(hourly.wind_speed_10m[i], hourly.wind_gusts_10m[i])}">${Math.round(hourly.wind_speed_10m[i])} / ${Math.round(hourly.wind_gusts_10m[i])} км/год</span>
         ${showUv ? buildVizBlock(getSunSvg(), uvBar) : ""}
-        <span class="hourly-extra ${showUv ? "" : "hidden"}">УФ: ${round1(hourly.uv_index[i])}</span>
+        <span class="hourly-extra tip ${showUv ? "" : "hidden"}" tabindex="0" data-tip="${uvTitle(hourly.uv_index[i])}">УФ: ${round1(hourly.uv_index[i])}</span>
       </div>`;
   });
 

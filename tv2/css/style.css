@@ -460,6 +460,55 @@ body {
   white-space: nowrap;
 }
 
+/* --- Tip (hover + tap) --- */
+
+.tip {
+  cursor: help;
+  position: relative;
+}
+.tip::after {
+  content: attr(data-tip);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  color: var(--text-main);
+  font-size: 0.75rem;
+  font-weight: 400;
+  left: 50%;
+  line-height: 1.4;
+  opacity: 0;
+  padding: 6px 10px;
+  pointer-events: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  text-align: center;
+  transform: translateX(-50%);
+  transition: opacity 0.15s;
+  width: max-content;
+  max-width: min(260px, 90vw);
+  white-space: normal;
+  z-index: 10;
+}
+.tip:hover::after,
+.tip:focus::after {
+  opacity: 1;
+}
+.tip:focus {
+  outline: none;
+}
+.hourly-item:first-child .tip::after,
+.daily-item:first-child .tip::after {
+  left: 0;
+  transform: none;
+}
+.hourly-item:last-child .tip::after,
+.daily-item:last-child .tip::after {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
 .loading {
   color: var(--text-secondary);
   font-style: italic;

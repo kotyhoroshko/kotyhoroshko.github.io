@@ -4,6 +4,7 @@ import {
   formatTime,
   escapeHtml,
   round1,
+  windTitle,
   LOCATION,
 } from "./config.js";
 
@@ -51,8 +52,8 @@ export function renderCurrent(data, locationName = LOCATION.name) {
       <span class="time-stamp">Станом на ${formatTime(curr.time)}</span>
     </div>
     <div class="details">
-      <div class="detail-item"><span class="detail-label" title="км/год">Вітер</span><span class="detail-value">${round1(curr.wind_speed_10m)}</span></div>
-      <div class="detail-item"><span class="detail-label" title="км/год">Пориви</span><span class="detail-value">${round1(curr.wind_gusts_10m)}</span></div>
+      <div class="detail-item tip" tabindex="0" data-tip="${windTitle(curr.wind_speed_10m, curr.wind_gusts_10m)}"><span class="detail-label">Вітер</span><span class="detail-value">${Math.round(curr.wind_speed_10m)} км/год</span></div>
+      <div class="detail-item tip" tabindex="0" data-tip="${windTitle(curr.wind_speed_10m, curr.wind_gusts_10m)}"><span class="detail-label">Пориви</span><span class="detail-value">${Math.round(curr.wind_gusts_10m)} км/год</span></div>
       <div class="detail-item"><span class="detail-label" title="${curr.wind_direction_10m}°">Напрям</span><span class="detail-value">${dirLabel(curr.wind_direction_10m)}</span></div>
       <div class="detail-item"><span class="detail-label" title="(mm)">Дощ</span><span class="detail-value">${round1(curr.rain ?? 0)}</span></div>
       <div class="detail-item"><span class="detail-label" title="(mm)">Зливи</span><span class="detail-value">${round1(curr.showers ?? 0)}</span></div>

@@ -1,7 +1,7 @@
 import {
   weatherConfig, getIconPath, getGlobalMinMax, UV_THRESHOLD, round1,
   buildTempBar, buildWindBar, buildPrecipBar, buildUvBar,
-  buildVizBlock, formatDate,
+  buildVizBlock, formatDate, windTitle, uvTitle,
 } from "./config.js";
 import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 
@@ -35,9 +35,9 @@ export function renderDaily(data) {
         ${showPrecip ? buildVizBlock(getRainSvg(daily.precipitation_sum[i], "daily"), precipBar) : ""}
         ${showPrecip ? `<span class="daily-precip">${round1(daily.precipitation_sum[i])}мм / ${daily.precipitation_hours[i]}год</span>` : ""}
         ${buildVizBlock(getWindSvg(daily.wind_speed_10m_max[i], daily.wind_gusts_10m_max[i]), windBar)}
-        <span class="daily-extra" title="Вітер км/год">${round1(daily.wind_speed_10m_max[i])} / ${round1(daily.wind_gusts_10m_max[i])}</span>
+        <span class="daily-extra tip" tabindex="0" data-tip="${windTitle(daily.wind_speed_10m_max[i], daily.wind_gusts_10m_max[i])}">${Math.round(daily.wind_speed_10m_max[i])} / ${Math.round(daily.wind_gusts_10m_max[i])} км/год</span>
         ${showUv ? buildVizBlock(getSunSvg(), uvBar) : ""}
-        ${showUv ? `<span class="daily-extra">УФ ${round1(daily.uv_index_max[i])}</span>` : ""}
+        ${showUv ? `<span class="daily-extra tip" tabindex="0" data-tip="${uvTitle(daily.uv_index_max[i])}">УФ ${round1(daily.uv_index_max[i])}</span>` : ""}
       </div>`;
   });
 
