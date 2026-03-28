@@ -18,12 +18,12 @@ export function escapeHtml(str) {
 export function windTitle(speed, gust) {
   const peak = Math.max(speed, gust);
   const level = WIND_LEVELS.find(([max]) => peak <= max);
-  return `Вітер: до ${Math.round(peak)} км/год (${level[1]}). ${level[2]}`;
+  return `${level[1]} вітер до ${Math.round(peak)}км/год. ${level[2]}`;
 }
 
 export function uvTitle(index) {
   const level = UV_LEVELS.find(([max]) => index <= max);
-  return `УФ-індекс: ${round1(index)} (${level[1]}). ${level[2]}`;
+  return `${level[1]}. ${level[2]}`;
 }
 
 /** Фолбек: 07:00–20:00 якщо sunrise/sunset не передано. */

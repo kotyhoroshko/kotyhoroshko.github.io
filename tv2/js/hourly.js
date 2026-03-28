@@ -14,10 +14,12 @@ export function renderHourly(data) {
   const { min: windMin, max: windMax } = getGlobalMinMax(hourly.wind_speed_10m, hourly.wind_gusts_10m);
   const { min: tempMin, max: tempMax } = getGlobalMinMax(hourly.temperature_2m, hourly.apparent_temperature);
   const maxPrecipProb = Math.max(...hourly.precipitation_probability);
+  const maxPrecipMm = Math.max(...hourly.precipitation);
   const maxUv = Math.max(...hourly.uv_index);
 
-  const showPrecipBlock = maxPrecipProb > PRECIP_BLOCK_THRESHOLD;
-  const showPrecipBar = maxPrecipProb > PRECIP_BAR_THRESHOLD;
+  const hasPrecip = maxPrecipMm > 0;
+  const showPrecipBlock = hasPrecip && maxPrecipProb > PRECIP_BLOCK_THRESHOLD;
+  const showPrecipBar = hasPrecip && maxPrecipProb > PRECIP_BAR_THRESHOLD;
   const showUv = maxUv > UV_THRESHOLD;
 
   const items = hourly.time.map((time, i) => {
@@ -39,7 +41,7 @@ export function renderHourly(data) {
           <span class="hourly-temp-feels">${Math.round(hourly.apparent_temperature[i])}°</span>
         </span>
         ${showPrecipBlock ? buildVizBlock(getRainSvg(hourly.precipitation[i], "hourly"), precipBar) : ""}
-        <span class="hourly-extra ${maxPrecipProb ? "" : "hidden"}">
+        <span class="hourly-extra ${hasPrecip ? "" : "hidden"}">
           ${round1(hourly.precipitation[i])}mm, ${hourly.precipitation_probability[i]}%
         </span>
         ${buildVizBlock(getWindSvg(hourly.wind_speed_10m[i], hourly.wind_gusts_10m[i]), windBar)}
