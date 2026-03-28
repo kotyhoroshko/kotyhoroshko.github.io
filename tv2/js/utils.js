@@ -1,6 +1,6 @@
 import {
-  WIND_LEVELS, UV_LEVELS, TEMP_COLOR_STOPS,
-  WMO_KNOWN_CODES, ICON_SOURCE, OW_BASE,
+  WIND_LEVELS, UV_LEVELS, PRECIP_LEVELS_HOURLY, PRECIP_LEVELS_DAILY,
+  TEMP_COLOR_STOPS, WMO_KNOWN_CODES, ICON_SOURCE, OW_BASE,
 } from "./config.js";
 
 export function round1(n) {
@@ -24,6 +24,13 @@ export function windTitle(speed, gust) {
 export function uvTitle(index) {
   const level = UV_LEVELS.find(([max]) => index <= max);
   return `${level[1]}. ${level[2]}`;
+}
+
+export function precipTitle(amountMm, probability, type = "hourly") {
+  const levels = type === "daily" ? PRECIP_LEVELS_DAILY : PRECIP_LEVELS_HOURLY;
+  const level = levels.find(([max]) => amountMm <= max);
+  const probText = probability != null ? ` Ймовірність ${probability}%.` : "";
+  return `${level[1]} (${round1(amountMm)}мм).${probText} ${level[2]}`;
 }
 
 /** Фолбек: 07:00–20:00 якщо sunrise/sunset не передано. */

@@ -1,5 +1,5 @@
 import { weatherConfig, UV_THRESHOLD } from "./config.js";
-import { getIconPath, getGlobalMinMax, round1, formatTime, windTitle, uvTitle } from "./utils.js";
+import { getIconPath, getGlobalMinMax, round1, formatTime, windTitle, uvTitle, precipTitle } from "./utils.js";
 import { buildTempBar, buildWindBar, buildPrecipBar, buildUvBar, buildVizBlock } from "./barBuilders.js";
 import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 
@@ -41,7 +41,7 @@ export function renderHourly(data) {
           <span class="hourly-temp-feels">${Math.round(hourly.apparent_temperature[i])}°</span>
         </span>
         ${showPrecipBlock ? buildVizBlock(getRainSvg(hourly.precipitation[i], "hourly"), precipBar) : ""}
-        <span class="hourly-extra ${hasPrecip ? "" : "hidden"}">
+        <span class="hourly-extra tip ${hasPrecip ? "" : "hidden"}" tabindex="0" data-tip="${precipTitle(hourly.precipitation[i], hourly.precipitation_probability[i])}">
           ${round1(hourly.precipitation[i])}mm, ${hourly.precipitation_probability[i]}%
         </span>
         ${buildVizBlock(getWindSvg(hourly.wind_speed_10m[i], hourly.wind_gusts_10m[i]), windBar)}
