@@ -4,6 +4,7 @@
   --border: #30363d;
   --card-bg: #161b22;
   --card-bg-hover: #1c2128;
+  --font-data: "Montserrat", "Montserrat Alternates", sans-serif;
   --radius: 16px;
   --radius-sm: 12px;
   --text-main: #f0f6fc;
@@ -101,7 +102,7 @@ body {
   color: var(--text-main);
   cursor: pointer;
   display: flex;
-  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
+  font-family: var(--font-data);
   font-size: 1.5rem;
   font-weight: 700;
   gap: 8px;
@@ -147,7 +148,7 @@ body {
   border: none;
   border-bottom: 2px solid var(--accent);
   color: var(--text-main);
-  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
+  font-family: var(--font-data);
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -255,7 +256,7 @@ body {
 .current-temp,
 .feels-like {
   color: var(--text-main);
-  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
+  font-family: var(--font-data);
   font-size: 3.25rem;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -332,14 +333,14 @@ body {
 }
 
 .hourly-time {
-  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
+  font-family: var(--font-data);
   font-size: 0.75rem;
   color: var(--text-secondary);
 }
 
 .hourly-temp {
   color: var(--text-main);
-  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
+  font-family: var(--font-data);
   font-size: 0.875rem;
   font-weight: 700;
   margin-top: 0.2rem;
@@ -348,7 +349,7 @@ body {
 
 .hourly-temp-feels {
   color: var(--text-secondary);
-  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
+  font-family: var(--font-data);
   margin-left: 4px;
   font-size: 0.875rem;
   font-weight: 700;
@@ -371,14 +372,15 @@ body {
   display: grid;
   flex: 1;
   gap: 4px;
-  grid-template-columns: repeat(7, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   width: 100%;
   padding-inline: 0;
 }
 
 .daily-date {
   color: var(--text-main);
-  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
+  font-family: var(--font-data);
   font-size: 0.875rem;
   font-weight: 600;
   min-width: 52px;
@@ -395,7 +397,7 @@ body {
 
 .daily-temp {
   color: var(--text-main);
-  font-family: "Montserrat", "Montserrat Alternates", sans-serif;
+  font-family: var(--font-data);
   font-size: 1.125rem;
   font-weight: 700;
   white-space: nowrap;
@@ -663,7 +665,16 @@ body {
     gap: 8px;
   }
   .daily {
-    grid-template-columns: repeat(7, minmax(90px, 1fr));
+    grid-auto-columns: minmax(90px, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drop,
+  .wind-line,
+  .sun-group,
+  .sun-core {
+    animation: none !important;
   }
 }
 

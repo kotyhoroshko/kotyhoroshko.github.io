@@ -1,8 +1,6 @@
-import {
-  weatherConfig, getIconPath, getGlobalMinMax, UV_THRESHOLD, round1,
-  buildTempBar, buildWindBar, buildPrecipBar, buildUvBar,
-  buildVizBlock, formatTime, windTitle, uvTitle,
-} from "./config.js";
+import { weatherConfig, UV_THRESHOLD } from "./config.js";
+import { getIconPath, getGlobalMinMax, round1, formatTime, windTitle, uvTitle } from "./utils.js";
+import { buildTempBar, buildWindBar, buildPrecipBar, buildUvBar, buildVizBlock } from "./barBuilders.js";
 import { getRainSvg, getWindSvg, getSunSvg } from "./svgAnimations.js";
 
 const PRECIP_BLOCK_THRESHOLD = 20;

@@ -1,12 +1,11 @@
 import { searchLocations } from "./geocoding.js";
-import { escapeHtml } from "./config.js";
+import { escapeHtml } from "./utils.js";
+import { GPS_BUTTON_HTML } from "./config.js";
 
 /**
  * Ініціалізує пошук локації з dropdown-підказками та GPS-кнопкою.
  * @param {HTMLElement} containerEl - елемент-контейнер (weather card)
- * @param {() => {name: string}} getLocation - повертає поточну локацію
- * @param {(loc: {lat: number, lon: number, name: string}) => Promise<void>} selectLocation - обробник вибору
- * @param {() => Promise<void>} geolocateUser - обробник GPS-запиту (викликається по user gesture)
+ * @param {{getLocation: () => {name: string}, selectLocation: (loc: {lat: number, lon: number, name: string}) => Promise<void>, geolocateUser: () => Promise<void>}} callbacks
  */
 export function initLocationSearch(containerEl, { getLocation, selectLocation, geolocateUser }) {
   if (!containerEl) return;
@@ -44,6 +43,10 @@ export function initLocationSearch(containerEl, { getLocation, selectLocation, g
       btn.classList.remove("location__gps-btn--loading");
       btn.disabled = false;
     }
+  }
+
+  function buildLocationHtml(name) {
+    return `${GPS_BUTTON_HTML}<span class="location__name">${escapeHtml(name)}</span>`;
   }
 
   function openSearchInput(locationEl) {
@@ -104,8 +107,7 @@ export function initLocationSearch(containerEl, { getLocation, selectLocation, g
     function restoreText() {
       if (locationEl.contains(input)) {
         clearTimeout(debounceTimer);
-        const loc = getLocation();
-        locationEl.innerHTML = `<span class="location__name">${escapeHtml(loc.name)}</span><button type="button" class="location__gps-btn" title="Визначити моє місцезнаходження" aria-label="Визначити моє місцезнаходження"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg></button>`;
+        locationEl.innerHTML = buildLocationHtml(getLocation().name);
       }
     }
 

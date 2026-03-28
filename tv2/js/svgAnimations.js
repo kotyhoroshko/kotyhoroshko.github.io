@@ -3,73 +3,52 @@
  * Класи .svg-bg-rain, .svg-bg-wind, .svg-bg-sun — обгортки для стилів у CSS.
  */
 
-export function getRainSvg(precipAmount = 0, type = 'hourly') {
-  if (precipAmount <= 0) {
-    return `<svg class="svg-bg svg-bg-rain" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
-  }
+const MAX_RAIN_DROPS = 150;
+const MAX_WIND_LINES = 30;
 
-  let drops = '';
-  // Максимум опадів: для погодинного 10мм = 150 крапель, для денного 30мм = 150 крапель
-  const maxPrecip = type === 'daily' ? 30 : 10;
-  
-  // Розраховуємо кількість крапель
-  let dropCount = Math.round((precipAmount / maxPrecip) * 150);
-  
-  // Мінімум 10 крапель (оскільки опади > 0), максимум 150
-  dropCount = Math.min(150, Math.max(10, dropCount));
+const EMPTY_RAIN = `<svg class="svg-bg svg-bg-rain" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
+const EMPTY_WIND = `<svg class="svg-bg svg-bg-wind" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
 
+export function getRainSvg(precipAmount = 0, type = "hourly") {
+  if (precipAmount <= 0) return EMPTY_RAIN;
+
+  const maxPrecip = type === "daily" ? 30 : 10;
+  const dropCount = Math.min(MAX_RAIN_DROPS, Math.max(5, Math.round((precipAmount / maxPrecip) * MAX_RAIN_DROPS)));
+
+  let drops = "";
   for (let i = 0; i < dropCount; i++) {
-    const x = (Math.random() * 160 - 30).toFixed(1); // від -30 до 130
-    const y = -20; // вище верхнього краю
-    const delay = (Math.random() * 2).toFixed(2); // випадкова затримка
-    const duration = (0.5 + Math.random() * 0.5).toFixed(2); // випадкова швидкість
-    
-    // Нахил: x зміщується на -1, y на 10
+    const x = (Math.random() * 160 - 30).toFixed(1);
+    const y = -20;
+    const delay = (Math.random() * 2).toFixed(2);
+    const duration = (0.5 + Math.random() * 0.5).toFixed(2);
     const x2 = (parseFloat(x) - 1).toFixed(1);
     const y2 = y + 10;
 
-    drops += `  <line class="drop" x1="${x}" y1="${y}" x2="${x2}" y2="${y2}" style="animation-delay: ${delay}s; animation-duration: ${duration}s;" />\n`;
+    drops += `  <line class="drop" x1="${x}" y1="${y}" x2="${x2}" y2="${y2}" style="animation-delay:${delay}s;animation-duration:${duration}s" />\n`;
   }
-  
-  return `
-<svg class="svg-bg svg-bg-rain" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-${drops}</svg>`;
+
+  return `\n<svg class="svg-bg svg-bg-rain" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">\n${drops}</svg>`;
 }
 
 export function getWindSvg(windSpeed = 0, windGust = 0) {
-  // windSpeed in km/h. Minimal wind lines for 0-5 km/h.
-  let lines = '';
-  
-  if (windSpeed < 2 && windGust < 2) {
-    return `<svg class="svg-bg svg-bg-wind" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
-  }
+  if (windSpeed < 2 && windGust < 2) return EMPTY_WIND;
 
-  // Кількість ліній залежить від базової швидкості вітру
-  // 120 км/год = 40 ліній
-  let lineCount = Math.round((windSpeed / 120) * 40);
-  lineCount = Math.min(40, Math.max(3, lineCount)); // від 3 до 40 ліній
-
-  // Швидкість анімації залежить від поривів вітру (чим сильніший порив, тим швидше)
+  const lineCount = Math.min(MAX_WIND_LINES, Math.max(3, Math.round((windSpeed / 120) * MAX_WIND_LINES)));
   const speedFactor = Math.max(5, Math.min(120, windGust || windSpeed));
 
+  let lines = "";
   for (let i = 0; i < lineCount; i++) {
     const y = (Math.random() * 100).toFixed(1);
-    const length = (10 + Math.random() * 30).toFixed(1); // Довжина від 10 до 40
-    
-    // Базовий розрахунок тривалості анімації (чим більший speedFactor, тим менша тривалість)
-    // 120 км/год -> ~0.2с, 5 км/год -> ~5с
+    const length = (10 + Math.random() * 30).toFixed(1);
     const duration = (25 / speedFactor + Math.random() * 0.5).toFixed(2);
     const delay = (Math.random() * 2).toFixed(2);
-    
     const strokeWidth = (0.3 + Math.random() * 1.2).toFixed(1);
     const opacity = (0.2 + Math.random() * 0.6).toFixed(2);
 
-    lines += `  <line class="wind-line" x1="-${length}" y1="${y}" x2="0" y2="${y}" style="stroke-width: ${strokeWidth}; --line-opacity: ${opacity}; animation-delay: ${delay}s; animation-duration: ${duration}s;" />\n`;
+    lines += `  <line class="wind-line" x1="-${length}" y1="${y}" x2="0" y2="${y}" style="stroke-width:${strokeWidth};--line-opacity:${opacity};animation-delay:${delay}s;animation-duration:${duration}s" />\n`;
   }
 
-  return `
-<svg class="svg-bg svg-bg-wind" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-${lines}</svg>`;
+  return `\n<svg class="svg-bg svg-bg-wind" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">\n${lines}</svg>`;
 }
 
 export function getSunSvg() {

@@ -9,6 +9,9 @@ import { renderDaily } from "./daily.js";
 /** false = реальний Open-Meteo; true = дані з js/dummy.json */
 const USE_DUMMY_JSON = false;
 
+const MAX_RETRIES = 3;
+const RETRY_BASE_MS = 1000;
+
 const API_PARAMS = {
   daily: [
     "weather_code", "temperature_2m_max", "temperature_2m_min", "uv_index_max",
@@ -57,22 +60,34 @@ const weatherCard = document.getElementById("weather-card");
 const hourlyCard = document.getElementById("hourly-card");
 const dailyCard = document.getElementById("daily-card");
 
+async function fetchWithRetry(url, retries = MAX_RETRIES) {
+  for (let attempt = 0; attempt < retries; attempt++) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return await response.json();
+    } catch (err) {
+      if (attempt === retries - 1) throw err;
+      await new Promise((r) => setTimeout(r, RETRY_BASE_MS * (attempt + 1)));
+    }
+  }
+}
+
 async function loadWeatherData(lat, lon) {
   const cached = getCachedWeather(lat, lon);
   if (cached) return cached;
 
-  let data;
-  if (USE_DUMMY_JSON) {
-    const response = await fetch(DUMMY_JSON_URL);
-    if (!response.ok) throw new Error(`dummy.json HTTP ${response.status}`);
-    data = await response.json();
-  } else {
-    const response = await fetch(buildApiUrl(lat, lon));
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    data = await response.json();
-  }
+  const url = USE_DUMMY_JSON ? DUMMY_JSON_URL : buildApiUrl(lat, lon);
+  const data = await fetchWithRetry(url);
   cacheWeather(lat, lon, data);
   return data;
+}
+
+function setCardsLoading() {
+  const msg = `<div class="loading">Завантаження...</div>`;
+  if (weatherCard) weatherCard.innerHTML = msg;
+  if (hourlyCard) hourlyCard.innerHTML = msg;
+  if (dailyCard) dailyCard.innerHTML = msg;
 }
 
 async function updateWeather() {
@@ -85,7 +100,7 @@ async function updateWeather() {
     document.title = `Погода — ${currentLocation.name}`;
   } catch (error) {
     console.error("Деталі помилки:", error);
-    const msg = "Помилка завантаження";
+    const msg = `<div class="loading">Помилка завантаження. Спробуйте пізніше.</div>`;
     if (weatherCard) weatherCard.innerHTML = msg;
     if (hourlyCard) hourlyCard.innerHTML = msg;
     if (dailyCard) dailyCard.innerHTML = msg;
@@ -100,11 +115,13 @@ async function init() {
     selectLocation: async (loc) => {
       currentLocation = loc;
       saveLocation(loc);
+      setCardsLoading();
       await updateWeather();
     },
     geolocateUser: async () => {
       const loc = await geolocateUser();
       currentLocation = loc;
+      setCardsLoading();
       await updateWeather();
     },
   });
