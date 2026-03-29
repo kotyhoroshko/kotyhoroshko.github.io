@@ -59,7 +59,7 @@ export function buildPrecipBar(amountMm, probability, maxMm = 10) {
     height: ${heightPct}%;
     background: linear-gradient(to top,
       rgba(0, 122, 255, ${bottomAlpha}),
-      hsl(${hue}deg 100% 50% / ${probability})
+      hsl(${hue}deg 100% 50% / ${bottomAlpha})
     )
   `);
 }

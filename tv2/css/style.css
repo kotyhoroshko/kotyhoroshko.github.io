@@ -130,6 +130,18 @@ body {
   padding: 4px;
   transition: color 0.2s, border-color 0.2s, opacity 0.2s;
 }
+.location__gps-icon {
+  background-color: currentColor;
+  display: block;
+  height: 18px;
+  mask-image: url("../img/gps.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url("../img/gps.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  width: 18px;
+}
 .location__gps-btn:hover {
   border-color: var(--accent);
   color: var(--accent);

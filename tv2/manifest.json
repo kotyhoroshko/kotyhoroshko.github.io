@@ -1,0 +1,12 @@
+{
+  "name": "Soul Kitchen",
+  "short_name": "Погода для кухні",
+  "description": "Прогноз погоди для Королева та інших міст",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "icons": [
+    { "src": "img/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}
