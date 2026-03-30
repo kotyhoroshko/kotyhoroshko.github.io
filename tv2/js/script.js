@@ -1,6 +1,6 @@
 import { LOCATION } from "./config.js";
 import { saveLocation, loadSavedLocation, getCachedWeather, cacheWeather } from "./storage.js";
-import { getUserGPSPosition, reverseGeocode } from "./geocoding.js";
+import { getUserGPSPosition, reverseGeocode, locateByIp } from "./geocoding.js";
 import { initLocationSearch } from "./locationSearch.js";
 import { renderCurrent } from "./current.js";
 import { renderHourly } from "./hourly.js";
@@ -41,8 +41,15 @@ function buildApiUrl(lat, lon) {
   );
 }
 
-function resolveLocation() {
-  return loadSavedLocation() || LOCATION;
+async function resolveInitialLocation() {
+  const saved = loadSavedLocation();
+  if (saved) return saved;
+  const ipLoc = await locateByIp();
+  if (ipLoc) {
+    saveLocation(ipLoc);
+    return ipLoc;
+  }
+  return { ...LOCATION };
 }
 
 async function geolocateUser() {
@@ -63,7 +70,8 @@ const dailyCard = document.getElementById("daily-card");
 async function fetchWithRetry(url, retries = MAX_RETRIES) {
   for (let attempt = 0; attempt < retries; attempt++) {
     try {
-      const response = await fetch(url);
+      // Open-Meteo може віддавати довгий HTTP-кеш; інакше після F5 показуються старі дані.
+      const response = await fetch(url, { cache: "no-store" });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return await response.json();
     } catch (err) {
@@ -108,7 +116,7 @@ async function updateWeather() {
 }
 
 async function init() {
-  currentLocation = resolveLocation();
+  currentLocation = await resolveInitialLocation();
   await updateWeather();
   initLocationSearch(weatherCard, {
     getLocation: () => currentLocation,

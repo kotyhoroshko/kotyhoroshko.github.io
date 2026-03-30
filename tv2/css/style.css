@@ -229,6 +229,14 @@ body {
   padding: 10px 14px;
   text-align: center;
 }
+.location-dropdown__recent-label {
+  color: var(--accent);
+  font-size: 0.625rem;
+  font-weight: 100;
+  letter-spacing: 0.06em;
+  padding: 6px 14px 4px;
+  text-transform: uppercase;
+}
 
 .date {
   display: flex;

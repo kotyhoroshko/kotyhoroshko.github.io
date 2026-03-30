@@ -26,7 +26,28 @@ export async function reverseGeocode(lat, lon) {
   }
 }
 
-export async function searchLocations(query, count = 5) {
+/**
+ * Приблизна локація за IP (рівень міста/регіону; VPN і мобільні мережі можуть помилятися).
+ * Працює з браузера (HTTPS + CORS). Якщо сервіс недоступний — null.
+ */
+export async function locateByIp() {
+  try {
+    const resp = await fetch("https://ipapi.co/json/", { cache: "no-store" });
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    if (!data || data.error) return null;
+    const lat = data.latitude;
+    const lon = data.longitude;
+    if (typeof lat !== "number" || typeof lon !== "number") return null;
+    const place = [data.city || data.region, data.country_name].filter(Boolean).join(", ");
+    const name = place || "За IP";
+    return { lat, lon, name };
+  } catch {
+    return null;
+  }
+}
+
+export async function searchLocations(query, count = 50) {
   try {
     const url =
       `https://geocoding-api.open-meteo.com/v1/search` +

@@ -1,6 +1,15 @@
 import { searchLocations } from "./geocoding.js";
+import { loadRecentLocations } from "./storage.js";
 import { escapeHtml } from "./utils.js";
 import { GPS_BUTTON_HTML } from "./config.js";
+
+function recentToSuggestionRows() {
+  return loadRecentLocations().map((l) => ({
+    name: l.name,
+    latitude: l.lat,
+    longitude: l.lon,
+  }));
+}
 
 /**
  * Ініціалізує пошук локації з dropdown-підказками та GPS-кнопкою.
@@ -68,13 +77,14 @@ export function initLocationSearch(containerEl, { getLocation, selectLocation, g
     let activeIndex = -1;
 
     function renderDropdown() {
+      const q = input.value.trim();
       if (!results.length) {
-        dropdown.innerHTML = input.value.trim().length >= 2
+        dropdown.innerHTML = q.length >= 2
           ? `<div class="location-dropdown__empty">Нічого не знайдено</div>`
           : "";
         return;
       }
-      dropdown.innerHTML = results.map((r, i) => {
+      const rows = results.map((r, i) => {
         const detail = [r.admin1, r.country].filter(Boolean).map(escapeHtml).join(", ");
         return `
           <div class="location-dropdown__item ${i === activeIndex ? "location-dropdown__item--active" : ""}" data-index="${i}">
@@ -82,11 +92,15 @@ export function initLocationSearch(containerEl, { getLocation, selectLocation, g
             ${detail ? `<span class="location-dropdown__detail">${detail}</span>` : ""}
           </div>`;
       }).join("");
+      const recentLabel = q.length < 2 && results.length
+        ? `<div class="location-dropdown__recent-label">Останні</div>`
+        : "";
+      dropdown.innerHTML = recentLabel + rows;
     }
 
     async function fetchSuggestions(query) {
       if (query.length < 2) {
-        results = [];
+        results = recentToSuggestionRows();
         activeIndex = -1;
         renderDropdown();
         return;
@@ -95,6 +109,8 @@ export function initLocationSearch(containerEl, { getLocation, selectLocation, g
       activeIndex = -1;
       renderDropdown();
     }
+
+    fetchSuggestions("");
 
     async function handleSelect(r) {
       input.disabled = true;
