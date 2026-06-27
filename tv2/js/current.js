@@ -34,15 +34,15 @@ export function renderCurrent(data, locationName = LOCATION.name) {
       <span class="location__name">${escapeHtml(locationName)}</span>
     </div>
     <div class="date">${new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" })}</div>
-    ${sunTimesHtml}
+    <span class="time-stamp">Станом на ${formatTime(curr.time)}</span>
+    <div class="description">${config.label}</div>
     <div class="main-info">
       <img src="${imgPath}" alt="${escapeHtml(config.label)}" class="main-icon" />
       <div class="temp-container">
         <div class="current-temp">${Math.round(curr.temperature_2m)}°</div>
         <div class="feels-like">${Math.round(curr.apparent_temperature)}°</div>
       </div>
-      <div class="description">${config.label}</div>
-      <span class="time-stamp">Станом на ${formatTime(curr.time)}</span>
+      ${sunTimesHtml}
     </div>
     <div class="details">
       <div class="detail-item tip" tabindex="0" data-tip="${windTitle(curr.wind_speed_10m, curr.wind_gusts_10m)}"><span class="detail-label">Вітер</span><span class="detail-value">${Math.round(curr.wind_speed_10m)} км/год</span></div>

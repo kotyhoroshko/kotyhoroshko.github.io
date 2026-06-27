@@ -1,0 +1,363 @@
+/* ==========================================
+   Modern Minimalist CV Stylesheet
+   Optimized for Screen and PDF Export
+   ========================================== */
+
+/* Reset and Core Variables */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-dark: #1e293b; /* Slate 800 - Deep professional text */
+  --accent-teal: #0f766e; /* Teal 700 - Sophisticated accent */
+  --accent-bg: #f0fdfa; /* Teal 50 - Badge backgrounds */
+  --text-main: #334155; /* Slate 700 - Body copy */
+  --text-muted: #64748b; /* Slate 500 - Subtitles & dates */
+  --bg-page: #f8fafc; /* Slate 5 */
+  --bg-container: #ffffff;
+  --sidebar-bg: #f8fafc; /* Soft neutral offset for right column */
+  --border-color: #e2e8f0; /* Slate 200 */
+  --bg: #00000012;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.5;
+  padding: 50px 20px;
+  -webkit-font-smoothing: antialiased;
+  background-color: #ffffff;
+  background-image:  radial-gradient(circle farthest-side at 0% 50%, #ffffff 23.5%, transparent 0), radial-gradient(circle farthest-side at 0% 50%, #eeeeee 24%, transparent 0), linear-gradient(#ffffff 14%, transparent 0, transparent 85%, #ffffff 0), linear-gradient(150deg, #ffffff 24%, #eeeeee 0 26%, transparent 0 74%, #eeeeee 0 76%, #ffffff 0), linear-gradient(30deg, #ffffff 24%, #eeeeee 0 26%, transparent 0 74%, #eeeeee 0 76%, #ffffff 0), linear-gradient(90deg, #eeeeee 1.6%, #ffffff 0 98.4%, #eeeeee 0);
+  background-position: 35px 50px, 31px 50px, 0 0, 0 0, 0 0, 0 0;
+  background-size: 66px 99px;
+  animation: move 24s ease infinite alternate;
+}
+
+/* Main A4 Document Container */
+.cv-container {
+  max-width: 920px;
+  margin: 0 auto;
+  background: var(--bg-container);
+  padding: 50px 55px;
+  border-radius: 12px;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.05),
+    0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes move {
+  0% {  
+    background-position: 50% 50%;
+    background-size: 72px 104px;
+  }
+  50% {
+    background-position: 72% 40%;
+    background-size: 88px 132px;
+  }
+  100% {
+    background-position: 90% 66%;
+    background-size: 36px 54px;
+  }
+}
+
+/* Header Component */
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.main-info {
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 0 0 0 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* gap: 8px; */
+  border-bottom: 2px solid var(--primary-dark);
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: -0.75px;
+  line-height: 1;
+}
+
+.main-info .subtitle {
+  font-size: 16px;
+  color: var(--accent-teal);
+  font-weight: 600;
+  margin-top: 6px;
+  letter-spacing: 0.25px;
+}
+.name-info {
+  /* border-left: 4px solid var(--primary-dark); */
+  padding: 4px 16px 0;
+  margin-left: -8px;
+  background-image: linear-gradient(to right, #00000012, transparent);
+  z-index: 0;
+}
+
+.header-contact {
+  text-align: right;
+  font-size: 13.5px;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+.header-contact p {
+  margin-bottom: 5px;
+}
+
+.header-contact strong {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+/* Section Separator */
+.divider {
+  border: 0;
+  height: 2px;
+  background: var(--border-color);
+  margin: 12px 0;
+}
+
+/* Two-Column Grid Setup */
+.cv-content {
+  display: flex;
+  gap: 20px;
+}
+
+.main-column {
+  flex: 2;
+}
+
+.sidebar-column {
+  flex: 1;
+  /* background-color: var(--sidebar-bg); */
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  height: fit-content;
+}
+
+/* Consistent Section Design */
+.section {
+  margin-bottom: 28px;
+}
+.block {
+  background-color: var(--bg-container);
+  padding: 16px;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  transform: translate(0, 0);
+  transition: 0.33s ease;
+}
+
+.block:hover {
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translate(-4px, -4px);
+}
+
+.avatar {
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+  overflow: hidden;
+  max-width: 150px;
+  z-index: 1;
+}
+.avatar img {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.section h2 {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary-dark);
+  border-bottom: 2px solid var(--primary-dark);
+  padding-bottom: 5px;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.section p {
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+/* Experience Layout blocks */
+.job-entry {
+  margin-bottom: 24px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+.job-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.job-header .date {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.company {
+  font-size: 14px;
+  color: var(--accent-teal);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Modern Inline Tech Stack Badges */
+.tech-stack-inline {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-teal);
+  background-color: var(--accent-bg);
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(15, 118, 114, 0.15);
+}
+
+/* Clean Professional Bullet Lists */
+.bullet-list {
+  list-style: none;
+  font-size: 13.5px;
+  color: var(--text-main);
+}
+
+.bullet-list li {
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.bullet-list li::before {
+  content: "▪";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  color: var(--accent-teal);
+  font-size: 10px;
+}
+
+/* Sidebar Elements Styling */
+.skill-group {
+  margin-bottom: 18px;
+}
+
+.skill-group h3 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.skill-group p {
+  font-size: 13px;
+  color: var(--text-main);
+}
+
+.sidebar-list {
+  list-style: none;
+  font-size: 13px;
+  color: var(--text-main);
+}
+
+.sidebar-list li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 14px;
+  line-height: 1.4;
+}
+
+.sidebar-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+  font-weight: bold;
+}
+
+.education-entry p {
+  font-size: 14px;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+.unique-id {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 25px;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================
+ Print and PDF Layout Rules (Ctrl+P Engine)
+ ========================================== */
+@media print {
+  body {
+    background-color: #fff;
+    padding: 0;
+    color: #000;
+  }
+  .cv-container {
+    box-shadow: none;
+    padding: 0;
+    max-width: 100%;
+  }
+  .sidebar-column {
+    background-color: transparent !important;
+    border: none !important;
+    padding-left: 20px;
+    padding-right: 0;
+  }
+  .tech-stack-inline {
+    background-color: #f1f5f9 !important; /* Keep a light grey background tint for print readability */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Responsive Web Layout */
+@media (max-width: 768px) {
+  .cv-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .header-contact {
+    text-align: left;
+  }
+  .cv-container {
+    padding: 30px 24px;
+  }
+}
