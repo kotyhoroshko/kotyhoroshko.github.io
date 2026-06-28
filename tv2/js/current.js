@@ -35,9 +35,9 @@ export function renderCurrent(data, locationName = LOCATION.name) {
     </div>
     <div class="date">${new Date().toLocaleDateString("uk-UA", { weekday: "long", day: "numeric", month: "long" })}</div>
     <span class="time-stamp">Станом на ${formatTime(curr.time)}</span>
-    <div class="description">${config.label}</div>
     <div class="main-info">
       <img src="${imgPath}" alt="${escapeHtml(config.label)}" class="main-icon" />
+      <div class="description">${config.label}</div>
       <div class="temp-container">
         <div class="current-temp">${Math.round(curr.temperature_2m)}°</div>
         <div class="feels-like">${Math.round(curr.apparent_temperature)}°</div>
